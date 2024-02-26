@@ -1,30 +1,116 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+        <div id="app">
+                <div id="stars"></div>
+                <router-view/>
+        </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
 }
 
-nav {
-  padding: 30px;
+html {
+        background: url("./assets/back3.png") no-repeat;
+        background-size: cover;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#app {
+        width: 100%;
+        height: 100%;
+        position: relative;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+}
+
+.star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: #fff;
+        animation: twinkle 1s infinite;
+}
+
+@keyframes twinkle {
+        0% {
+                opacity: 0;
+        }
+        10% {
+                opacity: 0.2;
+        }
+        20% {
+                opacity: 0.4;
+        }
+        30% {
+                opacity: 0.6;
+        }
+        40% {
+                opacity: 0.8;
+        }
+        50% {
+                opacity: 1;
+        }
+        60% {
+                opacity: 0.8;
+        }
+        70% {
+                opacity: 0.6;
+        }
+        80% {
+                opacity: 0.4;
+        }
+        90% {
+                opacity: 0.2;
+        }
+        100% {
+                opacity: 0;
+        }
 }
 </style>
+
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+        createStars();
+        disableZoom();
+});
+
+function createStars() {
+        const stars = document.getElementById('stars');
+        const starCount = 100;
+
+        for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random(300,600) * 5 + 's'; // 设置随机的闪烁延迟时间
+                stars.appendChild(star);
+        }
+}
+
+function disableZoom() {
+        document.addEventListener('wheel', function(e) {
+                if (e.ctrlKey) {
+                        e.preventDefault();
+                }
+        }, { passive: false });
+
+        document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '0')) {
+                        e.preventDefault();
+                }
+        });
+}
+</script>
