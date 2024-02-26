@@ -19,7 +19,7 @@ import FirstTable from "@/components/FirstView/FirstMainTable.vue";
     #map{
         width: 75%;
         height: 75%;
-        margin-top: 6%;
+        margin-top: 7.5%;
         margin-left: 12%;
         position: absolute;
     }
@@ -29,7 +29,7 @@ import FirstTable from "@/components/FirstView/FirstMainTable.vue";
     #FirstMainTable{
         width: 23%;
         height: 20%;
-        margin-top: 2%;
+        margin-top: 5%;
         margin-left: 3%;
         position: absolute;
     }

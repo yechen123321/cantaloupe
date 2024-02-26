@@ -6,7 +6,9 @@
   <div class="title_main">
       <img src="../assets/pic/progress.gif" class="top-title-first-gif" alt="">
       <img src="../assets/pic/top.png" class="top-title" alt="">
+      <img src="../assets/pic/header.gif" class="top-title-head" alt="">
       <img src="../assets/pic/progress.gif" class="top-title-second-gif" alt="">
+      <div class="TitleName">致态</div>
   </div>
 </template>
 
@@ -24,6 +26,13 @@
       height: 100%;
 
     }
+    .top-title-head{
+      width: 20%;
+      height: 200%;
+      position: absolute;
+      margin-left: -60%;
+      margin-top: -1%;
+    }
     .top-title-first-gif{
       width: 20%;
       height: 50%;
@@ -38,6 +47,14 @@
       margin-top: 1%;
       transform: scaleX(-1);
       position: absolute;
+    }
+    .TitleName{
+      width: 100%;
+      position: absolute;
+      margin-top: -8.5%;
+      font-size: 48px;
+      font-family: 微软雅黑;
+      color: #12c2e9;
     }
   }
 </style>
