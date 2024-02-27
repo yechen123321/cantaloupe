@@ -4,10 +4,10 @@
 
 <template>
   <div class="title_main">
-      <img src="../assets/pic/progress.gif" class="top-title-first-gif" alt="">
+<!--      <img src="../assets/pic/progress.gif" class="top-title-first-gif" alt="">-->
       <img src="../assets/pic/top.png" class="top-title" alt="">
       <img src="../assets/pic/header.gif" class="top-title-head" alt="">
-      <img src="../assets/pic/progress.gif" class="top-title-second-gif" alt="">
+<!--      <img src="../assets/pic/progress.gif" class="top-title-second-gif" alt="">-->
       <div class="TitleName">致态</div>
   </div>
 </template>
@@ -51,10 +51,12 @@
     .TitleName{
       width: 100%;
       position: absolute;
-      margin-top: -8.5%;
-      font-size: 48px;
-      font-family: 微软雅黑;
-      color: #12c2e9;
+      margin-top: -7.5%;
+      font-size: 1em;
+      font-family: 微软雅黑,serif;
+      color: #1cd7cd;
+      font-weight: bolder;
+      text-shadow: 0 0 1px #1cd7cd;
     }
   }
 </style>

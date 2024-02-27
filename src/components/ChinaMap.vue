@@ -1,23 +1,3 @@
-<template>
-    <div className="h-full flex justify-center items-center">
-        <div id="mapDom" className="h-full w-full"></div>
-    </div>
-</template>
-
-<style scoped>
-canvas {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.h-full {
-    height: 100%;
-}
-
-.w-full {
-    width: 100%;
-}
-</style>
 
 <script setup>
 import {onMounted, onUnmounted, ref} from 'vue';
@@ -26,24 +6,15 @@ import '../assets/china';
 import {getCityPositionByName} from '@/assets/cityPostion';
 
 let mockData = [
-    {name: '北京', value: 500, meta: 340},
-    {name: '天津', value: 200, meta: 340},
-    {name: '河南', value: 300, meta: 340},
-    {name: '广西', value: 300, meta: 340},
-    {name: '广东', value: 300, meta: 340},
-    {name: '河北', value: 300, meta: 340},
-    {name: '新疆', value: 230, meta: 340},
-    {name: '江苏', value: 123, meta: 340},
-    {name: '黑龙江', value: 230, meta: 340},
-    {name: '新疆', value: 111, meta: 123},
-    {name: '西藏', value: 222, meta: 345},
-    {name: '青海', value: 333, meta: 456},
+    {name: '新疆', value: 2503.36, meta: 123},
+    {name: '西藏', value: 118.33, meta: 345},
+    {name: '青海', value: 24.03, meta: 456},
     {name: '甘肃', value: 444, meta: 121},
     {name: '四川', value: 555, meta: 234},
     {name: '云南', value: 556, meta: 543},
-    {name: '贵州', value: 666, meta: 654},
+    {name: '贵州', value: 58.8, meta: 654},
     {name: '重庆', value: 776, meta: 786},
-    {name: '广西', value: 887, meta: 123},
+    {name: '广西', value: 12.26, meta: 123},
     {name: '海南', value: 992, meta: 432},
     {name: '澳门', value: 121, meta: 432},
     {name: '香港', value: 212, meta: 213},
@@ -52,11 +23,11 @@ let mockData = [
     {name: '内蒙古', value: 515, meta: 323},
     {name: '山西', value: 616, meta: 434},
     {name: '陕西', value: 717, meta: 545},
-    {name: '湖南', value: 828, meta: 676},
-    {name: '湖北', value: 949, meta: 675},
+    {name: '湖南', value: 43.74, meta: 676},
+    {name: '湖北', value: 201.59, meta: 675},
     {name: '河南', value: 332, meta: 333},
     {name: '河北', value: 212, meta: 222},
-    {name: '江西', value: 242, meta: 111},
+    {name: '江西', value: 274.74, meta: 111},
     {name: '福建', value: 545, meta: 323},
     {name: '台湾', value: 212, meta: 122},
     {name: '山东', value: 434, meta: 322},
@@ -64,10 +35,11 @@ let mockData = [
     {name: '天津', value: 231, meta: 555},
     {name: '安徽', value: 233, meta: 666},
     {name: '浙江', value: 534, meta: 777},
-    {name: '江苏', value: 546, meta: 876},
+    {name: '江苏', value: 77.25, meta: 876},
     {name: '上海', value: 768, meta: 767},
     {name: '辽宁', value: 975, meta: 656},
     {name: '吉林', value: 345, meta: 555},
+    {name: '黑龙江', value: 316.42, meta: 666},
 ];
 
 const initMap = ref(null);
@@ -127,10 +99,10 @@ onMounted(() => {
                                 params.name +
                                 "<br/>" +
                                 "煤炭产量：" +
-                                params.value[2] +
+                                params.value[2] +  " 万吨" +
                                 "<br/>" +
                                 "铁矿产量：" +
-                                params.meta
+                                params.data.meta + " 万吨"
                             );
                         }
                     },
@@ -242,10 +214,10 @@ onMounted(() => {
                                 params.name +
                                 "<br/>" +
                                 "煤炭产量：" +
-                                params.value[2] +
+                                params.value[2] +  " 万吨" +
                                 "<br/>" +
                                 "铁矿产量：" +
-                                params.data.meta
+                                params.data.meta + " 万吨"
                             );
                         },
                         backgroundColor: "rgba(23,52,139,0.7)",
@@ -272,3 +244,24 @@ onMounted(() => {
     }
 })
 </script>
+
+<template>
+    <div className="h-full flex justify-center items-center">
+        <div id="mapDom" className="h-full w-full"></div>
+    </div>
+</template>
+
+<style scoped>
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-full {
+    width: 100%;
+}
+</style>

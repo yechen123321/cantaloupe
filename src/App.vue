@@ -15,6 +15,16 @@ html, body {
         overflow: hidden;
 }
 
+* {
+        user-drag: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
 html {
         background: url("./assets/back3.png") no-repeat;
         background-size: cover;
@@ -38,6 +48,7 @@ html {
         position: absolute;
         width: 2px;
         height: 2px;
+        border-radius: 50%;
         background: #fff;
         animation: twinkle 1s infinite;
 }
@@ -89,7 +100,7 @@ onMounted(() => {
 
 function createStars() {
         const stars = document.getElementById('stars');
-        const starCount = 100;
+        const starCount = 250;
 
         for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
