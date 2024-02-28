@@ -5,6 +5,7 @@
         <SecondMainTable id="SecondMainTable"></SecondMainTable>
         <ThirdMainTable id="ThirdMainTable"></ThirdMainTable>
         <FourthMainTable id="FourthMainTable"></FourthMainTable>
+        <FifthMainTable id="FifthMainTable"></FifthMainTable>
         <china-map id="map"></china-map>
     </div>
 </template>
@@ -16,6 +17,7 @@ import FirstMainTable from "@/components/FirstView/FirstMainTable.vue";
 import SecondMainTable from "@/components/FirstView/SecondMainTable.vue";
 import ThirdMainTable from "@/components/FirstView/ThirdMainTable.vue";
 import FourthMainTable from "@/components/FirstView/FourthMainTable.vue";
+import FifthMainTable from "@/components/FirstView/FifthMainTable.vue";
 </script>
 
 <style lang="scss">
@@ -60,6 +62,16 @@ import FourthMainTable from "@/components/FirstView/FourthMainTable.vue";
         height: 22vh;
         margin-top: 66.5vh;
         margin-left: 3vw;
+        position: absolute;
+        z-index: 123;
+    }
+
+    #FifthMainTable{
+        width: 23vw;
+        height: 22vh;
+        margin-top: 15vh;
+        right: 0;
+        margin-right: 2.6vw;
         position: absolute;
         z-index: 123;
     }
