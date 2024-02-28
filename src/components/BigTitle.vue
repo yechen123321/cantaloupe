@@ -4,11 +4,13 @@
 
 <template>
   <div class="title_main">
-<!--      <img src="../assets/pic/progress.gif" class="top-title-first-gif" alt="">-->
+      <img src="../assets/pic/11-r.png" class="top-title-first-gif" alt="">
       <img src="../assets/pic/top.png" class="top-title" alt="">
       <img src="../assets/pic/header.gif" class="top-title-head" alt="">
-<!--      <img src="../assets/pic/progress.gif" class="top-title-second-gif" alt="">-->
+      <img src="../assets/pic/11-l.png" class="top-title-second-gif" alt="">
       <div class="TitleName">致态</div>
+      <img class="Screen-left" src="../assets/pic/p.png" alt="">
+      <img class="Screen-right" src="../assets/pic/pp.png" alt="">
   </div>
 </template>
 
@@ -21,6 +23,18 @@
     text-align: center;
     line-height: 100px;
     position: relative;
+    .Screen-left{
+      height: 80vh;
+      position: absolute;
+      margin-left: -99vw;
+      margin-top: 10vh;
+    }
+    .Screen-right{
+      height: 80vh;
+      position: absolute;
+      margin-left: -3.7vw;
+      margin-top: 10vh;
+    }
     .top-title{
       width: 100%;
       height: 100%;
@@ -34,18 +48,17 @@
       margin-top: -1%;
     }
     .top-title-first-gif{
-      width: 20%;
-      height: 50%;
-      margin-left: 8.65%;
-      margin-top: 1%;
+      width: 25vw;
+      height: 3vh;
+      margin-left: 4.65%;
+      margin-top: 2vh;
       position: absolute;
     }
     .top-title-second-gif{
-      width: 20%;
-      height: 50%;
-      margin-left: -29%;
-      margin-top: 1%;
-      transform: scaleX(-1);
+      width: 25vw;
+      height: 3vh;
+      margin-left: -29.7vw;
+      margin-top: 2vh;
       position: absolute;
     }
     .TitleName{

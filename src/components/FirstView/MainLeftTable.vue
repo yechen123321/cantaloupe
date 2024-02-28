@@ -166,7 +166,7 @@ option = {
             stack: 'Total',
             smooth: true,
             lineStyle: {
-                width: 0
+                width: 0,
             },
             showSymbol: false,
             label: {
@@ -200,8 +200,9 @@ option = {
 
 <template>
   <div class="SecondMainTable">
-      <img class="BackImg" src="../../assets/pic/k_3.png" alt="">
       <div id="echarts"></div>
+      <img class="BackImg" src="../../assets/pic/border3.png" alt="">
+
   </div>
 </template>
 
@@ -209,20 +210,17 @@ option = {
   .SecondMainTable{
     width: 100vw;
     height: 100vh;
-    border-image: linear-gradient(to right, #00bfff, #0d0d0d, #00bfff) 30 30;
-    border-radius: 10px;
-    box-shadow: 0px 0px 1vw 1vw #00bfff, 0px 0px 2vw 1vw #0d0d0d, 0px 0px 3vw 2vw #00bfff;
-    animation: glow 1s ease-in-out infinite alternate;
+
     .BackImg{
-      width: 23vw;
-      height: 22vh;
+      width: 27vw;
+      height: 80vh;
     }
     #echarts{
-      width: 23vw;
-      height:21.5vh;
-      margin-left: -0.4vw;
+      width: 25vw;
+      height:23.5vh;
+      margin-left: 0.7vw;
       position: absolute;
-      margin-top: -21.9vh;
+      margin-top: 4.5vh;
     }
     @keyframes glow {
 

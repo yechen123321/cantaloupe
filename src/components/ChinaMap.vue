@@ -195,14 +195,14 @@ onMounted(() => {
                     symbol: "pin",
                     symbolSize: [50, 50],
                     label: {
-                        show: true,
+                        show: false,
                         color: "#fff",
                         formatter(value) {
                             return value.data.value[2];
                         },
                     },
                     itemStyle: {
-                        color: "rgba(255,255,255,0.7)",
+                        color: "rgba(255,255,255,0)",
                     },
                     z: 2,
                     data: data,
@@ -247,11 +247,12 @@ onMounted(() => {
 
 <template>
     <div className="h-full flex justify-center items-center">
+<!--        <img src="../assets/pic/k_3.png" alt="">-->
         <div id="mapDom" className="h-full w-full"></div>
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 canvas {
     width: 100% !important;
     height: 100% !important;
@@ -263,5 +264,24 @@ canvas {
 
 .w-full {
     width: 100%;
+}
+
+//img{
+//    width: 30vw;
+//    height: 48vh;
+//    position: absolute;
+//    //margin-left: 5vw;
+//    right: 0;
+//    margin-right: -2vw;
+//    margin-top: 21.8vw;
+//
+//}
+
+#mapDom{
+    position: absolute;
+    //margin-top: 45.5vh;
+    //margin-left: -18vw;
+    z-index: 123;
+
 }
 </style>

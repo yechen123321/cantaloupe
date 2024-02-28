@@ -1,4 +1,6 @@
 <script setup>
+// import {onMounted, ref} from "vue";
+
 const items = [
     {name:'全国煤炭产量同比增长', number: 466000, up:'万吨', num: 2.19},
     {name:'全国铁矿产量同比增长', number: 466000, up:'万吨', num: 2.19},
@@ -9,6 +11,20 @@ const items = [
     {name:'全国铜矿产量同比增长', number: 466000, up:'万吨', num: 2.19},
     {name:'全国石油产量同比增长', number: 466000, up:'万吨', num: 2.19},
 ];
+
+// let items = ref([]); // 初始化 items 为响应式空数组
+//
+// onMounted(async () => {
+//     try {
+//         const response = await fetch('http://172.18.7.71:8080/swagger/'); // 使用你的 API 端点
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         items.value = await response.json();
+//     } catch (error) {
+//         console.log('Fetch error: ', error);
+//     }
+// });
 
 let scrollDown = true; // 初始化 scrollDown 变量为 true
 let index = 0; // 初始化 index 变量为 0
@@ -40,7 +56,7 @@ setInterval(() => {
 
 <template>
     <div class="FirstMainTable">
-        <img class="BackImg" src="../../assets/pic/k_2.png" alt="">
+        <img class="BackImg" src="../../assets/pic/ca1.png" alt="">
         <ul class="year-on-year">
             <li v-for="(item,index) in items" :class="{ 'li-active': index === 0 }" :key="index">
                 <div class="li-title">{{ item.name }}</div>
@@ -56,10 +72,6 @@ setInterval(() => {
 .FirstMainTable{
     width: 100vw;
     height: 100vh;
-    border-image: linear-gradient(to right, #00bfff, #0d0d0d, #00bfff) 30 30;
-    border-radius: 0.5vw;
-    box-shadow: 0px 0px 1vw 1vw #00bfff, 0px 0px 2vw 1vw #0d0d0d, 0px 0px 3vw 2vw #00bfff;
-    animation: glow 1s ease-in-out infinite alternate;
     .year-on-year::-webkit-scrollbar {
         display: none;
     }
@@ -67,7 +79,8 @@ setInterval(() => {
     .year-on-year{
         //background: red;
         height: 8vh;
-        margin: 0.5vw;
+        //margin: 0.5vw;
+        //margin-top: 2vw;
         position: absolute;
         z-index:10;
         //overflow: hidden;
@@ -79,7 +92,7 @@ setInterval(() => {
             margin-top: -2%;
             line-height: 4.5vh;
             color: white;
-            background: green;
+            height: 100%;
             .li-title {
                 float: left;
                 width: 100%;
@@ -107,9 +120,10 @@ setInterval(() => {
     }
     .BackImg{
         position: absolute;
-        width: 23vw;
-        height: 5.3vw;
-        //margin-top: -10%;
+        width: 25vw;
+        height: 7vw;
+        margin-left: -1vw;
+        margin-top: -0.5vw;
     }
     @keyframes glow {
 

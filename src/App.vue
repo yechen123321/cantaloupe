@@ -1,5 +1,4 @@
 <template>
-
         <div id="app">
                 <div id="stars"></div>
                 <router-view/>

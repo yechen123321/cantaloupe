@@ -54,7 +54,7 @@ onMounted(() => {
                 center: ['30%', '48%'],
                 roseType: 'radius',
                 itemStyle: {
-                    borderRadius: 5
+                    borderRadius: 3
                 },
                 emphasis: {
                     label: {
@@ -99,7 +99,7 @@ onMounted(() => {
 
 <template>
     <div class="ThirdMainTable">
-        <img class="BackImg" src="../../assets/pic/k_3.png" alt="">
+<!--        <img class="BackImg" src="../../assets/pic/border.png" alt="">-->
         <div id="echarts1"></div>
     </div>
 </template>
@@ -108,10 +108,6 @@ onMounted(() => {
 .ThirdMainTable {
     width: 100vw;
     height: 100vh;
-    border-image: linear-gradient(to right, #00bfff, #0d0d0d, #00bfff) 30 30;
-    border-radius: 0.5vw;
-    box-shadow: 0px 0px 1vw 1vw #00bfff, 0px 0px 2vw 1vw #0d0d0d, 0px 0px 3vw 2vw #00bfff;
-    animation: glow 1s ease-in-out infinite alternate;
     color: white;
     .BackImg {
         width: 23vw;

@@ -1,23 +1,23 @@
 <template>
     <div class="main">
         <big-title id="title"></big-title>
-        <FirstMainTable id="FirstMainTable"></FirstMainTable>
-        <SecondMainTable id="SecondMainTable"></SecondMainTable>
-        <ThirdMainTable id="ThirdMainTable"></ThirdMainTable>
-        <FourthMainTable id="FourthMainTable"></FourthMainTable>
-        <FifthMainTable id="FifthMainTable"></FifthMainTable>
+        <MainRightTop id="MainRightTop"></MainRightTop>
+        <MainLeftTable id="MainLeftTable"></MainLeftTable>
+<!--        <ThirdMainTable id="ThirdMainTable"></ThirdMainTable>-->
+<!--        <FourthMainTable id="FourthMainTable"></FourthMainTable>-->
+<!--        <FifthMainTable id="FifthMainTable"></FifthMainTable>-->
         <china-map id="map"></china-map>
+        <FootLoop id="FootLoop"></FootLoop>
     </div>
 </template>
 
 <script setup>
 import ChinaMap from "@/components/ChinaMap.vue";
 import BigTitle from "@/components/BigTitle.vue";
-import FirstMainTable from "@/components/FirstView/FirstMainTable.vue";
-import SecondMainTable from "@/components/FirstView/SecondMainTable.vue";
-import ThirdMainTable from "@/components/FirstView/ThirdMainTable.vue";
-import FourthMainTable from "@/components/FirstView/FourthMainTable.vue";
-import FifthMainTable from "@/components/FirstView/FifthMainTable.vue";
+import MainRightTop from "@/components/FirstView/MainRightTop.vue";
+import MainLeftTable from "@/components/FirstView/MainLeftTable.vue";
+import FootLoop from '@/components/FootLoop.vue'
+
 </script>
 
 <style lang="scss">
@@ -25,55 +25,35 @@ import FifthMainTable from "@/components/FirstView/FifthMainTable.vue";
     width: 100vw;
     height: 100vh;
     #map{
-        width: 70vw;
-        height: 70vh;
-        margin-top: 6.5vw;
-        margin-left: 15vw;
+        width: 45vw;
+        height: 45vh;
+        margin-top: 1vw;
+        margin-left: 27vw;
         position: absolute;
     }
     #title{
         width: 100vw;
     }
-    #FirstMainTable{
+    #MainRightTop{
         width: 23vw;
         height: 10vh;
-        margin-top: 1.5vh;
-        margin-left: 3vw;
+        margin-top: 5vh;
+        margin-right: 5vw;
+        right: 0;
         position: absolute;
     }
-    #SecondMainTable{
+    #MainLeftTable{
         width: 23vw;
         height: 22vh;
-        margin-top: 15vh;
-        margin-left: 3vw;
+        margin-top: 3vh;
+        margin-left: 5vw;
         position: absolute;
-        z-index: 123;
-    }
-    #ThirdMainTable{
-        width: 23vw;
-        height: 22vh;
-        margin-top: 40.7vh;
-        margin-left: 3vw;
-        position: absolute;
-        z-index: 123;
-    }
-    #FourthMainTable{
-        width: 23vw;
-        height: 22vh;
-        margin-top: 66.5vh;
-        margin-left: 3vw;
-        position: absolute;
-        z-index: 123;
+        z-index: 124;
     }
 
-    #FifthMainTable{
-        width: 23vw;
-        height: 22vh;
-        margin-top: 15vh;
-        right: 0;
-        margin-right: 2.6vw;
+    #FootLoop{
         position: absolute;
-        z-index: 123;
+        margin-top: 70vh;
     }
 }
 
