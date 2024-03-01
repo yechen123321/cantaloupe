@@ -1,4 +1,3 @@
-
 <script setup>
 import {onMounted, onUnmounted, ref} from 'vue';
 import * as echarts from 'echarts';
@@ -99,7 +98,7 @@ onMounted(() => {
                                 params.name +
                                 "<br/>" +
                                 "煤炭产量：" +
-                                params.value[2] +  " 万吨" +
+                                params.value[2] + " 万吨" +
                                 "<br/>" +
                                 "铁矿产量：" +
                                 params.data.meta + " 万吨"
@@ -119,7 +118,7 @@ onMounted(() => {
                 itemStyle: {
                     borderColor: "#0FA3F0",
                     borderWidth: 1,
-                    areaColor: "#070f71",
+                    areaColor: "rgba(7,15,113,0.4)",
                     shadowColor: "rgba(1,34,73,0.48)",
                     shadowBlur: 10,
                     shadowOffsetX: -10,
@@ -169,7 +168,7 @@ onMounted(() => {
                     itemStyle: {
                         borderColor: "#3ad6ff",
                         borderWidth: 1,
-                        areaColor: "#17348b",
+                        areaColor: "rgba(23,52,139,0.4)",
                         opacity: 1,
                     },
                     select: {
@@ -183,7 +182,7 @@ onMounted(() => {
                         },
                         itemStyle: {
                             color: "#ffffff",
-                            areaColor: "#0075f4",
+                            areaColor: "rgba(0,117,244,0.4)",
                         },
                     },
                     z: 2,
@@ -214,7 +213,7 @@ onMounted(() => {
                                 params.name +
                                 "<br/>" +
                                 "煤炭产量：" +
-                                params.value[2] +  " 万吨" +
+                                params.value[2] + " 万吨" +
                                 "<br/>" +
                                 "铁矿产量：" +
                                 params.data.meta + " 万吨"
@@ -247,23 +246,23 @@ onMounted(() => {
 
 <template>
     <div className="h-full flex justify-center items-center">
-<!--        <img src="../assets/pic/k_3.png" alt="">-->
+        <!--        <img src="../assets/pic/k_3.png" alt="">-->
         <div id="mapDom" className="h-full w-full"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
 canvas {
-    width: 100% !important;
-    height: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .h-full {
-    height: 100%;
+  height: 100%;
 }
 
 .w-full {
-    width: 100%;
+  width: 100%;
 }
 
 //img{
@@ -277,11 +276,11 @@ canvas {
 //
 //}
 
-#mapDom{
-    position: absolute;
-    //margin-top: 45.5vh;
-    //margin-left: -18vw;
-    z-index: 123;
+#mapDom {
+  position: absolute;
+  //margin-top: 45.5vh;
+  //margin-left: -18vw;
+  z-index: 123;
 
 }
 </style>

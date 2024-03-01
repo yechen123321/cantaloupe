@@ -1,11 +1,16 @@
 <script setup>
+import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
-import {onMounted} from "vue";
+
+const echartsRef = ref(null);
+let myChart2 = null;
+let option2 = null;
 
 onMounted(() => {
-    var chartDom2 = document.getElementById('echarts1');
-    var myChart2 = echarts.init(chartDom2);
-    var option2;
+    myChart2 = echarts.init(echartsRef.value);
+
+    // Your echarts option setup here...
+    // (Your existing option setup code)
     var colorList = [
         '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
     ];
@@ -33,8 +38,8 @@ onMounted(() => {
                 '南部',
                 '中部',
             ],
-            textStyle:{
-                color:'white',
+            textStyle: {
+                color: 'white',
             }
         },
         // toolbox: {
@@ -48,9 +53,9 @@ onMounted(() => {
         // },
         series: [
             {
-                name: 'Radius Mode',
+                name: '地区开发',
                 type: 'pie',
-                radius: [20, 40],
+                radius: ['20%', '50%'],
                 center: ['30%', '48%'],
                 roseType: 'radius',
                 itemStyle: {
@@ -62,75 +67,71 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    { value: 40, name: '北部' },
-                    { value: 33, name: '东部' },
-                    { value: 28, name: '西部' },
-                    { value: 22, name: '南部' },
-                    { value: 20, name: '中部' },
+                    {value: 40, name: '北部'},
+                    {value: 33, name: '东部'},
+                    {value: 28, name: '西部'},
+                    {value: 22, name: '南部'},
+                    {value: 20, name: '中部'},
                 ]
             },
 
             {
-                name: '地区占比',
+                name: '地区消耗',
                 type: 'pie',
-                radius: [20, 40],
+                radius: ['20%', '50%'],
                 center: ['75%', '48%'],
                 roseType: 'area',
                 itemStyle: {
                     borderRadius: 5
                 },
                 data: [
-                    { value: 30, name: '北部' },
-                    { value: 28, name: '南部' },
-                    { value: 26, name: '中部' },
-                    { value: 24, name: '东部' },
-                    { value: 22, name: '西部' },
+                    {value: 30, name: '北部'},
+                    {value: 28, name: '南部'},
+                    {value: 26, name: '中部'},
+                    {value: 24, name: '东部'},
+                    {value: 22, name: '西部'},
                 ]
             }
         ]
     };
-
     option2 && myChart2.setOption(option2);
-},)
 
+    const resizeObserver = new ResizeObserver(() => {
+        myChart2.resize();
+    });
+
+    resizeObserver.observe(echartsRef.value);
+});
 </script>
 
-
-
 <template>
-    <div class="ThirdMainTable">
-<!--        <img class="BackImg" src="../../assets/pic/border.png" alt="">-->
-        <div id="echarts1"></div>
+    <div className="MainLeftMidden">
+        <div id="MainLeftMidden-echarts" ref="echartsRef"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
-.ThirdMainTable {
-    width: 100vw;
-    height: 100vh;
-    color: white;
-    .BackImg {
-        width: 23vw;
-        height: 22vh;
-    }
-    #echarts1 {
-        width: 23vw;
-        height:20vh;
-        margin-left: -0.5vw;
-        //background: red;
-        position: absolute;
-        margin-top: -21.5vh;
-    }
-    @keyframes glow {
+.MainLeftMidden {
+  width: 100vw;
+  height: 100vh;
+  color: white;
 
-        from {
-            box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
-        }
+  #MainLeftMidden-echarts {
+    width: 23vw;
+    height: 20vh;
+    margin-left: -0.5vw;
+    position: absolute;
+    margin-top: -21.5vh;
+  }
 
-        to {
-            box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
-        }
+  @keyframes glow {
+    from {
+      box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
     }
+
+    to {
+      box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
+    }
+  }
 }
-
 </style>

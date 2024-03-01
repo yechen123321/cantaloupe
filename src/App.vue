@@ -25,7 +25,7 @@ html, body {
 }
 
 html {
-        background: url("./assets/back3.png") no-repeat;
+        background-color: #040e1a;
         background-size: cover;
 }
 
@@ -99,14 +99,14 @@ onMounted(() => {
 
 function createStars() {
         const stars = document.getElementById('stars');
-        const starCount = 250;
+        const starCount = 300;
 
         for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
                 star.style.left = Math.random() * 100 + 'vw';
                 star.style.top = Math.random() * 100 + 'vh';
-                star.style.animationDelay = Math.random(300,600) * 5 + 's'; // 设置随机的闪烁延迟时间
+                star.style.animationDelay = Math.random(400,600) * 5 + 's'; // 设置随机的闪烁延迟时间
                 stars.appendChild(star);
         }
 }

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@tweenjs/tween.js": "^18.6.4",
+    "axios": "^1.6.7",
     "core-js": "^3.8.3",
     "delaunator": "^5.0.0",
     "echarts": "^5.1.2",
@@ -21,6 +22,7 @@
     "three": "^0.136.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vue-seamless-scroll": "^1.1.23",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
