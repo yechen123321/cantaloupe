@@ -44,7 +44,6 @@ import MainDown from "@/components/FirstView/MainDown.vue";
     margin-right: 2vw;
     right: 0;
     position: absolute;
-      z-index: 126;
   }
 
   #MainRightButtom {

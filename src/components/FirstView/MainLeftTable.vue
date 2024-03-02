@@ -32,7 +32,9 @@ onMounted(() => {
             }
         },
         legend: {
-
+            textStyle: {
+                color: 'white'
+            },
             data: ['锰矿', '钨矿', '铀矿', '铅锌矿', '硫铁矿']
         },
         // toolbox: {
@@ -51,12 +53,23 @@ onMounted(() => {
             {
                 type: 'category',
                 boundaryGap: false,
-                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023']
+                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    }
+                }
             }
+
         ],
         yAxis: [
             {
-                type: 'value'
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    }
+                }
             }
         ],
         series: [
@@ -94,6 +107,11 @@ onMounted(() => {
                 smooth: true,
                 lineStyle: {
                     width: 0
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    }
                 },
                 showSymbol: false,
                 areaStyle: {
@@ -166,7 +184,8 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [220, 402, 231, 134, 190, 230, 120]
+                data: [220, 402, 231, 134, 190, 230, 120],
+
             },
             {
                 name: '硫铁矿',
@@ -180,6 +199,7 @@ onMounted(() => {
                 label: {
                     show: true,
                     position: 'top'
+
                 },
                 areaStyle: {
                     opacity: 0.8,
@@ -243,7 +263,7 @@ onMounted(() => {
   #MainLeftMidden-out {
     width: 25vw;
     height: 23.5vh;
-    margin-left: 2vw;
+    margin-left: 2.5vw;
     position: absolute;
     margin-top: 48.8vh;
   }

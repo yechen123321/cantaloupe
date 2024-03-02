@@ -56,7 +56,7 @@ onMounted(() => {
                 name: '地区开发',
                 type: 'pie',
                 radius: ['20%', '50%'],
-                center: ['30%', '48%'],
+                center: ['28%', '48%'],
                 roseType: 'radius',
                 itemStyle: {
                     borderRadius: 3
@@ -79,7 +79,7 @@ onMounted(() => {
                 name: '地区消耗',
                 type: 'pie',
                 radius: ['20%', '50%'],
-                center: ['75%', '48%'],
+                center: ['72%', '48%'],
                 roseType: 'area',
                 itemStyle: {
                     borderRadius: 5
