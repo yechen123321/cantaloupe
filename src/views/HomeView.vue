@@ -59,7 +59,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   #MainLeftTable {
     width: 23vw;
     height: 22vh;
-    margin-top: 3vh;
+    margin-top: 5vh;
     margin-left: 2vw;
     position: absolute;
     z-index: 124;
@@ -69,7 +69,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
     width: 68vw;
     height: 42vh;
     right: 0;
-    margin-top: 44vh;
+    margin-top: 46vh;
     margin-right: 5vw;
     position: absolute;
     z-index: 124;

@@ -87,14 +87,14 @@ onMounted(() => {
     option11 = {
         title: {
             text: '全国林地结构图',
-            top: '5%',
+            top: '7%',
             left: 'center',
             textStyle: {
                 color: 'white',
             },
         },
         legend: {
-            top: '-2%',
+            // top: '-1%',
             textStyle: {
                 color: 'white'
             },

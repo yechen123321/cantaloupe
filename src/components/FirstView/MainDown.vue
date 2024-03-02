@@ -49,6 +49,7 @@ import MainDownRight from "@/components/FirstView/MainDownRight.vue";
     position: absolute;
     margin-top: 30vh;
     margin-left: 48vw;
+
   }
 
   .BackImg {

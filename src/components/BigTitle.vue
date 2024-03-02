@@ -11,10 +11,12 @@
         <div class="TitleName">致态</div>
         <!--      <img class="Screen-left" src="../assets/pic/p.png" alt="">-->
         <!--      <img class="Screen-right" src="../assets/pic/pp.png" alt="">-->
-        <Router-Link class="FirstGoto" to=""></Router-Link>
-        <Router-Link class="FirstGoto" to=""></Router-Link>
-        <Router-Link class="FirstGoto" to=""></Router-Link>
-        <Router-Link class="FirstGoto" to=""></Router-Link>
+        <Router-Link class="Button" style="margin-left: 6vw;" to="">
+            你好姿态
+        </Router-Link>
+        <Router-Link class="Button" style="margin-left: 21vw;" to="">姿态你好</Router-Link>
+        <Router-Link class="Button" style="margin-right: 6vw; right: 0" to="">我红温啦</Router-Link>
+        <Router-Link class="Button" style="margin-right: 21vw; right: 0" to="">奇迹行者</Router-Link>
     </div>
 </template>
 
@@ -27,6 +29,21 @@
   text-align: center;
   line-height: 5vh;
   position: relative;
+
+    .Button{
+        display: block;
+        width: 12vw;
+        height: 8vh;
+        margin-top: -3.8vh;
+        font-size: 2vw;
+        line-height: 8vh;
+        text-align: center;
+        position: absolute;
+        color: white;
+        text-decoration: none;
+
+    }
+
 
   .Screen-left {
     height: 80vh;

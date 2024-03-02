@@ -45,7 +45,7 @@ const datas = ref([
         overflow-y: auto;
         //box-sizing: border-box;
         width: 100%;
-
+        margin-top: 4vh;
         li {
             list-style-type: none;
             width: 100%;
@@ -98,7 +98,7 @@ const datas = ref([
     .BackImg {
         position: absolute;
         width: 25vw;
-        height: 14vw;
+        height: 16vw;
         margin-left: -1vw;
         margin-top: -0.5vw;
     }

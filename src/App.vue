@@ -99,7 +99,7 @@ onMounted(() => {
 
 function createStars() {
         const stars = document.getElementById('stars');
-        const starCount = 300;
+        const starCount = 400;
 
         for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');

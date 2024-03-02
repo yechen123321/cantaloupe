@@ -46,7 +46,7 @@ onMounted(() => {
                 },
                 data: [
                     {value: 1548, name: '滨海旅游业'},
-                    {value: 775, name: '海洋交通运输业'},
+                    {value: 775, name: '海洋交通运输业',},
                     {value: 679, name: '海洋渔业', selected: true}
                 ]
             },
