@@ -1,0 +1,184 @@
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const options = ref([
+    { where: '安徽' },
+    { where: '新疆' },
+    { where: '西藏' },
+    { where: '北京' },
+    { where: '上海' },
+    { where: '浙江' },
+    { where: '东北' },
+]);
+
+const router = useRouter();
+
+const handleRouteChange = () => {
+    // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
+    router.push('/'); // 替换'/new-route'为您要跳转的路由路径
+};
+</script>
+
+<template>
+    <div class="ChooseTable">
+        <div class="ChooseTitle">
+            地区基本信息
+        </div>
+        <div class="MySelect">
+            <select class="SelectBox">
+                <option class="options" v-for="(option, index) in options" :key="index">
+                    {{ option.where }}
+                </option>
+            </select>
+        </div>
+        <button class="SelectGo" @click="handleRouteChange">切换</button>
+        <div class="factory">
+            <ul class="factoryUl">
+                <li>
+                    <img src="../../../assets/水库.png" alt="">
+                    <div class="number">43.59</div>
+                    <div class="up">
+                        总蓄水量
+                    </div>
+                    <div class="down">
+                        亿立方米
+                    </div>
+                </li>
+                <li style="margin-top: 0.63vh">
+                    <img src="../../../assets/太阳能发电.png" alt="">
+                    <div class="number">3135</div>
+                    <div class="up">
+                        总发电量
+                    </div>
+                    <div class="down">
+                        亿千瓦时
+                    </div>
+                </li>
+                <li>
+                    <img src="../../../assets/耕地面积.png" alt="">
+                    <div class="number">8800</div>
+                    <div class="up">
+                        耕地面积
+                    </div>
+                    <div class="down">
+                        万亩
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
+    </div>
+</template>
+
+<style scoped lang="scss">
+.ChooseTable{
+  .factory{
+    position: absolute;
+    width:26vw;
+    height:15vh;
+    margin-top: 2.5vh;
+    margin-left: 2vw;
+    //background: white;
+    .factoryUl{
+      position: absolute;
+      list-style: none;
+      width: 40vw;
+      height: 15vh;
+      margin-left: -6.8vw;
+      //background: red;
+      li{
+        width: 6vw;
+        height: 15vh;
+        float: left;
+        margin-left: 4vw;
+        margin-top: -1vh;
+        //background: red;
+          .number{
+              color: white;
+              margin-left: 4vw;
+              margin-top: -5vh;
+              font-size: 1.6vw;
+              font-weight: bolder;
+          }
+          img{
+              width: 3.5vw;
+
+          }
+          .up{
+              width: 8vw;
+              height: 6vh;
+              margin-top: 1vh;
+              padding-top: 0.5vh;
+              border-top: 2px solid #0d87f6;
+              color: rgb(127, 235, 240);
+              text-shadow: 0 0 2px #b6d4df, 0 0 5px #b6d4df; //设置发光效果
+              font-size: 1.5vw;
+              text-align: center;
+              //background: red;
+          }
+          .down{
+              color: white;
+              font-size: 1vw;
+              margin-left: 2vw;
+              font-weight: bolder;
+              margin-top: -1.5vh;
+              text-align: center;
+          }
+      }
+    }
+  }
+  .ChooseTitle{
+    font-size: 1.5vw;
+    font-weight: bolder;
+    color: white;
+    right: 0;
+    margin-right: 2vw;
+    position: absolute;
+    margin-left: 2vw;
+    margin-top: 1vh;
+  }
+  .MySelect{
+    width: 10vw;
+    height:10vh;
+    right: 0;
+    position: absolute;
+    margin-top: 6vh;
+    z-index: 222;
+    .SelectBox{
+      width: 7vw;
+      height: 4vh;
+      cursor: pointer;
+      overflow: hidden;
+      font-size: 1vw;
+      background: #4d70cd;
+      color: white;
+      border:none;
+      text-align: center;
+      border-radius: 6px;
+
+    }
+  }
+  .SelectGo{
+    width: 7vw;
+    height: 4vh;
+    right: 0;
+    margin-top: 12vh;
+    margin-right: 3vw;
+    position: absolute;
+    cursor: pointer;
+    font-size: 1vw;
+    font-weight: bolder;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    background: #0d87f6;
+    z-index: 222;
+  }
+  .BackImg{
+    width: 40vw;
+    height: 20vh;
+
+  }
+}
+</style>

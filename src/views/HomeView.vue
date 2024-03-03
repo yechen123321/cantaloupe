@@ -28,7 +28,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   #map {
     width: 45vw;
     height: 45vh;
-    margin-top: 1vw;
+    margin-top: 4.5vh;
     margin-left: 39vw;
     position: absolute;
   }
@@ -40,7 +40,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   #MainRightTop {
     width: 23vw;
     height: 10vh;
-    margin-top: 5vh;
+    margin-top: 6vh;
     margin-right: 2vw;
     right: 0;
     position: absolute;

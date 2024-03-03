@@ -1,8 +1,8 @@
 <script setup>
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
-import MainLeftMidden from "@/components/FirstView/MainLeftMidden.vue";
-import MainLeftButtom from "@/components/FirstView/MainLeftButtom.vue";
+import MainLeftMidden from "@/components/FirstView/FirstViewTools/MainLeftMidden.vue";
+import MainLeftButtom from "@/components/FirstView/FirstViewTools/MainLeftButtom.vue";
 import MainChinaLeft from "@/components/FirstView/MainChinaLeft.vue";
 
 const echartsRef = ref(null);

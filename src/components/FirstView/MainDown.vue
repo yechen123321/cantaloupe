@@ -1,7 +1,7 @@
 <script setup>
-import MainDownLeft from "@/components/FirstView/MainDownLeft.vue";
-import MainDownSea from "@/components/FirstView/MainDownSea.vue";
-import MainDownRight from "@/components/FirstView/MainDownRight.vue";
+import MainDownLeft from "@/components/FirstView/FirstViewTools/MainDownLeft.vue";
+import MainDownSea from "@/components/FirstView/FirstViewTools/MainDownSea.vue";
+import MainDownRight from "@/components/FirstView/FirstViewTools/MainDownRight.vue";
 </script>
 
 <template>

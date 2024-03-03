@@ -12,19 +12,19 @@
         <!--      <img class="Screen-left" src="../assets/pic/p.png" alt="">-->
         <!--      <img class="Screen-right" src="../assets/pic/pp.png" alt="">-->
         <Router-Link class="Button" style="margin-left: 6vw;" to="/">
-            你好姿态
-            <img src="../assets/pic/anniu1.png" alt="">
+            全国数据概览
+            <img style="" src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
-        <Router-Link class="Button" style="margin-left: 21vw;" to="/City">
-            姿态你好
+        <Router-Link class="Button" style="margin-left: 21vw;" to="/firstcity">
+            地方数据统览
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
         <Router-Link class="Button" style="margin-right: 6vw; right: 0" to="">
-            我红温啦
+            我我奇迹行者
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
         <Router-Link class="Button" style="margin-right: 21vw; right: 0" to="">
-            奇迹行者
+            方向数据分析
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
     </div>
@@ -52,34 +52,37 @@
     position: absolute;
     color: white;
     text-decoration: none;
+
     img {
-      margin-left: -9vw;
-      width: 12vw;
+      margin-left: -11.7vw;
+      width: 14vw;
       height: 8vh;
       position: absolute;
     }
   }
-    .Button:hover{
-        text-shadow: 0 0 10px rgb(127, 235, 240),0 0 20px rgb(127, 235, 240);	//设置发光效果
-        font-size: 1.8vw;
-        img{
-            width: 13vw;
-            height: 8.8vh;
-            margin-top: -0.45vh;
-            margin-left: -10vw;
-        }
-    }
-    .Button:active{
-        font-size: 1.4vw;
-        img{
-            width: 10vw;
-            height: 7vh;
-            margin-left: -7.7vw;
-            margin-top: 0.7vh;
-        }
-    }
 
+  .Button:hover {
+    text-shadow: 0 0 10px rgb(127, 235, 240), 0 0 20px rgb(127, 235, 240); //设置发光效果
+    font-size: 1.8vw;
 
+    img {
+      width: 15vw;
+      height: 9.5vh;
+      margin-top: -0.65vh;
+      margin-left: -13vw;
+    }
+  }
+
+  .Button:active {
+    font-size: 1.4vw;
+
+    img {
+      width: 13vw;
+      height: 7vh;
+      margin-left: -10.7vw;
+      margin-top: 0.7vh;
+    }
+  }
 
 
   .Screen-left {
