@@ -10,121 +10,133 @@ let option9 = null;
 onMounted(() => {
     myChart9 = echarts.init(echartsRef.value);
 
-    // Your echarts option setup here...
-    // (Your existing option setup code)
-    // prettier-ignore
-    var hours = ['沿海滩涂', '内陆滩涂', '沼泽地', '红树林地', '森林沼泽', '灌丛沼泽', '沼泽草地',];
-// prettier-ignore
-    var years = ['2017', '2018', '2019',
-        '2020', '2021', '2022', '2023'];
-// prettier-ignore
-    var data = [[0, 0, 0.45], [0, 1, 0.14], [0, 2, 0.15], [0, 3, 0.19], [0, 4, 0.14], [0, 5, 0.11], [0, 6, 0.15],
-        [1, 0, 0.42], [1, 1, 0.14], [1, 2, 0.15], [1, 3, 0.19], [1, 4, 0.14], [1, 5, 0.11], [1, 6, 0.15],
-        [2, 0, 0.34], [2, 1, 0.14], [2, 2, 0.15], [2, 3, 0.19], [2, 4, 0.14], [2, 5, 0.11], [2, 6, 0.15],
-        [3, 0, 0.43], [3, 1, 0.14], [3, 2, 0.15], [3, 3, 0.19], [3, 4, 0.14], [3, 5, 0.11], [3, 6, 0.15],
-        [4, 0, 0.34], [4, 1, 0.14], [4, 2, 0.15], [4, 3, 0.19], [4, 4, 0.14], [4, 5, 0.11], [4, 6, 0.15],
-        [5, 0, 0.29], [5, 1, 0.14], [5, 2, 0.15], [5, 3, 0.19], [5, 4, 0.14], [5, 5, 0.11], [5, 6, 0.15],
-        [6, 0, 0.31], [6, 1, 0.14], [6, 2, 0.15], [6, 3, 0.19], [6, 4, 0.14], [6, 5, 0.11], [6, 6, 0.15],]
+
     option9 = {
-        title: {
-            text: '全国湿地资源结构示意图',
-            top: '1%',
-            left: '25.5%',
+
+        tooltip: {
+            trigger: 'axis',
+            // axisPointer: {
+            //     type: 'cross',
+            //     // label: {
+            //     //     backgroundColor: '#6a7985'
+            //     // }
+            //
+            // }
+        },
+        legend: {
+            data: ['煤炭', '石油', '天然气', '页岩气', '页岩油', '煤层气', '油页岩'],
             textStyle: {
                 color: 'white'
             }
         },
-        tooltip: {
-            formatter: function (params) {
-                return '年份：' + years[params.value[1]] + '<br>' + '结构类型：' + hours[params.value[0]] + '<br>' + '结构占比：' + (params.value[2] * 100).toFixed(2) + '%';// 使用当前数据点的索引来获取对应的 hours 和 years 值
-            },
+        // toolbox: {
+        //     feature: {
+        //         saveAsImage: {}
+        //     }
+        // },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
         },
-        visualMap: {
-            max: 0.5,
-            inRange: {
-                color: [
-                    '#abd9e9',
-                    '#fdae61',
-                    '#d73027',
-                ]
-            }
-        },
-        xAxis3D: {
-            type: 'category',
-            data: hours,
-            axisLine: {
-                lineStyle: {
-                    color: 'white',
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
                 }
             }
-        },
-        yAxis3D: {
-            type: 'category',
-            data: years,
-            axisLine: {
-                lineStyle: {
-                    color: 'white',
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
                 }
             }
-        },
-        zAxis3D: {
-            type: 'value',
-            max: 1,
-            axisLine: {
-                lineStyle: {
-                    color: 'white',
-                },
-
-            }
-        },
-        grid3D: {
-            boxWidth: 200,
-            boxDepth: 80,
-            viewControl: {
-                autoRotate: true, // 自动旋转
-                // distance: 100, // 初始视角距离
-                // minBeta: -360, // 最小仰角
-                // maxBeta: 360, // 最大仰角
-                // alpha: 45, // 初始方位角
-                // beta: 10, // 初始仰角
-            },
-
-            light: {
-                main: {
-                    intensity: 1.2,
-                    shadow: true
-                },
-                ambient: {
-                    intensity: 0.3
-                }
-            }
-        },
+        ],
         series: [
             {
-                type: 'bar3D',
-                data: data.map(function (item) {
-                    return {
-                        value: [item[1], item[0], item[2]]
-                    };
-                }),
-                shading: 'lambert',
-                label: {
-                    fontSize: 16,
-                    borderWidth: 1
-                },
+                name: '煤炭',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
                 emphasis: {
-                    label: {
-                        fontSize: 20,
-                        color: '#900'
-                    },
-                    itemStyle: {
-                        color: '#900'
-                    }
-                }
-            }
+                    focus: 'series'
+                },
+                data: [120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name: '石油',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '天然气',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '页岩气',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name: '页岩油',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
+            },
+            {
+                name: '煤层气',
+                type: 'line',
+                stack: 'Total',
+
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
+            },
+            {
+                name: '油页岩',
+                type: 'line',
+                stack: 'Total',
+
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
+            },
         ]
     };
-
     option9 && myChart9.setOption(option9);
 
     const resizeObserver = new ResizeObserver(() => {
@@ -138,6 +150,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownLeft">
+        <Button class="GotoQ">全国化石能源产量结构占比</Button>
         <div id="MainDownLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -148,10 +161,31 @@ onMounted(() => {
   height: 100vh;
   color: white;
 
+  .GotoQ {
+    position: absolute;
+    margin-top: -25.5vh;
+    width: 23vw;
+    margin-left: 0.6vw;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2vw;
+    cursor: pointer;
+  }
+
+  .GotoQ:hover {
+    font-size: 1.3vw;
+  }
+
+  .GotoQ:active {
+    font-size: 1.2vw;
+  }
+
   #MainDownLeft-echarts {
     width: 23vw;
-    height: 26vh;
-    margin-left: 1vw;
+    height: 30vh;
+    margin-left: 0.5vw;
     position: absolute;
     margin-top: -21.5vh;
   }

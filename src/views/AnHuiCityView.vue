@@ -1,9 +1,9 @@
 <script setup>
 import BigTitle from "@/components/BigTitle.vue";
 import FootLoop from '@/components/FootLoop.vue';
-import SecondLeftTable from "@/components/SecondView/SecondLeftTable.vue";
-import SecondRightTable from "@/components/SecondView/SecondRightTable.vue";
-import SecondMiddem from "@/components/SecondView/SecondMidden.vue";
+import SecondLeftTable from "@/components/SecondView/AnHuiLeftTable.vue";
+import SecondRightTable from "@/components/SecondView/AnHuiRightTable.vue";
+import SecondMiddem from "@/components/SecondView/AnHuiMidden.vue";
 </script>
 
 <template>
@@ -31,8 +31,8 @@ import SecondMiddem from "@/components/SecondView/SecondMidden.vue";
   }
 
   #SecondMiddem {
-      width: 40vw;
-      height: 80vh;
+    width: 40vw;
+    height: 80vh;
     margin-top: 5vh;
     margin-left: 30vw;
     position: absolute;

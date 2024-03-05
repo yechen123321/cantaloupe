@@ -156,11 +156,11 @@ onMounted(() => {
                     tooltip: {
                         show: false,
                     },
-                    label: {
-                        show: true,
-                        color: "#ffffff",
-                        align: "center",
-                    },
+                    // label: {
+                    //     show: true,
+                    //     color: "#ffffff",
+                    //     align: "center",
+                    // },
                     top: "10%",
                     left: "center",
                     aspectScale: 0.75,

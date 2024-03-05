@@ -1,16 +1,6 @@
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-
-const options = ref([
-    { where: '安徽' },
-    { where: '新疆' },
-    { where: '西藏' },
-    { where: '北京' },
-    { where: '上海' },
-    { where: '浙江' },
-    { where: '东北' },
-]);
+import {ref} from 'vue';
+import {useRouter} from 'vue-router';
 
 const router = useRouter();
 
@@ -18,12 +8,28 @@ const handleRouteChange = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
     router.push('/'); // 替换'/new-route'为您要跳转的路由路径
 };
+
+const options = ref([
+    {where: '安徽'},
+    {where: '全国'},
+    {where: '北京'},
+    {where: '浙江'},
+    {where: '重庆'},
+    {where: '西藏'},
+    {where: '四川'},
+    {where: '山东'},
+    {where: '上海'},
+    {where: '广东'},
+    {where: '广西'},
+]);
+
+
 </script>
 
 <template>
     <div class="ChooseTable">
         <div class="ChooseTitle">
-            地区基本信息
+            安徽地区基本信息
         </div>
         <div class="MySelect">
             <select class="SelectBox">
@@ -72,63 +78,67 @@ const handleRouteChange = () => {
 </template>
 
 <style scoped lang="scss">
-.ChooseTable{
-  .factory{
+.ChooseTable {
+  .factory {
     position: absolute;
-    width:26vw;
-    height:15vh;
+    width: 26vw;
+    height: 15vh;
     margin-top: 2.5vh;
     margin-left: 2vw;
     //background: white;
-    .factoryUl{
+    .factoryUl {
       position: absolute;
       list-style: none;
       width: 40vw;
       height: 15vh;
       margin-left: -6.8vw;
       //background: red;
-      li{
+      li {
         width: 6vw;
         height: 15vh;
         float: left;
         margin-left: 4vw;
         margin-top: -1vh;
         //background: red;
-          .number{
-              color: white;
-              margin-left: 4vw;
-              margin-top: -5vh;
-              font-size: 1.6vw;
-              font-weight: bolder;
-          }
-          img{
-              width: 3.5vw;
+        .number {
+          color: white;
+          margin-left: 4vw;
+          margin-top: -5vh;
+          font-size: 1.6vw;
+          font-weight: bolder;
+        }
 
-          }
-          .up{
-              width: 8vw;
-              height: 6vh;
-              margin-top: 1vh;
-              padding-top: 0.5vh;
-              border-top: 2px solid #0d87f6;
-              color: rgb(127, 235, 240);
-              text-shadow: 0 0 2px #b6d4df, 0 0 5px #b6d4df; //设置发光效果
-              font-size: 1.5vw;
-              text-align: center;
-              //background: red;
-          }
-          .down{
-              color: white;
-              font-size: 1vw;
-              margin-left: 2vw;
-              font-weight: bolder;
-              margin-top: -1.5vh;
-              text-align: center;
-          }
+        img {
+          width: 3.5vw;
+
+        }
+
+        .up {
+          width: 8vw;
+          height: 6vh;
+          margin-top: 1vh;
+          padding-top: 0.5vh;
+          border-top: 2px solid #0d87f6;
+          color: rgb(127, 235, 240);
+          text-shadow: 0 0 2px #b6d4df, 0 0 5px #b6d4df; //设置发光效果
+          font-size: 1.5vw;
+          text-align: center;
+          //background: red;
+        }
+
+        .down {
+          color: white;
+          font-size: 1vw;
+          margin-left: 2vw;
+          font-weight: bolder;
+          margin-top: -1.5vh;
+          text-align: center;
+        }
       }
     }
   }
-  .ChooseTitle{
+
+  .ChooseTitle {
     font-size: 1.5vw;
     font-weight: bolder;
     color: white;
@@ -138,14 +148,16 @@ const handleRouteChange = () => {
     margin-left: 2vw;
     margin-top: 1vh;
   }
-  .MySelect{
+
+  .MySelect {
     width: 10vw;
-    height:10vh;
+    height: 10vh;
     right: 0;
     position: absolute;
     margin-top: 6vh;
     z-index: 222;
-    .SelectBox{
+
+    .SelectBox {
       width: 7vw;
       height: 4vh;
       cursor: pointer;
@@ -153,13 +165,14 @@ const handleRouteChange = () => {
       font-size: 1vw;
       background: #4d70cd;
       color: white;
-      border:none;
+      border: none;
       text-align: center;
       border-radius: 6px;
 
     }
   }
-  .SelectGo{
+
+  .SelectGo {
     width: 7vw;
     height: 4vh;
     right: 0;
@@ -175,7 +188,24 @@ const handleRouteChange = () => {
     background: #0d87f6;
     z-index: 222;
   }
-  .BackImg{
+
+  .SelectGo:hover {
+    width: 7.5vw;
+    height: 5vh;
+    margin-top: 11.5vh;
+    margin-right: 2.7vw;
+    font-size: 1.4vw;
+  }
+
+  .SelectGo:active {
+    width: 7vw;
+    height: 4vh;
+    margin-top: 12vh;
+    margin-right: 3vw;
+    font-size: 1vw;
+  }
+
+  .BackImg {
     width: 40vw;
     height: 20vh;
 

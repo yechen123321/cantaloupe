@@ -10,15 +10,15 @@ onMounted(() => {
     myChart8 = echarts.init(echartsRef.value);
 
     option8 = {
-        title: {
-            text: '全国农用地利用情况',
-            // subtext: 'Fake Data',
-            top: '15%',
-            left: 'center',
-            textStyle: {
-                color: 'white',
-            },
-        },
+        // title: {
+        //     text: '全国土地利用情况',
+        //     // subtext: 'Fake Data',
+        //     top: '15%',
+        //     left: 'center',
+        //     textStyle: {
+        //         color: 'white',
+        //     },
+        // },
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -53,6 +53,7 @@ onMounted(() => {
         yAxis: {
             type: 'category',
             data: ['2017年', '2018年', '2019年', '2020年', '2021年', '2022年', '2023年'],
+
             axisLine: {
                 lineStyle: {
                     color: 'white',
@@ -71,7 +72,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [11, 11, 11, 11, 11, 8, 3]
+                data: [20, 24, 20, 29, 15, 12, 25]
             },
             {
                 name: '耕地',
@@ -84,7 +85,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [11, 11, 11, 11, 11, 8, 3]
+                data: [11, 26, 20, 22, 22, 13, 25]
             },
             {
                 name: '园地',
@@ -97,7 +98,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [11, 11, 11, 11, 11, 8, 3]
+                data: [19, 11, 16, 20, 33, 25, 25]
             },
             {
                 name: '林地',
@@ -110,7 +111,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [11, 11, 11, 11, 11, 8, 3]
+                data: [27, 22, 22, 11, 19, 27, 22]
             },
             {
                 name: '其他农用地',
@@ -123,7 +124,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [11, 11, 11, 11, 11, 8, 3]
+                data: [23, 17, 22, 18, 11, 23, 3]
             }
         ]
     };
@@ -139,6 +140,7 @@ onMounted(() => {
 <template>
     <div className="MainChinaLeft">
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
+        <Button class="GotoGrounds">全国土地利用情况</Button>
         <div id="MainChinaLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -149,16 +151,40 @@ onMounted(() => {
   height: 100vh;
   color: white;
 
+  .GotoGrounds {
+    position: absolute;
+    margin-top: -32vh;
+    width: 19vw;
+    margin-left: 0.6vw;
+    border: none;
+    background: none;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    font-size: 1.2vw;
+    z-index: 999;
+  }
+
+  .GotoGrounds:hover {
+    font-size: 1.3vw;
+    margin-top: -32.3vh;
+  }
+
+  .GotoGrounds:active {
+    margin-top: -32vh;
+    font-size: 1.2vw;
+  }
+
   #MainChinaLeft-echarts {
-    width: 15vw;
+    width: 19vw;
     height: 37vh;
-    margin-left: 1vw;
+    margin-left: 0.2vw;
     position: absolute;
     margin-top: -38vh;
   }
 
   .BackImg {
-    width: 18vw;
+    width: 20.2vw;
     height: 40vh;
     margin-top: -20vh;
   }

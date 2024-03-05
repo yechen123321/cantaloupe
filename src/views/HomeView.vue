@@ -28,8 +28,8 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   #map {
     width: 45vw;
     height: 45vh;
-    margin-top: 4.5vh;
-    margin-left: 39vw;
+    margin-top: 2.5vh;
+    margin-left: 40vw;
     position: absolute;
   }
 
@@ -40,7 +40,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   #MainRightTop {
     width: 23vw;
     height: 10vh;
-    margin-top: 6vh;
+    margin-top: 3vh;
     margin-right: 2vw;
     right: 0;
     position: absolute;
@@ -49,8 +49,8 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   #MainRightButtom {
     width: 23vw;
     height: 20vh;
-    margin-top: 22.5vh;
-    margin-right: 2vw;
+    margin-top: 16.5vh;
+    margin-right: 3vw;
     right: 0;
     position: absolute;
   }
@@ -58,7 +58,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   #MainLeftTable {
     width: 23vw;
     height: 22vh;
-    margin-top: 5vh;
+    margin-top: 2vh;
     margin-left: 2vw;
     position: absolute;
     z-index: 124;
@@ -68,7 +68,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
     width: 68vw;
     height: 42vh;
     right: 0;
-    margin-top: 46vh;
+    margin-top: 43vh;
     margin-right: 5vw;
     position: absolute;
     z-index: 124;

@@ -9,7 +9,12 @@ const routes = [
   {
     path: '/firstcity',
     name: 'firstcity',
-    component: () => import('../views/FirstCityView.vue')
+    component: () => import('../views/AnHuiCityView.vue')
+  },
+  {
+    path: '/anhui',
+    name: 'anhui',
+    component: () => import('../views/AnHuiCityView.vue')
   },
 
 ]

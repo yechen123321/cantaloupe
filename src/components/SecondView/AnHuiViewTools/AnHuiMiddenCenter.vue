@@ -12,8 +12,8 @@ onMounted(() => {
     option21 = {
         title: {
             text: '你好不好我不好',
-            left:'center',
-            top:'10%',
+            left: 'center',
+            top: '10%',
             textStyle: {
                 color: 'white',
             },
@@ -22,19 +22,19 @@ onMounted(() => {
             trigger: 'axis',
             axisPointer: {
                 type: 'shadow'
-            }
+            },
         },
         legend: {
             textStyle: {
                 color: 'white',
             },
-            left: '5%'
+            left: '5%',
         },
         grid: {
             left: '3%',
             right: '4%',
             bottom: '3%',
-            containLabel: true
+            containLabel: true,
         },
         xAxis: [
             {
@@ -43,9 +43,9 @@ onMounted(() => {
                 axisLine: {
                     lineStyle: {
                         color: 'white',
-                    }
+                    },
                 },
-            }
+            },
         ],
         yAxis: [
             {

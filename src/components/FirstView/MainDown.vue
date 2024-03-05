@@ -23,29 +23,21 @@ import MainDownRight from "@/components/FirstView/FirstViewTools/MainDownRight.v
     width: 25vw;
     height: 26vh;
     position: absolute;
-    margin-top: 30vh;
+    margin-top: 32vh;
     margin-left: 4vw;
-  }
-
-  #MainDownMidden-out {
-    width: 25vw;
-    height: 26vh;
-    position: absolute;
-    margin-top: 30vh;
-    margin-left: 30vw;
   }
 
   #MainDownSea-out {
     width: 25vw;
-    height: 26vh;
+    height: 28vh;
     position: absolute;
-    margin-top: 30vh;
-    margin-left: 26.5vw;
+    margin-top: 34vh;
+    margin-left: 27vw;
   }
 
   #MainDownRight-out {
     width: 25vw;
-    height: 26vh;
+    height: 28vh;
     position: absolute;
     margin-top: 30vh;
     margin-left: 48vw;
@@ -54,7 +46,7 @@ import MainDownRight from "@/components/FirstView/FirstViewTools/MainDownRight.v
 
   .BackImg {
     width: 74vw;
-    height: 42vh;
+    height: 46vh;
   }
 }
 </style>

@@ -85,20 +85,23 @@ onMounted(() => {
         }
     }
     option11 = {
-        title: {
-            text: '全国林地结构图',
-            top: '7%',
-            left: 'center',
-            textStyle: {
-                color: 'white',
-            },
-        },
+        // title: {
+        //     text: '全国林地结构图',
+        //     top: '7%',
+        //     left: 'center',
+        //     textStyle: {
+        //         color: 'white',
+        //     },
+        // },
         legend: {
             // top: '-1%',
+            itemWidth: 10, // 标签宽度为10px
+            itemHeight: 10, // 标签高度为10px
             textStyle: {
+
                 color: 'white'
             },
-            selectedMode: false
+            selectedMode: true
         },
         grid,
         yAxis: {
@@ -137,6 +140,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownRight">
+        <Button class="GotoForest">全国林地结构图</Button>
         <div id="MainDownRight-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -147,9 +151,34 @@ onMounted(() => {
   height: 100vh;
   color: white;
 
+  .GotoForest {
+    position: absolute;
+    font-size: 1.2vw;
+    font-weight: bolder;
+    margin-top: -19vh;
+    border: none;
+    background: none;
+    color: white;
+    margin-left: 7.7vw;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  .GotoForest:hover {
+    font-size: 1.3vw;
+    margin-left: 7.5vw;
+    margin-top: -19.2vh;
+  }
+
+  .GotoForest:active {
+    font-size: 1.2vw;
+    margin-top: -19vh;
+    margin-left: 7.7vw;
+  }
+
   #MainDownRight-echarts {
     width: 25vw;
-    height: 32vh;
+    height: 35vh;
     //margin-left: 0vw;
     position: absolute;
     margin-top: -21.5vh;

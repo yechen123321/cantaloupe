@@ -11,11 +11,14 @@ onMounted(() => {
     myChart7 = echarts.init(echartsRef.value);
     option7 = {
         tooltip: {
-
             trigger: 'item',
             formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
         legend: {
+            // type: 'scroll',
+            itemWidth: 10, // 标签宽度为20px
+            itemHeight: 10, // 标签高度为10px
+            top: '-4',
             textStyle: {
                 color: 'white'
             },
@@ -37,7 +40,7 @@ onMounted(() => {
                 type: 'pie',
                 selectedMode: 'single',
                 radius: [0, '30%'],
-                top: '20%',
+                top: '27%',
                 labelLine: {
                     length: 30
                 },
@@ -53,7 +56,7 @@ onMounted(() => {
             {
                 name: '全国批准用海结构',
                 type: 'pie',
-                top: '20%',
+                top: '25%',
                 radius: ['45%', '60%'],
                 label: {
                     color: 'white',
@@ -86,6 +89,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownSea">
+        <Button class="GotoSea">全国批准用海结构</Button>
         <div id="MainDownSea-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -96,9 +100,33 @@ onMounted(() => {
   height: 100vh;
   color: white;
 
+  .GotoSea {
+    position: absolute;
+    margin-top: -26vh;
+    border: none;
+    background: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2vw;
+    margin-left: 7vw;
+    cursor: pointer;
+  }
+
+  .GotoSea:hover {
+    font-size: 1.3vw;
+    margin-left: 6.7vw;
+    margin-top: -26.1vh;
+  }
+
+  .GotoSea:active {
+    margin-top: -26vh;
+    font-size: 1.2vw;
+    margin-left: 7vw;
+  }
+
   #MainDownSea-echarts {
     width: 23vw;
-    height: 26vh;
+    height: 28vh;
     margin-left: 1vw;
     position: absolute;
     margin-top: -21.5vh;

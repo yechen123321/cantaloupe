@@ -17,11 +17,11 @@ onMounted(() => {
     option1 = {
         backgroundColor: 'rgba(128, 128, 128, 0)',
         color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
-        title: {
-            text: '全国重要矿产开发投入资金',
-            top: '28vh',
-            left: 'center',
-        },
+        // title: {
+        //     text: '全国重要矿产开发产量',
+        //     top: '28vh',
+        //     left: 'center',
+        // },
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -98,7 +98,8 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [140, 232, 101, 264, 90, 340, 250]
+                data: [140, 232, 101, 264, 90, 340, 250],
+
             },
             {
                 name: '钨矿',
@@ -235,6 +236,7 @@ onMounted(() => {
 <template>
     <div class="MainLeftTable">
         <div id="MainTable-echarts" ref="echartsRef"></div>
+        <Button class="GoMinerals">全国重要矿产开发产量</Button>
         <MainLeftMidden id="MainLeftMidden-out"></MainLeftMidden>
         <MainChinaLeft id="MainChinaLeft-out"></MainChinaLeft>
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
@@ -249,7 +251,7 @@ onMounted(() => {
 
   .BackImg {
     width: 27vw;
-    height: 80vh;
+    height: 84vh;
   }
 
   #MainTable-echarts {
@@ -257,7 +259,44 @@ onMounted(() => {
     height: 21.5vh;
     margin-left: 1.5vw;
     position: absolute;
-    margin-top: 4vh;
+    margin-top: 28vh;
+    z-index: 999;
+  }
+
+  .GoMinerals {
+    cursor: pointer;
+    position: absolute;
+    //right: 0;
+    text-align: center;
+    width: 13vw;
+    height: 2.5vh;
+    font-size: 1.2vw;
+    margin-top: 31vh;
+    //margin-right: -2vw;
+    margin-left: 6.8vw;
+    font-weight: bolder;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 2px;
+    z-index: 999;
+  }
+
+  .GoMinerals:hover {
+    width: 14vw;
+    height: 3vh;
+    font-size: 1.3vw;
+    margin-top: 31vh;
+    //margin-right: -2.4vw;
+    margin-left: 6.3vw;
+  }
+
+  .GoMinerals:active {
+    font-size: 1.2vw;
+    margin-top: 31vh;
+    margin-left: 6.8vw;
+    width: 13vw;
+    height: 2.5vh;
   }
 
   #MainLeftMidden-out {
@@ -265,7 +304,7 @@ onMounted(() => {
     height: 23.5vh;
     margin-left: 2.5vw;
     position: absolute;
-    margin-top: 48.8vh;
+    margin-top: 27.8vh;
   }
 
   #MainLeftButtom-out {
@@ -273,11 +312,11 @@ onMounted(() => {
     height: 32.5vh;
     margin-left: 2.5vw;
     position: absolute;
-    margin-top: -14vh;
+    margin-top: -16vh;
   }
 
   #MainChinaLeft-out {
-    width: 25vw;
+    width: 15vw;
     height: 23.5vh;
     margin-left: 28vw;
     position: absolute;

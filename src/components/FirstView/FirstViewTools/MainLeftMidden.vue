@@ -16,14 +16,15 @@ onMounted(() => {
     ];
     option2 = {
         color: colorList,
-        title: {
-            text: '全国资源开发与消耗占比',
-            // subtext: 'Fake Data',
-            left: 'center',
-            textStyle: {
-                color: 'white',
-            },
-        },
+        // title: {
+        //     top:'-2%',
+        //     text: '全国资源开发与消耗占比',
+        //     // subtext: 'Fake Data',
+        //     left: 'center',
+        //     textStyle: {
+        //         color: 'white',
+        //     },
+        // },
         tooltip: {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)'
@@ -106,6 +107,7 @@ onMounted(() => {
 
 <template>
     <div className="MainLeftMidden">
+        <div class="MainLeftMidden-title">全国资源开发与需求占比</div>
         <div id="MainLeftMidden-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -116,10 +118,19 @@ onMounted(() => {
   height: 100vh;
   color: white;
 
+  .MainLeftMidden-title {
+    position: absolute;
+    margin-top: -23vh;
+    width: 22vw;
+    font-weight: bolder;
+    font-size: 1.2vw;
+    text-align: center;
+  }
+
   #MainLeftMidden-echarts {
-    width: 23vw;
+    width: 26vw;
     height: 20vh;
-    margin-left: -0.5vw;
+    margin-left: -2vw;
     position: absolute;
     margin-top: -21.5vh;
   }

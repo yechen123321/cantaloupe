@@ -13,6 +13,9 @@ onMounted(() => {
     // (Your existing option setup code)
     option5 = {
         legend: {
+            itemWidth: 2, // 标签宽度为20px
+            itemHeight: 10, // 标签高度为10px
+
             textStyle: {
                 color: 'white'
             },
@@ -25,11 +28,11 @@ onMounted(() => {
         dataset: {
             source: [
                 ['年份', '2018', '2019', '2020', '2021', '2022', '2023'],
-                ['光伏发电', 43, 23, 43, 23, 56, 54],
-                ['风能发电', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
-                ['水力发电', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
-                ['火力发电', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
-                ['核能发电', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+                ['水电能源', 43, 23, 43, 23, 56, 54],
+                ['化石能源', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+                ['太阳能源', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+                ['核变能源', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+                ['水利能源', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
             ]
         },
         xAxis: {
@@ -119,11 +122,11 @@ onMounted(() => {
             dataset: {
                 source: [
                     ['年份', '2018', '2019', '2020', '2021', '2022', '2023'],
-                    ['光伏发电', 43, 23, 43, 23, 56, 54],
-                    ['风能发电', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
-                    ['水力发电', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
-                    ['火力发电', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
-                    ['核能发电', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+                    ['水电能源', 43, 23, 43, 23, 56, 54],
+                    ['化石能源', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+                    ['太阳能源', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+                    ['核变能源', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+                    ['水利能源', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
                 ]
             },
             xAxis: {
@@ -211,7 +214,7 @@ onMounted(() => {
                         id: 'pie',
                         label: {
                             show: true,
-                            formatter: `{b}: {@${dimension}} ({d}%)`
+                            formatter: `数据为： {@${dimension}} ({d}%)`
                         },
                         encode: {
                             value: dimension,
@@ -255,6 +258,8 @@ onMounted(() => {
 
 <template>
     <div class="MainLeftButtom">
+        <Button class="GoEnergy-title">全国新能源产量及其结构占比</Button>
+        <Button></Button>
         <div id="MainLeftButtom-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -265,12 +270,46 @@ onMounted(() => {
   height: 100vh;
   color: white;
 
+  .GoEnergy-title {
+    cursor: pointer;
+    position: absolute;
+    //right: 0;
+    margin-left: 2vw;
+    width: 18vw;
+    height: 2.5vh;
+    font-size: 1.2vw;
+    font-weight: bolder;
+    //margin-right: 0.6vw;
+    color: white;
+    border: none;
+    margin-top: -18.5vh;
+    background: none;
+    border-radius: 2px;
+    z-index: 999;
+  }
+
+  .GoEnergy-title:hover {
+    width: 20vw;
+    height: 2.5vh;
+    font-size: 1.3vw;
+    margin-left: 1vw;
+    margin-top: -18.6vh;
+  }
+
+  .GoEnergy-title:active {
+    margin-left: 2vw;
+    width: 18vw;
+    height: 2.5vh;
+    font-size: 1.2vw;
+    margin-top: -18.5vh;
+  }
+
   #MainLeftButtom-echarts {
     width: 24vw;
     height: 32vh;
     margin-left: -0.5vw;
     position: absolute;
-    margin-top: -18.5vh;
+    margin-top: -17vh;
   }
 
   @keyframes glow {
