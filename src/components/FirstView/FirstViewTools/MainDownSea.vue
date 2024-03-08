@@ -12,6 +12,9 @@ onMounted(() => {
     option7 = {
         tooltip: {
             trigger: 'item',
+            textStyle:{
+                fontWeight:'bold',
+            },
             formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
         legend: {
@@ -109,20 +112,20 @@ onMounted(() => {
     font-weight: bolder;
     font-size: 1.2vw;
     margin-left: 7vw;
-    cursor: pointer;
+    //cursor: pointer;
   }
 
-  .GotoSea:hover {
-    font-size: 1.3vw;
-    margin-left: 6.7vw;
-    margin-top: -26.1vh;
-  }
-
-  .GotoSea:active {
-    margin-top: -26vh;
-    font-size: 1.2vw;
-    margin-left: 7vw;
-  }
+  //.GotoSea:hover {
+  //  font-size: 1.3vw;
+  //  margin-left: 6.7vw;
+  //  margin-top: -26.1vh;
+  //}
+  //
+  //.GotoSea:active {
+  //  margin-top: -26vh;
+  //  font-size: 1.2vw;
+  //  margin-left: 7vw;
+  //}
 
   #MainDownSea-echarts {
     width: 23vw;

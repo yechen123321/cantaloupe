@@ -37,7 +37,7 @@ onMounted(() => {
     const series = [
         '乔木林地',
         '灌木林地',
-        '竹林地',
+        '竹木林地',
         '其他林地',
     ].map((name, sid) => {
         return {
@@ -45,12 +45,12 @@ onMounted(() => {
             type: 'bar',
             stack: 'total',
             barWidth: '60%',
-            label: {
-                show: true,
-                formatter: (params) => Math.round(params.value * 1000) / 10 + '%'
-            },
+            // label: {
+            //     show: true,
+            //     formatter: (params) => Math.round(params.value) + '%'
+            // },
             data: rawData[sid].map((d, did) =>
-                totalData[did] <= 0 ? 0 : d / totalData[did]
+                totalData[did] <= 0 ? 0 : ((d / totalData[did]) * 100).toFixed(1) // 将数据转换为百分比
             )
         };
     });
@@ -85,6 +85,25 @@ onMounted(() => {
         }
     }
     option11 = {
+        tooltip: {
+            trigger: 'axis', // 设置触发类型为坐标轴
+            tooltip: {
+                trigger: 'axis',
+                extraCssText: 'width: 10vw; height: 24vh;', // 设置tooltip框的宽度和高度，调整框的大小
+                formatter: function (params) {
+                    let tooltipContent = '';
+                    let mineName = params[0].name; // 获取矿地的名字
+                    tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                    params.forEach(function (param) {
+                        if (param.seriesName !== '趋势') {
+                            tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                        }
+                    });
+                    return tooltipContent;
+                }
+
+            },
+        },
         // title: {
         //     text: '全国林地结构图',
         //     top: '7%',
@@ -161,27 +180,28 @@ onMounted(() => {
     color: white;
     margin-left: 7.7vw;
     z-index: 999;
-    cursor: pointer;
+    //cursor: pointer;
   }
 
-  .GotoForest:hover {
-    font-size: 1.3vw;
-    margin-left: 7.5vw;
-    margin-top: -19.2vh;
-  }
-
-  .GotoForest:active {
-    font-size: 1.2vw;
-    margin-top: -19vh;
-    margin-left: 7.7vw;
-  }
+  //.GotoForest:hover {
+  //  font-size: 1.3vw;
+  //  margin-left: 7.5vw;
+  //  margin-top: -19.2vh;
+  //}
+  //
+  //.GotoForest:active {
+  //  font-size: 1.2vw;
+  //  margin-top: -19vh;
+  //  margin-left: 7.7vw;
+  //}
 
   #MainDownRight-echarts {
-    width: 25vw;
+    width: 26vw;
     height: 35vh;
     //margin-left: 0vw;
     position: absolute;
     margin-top: -21.5vh;
+
   }
 
   @keyframes glow {

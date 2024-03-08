@@ -15,213 +15,172 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     option1 = {
-        backgroundColor: 'rgba(128, 128, 128, 0)',
-        color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
-        // title: {
-        //     text: '全国重要矿产开发产量',
-        //     top: '28vh',
-        //     left: 'center',
-        // },
+        backgroundColor:'rgba(128,128,128,0)',
+        title: {
+            text: '全国重要矿产开发产量',
+            left: 'center',
+            top: '0%',
+            textStyle: {
+                color: 'white',
+            },
+        },
         tooltip: {
             trigger: 'axis',
+            extraCssText: 'width: 13vw',
             axisPointer: {
-                type: 'cross',
-                label: {
-                    backgroundColor: '#6a7985'
-                }
+                type: 'shadow'
+            },
+            // textStyle: {
+            //     fontWeight: 'bold'
+            // },
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name;
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName !== '趋势') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
             }
         },
         legend: {
+            width:'120%',
+            top:'15%',
+            itemWidth: 10, // 标签宽度为10px
+            itemHeight: 10, // 标签高度为10px
+            left:'center',
             textStyle: {
-                color: 'white'
+                color: 'white',
             },
-            data: ['锰矿', '钨矿', '铀矿', '铅锌矿', '硫铁矿']
         },
-        // toolbox: {
-        //     feature: {
-        //         saveAsImage: {}
-        //     }
-        // },
         grid: {
             left: '3%',
             right: '4%',
-
             bottom: '3%',
-            containLabel: true
+            containLabel: true,
         },
         xAxis: [
             {
                 type: 'category',
-                boundaryGap: false,
                 data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
                 axisLine: {
                     lineStyle: {
                         color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
                     }
                 }
-            }
-
+            },
         ],
         yAxis: [
             {
                 type: 'value',
+
                 axisLine: {
                     lineStyle: {
                         color: 'white',
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置Y轴上数据的颜色为白色
                     }
                 }
             }
         ],
         series: [
             {
+                name: '铁矿',
+                type: 'bar',
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            {
                 name: '锰矿',
-                type: 'line',
-                stack: 'Total',
-                smooth: true,
-                lineStyle: {
-                    width: 0
-                },
-                showSymbol: false,
-                areaStyle: {
-                    opacity: 0.8,
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        {
-                            offset: 0,
-                            color: 'rgb(128, 255, 165)'
-                        },
-                        {
-                            offset: 1,
-                            color: 'rgb(1, 191, 236)'
-                        }
-                    ])
-                },
+                type: 'bar',
+                stack: 'Ad',
                 emphasis: {
                     focus: 'series'
                 },
-                data: [140, 232, 101, 264, 90, 340, 250],
-
+                data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
-                name: '钨矿',
-                type: 'line',
-                stack: 'Total',
-                smooth: true,
-                lineStyle: {
-                    width: 0
+                name: '世伟矿',
+                type: 'bar',
+                stack: 'Ad',
+                emphasis: {
+                    focus: 'series'
                 },
-                axisLine: {
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '超级矿',
+                type: 'bar',
+                stack: 'Ad',
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '基岩',
+                type: 'bar',
+                data: [862, 1018, 964, 1026, 1679, 1600, 1570],
+                emphasis: {
+                    focus: 'series'
+                },
+                markLine: {
                     lineStyle: {
-                        color: 'white',
-                    }
-                },
-                showSymbol: false,
-                areaStyle: {
-                    opacity: 0.8,
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        {
-                            offset: 0,
-                            color: 'rgb(0, 221, 255)'
-                        },
-                        {
-                            offset: 1,
-                            color: 'rgb(77, 119, 255)'
-                        }
-                    ])
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [120, 282, 111, 234, 220, 340, 310]
-            },
-            {
-                name: '铀矿',
-                type: 'line',
-                stack: 'Total',
-                smooth: true,
-                lineStyle: {
-                    width: 0
-                },
-                showSymbol: false,
-                areaStyle: {
-                    opacity: 0.8,
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        {
-                            offset: 0,
-                            color: 'rgb(55, 162, 255)'
-                        },
-                        {
-                            offset: 1,
-                            color: 'rgb(116, 21, 219)'
-                        }
-                    ])
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [320, 132, 201, 334, 190, 130, 220]
-            },
-            {
-                name: '铅锌矿',
-                type: 'line',
-                stack: 'Total',
-                smooth: true,
-                lineStyle: {
-                    width: 0
-                },
-                showSymbol: false,
-                areaStyle: {
-                    opacity: 0.8,
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        {
-                            offset: 0,
-                            color: 'rgb(255, 0, 135)'
-                        },
-                        {
-                            offset: 1,
-                            color: 'rgb(135, 0, 157)'
-                        }
-                    ])
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [220, 402, 231, 134, 190, 230, 120],
+                        type: 'dashed'
 
-            },
-            {
-                name: '硫铁矿',
-                type: 'line',
-                stack: 'Total',
-                smooth: true,
-                lineStyle: {
-                    width: 0,
-                },
-                showSymbol: false,
-                label: {
-                    show: true,
-                    position: 'top'
-
-                },
-                areaStyle: {
-                    opacity: 0.8,
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        {
-                            offset: 0,
-                            color: 'rgb(255, 191, 0)'
-                        },
-                        {
-                            offset: 1,
-                            color: 'rgb(224, 62, 76)'
+                    },
+                    label: {
+                        formatter: '{c} 吨', // 在数据后加上单位
+                        textStyle: {
+                            color: 'white' // 设置 markLine 文本颜色为白色
                         }
-                    ])
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [220, 302, 181, 234, 210, 290, 150]
-            }
+                    },
+                    data: [[{type: 'min'}, {type: 'max'}]]
+                }
+            },
+            // {
+            //     name: 'Baidu',
+            //     type: 'bar',
+            //     barWidth: 5,
+            //     stack: 'Search Engine',
+            //     emphasis: {
+            //         focus: 'series'
+            //     },
+            //     data: [620, 732, 701, 734, 1090, 1130, 1120]
+            // },
+            // {
+            //     name: 'Google',
+            //     type: 'bar',
+            //     stack: 'Search Engine',
+            //     emphasis: {
+            //         focus: 'series'
+            //     },
+            //     data: [120, 132, 101, 134, 290, 230, 220]
+            // },
+            //
+            // {
+            //     name: 'Others',
+            //     type: 'bar',
+            //     stack: 'Search Engine',
+            //     emphasis: {
+            //         focus: 'series'
+            //     },
+            //     data: [62, 82, 91, 84, 109, 110, 120]
+            // }
         ]
-    }
+    };
     option1 && myChart1.setOption(option1);
 
     const resizeObserver = new ResizeObserver(() => {
@@ -236,7 +195,7 @@ onMounted(() => {
 <template>
     <div class="MainLeftTable">
         <div id="MainTable-echarts" ref="echartsRef"></div>
-        <Button class="GoMinerals">全国重要矿产开发产量</Button>
+<!--        <Button class="GoMinerals">全国重要矿产开发产量</Button>-->
         <MainLeftMidden id="MainLeftMidden-out"></MainLeftMidden>
         <MainChinaLeft id="MainChinaLeft-out"></MainChinaLeft>
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
@@ -264,14 +223,14 @@ onMounted(() => {
   }
 
   .GoMinerals {
-    cursor: pointer;
+    //cursor: pointer;
     position: absolute;
     //right: 0;
     text-align: center;
     width: 13vw;
     height: 2.5vh;
     font-size: 1.2vw;
-    margin-top: 31vh;
+    margin-top: 27.5vh;
     //margin-right: -2vw;
     margin-left: 6.8vw;
     font-weight: bolder;
@@ -282,22 +241,22 @@ onMounted(() => {
     z-index: 999;
   }
 
-  .GoMinerals:hover {
-    width: 14vw;
-    height: 3vh;
-    font-size: 1.3vw;
-    margin-top: 31vh;
-    //margin-right: -2.4vw;
-    margin-left: 6.3vw;
-  }
-
-  .GoMinerals:active {
-    font-size: 1.2vw;
-    margin-top: 31vh;
-    margin-left: 6.8vw;
-    width: 13vw;
-    height: 2.5vh;
-  }
+  //.GoMinerals:hover {
+  //  width: 14vw;
+  //  height: 3vh;
+  //  font-size: 1.3vw;
+  //  margin-top: 31vh;
+  //  //margin-right: -2.4vw;
+  //  margin-left: 6.3vw;
+  //}
+  //
+  //.GoMinerals:active {
+  //  font-size: 1.2vw;
+  //  margin-top: 31vh;
+  //  margin-left: 6.8vw;
+  //  width: 13vw;
+  //  height: 2.5vh;
+  //}
 
   #MainLeftMidden-out {
     width: 25vw;

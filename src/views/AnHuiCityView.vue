@@ -25,7 +25,7 @@ import SecondMiddem from "@/components/SecondView/AnHuiMidden.vue";
   #SecondLeftTable {
     width: 25vw;
     height: 80vh;
-    margin-top: 5vh;
+    margin-top: 3vh;
     margin-left: 2vw;
     position: absolute;
   }
@@ -33,8 +33,8 @@ import SecondMiddem from "@/components/SecondView/AnHuiMidden.vue";
   #SecondMiddem {
     width: 40vw;
     height: 80vh;
-    margin-top: 5vh;
-    margin-left: 30vw;
+    margin-top: 4vh;
+    margin-left: 30.2vw;
     position: absolute;
   }
 
@@ -42,8 +42,8 @@ import SecondMiddem from "@/components/SecondView/AnHuiMidden.vue";
     width: 25vw;
     height: 80vh;
     right: 0;
-    margin-top: 5vh;
-    margin-right: 2vw;
+    margin-top: 3vh;
+    margin-right: 2.5vw;
     position: absolute;
   }
 

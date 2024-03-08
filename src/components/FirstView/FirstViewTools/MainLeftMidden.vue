@@ -27,7 +27,11 @@ onMounted(() => {
         // },
         tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)'
+            textStyle:{
+              fontWeight:'bold',
+            },
+            // formatter: '{a} <br/>{b} : {c} 吨 ({d}%)',
+            formatter: '{a} <br/>{b} : {d}%'
         },
         legend: {
             left: 'center',

@@ -40,7 +40,7 @@ import MainDownRight from "@/components/FirstView/FirstViewTools/MainDownRight.v
     height: 28vh;
     position: absolute;
     margin-top: 30vh;
-    margin-left: 48vw;
+    margin-left: 47vw;
 
   }
 

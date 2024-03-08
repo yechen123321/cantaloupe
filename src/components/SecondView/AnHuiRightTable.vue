@@ -15,7 +15,7 @@
   //background: red;
   .BackImg {
     width: 26vw;
-    height: 80vh;
+    height: 82vh;
   }
 }
 </style>

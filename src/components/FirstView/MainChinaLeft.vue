@@ -21,9 +21,20 @@ onMounted(() => {
         // },
         tooltip: {
             trigger: 'axis',
+            extraCssText: 'width: 10vw; height: 16vh;', // 设置tooltip框的宽度和高度，调整框的大小
             axisPointer: {
-                // Use axis to trigger tooltip
                 type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+            },
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name;
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName !== '趋势') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
             }
         },
         legend: {
@@ -160,20 +171,20 @@ onMounted(() => {
     background: none;
     color: white;
     font-weight: bolder;
-    cursor: pointer;
+    //cursor: pointer;
     font-size: 1.2vw;
     z-index: 999;
   }
 
-  .GotoGrounds:hover {
-    font-size: 1.3vw;
-    margin-top: -32.3vh;
-  }
-
-  .GotoGrounds:active {
-    margin-top: -32vh;
-    font-size: 1.2vw;
-  }
+  //.GotoGrounds:hover {
+  //  font-size: 1.3vw;
+  //  margin-top: -32.3vh;
+  //}
+  //
+  //.GotoGrounds:active {
+  //  margin-top: -32vh;
+  //  font-size: 1.2vw;
+  //}
 
   #MainChinaLeft-echarts {
     width: 19vw;

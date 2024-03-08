@@ -1,14 +1,6 @@
 <script setup>
-import {ref, onMounted} from 'vue';
+import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
-import {useRouter} from 'vue-router';
-
-const router = useRouter();
-
-const handleRouteChange = () => {
-    // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
-    router.push('/'); // 替换'/new-route'为您要跳转的路由路径
-};
 const echartsRef = ref(null);
 let myChart22 = null;
 let option22 = null;
@@ -21,7 +13,7 @@ onMounted(() => {
     const customData = [];
     const legendData = [];
     const dataList = [];
-    legendData.push('trend');
+    legendData.push('趋势');
     const encodeY = [];
     for (var i = 0; i < yearCount; i++) {
         legendData.push(2017 + i + '');
@@ -46,16 +38,30 @@ onMounted(() => {
         }
     }
     option22 = {
+        backgroundColor:'rgba(128,128,128,0)',
         title: {
             left: 'center',
-            top: '10%',
+            top: '12%',
             text: '安徽省矿场产量总览',
             textStyle: {
                 color: 'white',
             },
         },
         tooltip: {
-            trigger: 'axis'
+            trigger: 'axis',
+            extraCssText: 'width: 10vw; height: 24vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name; // 获取矿地的名字
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName !== '趋势') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
+            }
+
         },
         legend: {
             data: legendData,
@@ -95,7 +101,7 @@ onMounted(() => {
         series: [
             {
                 type: 'custom',
-                name: 'trend',
+                name: '趋势',
                 renderItem: function (params, api) {
                     var xValue = api.value(0);
                     var currentSeriesIndices = api.currentSeriesIndices();
@@ -151,6 +157,37 @@ onMounted(() => {
     };
 
     option22 && myChart22.setOption(option22);
+
+    let start = -1; // 初始数据区域缩放起始位置
+    let end = 2; // 初始数据区域缩放结束位置
+    let step = 1; // 每次轮播的步长
+    let direction = 1; // 方向，1表示向前，-1表示向后
+
+    const timer = setInterval(() => {
+        start += step * direction;
+        end += step * direction;
+
+        if (start < 0) {
+            start = 0;
+            end = 2;
+            direction = 1; // 改变方向为向前
+        } else if (end >= 30) {
+            start = 0;
+            end = 2;
+            direction = 1; // 改变方向为向前
+        }
+
+        myChart22.dispatchAction({
+            type: 'dataZoom',
+            startValue: start,
+            endValue: end
+        });
+    }, 2000); // 设置轮播间隔时间，单位为毫秒
+
+    // 监听组件销毁事件，清除定时器
+    onBeforeUnmount(() => {
+        clearInterval(timer);
+    });
     const resizeObserver = new ResizeObserver(() => {
         myChart22.resize();
     });
@@ -163,7 +200,7 @@ onMounted(() => {
     <div className="SecondMiddenCenter">
         <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
-        <Button class="GotoOre" @click="handleRouteChange">矿场详情</Button>
+<!--        <Button class="GotoOre" @click="handleRouteChange">矿场详情</Button>-->
     </div>
 </template>
 
@@ -182,38 +219,38 @@ onMounted(() => {
     z-index: 166;
   }
 
-  .GotoOre {
-    position: absolute;
-    margin-left: -8vw;
-    margin-top: 4.5vh;
-    width: 6vw;
-    height: 2.5vh;
-    color: white;
-    font-size: 0.8vw;
-    font-weight: bolder;
-    border-radius: 5px;
-    z-index: 999;
-    cursor: pointer;
-    border: none;
-    background: #0d87f6;
-  }
-
-  .GotoOre:hover {
-    width: 6.5vw;
-    height: 3vh;
-    margin-top: 4.3vh;
-    margin-left: -8.3vw;
-    font-size: 1vw;
-  }
-
-  .GotoOre:active {
-    margin-left: -8vw;
-    margin-top: 4.5vh;
-    width: 6vw;
-    height: 2.5vh;
-    color: white;
-    font-size: 0.8vw;
-  }
+  //.GotoOre {
+  //  position: absolute;
+  //  margin-left: -8vw;
+  //  margin-top: 5vh;
+  //  width: 6vw;
+  //  height: 2.5vh;
+  //  color: white;
+  //  font-size: 0.8vw;
+  //  font-weight: bolder;
+  //  border-radius: 5px;
+  //  z-index: 999;
+  //  cursor: pointer;
+  //  border: none;
+  //  background: #0d87f6;
+  //}
+  //
+  //.GotoOre:hover {
+  //  width: 6.5vw;
+  //  height: 3vh;
+  //  margin-top: 5vh;
+  //  margin-left: -8.3vw;
+  //  font-size: 1vw;
+  //}
+  //
+  //.GotoOre:active {
+  //    margin-left: -8vw;
+  //    margin-top: 5vh;
+  //  width: 6vw;
+  //  height: 2.5vh;
+  //  color: white;
+  //  font-size: 0.8vw;
+  //}
 
   .BackImg {
     width: 40vw;

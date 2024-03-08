@@ -15,13 +15,19 @@ onMounted(() => {
 
         tooltip: {
             trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     // label: {
-            //     //     backgroundColor: '#6a7985'
-            //     // }
-            //
-            // }
+            extraCssText: 'width: 10vw; height: 21vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name;
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName !== '趋势') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
+            }
+
         },
         legend: {
             data: ['煤炭', '石油', '天然气', '页岩气', '页岩油', '煤层气', '油页岩'],
@@ -150,7 +156,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownLeft">
-        <Button class="GotoQ">全国化石能源产量结构占比</Button>
+        <Button class="GotoQ">全国化石能源产量趋势</Button>
         <div id="MainDownLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -171,16 +177,16 @@ onMounted(() => {
     color: white;
     font-weight: bolder;
     font-size: 1.2vw;
-    cursor: pointer;
+    //cursor: pointer;
   }
-
-  .GotoQ:hover {
-    font-size: 1.3vw;
-  }
-
-  .GotoQ:active {
-    font-size: 1.2vw;
-  }
+  //
+  //.GotoQ:hover {
+  //  font-size: 1.3vw;
+  //}
+  //
+  //.GotoQ:active {
+  //  font-size: 1.2vw;
+  //}
 
   #MainDownLeft-echarts {
     width: 23vw;

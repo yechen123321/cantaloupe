@@ -156,7 +156,7 @@ const options = ref([
     position: absolute;
     margin-top: 6vh;
     z-index: 222;
-
+      margin-right: -1vw;
     .SelectBox {
       width: 7vw;
       height: 4vh;
@@ -177,7 +177,7 @@ const options = ref([
     height: 4vh;
     right: 0;
     margin-top: 12vh;
-    margin-right: 3vw;
+    margin-right: 2vw;
     position: absolute;
     cursor: pointer;
     font-size: 1vw;
@@ -193,7 +193,7 @@ const options = ref([
     width: 7.5vw;
     height: 5vh;
     margin-top: 11.5vh;
-    margin-right: 2.7vw;
+    margin-right: 1.7vw;
     font-size: 1.4vw;
   }
 
@@ -201,7 +201,7 @@ const options = ref([
     width: 7vw;
     height: 4vh;
     margin-top: 12vh;
-    margin-right: 3vw;
+    margin-right: 2vw;
     font-size: 1vw;
   }
 

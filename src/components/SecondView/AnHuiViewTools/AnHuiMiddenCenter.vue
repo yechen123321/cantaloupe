@@ -10,25 +10,43 @@ let option21 = null;
 onMounted(() => {
     myChart21 = echarts.init(echartsRef.value);
     option21 = {
-        title: {
-            text: '你好不好我不好',
-            left: 'center',
-            top: '10%',
-            textStyle: {
-                color: 'white',
-            },
-        },
+        // title: {
+        //     text: '你好不好我不好',
+        //     left: 'center',
+        //     top: '10%',
+        //     textStyle: {
+        //         color: 'white',
+        //     },
+        // },
+        backgroundColor:'rgba(128,128,128,0)',
         tooltip: {
             trigger: 'axis',
+            extraCssText: 'width: 13vw',
             axisPointer: {
                 type: 'shadow'
             },
+            // textStyle: {
+            //     fontWeight: 'bold'
+            // },
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name;
+                tooltipContent += '<span style="font-weight: bold; margin-right: 1vw">' + mineName + '</span>' + '单位/万千瓦时' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName !== '趋势') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
+            }
         },
         legend: {
+            itemWidth: 10, // 标签宽度为10px
+            itemHeight: 10, // 标签高度为10px
             textStyle: {
                 color: 'white',
             },
-            left: '5%',
+            left: 'center',
         },
         grid: {
             left: '3%',
@@ -39,7 +57,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
                 axisLine: {
                     lineStyle: {
                         color: 'white',
@@ -59,7 +77,7 @@ onMounted(() => {
         ],
         series: [
             {
-                name: 'Direct',
+                name: '太阳能',
                 type: 'bar',
                 emphasis: {
                     focus: 'series'
@@ -67,7 +85,7 @@ onMounted(() => {
                 data: [320, 332, 301, 334, 390, 330, 320]
             },
             {
-                name: 'Email',
+                name: '地热能',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -76,7 +94,7 @@ onMounted(() => {
                 data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
-                name: 'Union Ads',
+                name: '潮汐能',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -85,7 +103,7 @@ onMounted(() => {
                 data: [220, 182, 191, 234, 290, 330, 310]
             },
             {
-                name: 'Video Ads',
+                name: '生物能',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -94,7 +112,7 @@ onMounted(() => {
                 data: [150, 232, 201, 154, 190, 330, 410]
             },
             {
-                name: 'Search Engine',
+                name: '核能',
                 type: 'bar',
                 data: [862, 1018, 964, 1026, 1679, 1600, 1570],
                 emphasis: {
@@ -108,7 +126,7 @@ onMounted(() => {
                 }
             },
             {
-                name: 'Baidu',
+                name: '风能',
                 type: 'bar',
                 barWidth: 5,
                 stack: 'Search Engine',
@@ -118,7 +136,7 @@ onMounted(() => {
                 data: [620, 732, 701, 734, 1090, 1130, 1120]
             },
             {
-                name: 'Google',
+                name: '氢能源',
                 type: 'bar',
                 stack: 'Search Engine',
                 emphasis: {
@@ -126,16 +144,15 @@ onMounted(() => {
                 },
                 data: [120, 132, 101, 134, 290, 230, 220]
             },
-
-            {
-                name: 'Others',
-                type: 'bar',
-                stack: 'Search Engine',
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [62, 82, 91, 84, 109, 110, 120]
-            }
+            // {
+            //     name: 'Others',
+            //     type: 'bar',
+            //     stack: 'Search Engine',
+            //     emphasis: {
+            //         focus: 'series'
+            //     },
+            //     data: [62, 82, 91, 84, 109, 110, 120]
+            // }
         ]
     };
     option21 && myChart21.setOption(option21);
@@ -150,6 +167,7 @@ onMounted(() => {
 <template>
     <div className="SecondMiddenCenter">
         <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
+        <Button class="GotoMore">安徽省新能源产能图</Button>
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -159,6 +177,31 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   color: white;
+
+  .GotoMore {
+    position: absolute;
+    width: 20vw;
+    border: none;
+    background: none;
+    font-weight: bolder;
+    font-size: 1.2vw;
+    color: white;
+    margin-top: 5vh;
+    margin-left: -30vw;
+    cursor: pointer;
+    //z-index: 999;
+  }
+
+  //.GotoMore:hover {
+  //  font-size: 1.3vw;
+  //  margin-top: 4.9vh;
+  //}
+  //
+  //.GotoMore:active {
+  //  margin-top: 5vh;
+  //  font-size: 1.2vw;
+  //
+  //}
 
   #SecondMiddenCenter-echarts {
     width: 40vw;

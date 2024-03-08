@@ -188,7 +188,7 @@ onMounted(() => {
                     type: 'pie',
                     id: 'pie',
                     radius: '30%',
-                    center: ['50%', '30%'],
+                    center: ['50%', '40%'],
                     animationType: 'scale',
                     emphasis: {
                         focus: 'self'
@@ -214,12 +214,14 @@ onMounted(() => {
                         id: 'pie',
                         label: {
                             show: true,
-                            formatter: `数据为： {@${dimension}} ({d}%)`
+                            // formatter: `数据为： {@${dimension}} ({d}%)`
+                            formatter: `数据为： {@${dimension}}  ({d}%)`
                         },
                         encode: {
                             value: dimension,
                             tooltip: dimension
-                        }
+                        },
+
                     }
                 });
             }
@@ -258,7 +260,7 @@ onMounted(() => {
 
 <template>
     <div class="MainLeftButtom">
-        <Button class="GoEnergy-title">全国新能源产量及其结构占比</Button>
+        <Button class="GoEnergy-title">全国新能源结构及趋势</Button>
         <Button></Button>
         <div id="MainLeftButtom-echarts" ref="echartsRef"></div>
     </div>
@@ -271,7 +273,7 @@ onMounted(() => {
   color: white;
 
   .GoEnergy-title {
-    cursor: pointer;
+    //cursor: pointer;
     position: absolute;
     //right: 0;
     margin-left: 2vw;
@@ -288,26 +290,26 @@ onMounted(() => {
     z-index: 999;
   }
 
-  .GoEnergy-title:hover {
-    width: 20vw;
-    height: 2.5vh;
-    font-size: 1.3vw;
-    margin-left: 1vw;
-    margin-top: -18.6vh;
-  }
-
-  .GoEnergy-title:active {
-    margin-left: 2vw;
-    width: 18vw;
-    height: 2.5vh;
-    font-size: 1.2vw;
-    margin-top: -18.5vh;
-  }
+  //.GoEnergy-title:hover {
+  //  width: 20vw;
+  //  height: 2.5vh;
+  //  font-size: 1.3vw;
+  //  margin-left: 1vw;
+  //  margin-top: -18.6vh;
+  //}
+  //
+  //.GoEnergy-title:active {
+  //  margin-left: 2vw;
+  //  width: 18vw;
+  //  height: 2.5vh;
+  //  font-size: 1.2vw;
+  //  margin-top: -18.5vh;
+  //}
 
   #MainLeftButtom-echarts {
-    width: 24vw;
+    width: 26vw;
     height: 32vh;
-    margin-left: -0.5vw;
+    margin-left: -2.4vw;
     position: absolute;
     margin-top: -17vh;
   }
