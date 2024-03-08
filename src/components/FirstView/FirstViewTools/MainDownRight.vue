@@ -113,11 +113,10 @@ onMounted(() => {
         //     },
         // },
         legend: {
-            // top: '-1%',
+            top: '7%',
             itemWidth: 10, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             textStyle: {
-
                 color: 'white'
             },
             selectedMode: true
@@ -174,7 +173,7 @@ onMounted(() => {
     position: absolute;
     font-size: 1.2vw;
     font-weight: bolder;
-    margin-top: -19vh;
+    margin-top: -22.5vh;
     border: none;
     background: none;
     color: white;

@@ -38,7 +38,11 @@ onMounted(() => {
             }
         },
         legend: {
-            left: 'center',
+            top:'15%',
+            width:'100%',
+            itemWidth: 10, // 标签宽度为20px
+            itemHeight: 10, // 标签高度为10px
+            left: '1%',
             textStyle: {
                 color: 'white'
             },
@@ -164,7 +168,7 @@ onMounted(() => {
 
   .GotoGrounds {
     position: absolute;
-    margin-top: -32vh;
+    margin-top: -37.5vh;
     width: 19vw;
     margin-left: 0.6vw;
     border: none;
@@ -191,7 +195,7 @@ onMounted(() => {
     height: 37vh;
     margin-left: 0.2vw;
     position: absolute;
-    margin-top: -38vh;
+    margin-top: -39vh;
   }
 
   .BackImg {
