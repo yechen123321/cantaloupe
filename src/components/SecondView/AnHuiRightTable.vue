@@ -1,12 +1,10 @@
 <script setup>
-import AnHuiRightTop from "@/components/SecondView/AnHuiViewTools/AnHuiRightTop.vue";
+
 </script>
 
 <template>
     <div class="SecondRightTable">
-        <AnHuiRightTop id="AnHuiRightTop-out"></AnHuiRightTop>
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
-
     </div>
 </template>
 
@@ -19,11 +17,20 @@ import AnHuiRightTop from "@/components/SecondView/AnHuiViewTools/AnHuiRightTop.
         position: absolute;
         width: 30vw;
         height: 23vh;
+        margin-left: -12vw;
+        margin-top: 0vh;
 
+    }
+
+    #AnHuiRightDown{
+      width: 23vw;
+      height: 23vh;
+        position: absolute;
+        margin-top: -30vh;
     }
   .BackImg {
     width: 26vw;
-    height: 82vh;
+    height: 58vh;
   }
 }
 </style>

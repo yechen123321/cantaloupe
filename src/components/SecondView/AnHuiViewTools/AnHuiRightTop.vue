@@ -1,113 +1,88 @@
 <script setup>
-import {ref, onMounted,} from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import * as echarts from 'echarts';
+
 const echartsRef = ref(null);
 let myChart30 = null;
 let option30 = null;
+let currentIndex = 0;
+let highlightTimer = null;
 
 onMounted(() => {
     myChart30 = echarts.init(echartsRef.value);
+    var colorList = [
+        '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
+    ];
+    let data = [
+        { value: 800, name: '煤炭' },
+        { value: 700, name: '石油' },
+        { value: 600, name: '天然气' },
+        { value: 500, name: '水力能源' },
+        { value: 450, name: '风能' },
+        { value: 400, name: '太阳能' },
+        { value: 300, name: '生物质能' },
+        { value: 200, name: '地热能' },
+    ];
 
     option30 = {
+
         series: [
             {
-                type: 'gauge',
-                startAngle: 180,
-                endAngle: 0,
-                center: ['50%', '75%'],
-                radius: '90%',
-                min: 0,
-                max: 1,
-                splitNumber: 5,
-                axisLine: {
-                    lineStyle: {
-                        width: 6,
-                        color: [
-                            [0.25, '#FF6E76'],
-                            [0.5, '#FDDD60'],
-                            [0.75, '#58D9F9'],
-                            [1, '#7CFFB2']
-                        ]
-                    }
+                backgroundColor: colorList,
+                itemStyle: {
+                    borderWidth: 0,
+                    borderRadius: [10, 10, 0, 0],
                 },
-                pointer: {
-                    icon: 'path://M12.8,0.7l12,40.1H0.7L12.8,0.7z',
-                    length: '12%',
-                    width: 20,
-                    offsetCenter: [0, '-60%'],
-                    itemStyle: {
-                        color: 'auto'
-                    }
-                },
-                axisTick: {
-                    length: 12,
-                    lineStyle: {
-                        color: 'auto',
-                        width: 2
-                    }
-                },
-                splitLine: {
-                    length: 20,
-                    lineStyle: {
-                        color: 'auto',
-                        width: 5
-                    }
-                },
-                axisLabel: {
-                    color: '#fff',
-                    fontSize: 20,
-                    distance: -60,
-                    rotate: 'tangential',
-                    formatter: function (value) {
-                        if (value === 0.875) {
-                            return 'Grade A';
-                        } else if (value === 0.625) {
-                            return 'Grade B';
-                        } else if (value === 0.375) {
-                            return 'Grade C';
-                        } else if (value === 0.125) {
-                            return 'Grade D';
-                        }
-                        return '';
-                    }
-                },
-                title: {
-                    offsetCenter: [0, '-10%'],
-                    fontSize: 20
-                },
-                detail: {
-                    fontSize: 30,
-                    offsetCenter: [0, '-35%'],
-                    valueAnimation: true,
-                    formatter: function (value) {
-                        if (value <= 0.25 && value >= 0) {
-                            return '低程度';
-                        }
-                        if (value > 0.25 && value <= 0.5) {
-                            return '中低程度';
-                        }
-                        if (value > 0.5 && value <= 0.75) {
-                            return '中高程度';
-                        }
-                        if (value > 0.75 && value <= 1) {
-                            return '高程度';
-                        }
-                        return '';
+                name: 'Funnel',
+                type: 'funnel',
+                width: '40%',
+                height: '45%',
+                left: '30%',
+                top: '5%',
+                label: {
+                    position: 'center',
+                    textStyle: {
+                        color: 'white',
+                        fontSize: 14, // 初始字体大小
+                        fontWeight: 'normal', // 初始字体粗细
                     },
-                    color: 'inherit'
                 },
-                data: [
-                    {
-                        value: 0.7,
-                        color:'white',
-                        name:'发展程度'
-                    }
-                ]
-            }
-        ]
+                data: data,
+            },
+        ],
     };
 
     option30 && myChart30.setOption(option30);
+
+    // 循环触发数据项高亮效果
+    highlightTimer = setInterval(() => {
+        // 取消上一个数据项的高亮状态
+        myChart30.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: currentIndex === 0 ? data.length - 1 : currentIndex - 1,
+        });
+
+        myChart30.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: currentIndex,
+        });
+
+        // 修改被选中数据项的字体大小和粗细
+        myChart30.setOption({
+            series: [{
+                label: {
+                    emphasis: {
+                        fontSize: 18, // 被选中的字体变大
+                        fontWeight: 'bold', // 被选中的字体变粗
+                    },
+                },
+            }],
+        });
+
+        currentIndex = (currentIndex + 1) % data.length;
+    }, 1000); // 每隔1秒切换高亮显示的数据项
 
     const resizeObserver = new ResizeObserver(() => {
         myChart30.resize();
@@ -116,11 +91,16 @@ onMounted(() => {
     resizeObserver.observe(echartsRef.value);
 });
 
+// 组件销毁时清除定时器
+onBeforeUnmount(() => {
+    clearInterval(highlightTimer);
+});
 </script>
-
 <template>
   <div class="AnHuiRightTop">
+      <div class="AnHuiRightTop-title">安徽省储量前八能源</div>
       <div class="AnHuiRightTop-echarts" ref="echartsRef"></div>
+      <img class="BackImg" src="../../../assets/pic/border4.png" alt="">
   </div>
 </template>
 
@@ -128,9 +108,29 @@ onMounted(() => {
   .AnHuiRightTop{
     width: 100%;
     height: 100%;
+    .AnHuiRightTop-title{
+      font-size: 1.2vw;
+      width: 24vw;
+      //background: red;
+      color: white;
+      text-align: center;
+      position: absolute;
+      font-weight: bolder;
+      //background: none;
+      margin-top: -9.5vh;
+      margin-left: 13vw;
+    }
     .AnHuiRightTop-echarts{
-      width: 30vw;
-      height: 30vh;
+      position: absolute;
+      width: 50vw;
+      height: 33vh;
+      margin-top: -7.5vh;
+    }
+    .BackImg{
+      width: 25vw;
+      height: 20vh;
+      margin-left: 12vw;
+      margin-top: -10vh;
     }
   }
 </style>

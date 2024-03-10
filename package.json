@@ -25,7 +25,8 @@
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vue-seamless-scroll": "^1.1.23",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "webpack": "^5.90.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

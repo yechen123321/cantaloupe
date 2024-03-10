@@ -7,17 +7,34 @@
         <china-map id="map"></china-map>
         <MainDown id="MainDown"></MainDown>
         <FootLoop id="FootLoop"></FootLoop>
+<!--         <button  @click="actions.initBooksList" style="position: absolute; z-index:123123; width: 200px; height: 200px">adawdawda</button>-->
     </div>
 </template>
 
 <script setup>
-import ChinaMap from "@/components/ChinaMap.vue";
+import ChinaMap from "@/components/FirstView/ChinaMap.vue";
 import BigTitle from "@/components/BigTitle.vue";
 import MainRightTop from "@/components/FirstView/MainRightTop.vue";
 import MainRightButtom from "@/components/FirstView/MainRightButtom.vue";
 import MainLeftTable from "@/components/FirstView/MainLeftTable.vue";
 import FootLoop from '@/components/FootLoop.vue'
 import MainDown from "@/components/FirstView/MainDown.vue";
+
+// import { initlandlist } from '@/api';
+//
+// const actions = {
+//     initBooksList({ commit }) {
+//         initlandlist().then(res => {
+//             console.log('Response Data:', res.data); // 输出传回来的请求数据
+//             if (res.status === 200) {
+//                 commit('INITBOOKSLIST', res.data);
+//             }
+//         }).catch(err => {
+//             console.error('Error:', err); // 输出错误信息
+//         });
+//     }
+// };
+
 </script>
 
 <style lang="scss">

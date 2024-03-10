@@ -1,7 +1,7 @@
 <script setup>
 import {onMounted, onUnmounted, ref} from 'vue';
 import * as echarts from 'echarts';
-import '../assets/china';
+import '../../assets/china';
 import {getCityPositionByName} from '@/assets/cityPostion';
 
 let mockData = [
