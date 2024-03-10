@@ -43,7 +43,8 @@ onMounted(() => {
                     { value: 735, name: '铁矿' },
                     { value: 580, name: '基岩' },
                     { value: 484, name: '石灰石' },
-                    { value: 300, name: '钻石' }
+                    { value: 300, name: '钻石' },
+                    { value: 300, name: '其他' }
                 ]
             }
         ]
@@ -61,14 +62,14 @@ onMounted(() => {
             myChart31.dispatchAction({
                 type: 'downplay',
                 seriesIndex: 0,
-                dataIndex: prevIndex
+                dataIndex: prevIndex,
             });
         }
 
         myChart31.dispatchAction({
             type: 'highlight',
             seriesIndex: 0,
-            dataIndex: currentIndex
+            dataIndex: currentIndex,
         });
     });
 
@@ -89,13 +90,13 @@ function startInterval() {
             myChart31.dispatchAction({
                 type: 'downplay',
                 seriesIndex: 0,
-                dataIndex: prevIndex
+                dataIndex: prevIndex,
             });
 
             myChart31.dispatchAction({
                 type: 'highlight',
                 seriesIndex: 0,
-                dataIndex: currentIndex
+                dataIndex: currentIndex,
             });
         }
     }, 2000);

@@ -233,7 +233,7 @@ onMounted(() => {
         margin-right: 0.8vw;
         margin-top: -24vh;
         z-index: 199;
-        border-left: 1px solid #0d87f6;
+        border-left: 1.5px solid #0d87f6;
     }
   #SecondMiddenCenter-echarts {
     width: 28vw;
