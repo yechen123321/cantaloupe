@@ -18,7 +18,7 @@ onMounted(() => {
             itemWidth: 15, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             width: '10vw',
-            left:'20%',
+            left: '22%',
             data: ['实际', '预期'],
             textStyle: {
                 color: 'white',
@@ -111,7 +111,7 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     .AnHuiRightDownFirst-thing{
-      margin-top: -2vh;
+      margin-top: 25vh;
       .AnHuiRightDownFirst-down{
         color: white;
         position: absolute;
@@ -154,7 +154,9 @@ onMounted(() => {
       //background: red;
       height: 23vh;
       margin-left: -5vw;
+      position: absolute;
       margin-top: 4vh;
+      z-index: 399;
     }
   }
 </style>
