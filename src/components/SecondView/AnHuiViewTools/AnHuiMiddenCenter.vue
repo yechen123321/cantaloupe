@@ -41,8 +41,9 @@ onMounted(() => {
             }
         },
         legend: {
-            itemWidth: 10, // 标签宽度为10px
-            itemHeight: 10, // 标签高度为10px
+            top:'15%',
+            // itemWidth: 10, // 标签宽度为10px
+            // itemHeight: 10, // 标签高度为10px
             textStyle: {
                 color: 'white',
             },
@@ -184,9 +185,9 @@ onMounted(() => {
     border: none;
     background: none;
     font-weight: bolder;
-    font-size: 1.2vw;
+    font-size: 1.3vw;
     color: white;
-    margin-top: 5vh;
+    margin-top: 1.5vh;
     margin-left: -30vw;
     cursor: pointer;
     //z-index: 999;

@@ -44,14 +44,14 @@ onMounted(() => {
     option22 = {
         backgroundColor: 'rgba(128,128,128,0)',
         color:colorList,
-        title: {
-            left: 'center',
-            top: '-1%',
-            text: '安徽省矿场产量总览',
-            textStyle: {
-                color: 'white',
-            },
-        },
+        // title: {
+        //     left: 'center',
+        //     top: '-1%',
+        //     text: '安徽省矿场产量总览',
+        //     textStyle: {
+        //         color: 'white',
+        //     },
+        // },
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 10vw; height: 14vh;', // 设置tooltip框的宽度和高度，调整框的大小
@@ -205,6 +205,7 @@ onMounted(() => {
 <template>
     <div className="SecondMiddenCenter">
         <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
+        <div class="SecondMiddenCenter-title">安徽省矿场产量总览</div>
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
         <AnHuiMiddenDownThing id="AnHuiMiddenDownThing-out"></AnHuiMiddenDownThing>
         <!--        <Button class="GotoOre" @click="handleRouteChange">矿场详情</Button>-->
@@ -216,21 +217,28 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   color: white;
+    .SecondMiddenCenter-title{
+        position: absolute;
+        margin-top: -28.7vh;
+        margin-left: 15vw;
+        font-size: 1.3vw;
+        font-weight: bolder;
+    }
     #AnHuiMiddenDownThing-out{
         width: 12vw;
-        height: 24vh;
+        height: 18vh;
         position: absolute;
         right: 0;
         //background: red;
         margin-right: 0.8vw;
-        margin-top: -27vh;
+        margin-top: -24vh;
         z-index: 199;
         border-left: 1px solid #0d87f6;
     }
   #SecondMiddenCenter-echarts {
     width: 28vw;
     height: 27vh;
-    margin-left: 0vw;
+    //margin-left: 0vw;
     position: absolute;
     margin-top: -28.2vh;
     z-index: 166;

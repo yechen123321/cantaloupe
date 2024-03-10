@@ -108,6 +108,10 @@ onBeforeUnmount(() => {
 
 <template>
     <div class="AnHuiMiddenDownThing">
+        <div class="AnHuiMiddenDownThing-title">
+            <div class="first">矿场数：</div>
+            <div class="second">123123 座</div>
+        </div>
         <div class="AnHuiMiddenDownThing-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -116,12 +120,24 @@ onBeforeUnmount(() => {
 .AnHuiMiddenDownThing {
     width: 100%;
     height: 100%;
-
+    .AnHuiMiddenDownThing-title{
+        font-weight: bolder;
+        margin-top: -1vh;
+        width: 12vw;
+        //background: red;
+        margin-left: 1vw;
+        .first{
+            float: left;
+        }
+        .second{
+            margin-top: 1vh;
+        }
+    }
     .AnHuiMiddenDownThing-echarts {
         width: 20vw;
         height: 20vh;
         margin-left: -3.5vw;
-        margin-top: 4vh;
+        margin-top: -1.5vh;
     }
 }
 </style>
