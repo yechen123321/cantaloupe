@@ -1,13 +1,17 @@
 <script setup>
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
+import AnHuiMiddenDownThing from "@/components/SecondView/AnHuiViewTools/AnHuiMiddenDownThing.vue";
 const echartsRef = ref(null);
 let myChart22 = null;
 let option22 = null;
 
 onMounted(() => {
     myChart22 = echarts.init(echartsRef.value);
-    const yearCount = 7;
+    var colorList = [
+        '#ea7ccc', '#73c0de', '#3ba272', '#fc8452',
+    ];
+    const yearCount = 3;
     const categoryCount = 30;
     const xAxisData = [];
     const customData = [];
@@ -16,13 +20,13 @@ onMounted(() => {
     legendData.push('趋势');
     const encodeY = [];
     for (var i = 0; i < yearCount; i++) {
-        legendData.push(2017 + i + '');
+        legendData.push(2021 + i + '');
         dataList.push([]);
         encodeY.push(1 + i);
     }
     for (var i = 0; i < categoryCount; i++) {
         var val = Math.random(1, 100) * 1000;
-        xAxisData.push('矿场' + i + '\t单位 / 吨');
+        xAxisData.push('矿场' + i );
         var customVal = [i];
         customData.push(customVal);
         for (var j = 0; j < dataList.length; j++) {
@@ -38,10 +42,11 @@ onMounted(() => {
         }
     }
     option22 = {
-        backgroundColor:'rgba(128,128,128,0)',
+        backgroundColor: 'rgba(128,128,128,0)',
+        color:colorList,
         title: {
             left: 'center',
-            top: '12%',
+            top: '-1%',
             text: '安徽省矿场产量总览',
             textStyle: {
                 color: 'white',
@@ -49,14 +54,14 @@ onMounted(() => {
         },
         tooltip: {
             trigger: 'axis',
-            extraCssText: 'width: 10vw; height: 24vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            extraCssText: 'width: 10vw; height: 14vh;', // 设置tooltip框的宽度和高度，调整框的大小
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name; // 获取矿地的名字
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold; margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/万千瓦时' + '<br>'+ '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
                     }
                 });
                 return tooltipContent;
@@ -65,6 +70,7 @@ onMounted(() => {
         },
         legend: {
             data: legendData,
+            top: '12%',
             textStyle: {
                 color: 'white'
             }
@@ -200,7 +206,8 @@ onMounted(() => {
     <div className="SecondMiddenCenter">
         <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
-<!--        <Button class="GotoOre" @click="handleRouteChange">矿场详情</Button>-->
+        <AnHuiMiddenDownThing id="AnHuiMiddenDownThing-out"></AnHuiMiddenDownThing>
+        <!--        <Button class="GotoOre" @click="handleRouteChange">矿场详情</Button>-->
     </div>
 </template>
 
@@ -209,13 +216,23 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   color: white;
-
+    #AnHuiMiddenDownThing-out{
+        width: 12vw;
+        height: 24vh;
+        position: absolute;
+        right: 0;
+        //background: red;
+        margin-right: 0.8vw;
+        margin-top: -27vh;
+        z-index: 199;
+        border-left: 1px solid #0d87f6;
+    }
   #SecondMiddenCenter-echarts {
-    width: 44vw;
+    width: 28vw;
     height: 27vh;
-    margin-left: -1.5vw;
+    margin-left: 0vw;
     position: absolute;
-    margin-top: -27.5vh;
+    margin-top: -28.2vh;
     z-index: 166;
   }
 

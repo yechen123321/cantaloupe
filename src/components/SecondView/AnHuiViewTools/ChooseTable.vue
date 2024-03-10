@@ -156,7 +156,8 @@ const options = ref([
     position: absolute;
     margin-top: 6vh;
     z-index: 222;
-      margin-right: -1vw;
+    margin-right: -1vw;
+
     .SelectBox {
       width: 7vw;
       height: 4vh;

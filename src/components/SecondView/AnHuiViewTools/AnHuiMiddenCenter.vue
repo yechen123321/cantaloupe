@@ -18,7 +18,7 @@ onMounted(() => {
         //         color: 'white',
         //     },
         // },
-        backgroundColor:'rgba(128,128,128,0)',
+        backgroundColor: 'rgba(128,128,128,0)',
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 13vw',
@@ -31,7 +31,7 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold; margin-right: 1vw">' + mineName + '</span>' + '单位/万千瓦时' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold; margin-right: 1vw">' + mineName + '</span>' + '单位/万千瓦时' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
@@ -57,7 +57,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                data: ['2019', '2020', '2021', '2022', '2023'],
                 axisLine: {
                     lineStyle: {
                         color: 'white',

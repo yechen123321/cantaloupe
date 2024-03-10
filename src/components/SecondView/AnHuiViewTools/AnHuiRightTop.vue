@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
 
 const echartsRef = ref(null);
@@ -14,14 +14,14 @@ onMounted(() => {
         '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
     ];
     let data = [
-        { value: 800, name: '煤炭' },
-        { value: 700, name: '石油' },
-        { value: 600, name: '天然气' },
-        { value: 500, name: '水力能源' },
-        { value: 450, name: '风能' },
-        { value: 400, name: '太阳能' },
-        { value: 300, name: '生物质能' },
-        { value: 200, name: '地热能' },
+        {value: 800, name: '煤炭'},
+        {value: 700, name: '石油'},
+        {value: 600, name: '天然气'},
+        {value: 500, name: '水力能源'},
+        {value: 450, name: '风能'},
+        {value: 400, name: '太阳能'},
+        {value: 300, name: '生物质能'},
+        {value: 200, name: '地热能'},
     ];
 
     option30 = {
@@ -96,41 +96,45 @@ onBeforeUnmount(() => {
     clearInterval(highlightTimer);
 });
 </script>
+
 <template>
-  <div class="AnHuiRightTop">
-      <div class="AnHuiRightTop-title">安徽省储量前八能源</div>
-      <div class="AnHuiRightTop-echarts" ref="echartsRef"></div>
-      <img class="BackImg" src="../../../assets/pic/border4.png" alt="">
-  </div>
+    <div class="AnHuiRightTop">
+        <div class="AnHuiRightTop-title">安徽省储量前八能源</div>
+        <div class="AnHuiRightTop-echarts" ref="echartsRef"></div>
+        <img class="BackImg" src="../../../assets/pic/border4.png" alt="">
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .AnHuiRightTop{
-    width: 100%;
-    height: 100%;
-    .AnHuiRightTop-title{
-      font-size: 1.2vw;
-      width: 24vw;
-      //background: red;
-      color: white;
-      text-align: center;
-      position: absolute;
-      font-weight: bolder;
-      //background: none;
-      margin-top: -9.5vh;
-      margin-left: 13vw;
-    }
-    .AnHuiRightTop-echarts{
-      position: absolute;
-      width: 50vw;
-      height: 33vh;
-      margin-top: -7.5vh;
-    }
-    .BackImg{
-      width: 25vw;
-      height: 20vh;
-      margin-left: 12vw;
-      margin-top: -10vh;
-    }
+.AnHuiRightTop {
+  width: 100%;
+  height: 100%;
+
+  .AnHuiRightTop-title {
+    font-size: 1.2vw;
+    width: 24vw;
+    //background: red;
+    color: white;
+    text-align: center;
+    position: absolute;
+    font-weight: bolder;
+    //background: none;
+    margin-top: -9.5vh;
+    margin-left: 13vw;
   }
+
+  .AnHuiRightTop-echarts {
+    position: absolute;
+    width: 50vw;
+    height: 33vh;
+    margin-top: -7.5vh;
+  }
+
+  .BackImg {
+    width: 25vw;
+    height: 20vh;
+    margin-left: 12vw;
+    margin-top: -10vh;
+  }
+}
 </style>

@@ -50,7 +50,7 @@ import AnHuiRightTop from "@/components/SecondView/AnHuiViewTools/AnHuiRightTop.
 
   #SecondRightTable {
     width: 25vw;
-    height: 80vh;
+    height: 60vh;
     right: 0;
     margin-top: 26.8vh;
     margin-right: 2.5vw;
