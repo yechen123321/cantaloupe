@@ -18,15 +18,7 @@ onMounted(async () => {
         // 处理从initlandlist获取的数据，例如更新echarts图表
         if (data) {
             option8 = {
-                // title: {
-                //     text: '全国土地利用情况',
-                //     // subtext: 'Fake Data',
-                //     top: '15%',
-                //     left: 'center',
-                //     textStyle: {
-                //         color: 'white',
-                //     },
-                // },
+
                 tooltip: {
                     trigger: 'axis',
                     extraCssText: 'width: 10vw; height: 16vh;', // 设置tooltip框的宽度和高度，调整框的大小

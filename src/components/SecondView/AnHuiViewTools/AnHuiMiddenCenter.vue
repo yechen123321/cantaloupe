@@ -23,7 +23,7 @@ onMounted(() => {
             trigger: 'axis',
             extraCssText: 'width: 13vw',
             axisPointer: {
-                type: 'shadow'
+                type: 'shadow',
             },
             // textStyle: {
             //     fontWeight: 'bold'

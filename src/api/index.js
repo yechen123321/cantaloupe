@@ -5,3 +5,8 @@ export const initlandlist = () => request({
     method: 'get'
 })
 
+export const initKlist = () => request({
+    url: '/rscefacilt/13',
+    method: 'get'
+})
+

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="AnHuiLeftMidden">
+  <div class="AnHuiLeftDown">
 
   </div>
 </template>
