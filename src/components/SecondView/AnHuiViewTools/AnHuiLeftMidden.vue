@@ -146,7 +146,7 @@ onMounted(() => {
 
 <template>
     <div class="AnHuiLeftMidden">
-        <div class="AnHuiLeftMidden-title">全国XXXXXXXX</div>
+        <div class="AnHuiLeftMidden-title">安徽省XXXXXXXX</div>
         <div class="AnHuiLeftMidden-echarts" ref="echartsRef"></div>
     </div>
 </template>

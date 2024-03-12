@@ -68,6 +68,7 @@ onMounted(() => {
                 },
                 label: {
                     show: true,
+                    fontWeight: 'bold',
                     color:'white'
                 },
                 emphasis: {
@@ -98,6 +99,7 @@ onMounted(() => {
                 },
                 label: {
                     show: true,
+                    fontWeight: 'bold',
                     color:'white'
                 },
                 data: [
@@ -123,7 +125,7 @@ onMounted(() => {
 
 <template>
   <div class="AnHuiLeftTop">
-      <div class="AnHuiLeftTop-title">全国XXXXXXX</div>
+      <div class="AnHuiLeftTop-title">安徽省 XXXXXXX</div>
     <div class="AnHuiLeftTop-echarts" ref="echartsRef"></div>
   </div>
 </template>

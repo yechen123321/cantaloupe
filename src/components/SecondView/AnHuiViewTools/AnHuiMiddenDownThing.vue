@@ -14,7 +14,9 @@ onMounted(() => {
 
     option31 = {
         series: [
+
             {
+
                 name: 'Access From',
                 type: 'pie',
                 radius: ['40%', '70%'],

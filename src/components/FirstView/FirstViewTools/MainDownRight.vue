@@ -79,30 +79,27 @@ onMounted(() => {
                 },
                 style: {
                     fill: color[i],
-                    opacity: 0.25
-                }
+                    opacity: 0.25,
+                },
             });
         }
     }
     option11 = {
         tooltip: {
-            trigger: 'axis', // 设置触发类型为坐标轴
-            tooltip: {
-                trigger: 'axis',
-                extraCssText: 'width: 10vw; height: 24vh;', // 设置tooltip框的宽度和高度，调整框的大小
-                formatter: function (params) {
-                    let tooltipContent = '';
-                    let mineName = params[0].name; // 获取矿地的名字
-                    tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
-                    params.forEach(function (param) {
-                        if (param.seriesName !== '趋势') {
-                            tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
-                        }
-                    });
-                    return tooltipContent;
-                }
-
+            trigger: 'axis',
+            extraCssText: 'width: 10vw; height: 16vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name; // 获取矿地的名字
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '年</span>' + '<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName !== '趋势') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
             },
+
         },
         // title: {
         //     text: '全国林地结构图',
@@ -124,25 +121,29 @@ onMounted(() => {
         grid,
         yAxis: {
             type: 'value',
+            max: 100,
             axisLine: {
                 lineStyle: {
                     color: 'white',
-                }
-            }
+                },
+            },
+            axisLabel: {
+                formatter: '{value}%'
+            },
         },
         xAxis: {
             type: 'category',
             axisLine: {
                 lineStyle: {
                     color: 'white',
-                }
+                },
             },
             data: ['2019', '2020', '2021', '2022', '2023',]
         },
         series,
         graphic: {
             elements
-        }
+        },
     };
 
     option11 && myChart11.setOption(option11);
@@ -158,7 +159,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownRight">
-        <Button class="GotoForest">全国林地结构图</Button>
+        <Button class="GotoForest">全国森林结构图</Button>
         <div id="MainDownRight-echarts" ref="echartsRef"></div>
     </div>
 </template>

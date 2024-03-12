@@ -1,13 +1,16 @@
 <script setup>
 import AnHuiLeftTop from "@/components/SecondView/AnHuiViewTools/AnHuiLeftTop.vue";
 import AnHuiLeftMidden from "@/components/SecondView/AnHuiViewTools/AnHuiLeftMidden.vue";
+import AnHuiLeftDown from "@/components/SecondView/AnHuiViewTools/AnHuiLeftDown.vue";
 </script>
 
 <template>
     <div class="SecondLeftTable">
         <AnHuiLeftTop id="AnHuiLeftTop-out"></AnHuiLeftTop>
         <AnHuiLeftMidden id="AnHuiLeftMidden-out"></AnHuiLeftMidden>
+
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
+        <AnHuiLeftDown id="AnHuiLeftDown-out"></AnHuiLeftDown>
     </div>
 </template>
 
@@ -26,9 +29,16 @@ import AnHuiLeftMidden from "@/components/SecondView/AnHuiViewTools/AnHuiLeftMid
     #AnHuiLeftMidden-out{
         width: 23vw;
         height: 23vh;
-        margin-left: 1.5vw;
+        margin-left: 1.3vw;
         margin-top: 28vh;
         position: absolute;
+    }
+    #AnHuiLeftDown-out{
+        width: 23vw;
+        height: 23vh;
+        //margin-left: 0vw;
+        position: absolute;
+        margin-top: -32vh;
     }
   .BackImg {
     width: 26vw;

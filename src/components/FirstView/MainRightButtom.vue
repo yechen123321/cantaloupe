@@ -28,7 +28,7 @@ onMounted(() => {
             itemHeight: 10, // 标签高度为10px
             width: '10vw',
             left: 'right',
-            data: ['实际', '预期'],
+            data: ['计划', '预估'],
             textStyle: {
                 color: 'white',
             }
@@ -74,14 +74,14 @@ onMounted(() => {
                 data: [
                     {
                         value: [5000, 14000, 28000, 26000, 42000, 21000],
-                        name: '预期',
+                        name: '计划',
                         areaStyle: {
                             color: '#73C0DE' // 粉红色，与深蓝色相呼应
                         },
                     },
                     {
                         value: [4200, 3000, 20000, 35000, 50000, 18000],
-                        name: '实际',
+                        name: '预估',
                         areaStyle: {
                             color: '#FAC858' // 橙色，与深蓝色相呼应
                         },

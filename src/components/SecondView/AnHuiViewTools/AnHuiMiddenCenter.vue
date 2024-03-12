@@ -210,6 +210,7 @@ onMounted(() => {
     margin-left: -0.5vw;
     position: absolute;
     margin-top: -27.5vh;
+      z-index: 200;
   }
 
   .BackImg {

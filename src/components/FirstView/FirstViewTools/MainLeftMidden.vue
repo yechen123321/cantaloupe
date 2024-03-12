@@ -69,6 +69,7 @@ onMounted(() => {
                 },
                 label: {
                     show: true,
+                    fontWeight: 'bold',
                     color:'white'
                 },
                 emphasis: {
@@ -96,7 +97,8 @@ onMounted(() => {
                 },
                 label: {
                     show: true,
-                    color:'white'
+                    color:'white',
+                    fontWeight: 'bold',
                 },
                 data: [
                     {value: 30, name: '北部'},
@@ -105,7 +107,7 @@ onMounted(() => {
                     {value: 24, name: '东部'},
                     {value: 22, name: '西部'},
                 ]
-            }
+            },
         ]
     };
     option2 && myChart2.setOption(option2);
@@ -148,14 +150,5 @@ onMounted(() => {
     margin-top: -21.5vh;
   }
 
-  @keyframes glow {
-    from {
-      box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
-    }
-
-    to {
-      box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
-    }
-  }
 }
 </style>
