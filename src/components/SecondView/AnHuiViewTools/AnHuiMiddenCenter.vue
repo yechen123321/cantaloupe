@@ -72,9 +72,9 @@ onMounted(() => {
                 axisLine: {
                     lineStyle: {
                         color: 'white',
-                    }
-                }
-            }
+                    },
+                },
+            },
         ],
         series: [
             {

@@ -15,6 +15,7 @@ onMounted(() => {
         '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
     ];
     option2 = {
+        backgroundColor:'rgba(128,128,128,0)',
         color: colorList,
         // title: {
         //     top:'-2%',
@@ -66,6 +67,10 @@ onMounted(() => {
                 itemStyle: {
                     borderRadius: 3
                 },
+                label: {
+                    show: true,
+                    color:'white'
+                },
                 emphasis: {
                     label: {
                         show: true,
@@ -88,6 +93,10 @@ onMounted(() => {
                 roseType: 'area',
                 itemStyle: {
                     borderRadius: 5
+                },
+                label: {
+                    show: true,
+                    color:'white'
                 },
                 data: [
                     {value: 30, name: '北部'},

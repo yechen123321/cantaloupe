@@ -1,10 +1,130 @@
 <script setup>
+import {onMounted, ref} from "vue";
+import * as echarts from "echarts";
 
+const echartsRef = ref(null);
+let myChart38 = null;
+let option38 = null;
+
+onMounted(() => {
+    myChart38 = echarts.init(echartsRef.value, 'dark');
+    var colorList = [
+        '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
+    ];
+    // Your echarts option setup here...
+    // (Your existing option setup code)
+    option38 ={
+        backgroundColor:'rgba(128,128,128,0)',
+        color: colorList,
+        // title: {
+        //     top:'-2%',
+        //     text: '全国资源开发与消耗占比',
+        //     // subtext: 'Fake Data',
+        //     left: 'center',
+        //     textStyle: {
+        //         color: 'white',
+        //     },
+        // },
+        tooltip: {
+            trigger: 'item',
+            textStyle:{
+                fontWeight:'bold',
+            },
+            // formatter: '{a} <br/>{b} : {c} 吨 ({d}%)',
+            formatter: '{a} <br/>{b} : {d}%'
+        },
+        legend: {
+            left: 'center',
+            top: 'bottom',
+            data: [
+                '东部',
+                '西部',
+                '北部',
+                '南部',
+                '中部',
+            ],
+            textStyle: {
+                color: 'white',
+            },
+        },
+        // toolbox: {
+        //     show: true,
+        //     feature: {
+        //         mark: { show: true },
+        //         dataView: { show: true, readOnly: false },
+        //         restore: { show: true },
+        //         saveAsImage: { show: true }
+        //     }
+        // },
+        series: [
+            {
+                name: '地区开发',
+                type: 'pie',
+                radius: ['20%', '50%'],
+                center: ['33%', '48%'],
+                roseType: 'radius',
+                itemStyle: {
+                    borderRadius: 3,
+                },
+                label: {
+                    show: true,
+                    color:'white'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 16,
+                        color: 'white',
+                        fontWeight: 'bold'
+                    }
+                },
+                data: [
+                    {value: 40, name: '北部'},
+                    {value: 33, name: '东部'},
+                    {value: 28, name: '西部'},
+                    {value: 22, name: '南部'},
+                    {value: 20, name: '中部'},
+                ]
+            },
+
+            {
+                name: '地区消耗',
+                type: 'pie',
+                radius: ['20%', '50%'],
+                center: ['72%', '48%'],
+                roseType: 'area',
+                itemStyle: {
+                    borderRadius: 5
+                },
+                label: {
+                    show: true,
+                    color:'white'
+                },
+                data: [
+                    {value: 30, name: '北部'},
+                    {value: 28, name: '南部'},
+                    {value: 26, name: '中部'},
+                    {value: 24, name: '东部'},
+                    {value: 22, name: '西部'},
+                ],
+
+            }
+        ]
+    };
+    option38 && myChart38.setOption(option38);
+
+    const resizeObserver = new ResizeObserver(() => {
+        myChart38.resize();
+    });
+
+    resizeObserver.observe(echartsRef.value);
+});
 </script>
 
 <template>
   <div class="AnHuiLeftTop">
-
+      <div class="AnHuiLeftTop-title">全国XXXXXXX</div>
+    <div class="AnHuiLeftTop-echarts" ref="echartsRef"></div>
   </div>
 </template>
 
@@ -12,5 +132,21 @@
   .AnHuiLeftTop{
     width: 100%;
     height: 100%;
+    color:white;
+    .AnHuiLeftTop-title{
+      position: absolute;
+      color: white;
+      margin-top: -0.3vh;
+      text-align: center;
+      //background: red;
+      width: 23vw;
+      margin-left: 3.5vw;
+      font-weight: bolder;
+      font-size: 1.3vw;
+    }
+    .AnHuiLeftTop-echarts{
+      width: 29vw;
+      height: 22vh;
+    }
   }
 </style>

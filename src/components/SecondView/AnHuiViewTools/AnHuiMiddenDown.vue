@@ -220,7 +220,7 @@ onMounted(() => {
     .SecondMiddenCenter-title{
         position: absolute;
         margin-top: -28.7vh;
-        margin-left: 15vw;
+        margin-left: 14vw;
         font-size: 1.3vw;
         font-weight: bolder;
     }

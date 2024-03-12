@@ -169,56 +169,47 @@ onMounted(async () => {
 
 <style scoped lang="scss">
 .MainChinaLeft {
-  width: 100vw;
-  height: 100vh;
-  color: white;
-
-  .GotoGrounds {
-    position: absolute;
-    margin-top: -37.5vh;
-    width: 19vw;
-    margin-left: 0.6vw;
-    border: none;
-    background: none;
+    width: 100vw;
+    height: 100vh;
     color: white;
-    font-weight: bolder;
-    //cursor: pointer;
-    font-size: 1.2vw;
-    z-index: 999;
-  }
 
-  //.GotoGrounds:hover {
-  //  font-size: 1.3vw;
-  //  margin-top: -32.3vh;
-  //}
-  //
-  //.GotoGrounds:active {
-  //  margin-top: -32vh;
-  //  font-size: 1.2vw;
-  //}
-
-  #MainChinaLeft-echarts {
-    width: 19vw;
-    height: 37vh;
-    margin-left: 0.2vw;
-    position: absolute;
-    margin-top: -39vh;
-  }
-
-  .BackImg {
-    width: 20.2vw;
-    height: 40vh;
-    margin-top: -20vh;
-  }
-
-  @keyframes glow {
-    from {
-      box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
+    .GotoGrounds {
+        position: absolute;
+        margin-top: -37.5vh;
+        width: 19vw;
+        margin-left: 0.6vw;
+        border: none;
+        background: none;
+        color: white;
+        font-weight: bolder;
+        //cursor: pointer;
+        font-size: 1.2vw;
+        z-index: 999;
     }
 
-    to {
-      box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
+    //.GotoGrounds:hover {
+    //  font-size: 1.3vw;
+    //  margin-top: -32.3vh;
+    //}
+    //
+    //.GotoGrounds:active {
+    //  margin-top: -32vh;
+    //  font-size: 1.2vw;
+    //}
+
+    #MainChinaLeft-echarts {
+        width: 19vw;
+        height: 37vh;
+        margin-left: 0.2vw;
+        position: absolute;
+        margin-top: -39vh;
     }
-  }
+
+    .BackImg {
+        width: 20.2vw;
+        height: 40vh;
+        margin-top: -20vh;
+    }
+
 }
 </style>
