@@ -9,140 +9,165 @@ let option9 = null;
 
 onMounted(() => {
     myChart9 = echarts.init(echartsRef.value);
-
-
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#396afc'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        // 其他渐变色定义...
+    ];
     option9 = {
-
+        color: colorList,
         tooltip: {
             trigger: 'axis',
-            extraCssText: 'width: 10vw; height: 21vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>'+ '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
-                    if (param.seriesName !== '趋势') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                    if (param.seriesName === '全国能耗降低率') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
+                    }
+                    else {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
                     }
                 });
                 return tooltipContent;
             }
 
         },
-        legend: {
-            data: ['煤炭', '石油', '天然气', '页岩气', '页岩油', '煤层气', '油页岩'],
-            textStyle: {
-                color: 'white'
-            }
+        grid: {
+            left: '5.3%', // 调整图表左边距
+            right: '5%', // 调整图表右边距
+            // top: '10%', // 调整图表上边距
+            bottom: '15%', // 调整图表下边距
+            containLabel: true,
         },
         // toolbox: {
         //     feature: {
-        //         saveAsImage: {}
+        //         dataView: {show: true, readOnly: false},
+        //         restore: {show: true},
+        //         saveAsImage: {show: true}
         //     }
         // },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
+        legend: {
+            data: ['能源消耗', '全国GDP', '全国能耗降低率'],
+            textStyle:{
+                color:'white'
+            }
         },
         xAxis: [
             {
                 type: 'category',
-                boundaryGap: false,
-                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
-                axisLine: {
+                axisTick: {
+                    alignWithLabel: true
+                },  axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
-                }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                },
+                // prettier-ignore
+                data: [  'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             }
         ],
         yAxis: [
             {
                 type: 'value',
+                name: '万亿元',
+                position: 'right',
+                alignTicks: true,
+                nameTextStyle: {
+                    padding:[0,-30,0,0]
+                },
                 axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
                 }
-            }
+            },
+            {
+                type: 'value',
+                name: '降低率',
+                nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
+                position: 'right',
+                nameTextStyle: {
+                   padding:[0,-38,0,0]
+                },
+                alignTicks: true,
+                offset: 40,
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            },
+            {
+                type: 'value',
+                name: '标准煤 / 万亿吨',
+                position: 'left',
+                alignTicks: true,
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            },
         ],
         series: [
             {
-                name: '煤炭',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [120, 132, 101, 134, 90, 230, 210]
+                name: '能源消耗',
+                type: 'bar',
+                yAxisIndex: 2,
+                data: [
+                     135.6, 162.2, 32.6, 20.0, 6.4,
+                ]
             },
             {
-                name: '石油',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [220, 182, 191, 234, 290, 330, 310]
+                name: '全国GDP',
+                type: 'bar',
+                yAxisIndex: 0,
+                data: [
+                     175.6, 182.2, 48.7, 18.8, 6.0
+                ]
             },
             {
-                name: '天然气',
+                name: '全国能耗降低率',
                 type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [150, 232, 201, 154, 190, 330, 410]
-            },
-            {
-                name: '页岩气',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [320, 332, 301, 334, 390, 330, 320]
-            },
-            {
-                name: '页岩油',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [820, 932, 901, 934, 1290, 1330, 1320]
-            },
-            {
-                name: '煤层气',
-                type: 'line',
-                stack: 'Total',
-
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [820, 932, 901, 934, 1290, 1330, 1320]
-            },
-            {
-                name: '油页岩',
-                type: 'line',
-                stack: 'Total',
-
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [820, 932, 901, 934, 1290, 1330, 1320]
+                yAxisIndex: 1,
+                data: [  3.4, 2.0, 1.5, 1.0, 3.2]
             },
         ]
     };
+
     option9 && myChart9.setOption(option9);
 
     const resizeObserver = new ResizeObserver(() => {
@@ -156,7 +181,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownLeft">
-        <Button class="GotoQ">全国化石能源产量趋势</Button>
+        <Button class="GotoQ">全国能源效率水平</Button>
         <div id="MainDownLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -179,6 +204,7 @@ onMounted(() => {
     font-size: 1.2vw;
     //cursor: pointer;
   }
+
   //
   //.GotoQ:hover {
   //  font-size: 1.3vw;
@@ -189,8 +215,8 @@ onMounted(() => {
   //}
 
   #MainDownLeft-echarts {
-    width: 23vw;
-    height: 30vh;
+    width: 25vw;
+    height: 35vh;
     margin-left: 0.5vw;
     position: absolute;
     margin-top: -21.5vh;

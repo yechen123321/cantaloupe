@@ -95,7 +95,7 @@ onMounted(() => {
                 },
                 label: {
                     // show:'false',
-                    formatter: '{b}数据为：{@2018} ({d}%)',
+                    formatter: `占比为：{d}%`,
                     color: 'white',
                 },
                 encode: {
@@ -195,7 +195,7 @@ onMounted(() => {
                     },
                     label: {
                         // show:'false',
-                        formatter: '数据为：{@2018} ({d}%)'
+                        formatter: '数据为：{d}%'
                     },
                     encode: {
                         itemName: 'product',
@@ -215,13 +215,12 @@ onMounted(() => {
                         label: {
                             show: true,
                             // formatter: `数据为： {@${dimension}} ({d}%)`
-                            formatter: `数据为： {@${dimension}}  ({d}%)`
+                            formatter: `占比为：{d}%`
                         },
                         encode: {
                             value: dimension,
                             tooltip: dimension
                         },
-
                     }
                 });
             }

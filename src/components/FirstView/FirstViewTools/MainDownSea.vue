@@ -10,74 +10,124 @@ let option7 = null;
 onMounted(() => {
     myChart7 = echarts.init(echartsRef.value);
     option7 = {
-        tooltip: {
-            trigger: 'item',
-            textStyle:{
-                fontWeight:'bold',
-            },
-            formatter: '{a} <br/>{b}: {c} ({d}%)'
-        },
         legend: {
-            // type: 'scroll',
-            itemWidth: 10, // 标签宽度为20px
-            itemHeight: 10, // 标签高度为10px
-            top: '-4',
-            textStyle: {
-                color: 'white'
-            },
-            data: [
-                '渔业用海',
-                '工业用海',
-                '交通运输用海',
-                '造地工程用海',
-                '特殊用海',
-                '其他用海',
-                '滨海旅游业',
-                '海洋交通运输业',
-                '海洋渔业',
-            ]
+            top:"10%",
+            data: ['水电', '火电', '核电', '风电', '太阳能'],
+            textStyle:{
+                color:'white'
+            }
         },
+        tooltip: {
+            trigger: 'axis',
+            extraCssText: 'width: 10vw; height: 20vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name;
+                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位 / 万千瓦<br>'+ '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName !== '趋势') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '5%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            }
+        ],
         series: [
             {
-                name: '主要海洋产业增加值',
-                type: 'pie',
-                selectedMode: 'single',
-                radius: [0, '30%'],
-                top: '27%',
-                labelLine: {
-                    length: 30
+                name: '水电',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
                 },
-                label: {
-                    color: 'white',
-                },
-                data: [
-                    {value: 1548, name: '滨海旅游业'},
-                    {value: 775, name: '海洋交通运输业',},
-                    {value: 679, name: '海洋渔业', selected: true}
-                ]
+                data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
-                name: '全国批准用海结构',
-                type: 'pie',
-                top: '25%',
-                radius: ['45%', '60%'],
-                label: {
-                    color: 'white',
+                name: '火电',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
                 },
-                labelLine: {
-                    length: 30
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '核电',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
                 },
-                data: [
-                    {value: 1048, name: '渔业用海'},
-                    {value: 335, name: '工业用海'},
-                    {value: 310, name: '交通运输用海'},
-                    {value: 251, name: '造地工程用海'},
-                    {value: 234, name: '特殊用海'},
-                    {value: 147, name: '其他用海'},
-                ]
+                data: [150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '风电',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name: '太阳能 ',
+                type: 'line',
+                stack: 'Total',
+                // label: {
+                //     show: true,
+                //     position: 'top'
+                // },
+                areaStyle: {},
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
             }
         ]
     };
+
 
     option7 && myChart7.setOption(option7);
 
@@ -92,7 +142,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownSea">
-        <Button class="GotoSea">全国批准用海结构</Button>
+        <Button class="GotoSea">全国发电装机容量</Button>
         <div id="MainDownSea-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -129,10 +179,10 @@ onMounted(() => {
 
   #MainDownSea-echarts {
     width: 23vw;
-    height: 28vh;
-    margin-left: 1vw;
+    height: 32vh;
+    margin-left: 0.6vw;
     position: absolute;
-    margin-top: -21.5vh;
+    margin-top: -25.5vh;
   }
 
   @keyframes glow {

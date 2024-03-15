@@ -8,14 +8,14 @@
         <img src="../assets/pic/top2.png" class="top-title" alt="">
         <img src="../assets/pic/header.gif" class="top-title-head" alt="">
 <!--        <img src="../assets/pic/11-l.png" class="top-title-second-gif" alt="">-->
-        <div class="TitleName">致态</div>
+        <div class="TitleName">溯源</div>
 <!--        &lt;!&ndash;      <img class="Screen-left" src="../assets/pic/p.png" alt="">&ndash;&gt;-->
 <!--        &lt;!&ndash;      <img class="Screen-right" src="../assets/pic/pp.png" alt="">&ndash;&gt;-->
         <Router-Link class="Button" style="margin-left: 41.5vw;" to="/">
             全国数据概览
             <img style="" src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
-        <Router-Link class="Button" style="margin-left: 55vw;" to="/">
+        <Router-Link class="Button" style="margin-left: 55vw;" to="/anhui">
             地方能源分析
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>

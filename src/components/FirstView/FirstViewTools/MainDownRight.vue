@@ -9,141 +9,79 @@ let option11 = null;
 
 onMounted(() => {
     myChart11 = echarts.init(echartsRef.value);
-    const rawData = [
-        [100, 302, 301, 334, 390,],
-        [320, 132, 101, 134, 90,],
-        [220, 182, 191, 234, 290,],
-        [150, 212, 201, 154, 190,],
-    ];
-    const totalData = [];
-    for (let i = 0; i < rawData[0].length; ++i) {
-        let sum = 0;
-        for (let j = 0; j < rawData.length; ++j) {
-            sum += rawData[j][i];
-        }
-        totalData.push(sum);
-    }
-    const grid = {
-        left: 100,
-        right: 100,
-        top: 50,
-        bottom: 50
-    };
-    const gridWidth = myChart11.getWidth() - grid.left - grid.right;
-    const gridHeight = myChart11.getHeight() - grid.top - grid.bottom;
-    const categoryWidth = gridWidth / rawData[0].length;
-    const barWidth = categoryWidth * 0.6;
-    const barPadding = (categoryWidth - barWidth) / 2;
-    const series = [
-        '乔木林地',
-        '灌木林地',
-        '竹木林地',
-        '其他林地',
-    ].map((name, sid) => {
-        return {
-            name,
-            type: 'bar',
-            stack: 'total',
-            barWidth: '60%',
-            // label: {
-            //     show: true,
-            //     formatter: (params) => Math.round(params.value) + '%'
-            // },
-            data: rawData[sid].map((d, did) =>
-                totalData[did] <= 0 ? 0 : ((d / totalData[did]) * 100).toFixed(1) // 将数据转换为百分比
-            )
-        };
-    });
-    const color = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de'];
-    const elements = [];
-    for (let j = 1, jlen = rawData[0].length; j < jlen; ++j) {
-        const leftX = grid.left + categoryWidth * j - barPadding;
-        const rightX = leftX + barPadding * 2;
-        let leftY = grid.top + gridHeight;
-        let rightY = leftY;
-        for (let i = 0, len = series.length; i < len; ++i) {
-            const points = [];
-            const leftBarHeight = (rawData[i][j - 1] / totalData[j - 1]) * gridHeight;
-            points.push([leftX, leftY]);
-            points.push([leftX, leftY - leftBarHeight]);
-            const rightBarHeight = (rawData[i][j] / totalData[j]) * gridHeight;
-            points.push([rightX, rightY - rightBarHeight]);
-            points.push([rightX, rightY]);
-            points.push([leftX, leftY]);
-            leftY -= leftBarHeight;
-            rightY -= rightBarHeight;
-            elements.push({
-                type: 'polygon',
-                shape: {
-                    points
-                },
-                style: {
-                    fill: color[i],
-                    opacity: 0.25,
-                },
-            });
-        }
-    }
-    option11 = {
-        tooltip: {
-            trigger: 'axis',
-            extraCssText: 'width: 10vw; height: 16vh;', // 设置tooltip框的宽度和高度，调整框的大小
-            formatter: function (params) {
-                let tooltipContent = '';
-                let mineName = params[0].name; // 获取矿地的名字
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '年</span>' + '<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
-                params.forEach(function (param) {
-                    if (param.seriesName !== '趋势') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
-                    }
-                });
-                return tooltipContent;
-            },
 
-        },
-        // title: {
-        //     text: '全国林地结构图',
-        //     top: '7%',
-        //     left: 'center',
-        //     textStyle: {
-        //         color: 'white',
-        //     },
-        // },
+    option11 = {
+        color: ['#73C0DE', '#FAC858'],
+        backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
-            top: '7%',
-            itemWidth: 10, // 标签宽度为10px
+            itemWidth: 15, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
+            width: '10vw',
+            left: '60%',
+            top: '30vh',
+            data: ['国内总量', '世界平均'],
             textStyle: {
-                color: 'white'
-            },
-            selectedMode: true
+                color: 'white',
+            }
         },
-        grid,
-        yAxis: {
-            type: 'value',
-            max: 100,
+        radar: {
+            // shape: 'circle',
+            center: ['50%', '50%'], // 调整雷达图的位置，这里设置为图表中心
+            radius: '55%', // 调整雷达图的大小
+            indicator: [
+                {name: '煤炭', max: 6500},
+                {name: '石油', max: 16000},
+                {name: '天然气', max: 30000},
+                {name: '地热', max: 38000},
+                {name: '风能', max: 52000},
+                {name: '太阳能 ', max: 25000},
+            ],
+
+            splitNumber: 4, // 分割的圈数
             axisLine: {
+                show: false, // 隐藏雷达图的轴线
                 lineStyle: {
                     color: 'white',
                 },
             },
-            axisLabel: {
-                formatter: '{value}%'
-            },
-        },
-        xAxis: {
-            type: 'category',
-            axisLine: {
+            splitLine: {
                 lineStyle: {
-                    color: 'white',
-                },
+                    color: ['#B8B8B8'], // 设置分隔线的颜色
+                    width: 1 // 设置分隔线的宽度
+                }
             },
-            data: ['2019', '2020', '2021', '2022', '2023',]
+            name: {
+                textStyle: {
+                    fontWeight: 'bold',
+                    color: '#fff' // 设置雷达图每一个角的文字颜色为白色
+                }
+            },
         },
-        series,
-        graphic: {
-            elements
-        },
+        series: [
+            {
+                name: 'Budget vs spending',
+                type: 'radar',
+                symbol: 'none', // 去掉每个角的小点
+                data: [
+                    {
+                        value: [5000, 14000, 28000, 26000, 42000, 21000],
+                        name: '国内总量',
+                        areaStyle: {
+                            color: '#73C0DE' // 粉红色，与深蓝色相呼应
+                        },
+                    },
+                    {
+                        value: [4200, 3000, 20000, 35000, 50000, 18000],
+                        name: '世界平均',
+                        areaStyle: {
+                            color: '#FAC858' // 橙色，与深蓝色相呼应
+                        },
+
+                    },
+
+                ]
+            }
+        ]
     };
 
     option11 && myChart11.setOption(option11);
@@ -159,7 +97,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownRight">
-        <Button class="GotoForest">全国森林结构图</Button>
+        <Button class="GotoForest">全国能源储量统计</Button>
         <div id="MainDownRight-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -178,7 +116,7 @@ onMounted(() => {
     border: none;
     background: none;
     color: white;
-    margin-left: 7.7vw;
+    margin-left: 9.3vw;
     z-index: 999;
     //cursor: pointer;
   }
@@ -201,7 +139,7 @@ onMounted(() => {
     //margin-left: 0vw;
     position: absolute;
     margin-top: -21.5vh;
-
+    margin-left: 1.5vw;
   }
 
   @keyframes glow {

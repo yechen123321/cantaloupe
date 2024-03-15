@@ -14,6 +14,7 @@
     "delaunator": "^5.0.0",
     "echarts": "^5.5.0",
     "echarts-gl": "^2.0.9",
+    "echarts-stat": "^1.2.0",
     "echarts-wordcloud": "^2.1.0",
     "element-plus": "^2.5.6",
     "geo-point-in-polygon": "^1.0.0",

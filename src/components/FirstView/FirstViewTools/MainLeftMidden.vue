@@ -38,11 +38,12 @@ onMounted(() => {
             left: 'center',
             top: 'bottom',
             data: [
-                '东部',
-                '西部',
-                '北部',
-                '南部',
-                '中部',
+                '东北',
+                '华北',
+                '华东',
+                '中南',
+                '西南',
+                '西北',
             ],
             textStyle: {
                 color: 'white',
@@ -78,11 +79,12 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    {value: 40, name: '北部'},
-                    {value: 33, name: '东部'},
-                    {value: 28, name: '西部'},
-                    {value: 22, name: '南部'},
-                    {value: 20, name: '中部'},
+                    {value: 40, name: '东北'},
+                    {value: 33, name: '华北'},
+                    {value: 28, name: '华东'},
+                    {value: 22, name: '中南'},
+                    {value: 10, name: '西南'},
+                    {value: 10, name: '西北'},
                 ]
             },
 
@@ -101,11 +103,12 @@ onMounted(() => {
                     fontWeight: 'bold',
                 },
                 data: [
-                    {value: 30, name: '北部'},
-                    {value: 28, name: '南部'},
-                    {value: 26, name: '中部'},
-                    {value: 24, name: '东部'},
-                    {value: 22, name: '西部'},
+                    {value: 40, name: '东北'},
+                    {value: 33, name: '华北'},
+                    {value: 28, name: '华东'},
+                    {value: 22, name: '中南'},
+                    {value: 10, name: '西南'},
+                    {value: 10, name: '西北'},
                 ]
             },
         ]
@@ -122,7 +125,7 @@ onMounted(() => {
 
 <template>
     <div className="MainLeftMidden">
-        <div class="MainLeftMidden-title">全国资源开发与需求占比</div>
+        <div class="MainLeftMidden-title">全国能源开发与需求占比</div>
         <div id="MainLeftMidden-echarts" ref="echartsRef"></div>
     </div>
 </template>
