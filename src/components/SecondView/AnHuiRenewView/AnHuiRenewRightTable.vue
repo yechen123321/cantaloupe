@@ -1,11 +1,11 @@
 <script setup>
-import AnHuiRightDownFirst from "@/components/SecondView/AnHuiMainViewTools/AnHuiRightDownFirst.vue";
-import AnHuiRightDownSecond from "@/components/SecondView/AnHuiMainViewTools/AnHuiRightDownSecond.vue";
+import AnHuiRightDownFirst from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRightDownFirst.vue";
+import AnHuiRightDownSecond from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRightDownSecond.vue";
 </script>
 
 <template>
     <div class="SecondRightTable">
-        <img class="BackImg" src="../../assets/pic/border3.png" alt="">
+        <img class="BackImg" src="../../../assets/pic/border3.png" alt="">
         <AnHuiRightDownFirst id="AnHuiRightDownFirst-out"></AnHuiRightDownFirst>
         <AnHuiRightDownSecond id="AnHuiRightDownFirst-out"></AnHuiRightDownSecond>
     </div>

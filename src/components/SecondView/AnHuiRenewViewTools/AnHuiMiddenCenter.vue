@@ -10,6 +10,19 @@ let option21 = null;
 onMounted(() => {
     myChart21 = echarts.init(echartsRef.value);
     option21 = {
+        // toolbox: {
+        //     iconStyle: {
+        //         borderColor: "#fff",
+        //     },
+        //     showTitle:false,
+        //     right:'3%',
+        //     feature: {
+        //         dataView: { show: true, readOnly: false },
+        //         magicType: { show: true, type: ['line', 'bar'] },
+        //         restore: { show: true },
+        //         saveAsImage: { show: true }
+        //     }
+        // },
         // title: {
         //     text: '你好不好我不好',
         //     left: 'center',
@@ -41,7 +54,7 @@ onMounted(() => {
             }
         },
         legend: {
-            top:'15%',
+            top: '15%',
             // itemWidth: 10, // 标签宽度为10px
             // itemHeight: 10, // 标签高度为10px
             textStyle: {
@@ -58,7 +71,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['2019', '2020', '2021', '2022', '2023'],
+                data: ['2018', '2019', '2020', '2021', '2022', '2023'],
                 axisLine: {
                     lineStyle: {
                         color: 'white',
@@ -78,7 +91,7 @@ onMounted(() => {
         ],
         series: [
             {
-                name: '太阳能',
+                name: '光生发电',
                 type: 'bar',
                 emphasis: {
                     focus: 'series'
@@ -86,7 +99,7 @@ onMounted(() => {
                 data: [320, 332, 301, 334, 390, 330, 320]
             },
             {
-                name: '地热能',
+                name: '水生发电',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -95,7 +108,7 @@ onMounted(() => {
                 data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
-                name: '潮汐能',
+                name: '风生发电',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -104,7 +117,7 @@ onMounted(() => {
                 data: [220, 182, 191, 234, 290, 330, 310]
             },
             {
-                name: '生物能',
+                name: '生物质能',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -113,7 +126,7 @@ onMounted(() => {
                 data: [150, 232, 201, 154, 190, 330, 410]
             },
             {
-                name: '核能',
+                name: '氢能',
                 type: 'bar',
                 data: [862, 1018, 964, 1026, 1679, 1600, 1570],
                 emphasis: {
@@ -162,13 +175,14 @@ onMounted(() => {
     });
 
     resizeObserver.observe(echartsRef.value);
+
 });
 </script>
 
 <template>
     <div className="SecondMiddenCenter">
         <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
-        <Button class="GotoMore">安徽省新能源产能图</Button>
+        <Button class="GotoMore">安徽省再生能源产能图</Button>
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -185,9 +199,9 @@ onMounted(() => {
     border: none;
     background: none;
     font-weight: bolder;
-    font-size: 1.3vw;
+    font-size: 1.26em;
     color: white;
-    margin-top: 1.5vh;
+    margin-top: 1.3vh;
     margin-left: -30vw;
     cursor: pointer;
     //z-index: 999;
@@ -210,7 +224,7 @@ onMounted(() => {
     margin-left: -0.5vw;
     position: absolute;
     margin-top: -27.5vh;
-      z-index: 200;
+    z-index: 200;
   }
 
   .BackImg {

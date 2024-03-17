@@ -26,6 +26,19 @@ onMounted(() => {
     ];
     option9 = {
         color: colorList,
+        // toolbox: {
+        //     iconStyle: {
+        //         borderColor: "#fff",
+        //     },
+        //     showTitle:false,
+        //     right:'3%',
+        //     feature: {
+        //         dataView: { show: true, readOnly: false },
+        //         // magicType: { show: true, type: ['line', 'bar'] },
+        //         restore: { show: true },
+        //         saveAsImage: { show: true }
+        //     }
+        // },
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
@@ -52,14 +65,8 @@ onMounted(() => {
             bottom: '15%', // 调整图表下边距
             containLabel: true,
         },
-        // toolbox: {
-        //     feature: {
-        //         dataView: {show: true, readOnly: false},
-        //         restore: {show: true},
-        //         saveAsImage: {show: true}
-        //     }
-        // },
         legend: {
+            // left:'0%',
             data: ['能源消耗', '全国GDP', '全国能耗降低率'],
             textStyle:{
                 color:'white'

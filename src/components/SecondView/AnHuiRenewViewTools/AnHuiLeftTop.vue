@@ -28,11 +28,11 @@ onMounted(() => {
             left: 'center',
             top: 'bottom',
             data: [
-                '东部',
-                '西部',
-                '北部',
-                '南部',
-                '中部',
+                '光伏',
+                '水利',
+                '风能',
+                '质能',
+                '其他',
             ],
             textStyle: {
                 color: 'white',
@@ -71,11 +71,11 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    {value: 40, name: '北部'},
-                    {value: 33, name: '东部'},
-                    {value: 28, name: '西部'},
-                    {value: 22, name: '南部'},
-                    {value: 20, name: '中部'},
+                    {value: 40, name: '光伏'},
+                    {value: 33, name: '水利'},
+                    {value: 28, name: '风能'},
+                    {value: 22, name: '质能'},
+                    {value: 20, name: '其他'},
                 ]
             },
 
@@ -94,11 +94,11 @@ onMounted(() => {
                     color:'white'
                 },
                 data: [
-                    {value: 30, name: '北部'},
-                    {value: 28, name: '南部'},
-                    {value: 26, name: '中部'},
-                    {value: 24, name: '东部'},
-                    {value: 22, name: '西部'},
+                    {value: 30, name: '光伏'},
+                    {value: 28, name: '水利'},
+                    {value: 26, name: '风能'},
+                    {value: 24, name: '质能'},
+                    {value: 22, name: '其他'},
                 ],
 
             }
@@ -116,7 +116,7 @@ onMounted(() => {
 
 <template>
   <div class="AnHuiLeftTop">
-      <div class="AnHuiLeftTop-title">安徽省 XXXXXXX</div>
+      <div class="AnHuiLeftTop-title">安徽省再生能源结构</div>
     <div class="AnHuiLeftTop-echarts" ref="echartsRef"></div>
   </div>
 </template>

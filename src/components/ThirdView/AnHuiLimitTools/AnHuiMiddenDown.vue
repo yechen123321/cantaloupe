@@ -1,7 +1,7 @@
 <script setup>
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
-import AnHuiMiddenDownThing from "@/components/SecondView/AnHuiMainViewTools/AnHuiMiddenDownThing.vue";
+import AnHuiMiddenDownThing from "@/components/ThirdView/AnHuiLimitTools/AnHuiMiddenDownThing.vue";
 const echartsRef = ref(null);
 let myChart22 = null;
 let option22 = null;
@@ -51,7 +51,6 @@ onMounted(() => {
         //     textStyle: {
         //         color: 'white',
         //     },
-        // },
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 10vw; height: 14vh;', // 设置tooltip框的宽度和高度，调整框的大小
@@ -243,39 +242,6 @@ onMounted(() => {
     margin-top: -28.2vh;
     z-index: 166;
   }
-
-  //.GotoOre {
-  //  position: absolute;
-  //  margin-left: -8vw;
-  //  margin-top: 5vh;
-  //  width: 6vw;
-  //  height: 2.5vh;
-  //  color: white;
-  //  font-size: 0.8vw;
-  //  font-weight: bolder;
-  //  border-radius: 5px;
-  //  z-index: 999;
-  //  cursor: pointer;
-  //  border: none;
-  //  background: #0d87f6;
-  //}
-  //
-  //.GotoOre:hover {
-  //  width: 6.5vw;
-  //  height: 3vh;
-  //  margin-top: 5vh;
-  //  margin-left: -8.3vw;
-  //  font-size: 1vw;
-  //}
-  //
-  //.GotoOre:active {
-  //    margin-left: -8vw;
-  //    margin-top: 5vh;
-  //  width: 6vw;
-  //  height: 2.5vh;
-  //  color: white;
-  //  font-size: 0.8vw;
-  //}
 
   .BackImg {
     width: 40vw;

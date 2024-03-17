@@ -6,21 +6,20 @@ const router = useRouter();
 
 const handleRouteChange = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
-    router.push('/'); // 替换'/new-route'为您要跳转的路由路径
+    router.push('/anhui'); // 替换'/new-route'为您要跳转的路由路径
 };
 
 const options = ref([
-    {where: '安徽'},
-    {where: '全国'},
-    {where: '北京'},
-    {where: '浙江'},
-    {where: '重庆'},
-    {where: '西藏'},
-    {where: '四川'},
-    {where: '山东'},
-    {where: '上海'},
-    {where: '广东'},
-    {where: '广西'},
+    {where: '安徽', value:1},
+    {where: '北京', value:2},
+    {where: '浙江', value:3},
+    {where: '重庆', value:4},
+    {where: '西藏', value:5},
+    {where: '四川', value:6},
+    {where: '山东', value:7},
+    {where: '上海', value:8},
+    {where: '广东', value:9},
+    {where: '广西', value:10},
 ]);
 
 
@@ -42,33 +41,33 @@ const options = ref([
         <div class="factory">
             <ul class="factoryUl">
                 <li>
-                    <img src="../../../assets/水库.png" alt="">
+                    <img  src="../../../assets/水库.png" alt="">
                     <div class="number">43.59</div>
                     <div class="up">
-                        总蓄水量
+                        水生电能
                     </div>
                     <div class="down">
-                        亿立方米
+                        亿千瓦时
                     </div>
                 </li>
                 <li style="margin-top: 0.63vh">
                     <img src="../../../assets/太阳能发电.png" alt="">
                     <div class="number">3135</div>
                     <div class="up">
-                        总发电量
+                        光生电能
                     </div>
                     <div class="down">
                         亿千瓦时
                     </div>
                 </li>
                 <li>
-                    <img src="../../../assets/耕地面积.png" alt="">
+                    <img src="../../../assets/风力发电.png" alt="">
                     <div class="number">8800</div>
                     <div class="up">
-                        耕地面积
+                        风生电能
                     </div>
                     <div class="down">
-                        万亩
+                        亿千瓦时
                     </div>
                 </li>
             </ul>

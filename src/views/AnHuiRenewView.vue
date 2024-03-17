@@ -1,10 +1,10 @@
 <script setup>
 import BigTitle from "@/components/BigTitle.vue";
 import FootLoop from '@/components/FootLoop.vue';
-import SecondLeftTable from "@/components/SecondView/AnHuiLeftTable.vue";
-import SecondRightTable from "@/components/SecondView/AnHuiRightTable.vue";
-import SecondMiddem from "@/components/SecondView/AnHuiMidden.vue";
-import AnHuiRightTop from "@/components/SecondView/AnHuiMainViewTools/AnHuiRightTop.vue";
+import SecondLeftTable from "@/components/SecondView/AnHuiRenewView/AnHuiRenewLeftTable.vue";
+import SecondRightTable from "@/components/SecondView/AnHuiRenewView/AnHuiRenewRightTable.vue";
+import SecondMiddem from "@/components/SecondView/AnHuiRenewView/AnHuiRenewMidden.vue";
+import AnHuiRightTop from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRightTop.vue";
 
 </script>
 

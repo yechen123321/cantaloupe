@@ -15,7 +15,7 @@
             全国数据概览
             <img style="" src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
-        <Router-Link class="Button" style="margin-left: 55vw;" to="/anhui">
+        <Router-Link class="Button" style="margin-left: 55vw;" to="/anhuirenew">
             地方再生能源
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>

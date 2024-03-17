@@ -1,7 +1,7 @@
 <script setup>
-import AnHuiLeftTop from "@/components/SecondView/AnHuiMainViewTools/AnHuiLeftTop.vue";
-import AnHuiLeftMidden from "@/components/SecondView/AnHuiMainViewTools/AnHuiLeftMidden.vue";
-import AnHuiLeftDown from "@/components/SecondView/AnHuiMainViewTools/AnHuiLeftDown.vue";
+import AnHuiLeftTop from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeftTop.vue";
+import AnHuiLeftMidden from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeftMidden.vue";
+import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeftDown.vue";
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiMainViewTools/AnHuiLeftD
         <AnHuiLeftTop id="AnHuiLeftTop-out"></AnHuiLeftTop>
         <AnHuiLeftMidden id="AnHuiLeftMidden-out"></AnHuiLeftMidden>
 
-        <img class="BackImg" src="../../assets/pic/border3.png" alt="">
+        <img class="BackImg" src="../../../assets/pic/border3.png" alt="">
         <AnHuiLeftDown id="AnHuiLeftDown-out"></AnHuiLeftDown>
     </div>
 </template>

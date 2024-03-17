@@ -18,10 +18,11 @@ onMounted(() => {
             itemWidth: 15, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             width: '10vw',
-            left: '22%',
-            data: ['计划', '预估'],
+            left: '18%',
+            data: ['全国平均', '省内总量'],
             textStyle: {
                 color: 'white',
+                fontWeight: 'bold',
             }
         },
         radar: {
@@ -29,12 +30,14 @@ onMounted(() => {
             center: ['50%', '50%'], // 调整雷达图的位置，这里设置为图表中心
             radius: '55%', // 调整雷达图的大小
             indicator: [
-                {name: '矿产', max: 6500},
-                {name: '能源', max: 16000},
-                {name: '水产', max: 30000},
-                {name: '林业', max: 38000},
-                {name: '地质', max: 52000},
-                {name: '海洋', max: 25000}
+                {name: '光伏', max: 65000},
+                {name: '水利', max: 40000},
+                {name: '风力', max: 30000},
+                {name: '地热', max: 38000},
+                {name: '氢能', max: 52000},
+                {name: '潮汐', max: 30000},
+                {name: '核能', max: 30000},
+                {name: '海洋', max: 30000},
             ],
 
             splitNumber: 4, // 分割的圈数
@@ -64,15 +67,15 @@ onMounted(() => {
                 symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
-                        value: [5000, 14000, 28000, 26000, 42000, 21000],
-                        name: '计划',
+                        value: [50000, 35000, 28000, 26000, 42000, 23200 ,21000, 28000],
+                        name: '全国平均',
                         areaStyle: {
                             color: '#73C0DE' // 粉红色，与深蓝色相呼应
                         },
                     },
                     {
-                        value: [4200, 3000, 20000, 35000, 50000, 18000],
-                        name: '预估',
+                        value: [42000, 30000, 20000, 35000, 45000,25000, 18000, 0],
+                        name: '省内总量',
                         areaStyle: {
                             color: '#FAC858' // 橙色，与深蓝色相呼应
                         },
@@ -96,12 +99,12 @@ onMounted(() => {
 
 <template>
   <div class="AnHuiRightDownFirst">
-      <div class="AnHuiRightDownFirst-title">安徽省资源发展概况图</div>
+      <div class="AnHuiRightDownFirst-title">安徽省能源储量概况图</div>
       <div class="AnHuiRightDownFirst-echarts" ref="echartsRef"></div>
       <div class="AnHuiRightDownFirst-thing">
-          <div class="AnHuiRightDownFirst-name">70%</div>
+          <div class="AnHuiRightDownFirst-name">75%</div>
           <img src="../../../assets/pic/pic-4.png" alt="">
-          <div class="AnHuiRightDownFirst-down">发展进度</div>
+          <div class="AnHuiRightDownFirst-down">发展占比</div>
       </div>
   </div>
 </template>
@@ -147,12 +150,12 @@ onMounted(() => {
       text-align: center;
       position: absolute;
       font-weight: bolder;
-      font-size: 1.3vw;
+      font-size: 1.26em;
     }
     .AnHuiRightDownFirst-echarts{
-      width: 21vw;
+      width: 23vw;
       //background: red;
-      height: 23vh;
+      height: 25vh;
       margin-left: -5vw;
       position: absolute;
       margin-top: 4vh;

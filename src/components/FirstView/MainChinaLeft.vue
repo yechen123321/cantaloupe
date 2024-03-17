@@ -177,6 +177,21 @@ onMounted(async () => {
             // }
         },
         // toolbox: {
+        //     iconStyle: {
+        //         borderColor: "#fff",
+        //     },
+        //     showTitle:false,
+        //     top:'82%',
+        //     // itemSize:'10',
+        //     right:'3%',
+        //     feature: {
+        //         dataView: { show: true, readOnly: false },
+        //         magicType: { show: true, type: ['line', 'bar'] },
+        //         restore: { show: true },
+        //         saveAsImage: { show: true }
+        //     }
+        // },
+        // toolbox: {
         //     feature: {
         //         dataView: { show: true, readOnly: false },
         //         magicType: { show: true, type: ['line', 'bar'] },
@@ -219,11 +234,11 @@ onMounted(async () => {
         yAxis: [
             {
                 type: 'value',
-                name: '万吨',
+                name: '标准煤 / 万吨',
                 min: 0,
                 max: 250,
                 nameTextStyle: {
-                    padding:[0,20,0,0]
+                    padding:[0,-10,0,0]
                 },
                 interval: 50,
                 axisLabel: {
@@ -244,7 +259,7 @@ onMounted(async () => {
                 min: 0,
                 max: 25,
                 nameTextStyle: {
-                    padding:[0,-20,0,0]
+                    padding:[0,-25,0,0]
                 },
                 interval: 5,
                 axisLabel: {
