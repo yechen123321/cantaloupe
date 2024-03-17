@@ -4,7 +4,7 @@ import FootLoop from '@/components/FootLoop.vue';
 import SecondLeftTable from "@/components/SecondView/AnHuiLeftTable.vue";
 import SecondRightTable from "@/components/SecondView/AnHuiRightTable.vue";
 import SecondMiddem from "@/components/SecondView/AnHuiMidden.vue";
-import AnHuiRightTop from "@/components/SecondView/AnHuiViewTools/AnHuiRightTop.vue";
+import AnHuiRightTop from "@/components/SecondView/AnHuiMainViewTools/AnHuiRightTop.vue";
 
 </script>
 

@@ -1,7 +1,7 @@
 <script setup>
-import AnHuiLeftTop from "@/components/SecondView/AnHuiViewTools/AnHuiLeftTop.vue";
-import AnHuiLeftMidden from "@/components/SecondView/AnHuiViewTools/AnHuiLeftMidden.vue";
-import AnHuiLeftDown from "@/components/SecondView/AnHuiViewTools/AnHuiLeftDown.vue";
+import AnHuiLeftTop from "@/components/SecondView/AnHuiMainViewTools/AnHuiLeftTop.vue";
+import AnHuiLeftMidden from "@/components/SecondView/AnHuiMainViewTools/AnHuiLeftMidden.vue";
+import AnHuiLeftDown from "@/components/SecondView/AnHuiMainViewTools/AnHuiLeftDown.vue";
 </script>
 
 <template>

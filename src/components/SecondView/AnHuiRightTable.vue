@@ -1,6 +1,6 @@
 <script setup>
-import AnHuiRightDownFirst from "@/components/SecondView/AnHuiViewTools/AnHuiRightDownFirst.vue";
-import AnHuiRightDownSecond from "@/components/SecondView/AnHuiViewTools/AnHuiRightDownSecond.vue";
+import AnHuiRightDownFirst from "@/components/SecondView/AnHuiMainViewTools/AnHuiRightDownFirst.vue";
+import AnHuiRightDownSecond from "@/components/SecondView/AnHuiMainViewTools/AnHuiRightDownSecond.vue";
 </script>
 
 <template>

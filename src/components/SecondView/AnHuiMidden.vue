@@ -1,7 +1,7 @@
 <script setup>
-import ChooseTable from "@/components/SecondView/AnHuiViewTools/ChooseTable.vue";
-import SecondMiddenCenter from "@/components/SecondView/AnHuiViewTools/AnHuiMiddenCenter.vue";
-import SecondMiddenDown from "@/components/SecondView/AnHuiViewTools/AnHuiMiddenDown.vue";
+import ChooseTable from "@/components/SecondView/AnHuiMainViewTools/ChooseTable.vue";
+import SecondMiddenCenter from "@/components/SecondView/AnHuiMainViewTools/AnHuiMiddenCenter.vue";
+import SecondMiddenDown from "@/components/SecondView/AnHuiMainViewTools/AnHuiMiddenDown.vue";
 </script>
 
 <template>

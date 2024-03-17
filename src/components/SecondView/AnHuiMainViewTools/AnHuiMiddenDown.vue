@@ -1,7 +1,7 @@
 <script setup>
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
-import AnHuiMiddenDownThing from "@/components/SecondView/AnHuiViewTools/AnHuiMiddenDownThing.vue";
+import AnHuiMiddenDownThing from "@/components/SecondView/AnHuiMainViewTools/AnHuiMiddenDownThing.vue";
 const echartsRef = ref(null);
 let myChart22 = null;
 let option22 = null;

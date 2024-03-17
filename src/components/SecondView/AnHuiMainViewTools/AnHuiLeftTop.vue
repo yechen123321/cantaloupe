@@ -16,15 +16,6 @@ onMounted(() => {
     option38 ={
         backgroundColor:'rgba(128,128,128,0)',
         color: colorList,
-        // title: {
-        //     top:'-2%',
-        //     text: '全国资源开发与消耗占比',
-        //     // subtext: 'Fake Data',
-        //     left: 'center',
-        //     textStyle: {
-        //         color: 'white',
-        //     },
-        // },
         tooltip: {
             trigger: 'item',
             textStyle:{
