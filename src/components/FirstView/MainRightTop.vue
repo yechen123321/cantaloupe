@@ -2,8 +2,7 @@
 import {ref} from "vue";
 
 const datas = ref([
-    {name: '全国地质勘查投入', number: 1105.0, up: '亿', num: 2.19},
-    {name: '全国地质勘查投入', number: 1105.0, up: '亿', num: 2.19},
+    {name: '全国能源投资建设', number: 28000, up: '亿', num: 1.6},
 ]);
 </script>
 
@@ -27,72 +26,15 @@ const datas = ref([
   width: 100vw;
   height: 100vh;
 
-  .MySelect {
-    .SelectBox {
-      position: absolute;
-      width: 6vw;
-      height: 3.5vh;
-      cursor: pointer;
-      overflow: hidden;
-      font-size: 1vw;
-      right: 0;
-      margin-top: 5vh;
-      margin-right: 1.5vw;
-      background: #4d70cd;
-      color: white;
-      border: none;
-      text-align: center;
-      border-radius: 6px;
-    }
-
-    .GotoAn {
-      width: 6vw;
-      height: 3.5vh;
-      right: 0;
-      margin-top: 10.5vh;
-      margin-right: 1.5vw;
-      position: absolute;
-      cursor: pointer;
-      font-size: 1vw;
-      font-weight: bolder;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      background: #0d87f6;
-      z-index: 222;
-    }
-
-    .GotoAn:hover {
-      width: 6.5vw;
-      height: 4vh;
-      font-size: 1.2vw;
-      margin-top: 10.3vh;
-      margin-right: 1.2vw;
-    }
-
-    .GotoAn:active {
-      width: 6vw;
-      height: 3.5vh;
-      font-size: 1vw;
-      margin-top: 10.5vh;
-      margin-right: 1.5vw;
-    }
-  }
-
   .year-on-year::-webkit-scrollbar {
     display: none;
   }
 
   .year-on-year {
-    //background: red;
     height: 18vh;
-    //margin: 0.5vw;
-    //margin-top: 2vw;
     position: absolute;
     z-index: 10;
-    //overflow: hidden;
     overflow-y: auto;
-    //box-sizing: border-box;
     width: 100%;
     margin-top: 0.6vh;
     margin-left: -1.5vw;
@@ -108,6 +50,7 @@ const datas = ref([
       .li-title {
         float: left;
         width: 18vw;
+        font-size: 1.2vw;
         font-weight: bolder;
         margin-bottom: 2%;
       }
@@ -116,7 +59,7 @@ const datas = ref([
         float: left;
         color: #1cd7cd;
         text-align: center;
-        width: 25%;
+        width: 30%;
         font-weight: bolder;
         text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
         font-size: 2em;
@@ -125,6 +68,7 @@ const datas = ref([
       .li-up {
         float: left;
         margin-left: 4.5%;
+        font-size: 1em;
         margin-top: 1.3%;
         color: #01bae4;
         text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
@@ -134,6 +78,7 @@ const datas = ref([
         float: left;
         margin-left: 4%;
         margin-top: 1.3%;
+        font-size: 1em;
         color: #01bae4;
         text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
       }

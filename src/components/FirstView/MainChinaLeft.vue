@@ -150,8 +150,23 @@ onMounted(async () => {
     //     console.error('Error fetching data:', error);
     // }
 
-
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#2980B9'},
+            {offset: 1, color: '#6DD5FA'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        // 其他渐变色定义...
+    ];
     option8 = {
+        color:colorList,
         tooltip: {
             trigger: 'axis',
             // axisPointer: {
@@ -173,15 +188,15 @@ onMounted(async () => {
             textStyle:{
               color:'white'
             },
-            top:'8%',
-            data: ['1', '2', '3'],
+            top:'3%',
+            data: ['产量', '存量', '产量增长率'],
             itemWidth: 20, // 标签宽度为20px
             itemHeight: 10, // 标签高度为10px
         },
         xAxis: [
             {
                 type: 'category',
-                data: [ 'Thu', 'Fri', 'Sat', 'Sun'],
+                data: [ '2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -198,20 +213,23 @@ onMounted(async () => {
             }
         ],
         grid:{
-            left:'20%',
+            left:'15%',
             right:"13%"
         },
         yAxis: [
             {
                 type: 'value',
-                name: '12',
+                name: '万吨',
                 min: 0,
                 max: 250,
+                nameTextStyle: {
+                    padding:[0,20,0,0]
+                },
                 interval: 50,
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} ml'
+                    }, formatter: '{value} '
 
                 },
                 axisLine: {
@@ -222,14 +240,17 @@ onMounted(async () => {
             },
             {
                 type: 'value',
-                name: '21',
+                name: '百分比',
                 min: 0,
                 max: 25,
+                nameTextStyle: {
+                    padding:[0,-20,0,0]
+                },
                 interval: 5,
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} ml'
+                    }, formatter: '{value} %'
 
                 },
                 axisLine: {
@@ -241,7 +262,7 @@ onMounted(async () => {
         ],
         series: [
             {
-                name: '1',
+                name: '产量',
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
@@ -253,7 +274,7 @@ onMounted(async () => {
                 ]
             },
             {
-                name: '2',
+                name: '存量',
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
@@ -265,7 +286,7 @@ onMounted(async () => {
                 ]
             },
             {
-                name: '3',
+                name: '产量增长率',
                 type: 'line',
                 yAxisIndex: 1,
                 tooltip: {
@@ -290,7 +311,7 @@ onMounted(async () => {
 <template>
     <div className="MainChinaLeft">
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
-        <Button class="GotoGrounds">全国能源储量统计</Button>
+        <Button class="GotoGrounds">全国能源产量及库存</Button>
         <div id="MainChinaLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -303,7 +324,7 @@ onMounted(async () => {
 
   .GotoGrounds {
     position: absolute;
-    margin-top: -37.5vh;
+    margin-top: -38.5vh;
     width: 19vw;
     margin-left: 0.6vw;
     border: none;

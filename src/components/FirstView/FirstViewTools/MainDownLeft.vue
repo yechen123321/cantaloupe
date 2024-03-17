@@ -47,7 +47,7 @@ onMounted(() => {
         },
         grid: {
             left: '5.3%', // 调整图表左边距
-            right: '5%', // 调整图表右边距
+            right: '7%', // 调整图表右边距
             // top: '10%', // 调整图表上边距
             bottom: '15%', // 调整图表下边距
             containLabel: true,
@@ -215,7 +215,7 @@ onMounted(() => {
   //}
 
   #MainDownLeft-echarts {
-    width: 25vw;
+    width: 26vw;
     height: 35vh;
     margin-left: 0.5vw;
     position: absolute;
