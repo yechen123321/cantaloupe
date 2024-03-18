@@ -16,7 +16,11 @@ const routes = [
     name: 'anhuirenew',
     component: () => import('../views/AnHuiRenewView.vue')
   },
-
+  {
+    path: '/anhuisun',
+    name: 'anhuisun',
+    component: () => import('../views/AnHuiSunView.vue')
+  },
 ]
 
 const router = createRouter({

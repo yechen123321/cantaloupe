@@ -1,16 +1,3 @@
-<template>
-    <div class="main">
-        <big-title id="title"></big-title>
-        <MainRightTop id="MainRightTop"></MainRightTop>
-        <MainRightButtom id="MainRightButtom"></MainRightButtom>
-        <MainLeftTable id="MainLeftTable"></MainLeftTable>
-        <china-map id="map"></china-map>
-        <MainDown id="MainDown"></MainDown>
-        <FootLoop id="FootLoop"></FootLoop>
-<!--         <button  @click="actions.initBooksList" style="position: absolute; z-index:123123; width: 200px; height: 200px">adawdawda</button>-->
-    </div>
-</template>
-
 <script setup>
 import ChinaMap from "@/components/FirstView/ChinaMap.vue";
 import BigTitle from "@/components/BigTitle.vue";
@@ -34,8 +21,20 @@ import MainDown from "@/components/FirstView/MainDown.vue";
 //         });
 //     }
 // };
-
 </script>
+<template>
+    <div class="main">
+        <big-title id="title"></big-title>
+        <MainRightTop id="MainRightTop"></MainRightTop>
+        <MainRightButtom id="MainRightButtom"></MainRightButtom>
+        <MainLeftTable id="MainLeftTable"></MainLeftTable>
+        <china-map id="map"></china-map>
+        <MainDown id="MainDown"></MainDown>
+        <FootLoop id="FootLoop"></FootLoop>
+<!--         <button  @click="actions.initBooksList" style="position: absolute; z-index:123123; width: 200px; height: 200px">adawdawda</button>-->
+    </div>
+</template>
+
 
 <style lang="scss">
 .main, html {

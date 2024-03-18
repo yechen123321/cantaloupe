@@ -14,20 +14,21 @@ onMounted(() => {
         '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
     ];
     let data = [
-        {value: 800, name: '煤炭'},
-        {value: 700, name: '石油'},
-        {value: 600, name: '天然气'},
-        {value: 500, name: '水力能源'},
-        {value: 450, name: '风能'},
-        {value: 400, name: '太阳能'},
-        {value: 300, name: '生物质能'},
-        {value: 200, name: '地热能'},
+        {value: 800, name: '风能'},
+        {value: 700, name: '太阳能'},
+        {value: 600, name: '水利'},
+        {value: 500, name: '生物质能'},
+        {value: 450, name: '地热能'},
+        {value: 400, name: '氢能'},
+        {value: 300, name: '沼气'},
+        {value: 200, name: '核能'},
     ];
 
     option30 = {
 
         series: [
             {
+
                 backgroundColor: colorList,
                 itemStyle: {
                     borderWidth: 0,
@@ -99,7 +100,7 @@ onBeforeUnmount(() => {
 
 <template>
     <div class="AnHuiRightTop">
-        <div class="AnHuiRightTop-title">安徽省储量前八能源</div>
+        <div class="AnHuiRightTop-title">安徽省重要再生能源</div>
         <div class="AnHuiRightTop-echarts" ref="echartsRef"></div>
         <img class="BackImg" src="../../../assets/pic/border4.png" alt="">
     </div>

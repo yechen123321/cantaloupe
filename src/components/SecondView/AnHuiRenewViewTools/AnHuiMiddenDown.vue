@@ -214,6 +214,7 @@ onMounted(() => {
     margin-top: 1.5vh;
     margin-left: -1vw;
     position: absolute;
+      z-index: 999;
       //background: red;
   }
 

@@ -19,10 +19,14 @@
             地方再生能源
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
-        <a class="Button" style="margin-right: 6vw; right: 0" href="http://172.18.7.71:8080/admin/">
+<!--        <a class="Button" style="margin-right: 6vw; right: 0" href="http://172.18.7.71:8080/admin/">-->
+<!--            数据站点分析-->
+<!--            <img src="../assets/pic/anniu1.png" alt="">-->
+<!--        </a>-->
+        <Router-Link class="Button" style="margin-right: 6vw; right: 0"  to="/">
             数据站点分析
             <img src="../assets/pic/anniu1.png" alt="">
-        </a>
+        </Router-Link>
         <Router-Link class="Button" style="margin-right: 19.5vw; right: 0" to="/">
             地方有限能源
             <img src="../assets/pic/anniu1.png" alt="">

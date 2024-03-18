@@ -53,8 +53,9 @@ const options = ref([
                         亿千瓦时
                     </div>
                 </li>
-                <li style="margin-top: 0.63vh">
+                <li style="margin-top: -1vh">
                     <img @click="RouteToSun" src="../../../assets/太阳能发电.png" alt="">
+                    <img src="../../../assets/pic/pic-5.png" alt="" style="width: 10vw;margin-top: -2vh; margin-left: -4.5vw; position: absolute;">
                     <div class="number">3135</div>
                     <div class="up">
                         光生电能
@@ -215,7 +216,6 @@ const options = ref([
   .BackImg {
     width: 40vw;
     height: 20vh;
-
   }
 }
 </style>

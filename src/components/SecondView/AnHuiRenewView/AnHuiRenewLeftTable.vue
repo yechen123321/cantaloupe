@@ -8,7 +8,6 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
     <div class="SecondLeftTable">
         <AnHuiLeftTop id="AnHuiLeftTop-out"></AnHuiLeftTop>
         <AnHuiLeftMidden id="AnHuiLeftMidden-out"></AnHuiLeftMidden>
-
         <img class="BackImg" src="../../../assets/pic/border3.png" alt="">
         <AnHuiLeftDown id="AnHuiLeftDown-out"></AnHuiLeftDown>
     </div>
@@ -30,7 +29,7 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
         width: 23vw;
         height: 23vh;
         margin-left: 1.3vw;
-        margin-top: 28vh;
+        margin-top: 29vh;
         position: absolute;
     }
     #AnHuiLeftDown-out{

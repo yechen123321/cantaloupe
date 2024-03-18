@@ -13,16 +13,16 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 0, color: '#396afc'},
+            {offset: 1, color: '#2948ff'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#2980B9'},
-            {offset: 1, color: '#6DD5FA'}
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 1, color: '#92FE9D'},
         ]),
         // 其他渐变色定义...
     ];
@@ -174,7 +174,7 @@ onMounted(() => {
 
 <template>
     <div class="AnHuiLeftDown">
-        <div class="AnHuiLeftDown-title">安徽省XXXXXXX</div>
+        <div class="AnHuiLeftDown-title">安徽省再生能源建设投资</div>
         <div class="AnHuiLeftDown-echarts" ref="echartsRef"></div>
     </div>
 </template>

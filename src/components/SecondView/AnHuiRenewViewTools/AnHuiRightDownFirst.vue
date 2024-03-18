@@ -99,7 +99,7 @@ onMounted(() => {
 
 <template>
   <div class="AnHuiRightDownFirst">
-      <div class="AnHuiRightDownFirst-title">安徽省能源储量概况图</div>
+      <div class="AnHuiRightDownFirst-title">安徽省再生能源储量概况图</div>
       <div class="AnHuiRightDownFirst-echarts" ref="echartsRef"></div>
       <div class="AnHuiRightDownFirst-thing">
           <div class="AnHuiRightDownFirst-name">75%</div>
@@ -113,8 +113,10 @@ onMounted(() => {
   .AnHuiRightDownFirst{
     width: 100%;
     height: 100%;
+
     .AnHuiRightDownFirst-thing{
       margin-top: 25vh;
+
       .AnHuiRightDownFirst-down{
         color: white;
         position: absolute;
@@ -123,6 +125,7 @@ onMounted(() => {
         margin-top: -2.7vh;
          margin-right: 2.8vw;
       }
+
       .AnHuiRightDownFirst-name{
         color: white;
         position: absolute;
@@ -133,6 +136,7 @@ onMounted(() => {
         z-index: 199;
 
       }
+
       img{
         width: 8vw;
         height: 18vh;
@@ -146,20 +150,22 @@ onMounted(() => {
     .AnHuiRightDownFirst-title{
       color: white;
       //background: red;
+      margin-top: -0.6vh;
       width: 21vw;
       text-align: center;
       position: absolute;
       font-weight: bolder;
       font-size: 1.26em;
     }
+
     .AnHuiRightDownFirst-echarts{
       width: 23vw;
-      //background: red;
       height: 25vh;
       margin-left: -5vw;
       position: absolute;
-      margin-top: 4vh;
+      margin-top: 3vh;
       z-index: 399;
     }
+
   }
 </style>

@@ -128,7 +128,6 @@ onBeforeUnmount(() => {
 .AnHuiMiddenDownThing {
   width: 100%;
   height: 100%;
-
   .AnHuiMiddenDownThing-name {
     position: absolute;
     color: white;
@@ -158,11 +157,11 @@ onBeforeUnmount(() => {
   }
 
   .AnHuiMiddenDownThing-echarts {
-    width: 20vw;
+    width: 10vw;
     height: 20vh;
+      //background: red;
     margin-top: 1.8vh;
-    margin-left: -3vw;
-    //background: red;
+    margin-left: 2vw;
       position: absolute;
       z-index: 999;
   }

@@ -8,132 +8,101 @@ let option37 = null;
 
 onMounted(() => {
     myChart37 = echarts.init(echartsRef.value, 'dark');
-
+    var colorList = [
+        '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
+    ];
     // Your echarts option setup here...
     // (Your existing option setup code)
-    option37 = {
-        backgroundColor : 'rgba(128,128,128,0)',
-        // title: {
-        //     text: 'Stacked Area Chart'
-        // },
+    option37 =  {
+        backgroundColor:'rgba(128,128,128,0)',
+        color: colorList,
         tooltip: {
-            trigger: 'axis',
-            extraCssText: 'width: 10vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
-            formatter: function (params) {
-                let tooltipContent = '';
-                let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px; margin-right: 2vw">' + mineName + '</span>' + '单位/XX' +'<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
-                params.forEach(function (param) {
-                    if (param.seriesName !== '趋势') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
-                    }
-                });
-                return tooltipContent;
-            }
+            trigger: 'item',
+            textStyle:{
+                fontWeight:'bold',
+            },
+            // formatter: '{a} <br/>{b} : {c} 吨 ({d}%)',
+            formatter: '{a} <br/>{b} : {d}%'
         },
         legend: {
-            top:'15%',
-            textStyle:{
-              color:'white'
+            left: 'center',
+            top: 'bottom',
+            data: [
+                '光伏',
+                '水利',
+                '风能',
+                '质能',
+                '其他',
+            ],
+            textStyle: {
+                color: 'white',
             },
-            data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
         },
         // toolbox: {
+        //     show: true,
         //     feature: {
-        //         saveAsImage: {}
+        //         mark: { show: true },
+        //         dataView: { show: true, readOnly: false },
+        //         restore: { show: true },
+        //         saveAsImage: { show: true }
         //     }
         // },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis: [
-            {
-                type: 'category',
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    color: 'white' // 设置轴标签文字颜色为白色
-                },
-                boundaryGap: false,
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value',
-                axisLine: {
-                    lineStyle: {
-                        color: 'white', // 设置轴线颜色为白色
-                    },
-                },
-                axisLabel: {
-                    color: 'white' // 设置轴标签文字颜色为白色
-                }
-            }
-        ],
         series: [
             {
-                name: 'Email',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
+                name: '地区开发',
+                type: 'pie',
+                radius: ['20%', '50%'],
+                center: ['32%', '48%'],
+                roseType: 'radius',
+                itemStyle: {
+                    borderRadius: 3,
                 },
-                data: [120, 132, 101, 134, 90, 230, 210]
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    color:'white'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 16,
+                        color: 'white',
+                        fontWeight: 'bold'
+                    }
+                },
+                data: [
+                    {value: 45, name: '光伏'},
+                    {value: 33, name: '水利'},
+                    {value: 28, name: '风能'},
+                    {value: 22, name: '质能'},
+                    {value: 20, name: '其他'},
+                ]
             },
+
             {
-                name: 'Union Ads',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
+                name: '地区消耗',
+                type: 'pie',
+                radius: ['20%', '50%'],
+                center: ['70%', '48%'],
+                roseType: 'area',
+                itemStyle: {
+                    borderRadius: 5
                 },
-                data: [220, 182, 191, 234, 290, 330, 310]
-            },
-            {
-                name: 'Video Ads',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    color:'white'
                 },
-                data: [150, 232, 201, 154, 190, 330, 410]
-            },
-            {
-                name: 'Direct',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {},
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [320, 332, 301, 334, 390, 330, 320]
-            },
-            // {
-            //     name: 'Search Engine',
-            //     type: 'line',
-            //     stack: 'Total',
-            //     label: {
-            //         show: true,
-            //         position: 'top'
-            //     },
-            //     areaStyle: {},
-            //     emphasis: {
-            //         focus: 'series'
-            //     },
-            //     data: [820, 932, 901, 934, 1290, 1330, 1320]
-            // }
+                data: [
+                    {value: 30, name: '光伏'},
+                    {value: 28, name: '水利'},
+                    {value: 26, name: '风能'},
+                    {value: 24, name: '质能'},
+                    {value: 22, name: '其他'},
+                ],
+            }
         ]
-    }
+    };
     option37 && myChart37.setOption(option37);
 
     const resizeObserver = new ResizeObserver(() => {
@@ -146,7 +115,7 @@ onMounted(() => {
 
 <template>
     <div class="AnHuiLeftMidden">
-        <div class="AnHuiLeftMidden-title">安徽省XXXXXXXX</div>
+        <div class="AnHuiLeftMidden-title">安徽省再生能源结构</div>
         <div class="AnHuiLeftMidden-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -165,8 +134,9 @@ onMounted(() => {
             //background: red;
         }
         .AnHuiLeftMidden-echarts{
-            width: 23vw;
+            width: 27vw;
             height: 23vh;
+            margin-left: -2vw;
         }
     }
 </style>
