@@ -24,14 +24,16 @@ import AnHuiRightTop from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRigh
   #BigTitle {
     width: 100vw;
   }
-    #AnHuiRightTop-out{
-        position: absolute;
-        width: 30vw;
-        height: 23vh;
-       right: 0;
-        margin-right: 9vw;
-        margin-top: 14vh;
-    }
+
+  #AnHuiRightTop-out {
+    position: absolute;
+    width: 30vw;
+    height: 23vh;
+    right: 0;
+    margin-right: 9vw;
+    margin-top: 14vh;
+  }
+
   #SecondLeftTable {
     width: 25vw;
     height: 80vh;

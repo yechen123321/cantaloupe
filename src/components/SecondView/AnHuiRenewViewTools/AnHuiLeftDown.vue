@@ -27,8 +27,8 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option36 = {
-        backgroundColor:"rgba(128,128,128,0)",
-        color:colorList,
+        backgroundColor: "rgba(128,128,128,0)",
+        color: colorList,
         tooltip: {
             trigger: 'axis',
             // axisPointer: {
@@ -47,10 +47,10 @@ onMounted(() => {
         //     }
         // },
         legend: {
-            textStyle:{
-                color:'white'
+            textStyle: {
+                color: 'white'
             },
-            top:'10%',
+            top: '10%',
             data: ['产量', '存量', '产量增长率'],
             itemWidth: 20, // 标签宽度为20px
             itemHeight: 10, // 标签高度为10px
@@ -58,7 +58,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: [ '2020', '2021', '2022', '2023'],
+                data: ['2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -74,9 +74,9 @@ onMounted(() => {
                 },
             }
         ],
-        grid:{
-            left:'15%',
-            right:"13%"
+        grid: {
+            left: '15%',
+            right: "13%"
         },
         yAxis: [
             {
@@ -85,7 +85,7 @@ onMounted(() => {
                 min: 0,
                 max: 250,
                 nameTextStyle: {
-                    padding:[0,-10,0,0]
+                    padding: [0, -10, 0, 0]
                 },
                 interval: 50,
                 axisLabel: {
@@ -106,7 +106,7 @@ onMounted(() => {
                 min: 0,
                 max: 25,
                 nameTextStyle: {
-                    padding:[0,-25,0,0]
+                    padding: [0, -25, 0, 0]
                 },
                 interval: 5,
                 axisLabel: {
@@ -156,7 +156,7 @@ onMounted(() => {
                         return value + ' °C';
                     }
                 },
-                data: [20.3, 23.4, 23.0, 16.5, ]
+                data: [20.3, 23.4, 23.0, 16.5,]
             }
         ]
     };
@@ -187,11 +187,11 @@ onMounted(() => {
   .AnHuiLeftDown-title {
     width: 23vw;
     color: white;
-      //background: red;
-      margin-left: 1.5vw;
+    //background: red;
+    margin-left: 1.5vw;
     font-weight: bolder;
     font-size: 1.3vw;
-      margin-top: 1.5vh;
+    margin-top: 1.5vh;
     position: absolute;
     text-align: center;
   }
@@ -199,7 +199,9 @@ onMounted(() => {
   .AnHuiLeftDown-echarts {
     width: 25vw;
     height: 33vh;
-      margin-top: 2vh;
+    margin-top: 2vh;
+    position: absolute;
+    z-index: 999;
   }
 }
 </style>

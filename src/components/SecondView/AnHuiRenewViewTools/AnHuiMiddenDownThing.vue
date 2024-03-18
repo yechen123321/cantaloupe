@@ -128,42 +128,44 @@ onBeforeUnmount(() => {
 .AnHuiMiddenDownThing {
   width: 100%;
   height: 100%;
+
   .AnHuiMiddenDownThing-name {
     position: absolute;
     color: white;
     margin-left: 0.3vw;
+
     .name-title {
-        margin-left: 0.5vw;
-        width: 10vw;
-        position: absolute;
+      margin-left: 0.5vw;
+      width: 10vw;
+      position: absolute;
     }
 
     .name-number {
-        color: #4ed8fa;
-        text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
-        margin-left: 4.5vw;
-        font-size: 1.25em;
-        width: 10vw;
-        margin-top: -0.3vh;
-        font-weight: bolder;
-        position: absolute;
+      color: #4ed8fa;
+      text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
+      margin-left: 4.5vw;
+      font-size: 1.25em;
+      width: 10vw;
+      margin-top: -0.3vh;
+      font-weight: bolder;
+      position: absolute;
     }
 
     .name-up {
-        margin-left: 8vw;
-        width: 10vw;
-        position: absolute;
+      margin-left: 8vw;
+      width: 10vw;
+      position: absolute;
     }
   }
 
   .AnHuiMiddenDownThing-echarts {
     width: 10vw;
     height: 20vh;
-      //background: red;
+    //background: red;
     margin-top: 1.8vh;
     margin-left: 2vw;
-      position: absolute;
-      z-index: 999;
+    position: absolute;
+    z-index: 999;
   }
 }
 </style>

@@ -9,12 +9,13 @@
 </template>
 
 <style scoped lang="scss">
-  .AnHuiSunMiddenDown{
-    width: 100%;
-    height: 100%;
-    .BackImg{
-      width: 40vw;
-      height: 29vh;
-    }
+.AnHuiSunMiddenDown {
+  width: 100%;
+  height: 100%;
+
+  .BackImg {
+    width: 40vw;
+    height: 29vh;
   }
+}
 </style>

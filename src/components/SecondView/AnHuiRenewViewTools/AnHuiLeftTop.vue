@@ -9,12 +9,12 @@ let option38 = null;
 onMounted(() => {
     myChart38 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
-        '#ea7ccc','#91cc75', '#fac858', '#ee6666', '#73c0de',
+        '#ea7ccc', '#91cc75', '#fac858', '#ee6666', '#73c0de',
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
     option38 = {
-        backgroundColor : 'rgba(128,128,128,0)',
+        backgroundColor: 'rgba(128,128,128,0)',
         color: colorList,
         // title: {
         //     text: 'Stacked Area Chart'
@@ -25,7 +25,7 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px; margin-right: 2vw">' + mineName + '</span>' + '单位/XX' +'<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px; margin-right: 2vw">' + mineName + '</span>' + '单位/XX' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
@@ -35,9 +35,9 @@ onMounted(() => {
             }
         },
         legend: {
-            top:'15%',
-            textStyle:{
-                color:'white'
+            top: '15%',
+            textStyle: {
+                color: 'white'
             },
             data: ['风能', '水利', '光伏', '质能', '其他']
         },
@@ -128,7 +128,7 @@ onMounted(() => {
                 label: {
                     show: true,
                     position: 'top',
-                    color:'white'
+                    color: 'white'
                 },
                 areaStyle: {},
                 emphasis: {
@@ -151,33 +151,35 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="AnHuiLeftTop">
-      <div class="AnHuiLeftTop-title">安徽省再生能源储量</div>
-    <div class="AnHuiLeftTop-echarts" ref="echartsRef"></div>
-  </div>
+    <div class="AnHuiLeftTop">
+        <div class="AnHuiLeftTop-title">安徽省再生能源储量</div>
+        <div class="AnHuiLeftTop-echarts" ref="echartsRef"></div>
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .AnHuiLeftTop{
-    width: 100%;
-    height: 100%;
-    color:white;
-    .AnHuiLeftTop-title{
-      position: absolute;
-      color: white;
-      margin-top: -1.2vh;
-      text-align: center;
-      //background: red;
-      width: 23vw;
-      margin-left: 3.5vw;
-      font-weight: bolder;
-      font-size: 1.3vw;
-    }
-    .AnHuiLeftTop-echarts{
-      width: 23vw;
-      height: 25vh;
-      margin-top: -1.2vh;
-      margin-left: 3.2vw;
-    }
+.AnHuiLeftTop {
+  width: 100%;
+  height: 100%;
+  color: white;
+
+  .AnHuiLeftTop-title {
+    position: absolute;
+    color: white;
+    margin-top: -1.2vh;
+    text-align: center;
+    //background: red;
+    width: 23vw;
+    margin-left: 3.5vw;
+    font-weight: bolder;
+    font-size: 1.3vw;
   }
+
+  .AnHuiLeftTop-echarts {
+    width: 23vw;
+    height: 25vh;
+    margin-top: -1.2vh;
+    margin-left: 3.2vw;
+  }
+}
 </style>

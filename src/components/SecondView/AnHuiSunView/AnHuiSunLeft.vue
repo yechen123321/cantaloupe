@@ -3,18 +3,19 @@
 </script>
 
 <template>
-  <div class="AnHuiSunLeft">
-      <img src="../../../assets/pic/border3.png" alt="" class="BackImg">
-  </div>
+    <div class="AnHuiSunLeft">
+        <img src="../../../assets/pic/border3.png" alt="" class="BackImg">
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .AnHuiSunLeft{
-    width: 100%;
-    height: 100%;
-    .BackImg{
-      width: 26vw;
-      height: 82vh;
-    }
+.AnHuiSunLeft {
+  width: 100%;
+  height: 100%;
+
+  .BackImg {
+    width: 26vw;
+    height: 82vh;
   }
+}
 </style>

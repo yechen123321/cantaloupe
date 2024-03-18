@@ -25,8 +25,8 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option22 = {
-        backgroundColor:"rgba(128,128,128,0)",
-        color:colorList,
+        backgroundColor: "rgba(128,128,128,0)",
+        color: colorList,
         tooltip: {
             trigger: 'axis',
             // axisPointer: {
@@ -45,10 +45,10 @@ onMounted(() => {
         //     }
         // },
         legend: {
-            textStyle:{
-                color:'white'
+            textStyle: {
+                color: 'white'
             },
-            top:'10%',
+            top: '10%',
             data: ['现有量', '增长量', '增长率'],
             itemWidth: 20, // 标签宽度为20px
             itemHeight: 10, // 标签高度为10px
@@ -56,7 +56,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: [ '2020', '2021', '2022', '2023'],
+                data: ['2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -72,9 +72,9 @@ onMounted(() => {
                 },
             }
         ],
-        grid:{
-            left:'15%',
-            right:"13%"
+        grid: {
+            left: '15%',
+            right: "13%"
         },
         yAxis: [
             {
@@ -83,7 +83,7 @@ onMounted(() => {
                 min: 0,
                 max: 250,
                 nameTextStyle: {
-                    padding:[0,10,0,0]
+                    padding: [0, 10, 0, 0]
                 },
                 interval: 50,
                 axisLabel: {
@@ -104,7 +104,7 @@ onMounted(() => {
                 min: 0,
                 max: 25,
                 nameTextStyle: {
-                    padding:[0,-25,0,0]
+                    padding: [0, -25, 0, 0]
                 },
                 interval: 5,
                 axisLabel: {
@@ -154,7 +154,7 @@ onMounted(() => {
                         return value + ' °C';
                     }
                 },
-                data: [20.3, 23.4, 23.0, 16.5, ]
+                data: [20.3, 23.4, 23.0, 16.5,]
             }
         ]
     };
@@ -182,40 +182,43 @@ onMounted(() => {
 .AnHuiMiddenDown {
   width: 100%;
   height: 100%;
-    //background: red;
+  //background: red;
   .BackImg {
     width: 40vw;
     height: 29vh;
     position: absolute;
   }
-    .AnHuiMiddenDown-title{
-        color: white;
-        position: absolute;
-        width: 100%;
-        //background: red;
-        text-align: center;
-        font-weight: bolder;
-        margin-top: 1vh;
-        font-size: 1.26em;
-    }
-    .AnHuiMiddenDownThing-out{
-        width: 14vw;
-        height: 22vh;
-        position: absolute;
-        //background: red;
-        right: 0;
-        margin-top: 5.5vh;
-         margin-right: -0.7vw;
-        border-left: 1px solid #0d87f6;
-    }
+
+  .AnHuiMiddenDown-title {
+    color: white;
+    position: absolute;
+    width: 100%;
+    //background: red;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 1vh;
+    font-size: 1.26em;
+  }
+
+  .AnHuiMiddenDownThing-out {
+    width: 14vw;
+    height: 22vh;
+    position: absolute;
+    //background: red;
+    right: 0;
+    margin-top: 5.5vh;
+    margin-right: -0.7vw;
+    border-left: 1px solid #0d87f6;
+  }
+
   .AnHuiMiddenDown-echarts {
     width: 28vw;
     height: 32vh;
     margin-top: 1.5vh;
     margin-left: -1vw;
     position: absolute;
-      z-index: 999;
-      //background: red;
+    z-index: 999;
+    //background: red;
   }
 
 

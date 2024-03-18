@@ -5,28 +5,31 @@ import AnHuiSunMiddenDown from "@/components/SecondView/AnHuiSunTools/AnHuiSunMi
 </script>
 
 <template>
-  <div class="AnHuiSunMidden">
-      <ChooseTable id="ChooseTable-out"></ChooseTable>
-      <AnHuiSunMiddenCenter id="AnHuiSunMiddenCenter-out"></AnHuiSunMiddenCenter>
-      <AnHuiSunMiddenDown id="AnHuiSunMiddenDown-out"></AnHuiSunMiddenDown>
-  </div>
+    <div class="AnHuiSunMidden">
+        <ChooseTable id="ChooseTable-out"></ChooseTable>
+        <AnHuiSunMiddenCenter id="AnHuiSunMiddenCenter-out"></AnHuiSunMiddenCenter>
+        <AnHuiSunMiddenDown id="AnHuiSunMiddenDown-out"></AnHuiSunMiddenDown>
+    </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiSunMidden{
+.AnHuiSunMidden {
   width: 100%;
   height: 100%;
-  #ChooseTable-out{
+
+  #ChooseTable-out {
     width: 40vw;
     height: 20vh;
     position: absolute;
     //background: red;
   }
-  #AnHuiSunMiddenCenter-out{
+
+  #AnHuiSunMiddenCenter-out {
     position: absolute;
     margin-top: 22.5vh;
   }
-  #AnHuiSunMiddenDown-out{
+
+  #AnHuiSunMiddenDown-out {
     position: absolute;
     margin-top: 54vh;
   }

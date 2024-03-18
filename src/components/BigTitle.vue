@@ -4,13 +4,13 @@
 
 <template>
     <div class="title_main">
-<!--        <img src="../assets/pic/12-r.png" class="top-title-first-gif" alt="">-->
+        <!--        <img src="../assets/pic/12-r.png" class="top-title-first-gif" alt="">-->
         <img src="../assets/pic/top2.png" class="top-title" alt="">
         <img src="../assets/pic/header.gif" class="top-title-head" alt="">
-<!--        <img src="../assets/pic/11-l.png" class="top-title-second-gif" alt="">-->
+        <!--        <img src="../assets/pic/11-l.png" class="top-title-second-gif" alt="">-->
         <div class="TitleName">溯源</div>
-<!--        &lt;!&ndash;      <img class="Screen-left" src="../assets/pic/p.png" alt="">&ndash;&gt;-->
-<!--        &lt;!&ndash;      <img class="Screen-right" src="../assets/pic/pp.png" alt="">&ndash;&gt;-->
+        <!--        &lt;!&ndash;      <img class="Screen-left" src="../assets/pic/p.png" alt="">&ndash;&gt;-->
+        <!--        &lt;!&ndash;      <img class="Screen-right" src="../assets/pic/pp.png" alt="">&ndash;&gt;-->
         <Router-Link class="Button" style="margin-left: 41.5vw;" to="/">
             全国数据概览
             <img style="" src="../assets/pic/anniu1.png" alt="">
@@ -19,11 +19,11 @@
             地方再生能源
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
-<!--        <a class="Button" style="margin-right: 6vw; right: 0" href="http://172.18.7.71:8080/admin/">-->
-<!--            数据站点分析-->
-<!--            <img src="../assets/pic/anniu1.png" alt="">-->
-<!--        </a>-->
-        <Router-Link class="Button" style="margin-right: 6vw; right: 0"  to="/">
+        <!--        <a class="Button" style="margin-right: 6vw; right: 0" href="http://172.18.7.71:8080/admin/">-->
+        <!--            数据站点分析-->
+        <!--            <img src="../assets/pic/anniu1.png" alt="">-->
+        <!--        </a>-->
+        <Router-Link class="Button" style="margin-right: 6vw; right: 0" to="/">
             数据站点分析
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>

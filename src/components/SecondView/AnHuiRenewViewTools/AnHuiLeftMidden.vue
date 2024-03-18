@@ -13,13 +13,13 @@ onMounted(() => {
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
-    option37 =  {
-        backgroundColor:'rgba(128,128,128,0)',
+    option37 = {
+        backgroundColor: 'rgba(128,128,128,0)',
         color: colorList,
         tooltip: {
             trigger: 'item',
-            textStyle:{
-                fontWeight:'bold',
+            textStyle: {
+                fontWeight: 'bold',
             },
             // formatter: '{a} <br/>{b} : {c} 吨 ({d}%)',
             formatter: '{a} <br/>{b} : {d}%'
@@ -60,7 +60,7 @@ onMounted(() => {
                 label: {
                     show: true,
                     fontWeight: 'bold',
-                    color:'white'
+                    color: 'white'
                 },
                 emphasis: {
                     label: {
@@ -91,7 +91,7 @@ onMounted(() => {
                 label: {
                     show: true,
                     fontWeight: 'bold',
-                    color:'white'
+                    color: 'white'
                 },
                 data: [
                     {value: 30, name: '光伏'},
@@ -121,22 +121,24 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-    .AnHuiLeftMidden{
-        width: 100%;
-        height: 100%;
-        .AnHuiLeftMidden-title{
-            width: 23vw;
-            color: white;
-            font-weight: bolder;
-            font-size: 1.3vw;
-            text-align: center;
-            position: absolute;
-            //background: red;
-        }
-        .AnHuiLeftMidden-echarts{
-            width: 27vw;
-            height: 23vh;
-            margin-left: -2vw;
-        }
-    }
+.AnHuiLeftMidden {
+  width: 100%;
+  height: 100%;
+
+  .AnHuiLeftMidden-title {
+    width: 23vw;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.3vw;
+    text-align: center;
+    position: absolute;
+    //background: red;
+  }
+
+  .AnHuiLeftMidden-echarts {
+    width: 27vw;
+    height: 23vh;
+    margin-left: -2vw;
+  }
+}
 </style>

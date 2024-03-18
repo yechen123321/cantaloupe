@@ -55,7 +55,7 @@ onMounted(() => {
             },
             name: {
                 textStyle: {
-                    fontWeight:'bold',
+                    fontWeight: 'bold',
                     color: '#fff' // 设置雷达图每一个角的文字颜色为白色
                 }
             },
@@ -67,14 +67,14 @@ onMounted(() => {
                 symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
-                        value: [50000, 35000, 28000, 26000, 42000, 23200 ,21000, 28000],
+                        value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
                         name: '全国平均',
                         areaStyle: {
                             color: '#73C0DE' // 粉红色，与深蓝色相呼应
                         },
                     },
                     {
-                        value: [42000, 30000, 20000, 35000, 45000,25000, 18000, 0],
+                        value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 0],
                         name: '省内总量',
                         areaStyle: {
                             color: '#FAC858' // 橙色，与深蓝色相呼应
@@ -98,74 +98,74 @@ onMounted(() => {
 
 
 <template>
-  <div class="AnHuiRightDownFirst">
-      <div class="AnHuiRightDownFirst-title">安徽省再生能源储量概况图</div>
-      <div class="AnHuiRightDownFirst-echarts" ref="echartsRef"></div>
-      <div class="AnHuiRightDownFirst-thing">
-          <div class="AnHuiRightDownFirst-name">75%</div>
-          <img src="../../../assets/pic/pic-4.png" alt="">
-          <div class="AnHuiRightDownFirst-down">发展占比</div>
-      </div>
-  </div>
+    <div class="AnHuiRightDownFirst">
+        <div class="AnHuiRightDownFirst-title">安徽省再生能源储量概况图</div>
+        <div class="AnHuiRightDownFirst-echarts" ref="echartsRef"></div>
+        <div class="AnHuiRightDownFirst-thing">
+            <div class="AnHuiRightDownFirst-name">75%</div>
+            <img src="../../../assets/pic/pic-4.png" alt="">
+            <div class="AnHuiRightDownFirst-down">发展占比</div>
+        </div>
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .AnHuiRightDownFirst{
-    width: 100%;
-    height: 100%;
+.AnHuiRightDownFirst {
+  width: 100%;
+  height: 100%;
 
-    .AnHuiRightDownFirst-thing{
-      margin-top: 25vh;
+  .AnHuiRightDownFirst-thing {
+    margin-top: 25vh;
 
-      .AnHuiRightDownFirst-down{
-        color: white;
-        position: absolute;
-        font-weight: bolder;
-        right: 0;
-        margin-top: -2.7vh;
-         margin-right: 2.8vw;
-      }
-
-      .AnHuiRightDownFirst-name{
-        color: white;
-        position: absolute;
-        right: 0;
-        margin-top: -17vh;
-        font-size: 2vw;
-        margin-right: 3vw;
-        z-index: 199;
-
-      }
-
-      img{
-        width: 8vw;
-        height: 18vh;
-        right: 0;
-        margin-right: 0.9vw;
-        margin-top: -21.5vh;
-        position: absolute;
-      }
-    }
-
-    .AnHuiRightDownFirst-title{
+    .AnHuiRightDownFirst-down {
       color: white;
-      //background: red;
-      margin-top: -0.6vh;
-      width: 21vw;
-      text-align: center;
       position: absolute;
       font-weight: bolder;
-      font-size: 1.26em;
+      right: 0;
+      margin-top: -2.7vh;
+      margin-right: 2.8vw;
     }
 
-    .AnHuiRightDownFirst-echarts{
-      width: 23vw;
-      height: 25vh;
-      margin-left: -5vw;
+    .AnHuiRightDownFirst-name {
+      color: white;
       position: absolute;
-      margin-top: 3vh;
-      z-index: 399;
+      right: 0;
+      margin-top: -17vh;
+      font-size: 2vw;
+      margin-right: 3vw;
+      z-index: 199;
+
     }
 
+    img {
+      width: 8vw;
+      height: 18vh;
+      right: 0;
+      margin-right: 0.9vw;
+      margin-top: -21.5vh;
+      position: absolute;
+    }
   }
+
+  .AnHuiRightDownFirst-title {
+    color: white;
+    //background: red;
+    margin-top: -0.6vh;
+    width: 21vw;
+    text-align: center;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 1.26em;
+  }
+
+  .AnHuiRightDownFirst-echarts {
+    width: 23vw;
+    height: 25vh;
+    margin-left: -5vw;
+    position: absolute;
+    margin-top: 3vh;
+    z-index: 399;
+  }
+
+}
 </style>

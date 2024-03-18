@@ -16,22 +16,23 @@ import AnHuiRightDownSecond from "@/components/SecondView/AnHuiRenewViewTools/An
   width: 23vw;
   height: 80vh;
   //background: red;
-    #AnHuiRightDownFirst-out{
-        position: absolute;
-        width: 21vw;
-        height: 26vh;
-        border-bottom: 1px solid #0d87f6;
-        //background: red;
-        margin-top: -55vh;
-        margin-left: 2.5vw;
-    }
+  #AnHuiRightDownFirst-out {
+    position: absolute;
+    width: 21vw;
+    height: 26vh;
+    border-bottom: 1px solid #0d87f6;
+    //background: red;
+    margin-top: -55vh;
+    margin-left: 2.5vw;
+  }
 
-    #AnHuiRightDownSecond-out{
-        position: absolute;
-        width: 21vw;
-        height: 26vh;
-        margin-left: 2.5vw;
-    }
+  #AnHuiRightDownSecond-out {
+    position: absolute;
+    width: 21vw;
+    height: 26vh;
+    margin-left: 2.5vw;
+  }
+
   #AnHuiRightDown {
     width: 23vw;
     height: 23vh;
