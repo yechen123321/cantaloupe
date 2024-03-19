@@ -3,16 +3,16 @@ import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
 
 const echartsRef = ref(null);
-let myChart46 = null;
-let option46 = null;
+let myChart52 = null;
+let option52 = null;
 let currentIndex = 0;
 let intervalId = null;
 let isHovering = false;
 
 onMounted(() => {
-    myChart46 = echarts.init(echartsRef.value);
+    myChart52 = echarts.init(echartsRef.value);
 
-    option46 = {
+    option52 = {
         series: [
 
             {
@@ -51,35 +51,35 @@ onMounted(() => {
         ]
     };
 
-    option46 && myChart46.setOption(option46);
+    option52 && myChart52.setOption(option52);
     const resizeObserver = new ResizeObserver(() => {
-        myChart46.resize();
+        myChart52.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
 
-    myChart46.on('mouseover', (params) => {
+    myChart52.on('mouseover', (params) => {
         isHovering = true;
         const prevIndex = currentIndex;
         currentIndex = params.dataIndex;
         clearInterval(intervalId);
 
         if (prevIndex !== currentIndex) {
-            myChart46.dispatchAction({
+            myChart52.dispatchAction({
                 type: 'downplay',
                 seriesIndex: 0,
                 dataIndex: prevIndex,
             });
         }
 
-        myChart46.dispatchAction({
+        myChart52.dispatchAction({
             type: 'highlight',
             seriesIndex: 0,
             dataIndex: currentIndex,
         });
     });
 
-    myChart46.on('mouseout', () => {
+    myChart52.on('mouseout', () => {
         isHovering = false;
         startInterval();
     });
@@ -91,15 +91,15 @@ function startInterval() {
     intervalId = setInterval(() => {
         if (!isHovering) {
             const prevIndex = currentIndex;
-            currentIndex = (currentIndex + 1) % option46.series[0].data.length;
+            currentIndex = (currentIndex + 1) % option52.series[0].data.length;
 
-            myChart46.dispatchAction({
+            myChart52.dispatchAction({
                 type: 'downplay',
                 seriesIndex: 0,
                 dataIndex: prevIndex,
             });
 
-            myChart46.dispatchAction({
+            myChart52.dispatchAction({
                 type: 'highlight',
                 seriesIndex: 0,
                 dataIndex: currentIndex,
@@ -114,48 +114,48 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="AnHuiSunMiddenCenterThing">
-      <div class="title">
-          <div class="name">总容量：</div>
-          <div class="number">721.94</div>
-          <div class="up">万千瓦</div>
-      </div>
-      <div class="AnHuiSunMiddenCenterThing-echarts" ref="echartsRef"></div>
-  </div>
+    <div class="AnHuiWaterMiddenCenterThing">
+        <div class="title">
+            <div class="name">当年增长率：</div>
+            <div class="number">1.89</div>
+            <div class="up">%</div>
+        </div>
+        <div class="AnHuiWaterMiddenCenterThing-echarts" ref="echartsRef"></div>
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .AnHuiSunMiddenCenterThing{
-    width: 100%;
-    height: 100%;
-    .AnHuiSunMiddenCenterThing-echarts{
-      width: 20vw;
-      height: 20vh;
-      position: absolute;
-      margin-top: 2vh;
-      margin-left: -3vw;
+.AnHuiWaterMiddenCenterThing{
+  width: 100%;
+  height: 100%;
+  .AnHuiWaterMiddenCenterThing-echarts{
+    width: 20vw;
+    height: 20vh;
+    position: absolute;
+    margin-top: 2vh;
+    margin-left: -3.5vw;
+  }
+  .title{
+    color:white;
+    width: 20vw;
+    position: absolute;
+    margin-left: 1vw;
+    .name{
+      float: left;
     }
-    .title{
-      color:white;
-      width: 20vw;
-      position: absolute;
-      margin-left: 0.8vw;
-      .name{
-        float: left;
-      }
-      .number{
-        float: left;
-        margin-left: -0.2vw;
-        margin-top: -0.3vh;
-        font-weight: bolder;
-        color: #4ed8fa;
-        text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
-        font-size: 1.25em;
-      }
-      .up{
-        float: left;
-        margin-left: 0.6vw;
-      }
+    .number{
+      float: left;
+      margin-left: -0.2vw;
+      margin-top: -0.3vh;
+      font-weight: bolder;
+      color: #4ed8fa;
+      text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
+      font-size: 1.25em;
+    }
+    .up{
+      float: left;
+      margin-left: 0.6vw;
     }
   }
+}
 </style>

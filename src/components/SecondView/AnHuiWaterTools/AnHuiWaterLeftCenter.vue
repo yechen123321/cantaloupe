@@ -3,17 +3,17 @@ import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart48 = null;
-let option48 = null;
+let myChart55 = null;
+let option55 = null;
 
 onMounted(() => {
-    myChart48 = echarts.init(echartsRef.value, 'dark');
+    myChart55 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
         '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
-    option48 ={
+    option55 ={
         backgroundColor: 'rgba(128,128,128,0)',
         color: colorList,
         tooltip: {
@@ -107,25 +107,25 @@ onMounted(() => {
             }
         ]
     };
-    option48 && myChart48.setOption(option48);
+    option55 && myChart55.setOption(option55);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart48.resize();
+        myChart55.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
 });
 </script>
-<template>
-    <div class="AnHuiSunLeftTop">
-        <div class="title">安徽省光伏能源结构</div>
-        <div class="AnHuiSunLeftTop-echarts" ref="echartsRef"></div>
-    </div>
 
+<template>
+    <div class="AnHuiWaterLeftCenter">
+        <div class="title">安徽省水利能源结构</div>
+        <div class="AnHuiWaterLeftCenter-echarts" ref="echartsRef"></div>
+    </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiSunLeftTop{
+.AnHuiWaterLeftCenter{
   width: 100%;
   height: 100%;
   .title{
@@ -138,7 +138,7 @@ onMounted(() => {
     width: 24vw;
     margin-left: 1vw;
   }
-  .AnHuiSunLeftTop-echarts{
+  .AnHuiWaterLeftCenter-echarts{
     width: 25vw;
     height: 25vh;
     margin-top: -1vh;

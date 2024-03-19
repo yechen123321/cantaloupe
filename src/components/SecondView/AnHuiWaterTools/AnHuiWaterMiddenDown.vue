@@ -1,21 +1,21 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
-import AnHuiSunMiddenCenterThing from "@/components/SecondView/AnHuiSunTools/AnHuiSunMiddenCenterThing.vue";
+
 const echartsRef = ref(null);
-let myChart43 = null;
-let option43 = null;
+let myChart53= null;
+let option53 = null;
 
 onMounted(() => {
-    myChart43 = echarts.init(echartsRef.value, 'dark');
+    myChart53 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#bc4e9c'},
             {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#2980B9'},
+            {offset: 1, color: '#6DD5FA'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
@@ -25,7 +25,7 @@ onMounted(() => {
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
-    option43 = {
+    option53 = {
         backgroundColor: "rgba(128,128,128,0)",
         color: colorList,
         tooltip: {
@@ -159,54 +159,44 @@ onMounted(() => {
             }
         ]
     };
-    option43 && myChart43.setOption(option43);
+    option53 && myChart53.setOption(option53);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart43.resize();
+        myChart53.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
 });
 </script>
 <template>
-    <div class="AnHuiSunMiddenCenter">
-        <div class="title">安徽省光伏发电装机容量</div>
+    <div class="AnHuiWaterMiddenDown">
+        <div class="title">安徽省水利发电储能图</div>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
-        <div class="AnHuiSunMiddenCenter-echarts" ref="echartsRef"></div>
-        <AnHuiSunMiddenCenterThing id="AnHuiSunMiddenCenterThing"></AnHuiSunMiddenCenterThing>
+        <div class="AnHuiWaterMiddenDown-echarts" ref="echartsRef"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiSunMiddenCenter {
+.AnHuiWaterMiddenDown {
   width: 100%;
   height: 100%;
-    #AnHuiSunMiddenCenterThing{
-        width: 20vw;
-        height: 20vh;
-        //background: red;
-        position: absolute;
-        margin-left: 25.5vw;
-        margin-top: -24vh;
-        border-left: 2px solid #0d87f6;
-    }
-    .title{
-        position: absolute;
-        color:white;
-        width: 40vw;
-        font-weight: bolder;
-        font-size: 1.26em;
-        text-align: center;
-        margin-top: 1vh;
-        //background: red;
-    }
-    .AnHuiSunMiddenCenter-echarts{
-        width: 27vw;
-        height: 33vh;
-        position: absolute;
-        margin-top: -28.5vh;
-        margin-left: -1vw;
-    }
+  .title{
+    position: absolute;
+    color:white;
+    width: 40vw;
+    font-weight: bolder;
+    font-size: 1.26em;
+    text-align: center;
+    margin-top: 1vh;
+    //background: red;
+  }
+  .AnHuiWaterMiddenDown-echarts{
+    width: 44vw;
+    height: 33vh;
+    position: absolute;
+    margin-top: -28.5vh;
+    margin-left: -3vw;
+  }
   .BackImg {
     width: 40vw;
     height: 29vh;

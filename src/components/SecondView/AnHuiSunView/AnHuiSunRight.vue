@@ -492,7 +492,6 @@ onMounted(() => {
     margin-left: 1.5vw;
     border-radius: 20px;
     margin-top: -51.5vh;
-    background: red;
     overflow: hidden;
 
     .AnHuiSunRight-echarts {

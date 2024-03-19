@@ -208,7 +208,7 @@ onMounted(() => {
     right: 0;
     margin-top: 5.5vh;
     margin-right: -0.7vw;
-    border-left: 1px solid #0d87f6;
+    border-left: 2px solid #0d87f6;
   }
 
   .AnHuiMiddenDown-echarts {

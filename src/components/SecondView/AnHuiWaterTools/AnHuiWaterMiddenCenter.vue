@@ -1,19 +1,20 @@
 <script setup>
+import AnHuiWaterMiddenCenterThing from "@/components/SecondView/AnHuiWaterTools/AnHuiWaterMiddenCenterThing.vue";
 import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart47 = null;
-let option47= null;
+let myChart54 = null;
+let option54 = null;
 
 onMounted(() => {
-    myChart47 = echarts.init(echartsRef.value, 'dark');
+    myChart54 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
         '#ea7ccc', '#91cc75', '#fac858', '#ee6666', '#73c0de',
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
-    option47 = {
+    option54 = {
         backgroundColor: 'rgba(128,128,128,0)',
         color: colorList,
         // title: {
@@ -138,46 +139,63 @@ onMounted(() => {
             }
         ]
     }
-
-
-    option47 && myChart47.setOption(option47);
+    option54 && myChart54.setOption(option54);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart47.resize();
+        myChart54.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
 });
 </script>
 
-
 <template>
-    <div class="AnHuiSunLeftDown">
-        <div class="title">安徽省光伏能源储能</div>
-        <div class="AnHuiSunLeftDown-echarts" ref="echartsRef"></div>
+    <div class="AnHuiWaterMiddenCenter">
+        <div class="title">安徽省水利发电装机容量</div>
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
+        <div class="AnHuiWaterMiddenCenter-echarts" ref="echartsRef"></div>
+        <AnHuiWaterMiddenCenterThing id="AnHuiWaterMiddenCenterThing"></AnHuiWaterMiddenCenterThing>
     </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiSunLeftDown{
+.AnHuiWaterMiddenCenter {
   width: 100%;
   height: 100%;
-  .title{
+
+  .AnHuiWaterMiddenCenter-echarts {
+    width: 26vw;
+    height: 28vh;
+    margin-left: 0.2vw;
+    position: absolute;
+    margin-top: -29vh;
+    z-index: 399;
+  }
+
+  #AnHuiWaterMiddenCenterThing {
+    width: 16vw;
+    height: 20vh;
+    //background: red;
+    position: absolute;
+    margin-left: 27vw;
+    margin-top: -24vh;
+      border-left: 2px solid #0d87f6;
+  }
+
+  .title {
     position: absolute;
     color: white;
+    width: 40vw;
     font-weight: bolder;
-    text-align: center;
     font-size: 1.26em;
-    margin-top: 0.2vh;
-    width: 24vw;
-    margin-left: 1vw;
+    text-align: center;
+    margin-top: 1vh;
+    //background: red;
   }
-  .AnHuiSunLeftDown-echarts{
-    width: 23vw;
-    height: 25vh;
-    margin-top: 0.6vh;
-    margin-left: 1.3vw;
+
+  .BackImg {
+    width: 40vw;
+    height: 29vh;
   }
 }
 </style>
-
