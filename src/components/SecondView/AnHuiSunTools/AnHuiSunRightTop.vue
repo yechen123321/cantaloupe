@@ -5,6 +5,32 @@
 <template>
     <div class="AnHuiSunRightTop">
         <div class="title">电场信息</div>
+        <div class="ul">
+            <ul>
+                <li>
+                    <div class="name">XX发电：</div>
+                    <div class="thing">正常运行</div>
+                </li>
+                <li>
+                    <div class="name">XX发电：</div>
+                    <div class="thing">正常运行</div>
+                </li>
+                <li>
+                    <div class="name">XX发电：</div>
+                    <div class="thing">正常运行</div>
+                </li>
+                <li>
+                    <div class="name">XX发电：</div>
+                    <div class="thing">正常运行</div>
+                </li>
+                <li>
+                    <div class="name">XX发电：</div>
+                    <div class="thing">正常运行</div>
+                </li>
+            </ul>
+        </div>
+        <Button class="update">更新信息</Button>
+        <Button class="goto">风电场管理界面</Button>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
     </div>
 </template>
@@ -13,6 +39,97 @@
 .AnHuiSunRightTop {
   width: 100%;
   height: 100%;
+
+  .ul {
+    position: absolute;
+    width: 22vw;
+    height: 10vh;
+    background: rgba(10, 67, 188, .3);
+    border-radius: 5px;
+    margin-top: 5vh;
+    margin-left: 2vw;
+      overflow-y: auto;
+      -ms-overflow-style: none; /* IE 和 Edge */
+      scrollbar-width: none; /* Firefox */
+    ul {
+      width: 21.4vw;
+      margin-top: -0.5vh;
+      height: 10vh;
+      margin-left: -2vw;
+      //background: red;
+
+      li {
+        list-style: none;
+        width: 9vw;
+        margin-top: 1.6vh;
+        margin-left: 0.85vw;
+        float: left;
+        height: 3vh;
+          //background: rgba(10, 67, 188, .4);
+          .name{
+              width: 5vw;
+              height: 3vh;
+              color: white;
+              font-weight: bolder;
+              margin-left: 0.3vw;
+              margin-top: 0.2vh;
+              //background: #0d87f6;
+              position: absolute;
+          }
+          .thing{
+              width: 4.5vw;
+              height: 3vh;
+              color: white;
+              font-weight: bolder;
+              margin-left: 4.5vw;
+              margin-top: 0.2vh;
+              //background: #ffffff;
+              position: absolute;
+          }
+      }
+    }
+
+  }
+
+  .goto {
+    width: 7.5vw;
+    height: 3vh;
+    line-height: 3vh;
+    text-align: center;
+    position: absolute;
+    border-radius: 3px;
+    margin-top: 16vh;
+    margin-left: 11vw;
+    font-size: 0.9em;
+    color: white;
+    background: rgb(25, 83, 206);
+    border: none;
+    font-weight: bolder;
+  }
+
+  .goto:hover {
+    cursor: pointer;
+  }
+
+  .update {
+    font-size: 0.9em;
+    width: 5vw;
+    height: 3vh;
+    line-height: 3vh;
+    text-align: center;
+    position: absolute;
+    border-radius: 3px;
+    margin-top: 16vh;
+    margin-left: 4vw;
+    color: white;
+    background: rgb(25, 83, 206);
+    border: none;
+    font-weight: bolder;
+  }
+
+  .update:hover {
+    cursor: pointer;
+  }
 
   .title {
     position: absolute;

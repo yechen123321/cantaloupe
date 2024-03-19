@@ -15,8 +15,8 @@ onMounted(() => {
     // (Your existing option setup code)
     loadBMap("EGlnrCfbkZCDlamN0ap6OPQpuQhUsdmt").then(() => {
         const data = [
-            {name: '合肥', value: 200, thing:'我的世界awd'},
-            {name: '马鞍山', value: 100, thing:'我的世界awd'},
+            {name: '合肥', value: 200, thing: '我的世界awd'},
+            {name: '马鞍山', value: 100, thing: '我的世界awd'},
         ];
         const geoCoordMap = {
             海门: [121.15, 31.89],
@@ -225,7 +225,7 @@ onMounted(() => {
             return res;
         };
         option41 = {
-            backgroundColor:'rgba(121,121,121,0)',
+            backgroundColor: 'rgba(121,121,121,0)',
             tooltip: {
                 trigger: 'item',
                 formatter: function (params) {
@@ -458,6 +458,7 @@ onMounted(() => {
 <template>
     <div class="AnHuiSunRight">
         <div class="title">安徽省光伏发电基地分布</div>
+
         <img src="../../../assets/pic/border3.png" alt="" class="BackImg">
         <div class="ecahrts">
             <div class="AnHuiSunRight-echarts" ref="echartsRef"></div>
@@ -469,42 +470,47 @@ onMounted(() => {
 .AnHuiSunRight {
   width: 100%;
   height: 100%;
-    .title{
-        position: absolute;
-        color: white;
-        font-weight: bolder;
-        font-size: 1.26em;
-        width: 24vw;
-        margin-left: 1.1vw;
-        margin-top: 4vh;
-        text-align: center;
-        //background: red;
-    }
-    .ecahrts{
-        width: 23vw;
-        height: 45vh;
-        position: absolute;
-        margin-left: 1.5vw;
-        border-radius: 20px;
-        margin-top: -25vw;
-        background: red;
-        overflow: hidden;
-        .AnHuiSunRight-echarts {
-            width: 23vw;
-            height: 52vh;
-            z-index: 999;
-            position: absolute;
 
-        }
-    }
 
+
+  .title {
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.3em;
+    width: 24vw;
+    margin-left: 1.1vw;
+    margin-top: 2.7vh;
+    text-align: center;
+    //background: red;
+  }
+
+  .ecahrts {
+    width: 23vw;
+    height: 48vh;
+    position: absolute;
+    margin-left: 1.5vw;
+    border-radius: 20px;
+    margin-top: -51.5vh;
+    background: red;
+    overflow: hidden;
+
+    .AnHuiSunRight-echarts {
+      width: 23vw;
+      height: 54.5vh;
+      z-index: 999;
+      position: relative;
+
+    }
+  }
 
   .BackImg {
     width: 26vw;
     height: 58vh;
   }
 }
-.anchorBL{
-    display: none !important;
+
+.anchorBL {
+  display: none !important;
 }
 </style>
