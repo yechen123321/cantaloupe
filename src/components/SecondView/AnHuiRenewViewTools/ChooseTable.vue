@@ -53,8 +53,8 @@ const options = ref([
                         亿千瓦时
                     </div>
                 </li>
-                <li style="margin-top: 0.63vh">
-                    <img @click="RouteToSun" src="../../../assets/太阳能发电.png" alt="">
+                <li @click="RouteToSun" style="margin-top: 0.63vh">
+                    <img src="../../../assets/太阳能发电.png" alt="">
                     <div class="number">3135</div>
                     <div class="up">
                         光生电能
@@ -95,6 +95,11 @@ const options = ref([
       height: 15vh;
       margin-left: -6.8vw;
       //background: red;
+
+      li:hover {
+        cursor: pointer;
+      }
+
       li {
         width: 6vw;
         height: 15vh;
@@ -114,10 +119,6 @@ const options = ref([
           width: 3.5vw;
         }
 
-        img:hover {
-          cursor: pointer;
-          width: 3.5vw;
-        }
 
         .up {
           width: 8vw;

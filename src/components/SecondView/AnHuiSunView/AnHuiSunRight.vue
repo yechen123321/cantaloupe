@@ -233,7 +233,7 @@ onMounted(() => {
                 }
             },
             bmap: {
-                center: [117.27, 31.86], // 合肥的经纬度坐标
+                center: [117.27, 31.70], // 合肥的经纬度坐标
                 zoom: 9,
                 roam: true,
                 mapStyle: {
