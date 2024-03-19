@@ -30,7 +30,7 @@ import AnHuiSunLeftDown from "@/components/SecondView/AnHuiSunTools/AnHuiSunLeft
         height: 24vh;
         position: absolute;
         //background: #00ff24;
-        margin-top: -54.5vh;
+        margin-top: -55vh;
     }
     #AnHuiSunLeftDown{
         width: 26vw;

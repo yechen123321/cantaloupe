@@ -1,21 +1,22 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
+import AnHuiWindMiddenDownThing from "@/components/SecondView/AnHuiWindTools/AnHuiWindMiddenDownThing.vue";
 
 const echartsRef = ref(null);
-let myChart51 = null;
-let option51 = null;
+let myChart54 = null;
+let option54 = null;
 
 onMounted(() => {
-    myChart51 = echarts.init(echartsRef.value, 'dark');
+    myChart54 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#bc4e9c'},
             {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#2980B9'},
+            {offset: 1, color: '#6DD5FA'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
@@ -23,7 +24,9 @@ onMounted(() => {
         ]),
         // 其他渐变色定义...
     ];
-    option51 = {
+    // Your echarts option setup here...
+    // (Your existing option setup code)
+    option54 = {
         backgroundColor: "rgba(128,128,128,0)",
         color: colorList,
         tooltip: {
@@ -157,43 +160,61 @@ onMounted(() => {
             }
         ]
     };
-    option51 && myChart51.setOption(option51);
+    option54 && myChart54.setOption(option54);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart51.resize();
+        myChart54.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
 });
 </script>
-
 <template>
-    <div class="AnHuiWaterLeftTop">
-        <div class="title">安徽省水利发电产能图</div>
-        <div class="AnHuiWaterLeftTop-echarts" ref="echartsRef"></div>
+    <div class="AnHuiWindMiddenDown">
+        <div class="title">安徽省风能发电装机容量</div>
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
+        <div class="AnHuiWindMiddenDown-echarts" ref="echartsRef"></div>
+        <AnHuiWindMiddenDownThing id="AnHuiWindMiddenDownThing"></AnHuiWindMiddenDownThing>
     </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiWaterLeftTop {
+.AnHuiWindMiddenDown {
   width: 100%;
   height: 100%;
+
+  #AnHuiWindMiddenDownThing {
+    width: 16vw;
+    height: 20vh;
+    //background: red;
+    position: absolute;
+    margin-left: 27vw;
+    margin-top: -24vh;
+    border-left: 2px solid #0d87f6;
+  }
 
   .title {
     position: absolute;
     color: white;
+    width: 40vw;
     font-weight: bolder;
-    text-align: center;
     font-size: 1.26em;
-    margin-top: 0.2vh;
-    width: 24vw;
-    margin-left: 1vw;
+    text-align: center;
+    margin-top: 1vh;
+    //background: red;
   }
 
-  .AnHuiWaterLeftTop-echarts {
-    width: 25vw;
-    height: 32vh;
-    margin-top: 0.8vh;
+  .AnHuiWindMiddenDown-echarts {
+    width: 28vw;
+    height: 33vh;
+    position: absolute;
+    margin-top: -28.5vh;
+    margin-left: -1vw;
+  }
+
+  .BackImg {
+    width: 40vw;
+    height: 29vh;
   }
 }
 </style>

@@ -2,6 +2,7 @@
 import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 import AnHuiSunMiddenCenterThing from "@/components/SecondView/AnHuiSunTools/AnHuiSunMiddenCenterThing.vue";
+
 const echartsRef = ref(null);
 let myChart43 = null;
 let option43 = null;
@@ -57,7 +58,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['2017','2018','2019','2020', '2021', '2022', '2023'],
+                data: ['2019', '2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -131,7 +132,7 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    76.7, 135.6, 162.2, 32.6,162.2, 32.6, 76.7,
+                    76.7, 135.6, 162.2, 32.6, 162.2,
                 ]
             },
             {
@@ -143,7 +144,7 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    70.7, 175.6, 182.2, 48.7,182.2, 48.7, 70.7,
+                    70.7, 175.6, 182.2, 48.7, 182.2,
                 ]
             },
             {
@@ -155,7 +156,7 @@ onMounted(() => {
                         return value + ' °C';
                     }
                 },
-                data: [20.3, 23.4, 23.0, 16.5,23.0, 16.5,20.3, ]
+                data: [20.3, 23.4, 23.0, 16.5, 23.0,]
             }
         ]
     };
@@ -181,32 +182,36 @@ onMounted(() => {
 .AnHuiSunMiddenCenter {
   width: 100%;
   height: 100%;
-    #AnHuiSunMiddenCenterThing{
-        width: 20vw;
-        height: 20vh;
-        //background: red;
-        position: absolute;
-        margin-left: 25.5vw;
-        margin-top: -24vh;
-        border-left: 2px solid #0d87f6;
-    }
-    .title{
-        position: absolute;
-        color:white;
-        width: 40vw;
-        font-weight: bolder;
-        font-size: 1.26em;
-        text-align: center;
-        margin-top: 1vh;
-        //background: red;
-    }
-    .AnHuiSunMiddenCenter-echarts{
-        width: 27vw;
-        height: 33vh;
-        position: absolute;
-        margin-top: -28.5vh;
-        margin-left: -1vw;
-    }
+
+  #AnHuiSunMiddenCenterThing {
+    width: 20vw;
+    height: 20vh;
+    //background: red;
+    position: absolute;
+    margin-left: 25.5vw;
+    margin-top: -24vh;
+    border-left: 2px solid #0d87f6;
+  }
+
+  .title {
+    position: absolute;
+    color: white;
+    width: 40vw;
+    font-weight: bolder;
+    font-size: 1.26em;
+    text-align: center;
+    margin-top: 1vh;
+    //background: red;
+  }
+
+  .AnHuiSunMiddenCenter-echarts {
+    width: 27vw;
+    height: 33vh;
+    position: absolute;
+    margin-top: -28.5vh;
+    margin-left: -1vw;
+  }
+
   .BackImg {
     width: 40vw;
     height: 29vh;

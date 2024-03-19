@@ -18,7 +18,7 @@ const RouteToWater = () => {
 };
 const RouteToWind = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
-    router.push('/anhuirenew'); // 替换'/new-route'为您要跳转的路由路径
+    router.push('/anhuiwind'); // 替换'/new-route'为您要跳转的路由路径
 };
 const options = ref([
     {where: '安徽', value: 1},

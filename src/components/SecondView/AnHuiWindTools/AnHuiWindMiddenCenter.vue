@@ -3,19 +3,21 @@ import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart51 = null;
-let option51 = null;
+let myChart62 = null;
+let option62 = null;
 
 onMounted(() => {
-    myChart51 = echarts.init(echartsRef.value, 'dark');
+    myChart62 = echarts.init(echartsRef.value, 'dark');
+    // Your echarts option setup here...
+    // (Your existing option setup code)
     var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#bc4e9c'},
             {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#2980B9'},
+            {offset: 1, color: '#6DD5FA'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
@@ -23,7 +25,7 @@ onMounted(() => {
         ]),
         // 其他渐变色定义...
     ];
-    option51 = {
+    option62 = {
         backgroundColor: "rgba(128,128,128,0)",
         color: colorList,
         tooltip: {
@@ -157,10 +159,10 @@ onMounted(() => {
             }
         ]
     };
-    option51 && myChart51.setOption(option51);
+    option62 && myChart62.setOption(option62);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart51.resize();
+        myChart62.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
@@ -168,32 +170,50 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="AnHuiWaterLeftTop">
-        <div class="title">安徽省水利发电产能图</div>
-        <div class="AnHuiWaterLeftTop-echarts" ref="echartsRef"></div>
+    <div class="AnHuiWindMiddenCenter">
+        <div class="title">安徽省风能发电产能图</div>
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
+        <div class="AnHuiWindMiddenCenter-echarts" ref="echartsRef"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiWaterLeftTop {
+.AnHuiWindMiddenCenter {
   width: 100%;
   height: 100%;
+
+  .AnHuiWindMiddenCenter-echarts {
+    width: 40vw;
+    height: 33vh;
+    margin-left: -0.5vw;
+    position: absolute;
+    margin-top: -28vh;
+    z-index: 399;
+  }
+
+  #AnHuiWindMiddenCenterThing {
+    width: 16vw;
+    height: 20vh;
+    position: absolute;
+    margin-left: 27vw;
+    margin-top: -24vh;
+    border-left: 2px solid #0d87f6;
+  }
 
   .title {
     position: absolute;
     color: white;
+    width: 40vw;
     font-weight: bolder;
-    text-align: center;
     font-size: 1.26em;
-    margin-top: 0.2vh;
-    width: 24vw;
-    margin-left: 1vw;
+    text-align: center;
+    margin-top: 1vh;
+    //background: red;
   }
 
-  .AnHuiWaterLeftTop-echarts {
-    width: 25vw;
-    height: 32vh;
-    margin-top: 0.8vh;
+  .BackImg {
+    width: 40vw;
+    height: 29vh;
   }
 }
 </style>
