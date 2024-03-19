@@ -1,5 +1,9 @@
 <script setup>
-
+// 定义处理点击事件的方法
+const handleUpdate = () => {
+    // 刷新页面
+    window.location.reload();
+}
 </script>
 
 <template>
@@ -29,7 +33,7 @@
                 </li>
             </ul>
         </div>
-        <Button class="update">更新信息</Button>
+        <Button @click="handleUpdate" class="update">更新信息</Button>
         <Button class="goto">风电场管理界面</Button>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
     </div>

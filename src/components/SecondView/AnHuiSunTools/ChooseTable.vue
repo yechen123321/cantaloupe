@@ -6,11 +6,21 @@ const router = useRouter();
 
 const handleRouteChange = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
-    router.push('/anhui'); // 替换'/new-route'为您要跳转的路由路径
+    router.push('/anhuirenew'); // 替换'/new-route'为您要跳转的路由路径
 };
 const RouteToSun = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
     router.push('/anhuisun'); // 替换'/new-route'为您要跳转的路由路径
+};
+
+const RouteToWater = () => {
+    // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
+    router.push('/anhuiwater'); // 替换'/new-route'为您要跳转的路由路径
+};
+
+const RouteToWind = () => {
+    // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
+    router.push('/anhuirenew'); // 替换'/new-route'为您要跳转的路由路径
 };
 const options = ref([
     {where: '安徽', value: 1},
@@ -43,7 +53,7 @@ const options = ref([
         <button class="SelectGo" @click="handleRouteChange">切换</button>
         <div class="factory">
             <ul class="factoryUl">
-                <li>
+                <li @click="RouteToWater">
                     <img src="../../../assets/水库.png" alt="">
                     <div class="number">43.59</div>
                     <div class="up">
@@ -53,8 +63,8 @@ const options = ref([
                         亿千瓦时
                     </div>
                 </li>
-                <li style="margin-top: -1vh">
-                    <img @click="RouteToSun" src="../../../assets/太阳能发电.png" alt="">
+                <li @click="RouteToSun" style="margin-top: -1vh">
+                    <img src="../../../assets/太阳能发电.png" alt="">
                     <img src="../../../assets/pic/pic-5.png" alt=""
                          style="width: 10vw;margin-top: -2vh; margin-left: -4.5vw; position: absolute;">
                     <div class="number">3135</div>
@@ -65,7 +75,7 @@ const options = ref([
                         亿千瓦时
                     </div>
                 </li>
-                <li>
+                <li @click="RouteToWind">
                     <img src="../../../assets/风力发电.png" alt="">
                     <div class="number">8800</div>
                     <div class="up">
@@ -97,6 +107,10 @@ const options = ref([
       height: 15vh;
       margin-left: -6.8vw;
       //background: red;
+      li:hover {
+        cursor: pointer;
+      }
+
       li {
         width: 6vw;
         height: 15vh;
@@ -116,10 +130,6 @@ const options = ref([
           width: 3.5vw;
         }
 
-        img:hover {
-          cursor: pointer;
-          width: 3.5vw;
-        }
 
         .up {
           width: 8vw;

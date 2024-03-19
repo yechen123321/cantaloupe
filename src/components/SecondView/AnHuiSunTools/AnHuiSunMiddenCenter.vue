@@ -170,7 +170,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="AnHuiSunMiddenCenter">
-        <div class="title">安徽省风力发电装机容量</div>
+        <div class="title">安徽省光伏发电装机容量</div>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
         <div class="AnHuiSunMiddenCenter-echarts" ref="echartsRef"></div>
         <AnHuiSunMiddenCenterThing id="AnHuiSunMiddenCenterThing"></AnHuiSunMiddenCenterThing>

@@ -21,6 +21,12 @@ const routes = [
     name: 'anhuisun',
     component: () => import('../views/AnHuiSunView.vue')
   },
+
+  {
+    path: '/anhuiwater',
+    name: 'anhuiwater',
+    component: () => import('../views/AnHuiWaterView.vue')
+  },
 ]
 
 const router = createRouter({
