@@ -130,7 +130,18 @@ onMounted(() => {
                     position: 'top',
                     color: 'white'
                 },
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(115,192,222,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(115,192,222,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -165,7 +176,7 @@ onMounted(() => {
   .title{
     position: absolute;
     color: white;
-    font-weight: bolder;
+    font-weight: bolder;;
     text-align: center;
     font-size: 1.26em;
     margin-top: 0.2vh;

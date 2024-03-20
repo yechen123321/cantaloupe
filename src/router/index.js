@@ -32,6 +32,11 @@ const routes = [
     name: 'anhuiwind',
     component: () => import('../views/AnHuiWindView.vue')
   },
+  {
+    path: '/anhuilimit',
+    name: 'anhuilimit',
+    component: () => import('../views/AnHuiLimitView.vue')
+  },
 ]
 
 const router = createRouter({

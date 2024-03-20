@@ -85,7 +85,18 @@ onMounted(() => {
                 name: '其他',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(234,124,204,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(234,124,204,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -95,7 +106,18 @@ onMounted(() => {
                 name: '质能',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(145,204,117,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(145,204,117,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -105,7 +127,18 @@ onMounted(() => {
                 name: '风能',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(250,200,88,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(250,200,88,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -115,7 +148,18 @@ onMounted(() => {
                 name: '水利',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(115,192,222,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(115,192,222,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -130,7 +174,18 @@ onMounted(() => {
                     position: 'top',
                     color: 'white'
                 },
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(115,192,222,0.3)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(115,192,222,0)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },

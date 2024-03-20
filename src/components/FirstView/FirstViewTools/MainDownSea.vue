@@ -112,14 +112,25 @@ onMounted(() => {
                 data: [320, 332, 301, 334, 390, 330, 320]
             },
             {
-                name: '太阳能 ',
+                name: '太阳能',
                 type: 'line',
                 stack: 'Total',
                 // label: {
                 //     show: true,
                 //     position: 'top'
                 // },
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(115,192,222,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(115,192,222,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },

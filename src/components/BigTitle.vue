@@ -27,7 +27,7 @@
             数据站点分析
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
-        <Router-Link class="Button" style="margin-right: 19.5vw; right: 0" to="/">
+        <Router-Link class="Button" style="margin-right: 19.5vw; right: 0" to="/anhuilimit">
             地方有限能源
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
@@ -48,7 +48,7 @@
     display: block;
     width: 12vw;
     height: 6vh;
-    margin-top: -8.5vh;
+    margin-top: -7.5vh;
     font-size: 1.4vw;
     font-weight: bolder;
     line-height: 8vh;
