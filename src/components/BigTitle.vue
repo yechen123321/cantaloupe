@@ -23,8 +23,8 @@
         <!--            数据站点分析-->
         <!--            <img src="../assets/pic/anniu1.png" alt="">-->
         <!--        </a>-->
-        <Router-Link class="Button" style="margin-right: 6vw; right: 0" to="/">
-            数据站点分析
+        <Router-Link class="Button" style="margin-right: 6vw; right: 0" to="/dataanalysis">
+            能源发展分析
             <img src="../assets/pic/anniu1.png" alt="">
         </Router-Link>
         <Router-Link class="Button" style="margin-right: 19.5vw; right: 0" to="/anhuilimit">

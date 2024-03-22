@@ -21,7 +21,11 @@ const routes = [
     name: 'anhuisun',
     component: () => import('../views/AnHuiSunView.vue')
   },
-
+  {
+    path: '/dataanalysis',
+    name: 'dataanalysis',
+    component: () => import('../views/DataAnalysisView.vue')
+  },
   {
     path: '/anhuiwater',
     name: 'anhuiwater',
