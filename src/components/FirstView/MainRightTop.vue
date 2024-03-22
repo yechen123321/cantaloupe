@@ -4,6 +4,8 @@ import {ref} from "vue";
 const datas = ref([
     {name: '全国能源投资建设', number: 28000, up: '亿', num: 1.6},
 ]);
+
+
 </script>
 
 <template>

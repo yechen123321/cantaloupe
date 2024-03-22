@@ -24,27 +24,29 @@ import FootLoop from '@/components/FootLoop.vue';
 .AnHuiLimitView {
   width: 100%;
   height: 100%;
-    #AnHuiLimitRightTop-out{
-        position: absolute;
-        width: 20vw;
-        height: 20vh;
-        right: 0;
-        margin-top: 1vh;
-        margin-right: 8vw;
-    }
+
+  #AnHuiLimitRightTop-out {
+    position: absolute;
+    width: 20vw;
+    height: 20vh;
+    right: 0;
+    margin-top: 1vh;
+    margin-right: 8vw;
+  }
+
   #AnHuiLimitRight-out {
     width: 25vw;
     height: 60vh;
-    margin-top: 34vh;
+    margin-top: 48vh;
     //margin-left: 2vw;
-    //right: 0;
-    margin-left: 28.5vw;
+    right: 0;
+    margin-right: 3vw;
     position: absolute;
   }
 
   #AnHuiLimitMidden-out {
     position: absolute;
-    margin-left: 53.5vw;
+    margin-left: 26.5vw;
     margin-top: 29vh;
 
   }

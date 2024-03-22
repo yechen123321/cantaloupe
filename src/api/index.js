@@ -5,3 +5,7 @@ export const initKlist = () => request({
     method: 'get'
 })
 
+export const initadd = () => request({
+    url: '/energyproandinvnt/',
+    method:'get',
+})

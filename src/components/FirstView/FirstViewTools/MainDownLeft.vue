@@ -45,12 +45,11 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>'+ '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName === '全国能耗降低率') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
-                    }
-                    else {
+                    } else {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
                     }
                 });
@@ -68,8 +67,8 @@ onMounted(() => {
         legend: {
             // left:'0%',
             data: ['能源消耗', '全国GDP', '全国能耗降低率'],
-            textStyle:{
-                color:'white'
+            textStyle: {
+                color: 'white'
             }
         },
         xAxis: [
@@ -77,7 +76,7 @@ onMounted(() => {
                 type: 'category',
                 axisTick: {
                     alignWithLabel: true
-                },  axisLine: {
+                }, axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
@@ -88,7 +87,7 @@ onMounted(() => {
                     }
                 },
                 // prettier-ignore
-                data: [  'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                data: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             }
         ],
         yAxis: [
@@ -98,7 +97,7 @@ onMounted(() => {
                 position: 'right',
                 alignTicks: true,
                 nameTextStyle: {
-                    padding:[0,-30,0,0]
+                    padding: [0, -30, 0, 0]
                 },
                 axisLine: {
                     lineStyle: {
@@ -117,7 +116,7 @@ onMounted(() => {
                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
                 position: 'right',
                 nameTextStyle: {
-                   padding:[0,-38,0,0]
+                    padding: [0, -38, 0, 0]
                 },
                 alignTicks: true,
                 offset: 40,
@@ -155,7 +154,7 @@ onMounted(() => {
                 type: 'bar',
                 yAxisIndex: 2,
                 data: [
-                     135.6, 162.2, 32.6, 20.0, 6.4,
+                    135.6, 162.2, 32.6, 20.0, 6.4,
                 ]
             },
             {
@@ -163,14 +162,14 @@ onMounted(() => {
                 type: 'bar',
                 yAxisIndex: 0,
                 data: [
-                     175.6, 182.2, 48.7, 18.8, 6.0
+                    175.6, 182.2, 48.7, 18.8, 6.0
                 ]
             },
             {
                 name: '全国能耗降低率',
                 type: 'line',
                 yAxisIndex: 1,
-                data: [  3.4, 2.0, 1.5, 1.0, 3.2]
+                data: [3.4, 2.0, 1.5, 1.0, 3.2]
             },
         ]
     };

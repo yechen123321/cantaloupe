@@ -5,14 +5,11 @@ import {loadBMap} from "@/assets/map";
 import "echarts/extension/bmap/bmap"
 
 const echartsRef = ref(null);
-let myChart61= null;
+let myChart61 = null;
 let option61 = null;
 
 onMounted(() => {
     myChart61 = echarts.init(echartsRef.value, 'dark');
-
-    // Your echarts option setup here...
-    // (Your existing option setup code)
     loadBMap("EGlnrCfbkZCDlamN0ap6OPQpuQhUsdmt").then(() => {
         const data = [
             {name: '合肥', value: 200, thing: '我的世界awd'},
@@ -459,14 +456,14 @@ onMounted(() => {
     <div class="AnHuiWindRight">
         <div class="title">安徽省风能发电基地分布</div>
         <img src="../../../assets/pic/border3.png" alt="" class="BackImg">
-        <div class="ecahrts">
+        <div class="echarts">
             <div class="AnHuiWindRight-echarts" ref="echartsRef"></div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiWindRight{
+.AnHuiWindRight {
   width: 100%;
   height: 100%;
 
@@ -474,7 +471,7 @@ onMounted(() => {
     position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 1.3em;
+    font-size: 1.26em;
     width: 24vw;
     margin-left: 1.1vw;
     margin-top: 2.7vh;
@@ -482,7 +479,7 @@ onMounted(() => {
     //background: red;
   }
 
-  .ecahrts {
+  .echarts {
     width: 23vw;
     height: 48vh;
     position: absolute;
@@ -499,6 +496,7 @@ onMounted(() => {
 
     }
   }
+
   .BackImg {
     width: 26vw;
     height: 58vh;
