@@ -19,7 +19,7 @@ import DataAnalysisLeftMidden from "@/components/FourthView/DataAnalysisTools/Da
  #DataAnalysisLeftMidden-out{
   width: 20vw;
   height: 30vh;
-  margin-top: 27.5vh;
+  margin-top: -3.2vh;
   position: absolute;
  }
  #DataAnalysisLeftDown-out{
@@ -32,7 +32,8 @@ import DataAnalysisLeftMidden from "@/components/FourthView/DataAnalysisTools/Da
   width: 20vw;
   height: 30vh;
   position: absolute;
-  margin-top: -3.2vh;
+  margin-top: 21.5vh;
+
  }
 }
 </style>

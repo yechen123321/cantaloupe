@@ -16,6 +16,7 @@ onMounted(() => {
         series: [
 
             {
+                roseType: 'area',
                 name: 'Access From',
                 type: 'pie',
                 radius: ['25%', '50%'],
@@ -41,10 +42,12 @@ onMounted(() => {
                     show: false
                 },
                 data: [
-                    {value: 1048, name: '合肥'},
-                    {value: 735, name: '马鞍山'},
-                    {value: 580, name: '芜湖'},
-                    {value: 484, name: '淮南'},
+                    {value: 1048, name: '煤炭'},
+                    {value: 735, name: '天然气'},
+                    {value: 580, name: '油页岩'},
+                    {value: 540, name: '油页岩'},
+                    {value: 499, name: '页岩油'},
+                    {value: 484, name: '煤层气'},
                     {value: 300, name: '其他'}
                 ]
             },

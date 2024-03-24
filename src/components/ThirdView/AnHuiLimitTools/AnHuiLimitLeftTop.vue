@@ -150,7 +150,7 @@ onMounted(() => {
   }
 
   .AnHuiLimitLeftTop-echarts {
-    width: 10vw;
+    width: 25.5vw;
     height: 22vh;
 
   }
