@@ -44,142 +44,161 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option86 = {
-        backgroundColor: "rgba(128,128,128,0)",
+        backgroundColor:'rgba(1,1,1,0)',
         color: colorList,
-        tooltip: {
-            trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     crossStyle: {
-            //         color: '#999'
-            //     }
-            // }
-        },
         // toolbox: {
+        //     iconStyle: {
+        //         borderColor: "#fff",
+        //     },
+        //     showTitle:false,
+        //     right:'3%',
         //     feature: {
         //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
+        //         // magicType: { show: true, type: ['line', 'bar'] },
         //         restore: { show: true },
         //         saveAsImage: { show: true }
         //     }
         // },
+        tooltip: {
+            trigger: 'axis',
+            extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name;
+                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName === '全国能耗降低率') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
+                    } else {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
+            }
+
+        },
+        grid: {
+            left: '5.3%', // 调整图表左边距
+            right: '7%', // 调整图表右边距
+            // top: '10%', // 调整图表上边距
+            bottom: '15%', // 调整图表下边距
+            containLabel: true,
+        },
         legend: {
+            top:'3%',
+            data: ['能源消耗', '全国GDP', '全国能耗降低率'],
             textStyle: {
                 color: 'white'
-            },
-            top: '12%',
-            left: 'center',
-            data: ['碳排放总量', '碳排放增量', '碳排放增率',],
-            itemWidth: 20, // 标签宽度为20px
-            itemHeight: 10, // 标签高度为10px
+            }
         },
         xAxis: [
             {
                 type: 'category',
-                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
-                axisPointer: {
-                    type: 'shadow'
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }
-                },
-                axisLine: {
+                axisTick: {
+                    alignWithLabel: true
+                }, axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
                 },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                },
+                // prettier-ignore
+                data: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             }
         ],
-        grid: {
-            left: '15%',
-            right: "13%"
-        },
         yAxis: [
             {
                 type: 'value',
-                name: '万吨',
-                min: 0,
-                max: 250,
+                name: '万亿元',
+                position: 'right',
+                alignTicks: true,
                 nameTextStyle: {
                     color:'white',
-                    padding: [0, 25, 0, 0]
-                },
-                interval: 50,
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} '
-
+                    padding: [0, -30, 0, 0]
                 },
                 axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
                 },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
             },
             {
                 type: 'value',
-                name: '百分比',
-                min: 0,
-                max: 25,
+                name: '降低率',
+                nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
+                position: 'right',
                 nameTextStyle: {
                     color:'white',
-                    padding: [0, -25, 0, 0]
+                    padding: [0, -38, 0, 0]
                 },
-                interval: 5,
+                alignTicks: true,
+                offset: 40,
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
                 axisLabel: {
                     textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} %'
-
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            },
+            {
+                type: 'value',
+                name: '标准煤 / 万亿吨',
+                position: 'left',
+                alignTicks: true,
+                nameTextStyle: {
+                    color:'white',
                 },
                 axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
                 },
-            }
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            },
         ],
         series: [
             {
-                name: '碳排放总量',
+                name: '能源消耗',
                 type: 'bar',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' ml';
-                    }
-                },
+                yAxisIndex: 2,
                 data: [
-                    176.7, 235.6, 262.2, 132.6, 262.2, 132.6, 176.7,
+                    135.6, 162.2, 32.6, 20.0, 6.4,
                 ]
             },
             {
-                name: '碳排放增量',
+                name: '全国GDP',
                 type: 'bar',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' ml';
-                    }
-                },
+                yAxisIndex: 0,
                 data: [
-                    76.7, 135.6, 162.2, 32.6, 162.2, 32.6, 76.7,
+                    175.6, 182.2, 48.7, 18.8, 6.0
                 ]
             },
             {
-                name: '碳排放增率',
+                name: '全国能耗降低率',
                 type: 'line',
                 yAxisIndex: 1,
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' %';
-                    }
-                },
-                data: [20.3, 23.4, 23.0, 16.5, 23.0, 16.5, 20.3,]
+                data: [3.4, 2.0, 1.5, 1.0, 3.2]
             },
         ]
     };
+
     option86 && myChart86.setOption(option86);
 
     const resizeObserver = new ResizeObserver(() => {
@@ -193,11 +212,11 @@ onMounted(() => {
 
 <template>
   <div class="DataAnalysisMiddenTop">
-      <div class="title">安徽省碳排放量数据图</div>
+      <div class="title">安徽省能源消耗水平</div>
       <div class="DataAnalysisMiddenDown-echarts" ref="echartsRef"></div>
       <div class="MySelect">
-          <select class="SelectBox">
-              <option class="options" v-for="(option, index) in options" :key="index">
+          <select style="font-weight: bolder" class="SelectBox">
+              <option style="font-weight: bolder" class="options" v-for="(option, index) in options" :key="index">
                   {{ option.where }}
               </option>
           </select>
@@ -218,13 +237,12 @@ onMounted(() => {
           position: absolute;
           width: 42.5vw;
           text-align: center;
-          margin-top: 0.5vh;
+          margin-top: 0.8vh;
       }
       .DataAnalysisMiddenDown-echarts{
-          width: 33vw;
-          height: 32vh;
-          margin-top: 1vh;
-          margin-left: -2vw;
+          width: 30vw;
+          height: 28vh;
+          margin-top: 4vh;
           position: absolute;
       }
     .MySelect {

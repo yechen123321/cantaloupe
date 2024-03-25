@@ -318,17 +318,11 @@ onMounted(() => {
       margin-top: 5vh;
       margin-left: 1.4vw;
       position: absolute;
+        z-index: 300;
       //background: black;
     }
   }
 
-  //.AnHuiLimitRight-echarts2{
-  //  width: 20vw;
-  //  height: 15vw;
-  //  margin-top: 20vh;
-  //  position: absolute;
-  //  background: red;
-  //}
   .BackImg {
     width: 28vw;
     height: 40vh;

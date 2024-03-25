@@ -5,7 +5,6 @@ import DataAnalysisMiddenTopRight from "@/components/FourthView/DataAnalysisTool
 
 <template>
   <div class="DataAnalysisMiddenTop">
-      <div class="title">暗暗暗暗暗暗啊啊啊</div>
       <DataAnalysisMiddenTopLeft id="DataAnalysisMiddenTopLeft-out"></DataAnalysisMiddenTopLeft>
       <DataAnalysisMiddenTopRight id="DataAnalysisMiddenTopRight-out"></DataAnalysisMiddenTopRight>
       <img src="../../../assets/pic/midden.png" alt="" class="BackImg">

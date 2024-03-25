@@ -17,7 +17,6 @@ import DataAnalysisRightDown from "@/components/FourthView/DataAnalysisTools/Dat
   #DataAnalysisRightDown-out{
     width: 25vw;
     height: 50vh;
-    margin-left: 1.2vw;
     position: absolute;
     margin-top: 27.3vh;
   }

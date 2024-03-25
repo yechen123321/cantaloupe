@@ -41,6 +41,26 @@ const routes = [
     name: 'anhuilimit',
     component: () => import('../views/AnHuiLimitView.vue')
   },
+  {
+    path: '/sunenergy',
+    name: 'sunenergy',
+    component: () => import('../views/SunEnergyView.vue')
+  },
+  {
+    path: '/waterconser',
+    name: 'waterconser',
+    component: () => import('../views/WaterConserView.vue')
+  },
+  {
+    path: '/windenergy',
+    name: 'windenergy',
+    component: () => import('../views/WindEnergyView.vue')
+  },
+  {
+    path: '/thermalpower',
+    name: 'thermalpower',
+    component: () => import('../views/ThermalPowerView.vue')
+  },
 ]
 
 const router = createRouter({

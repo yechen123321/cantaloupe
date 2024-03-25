@@ -81,11 +81,12 @@ onMounted(() => {
         yAxis: [
             {
                 type: 'value',
-                name: '1',
+                name: '亿元',
                 min: 0,
                 max: 250,
                 nameTextStyle: {
-                    padding: [0, -10, 0, 0]
+                    color:'white',
+                    padding: [0, 30, 0, 0]
                 },
                 interval: 50,
                 axisLabel: {
@@ -106,6 +107,7 @@ onMounted(() => {
                 min: 0,
                 max: 25,
                 nameTextStyle: {
+                    color:'white',
                     padding: [0, -25, 0, 0]
                 },
                 interval: 5,

@@ -3,6 +3,7 @@ import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 import {loadBMap} from "@/assets/map";
 import "echarts/extension/bmap/bmap"
+import router from "@/router";
 
 const echartsRef = ref(null);
 let myChart49 = null;
@@ -10,7 +11,20 @@ let option49 = null;
 
 onMounted(() => {
     myChart49 = echarts.init(echartsRef.value, 'dark');
-
+    myChart49.on('click', function (params) {
+        if (params.componentType === 'series') {
+            if (params.seriesType === 'scatter') {
+                // 判断点击的是散点图
+                if (params.data && params.data.value) {
+                    // 获取点击的数据
+                    // 在这里可以根据需要处理点击事件，比如获取数据信息，然后跳转到另一个页面
+                    // 这里只是简单的示例，实际情况根据您的需求进行相应处理
+                    // window.location.href = 'https://www.4399.com'
+                    router.push('/waterconser');
+                }
+            }
+        }
+    });
     // Your echarts option setup here...
     // (Your existing option setup code)
     loadBMap("EGlnrCfbkZCDlamN0ap6OPQpuQhUsdmt").then(() => {
@@ -381,68 +395,39 @@ onMounted(() => {
                             })
                             .slice(0, 6)
                     ),
-                    symbolSize: function (val) {
-                        return val[2] / 10;
-                    },
                     encode: {
                         value: 2
                     },
-
                     label: {
-                        show: true, // 显示label
+                        show: true,
                         textStyle: {
                             color: 'white'
                         },
                         formatter: function (params) {
-                            return params.data.name; // 显示地名
+                            return params.data.name;
                         },
                         position: 'right'
                     },
                     itemStyle: {
-                        color: 'orange' // 设置颜色为橙色
+                        normal: {
+                            color: 'transparent'
+                        },
+                        emphasis: {
+                            color: 'transparent'
+                        }
                     },
+                    symbol: 'image://' + require('../../../assets/水电.png'),
+                    symbolSize: 50,
                     emphasis: {
                         label: {
                             show: true
                         }
                     }
-                }
-                // {
-                //   name: 'Top 5',
-                //   type: 'effectScatter',
-                //   coordinateSystem: 'bmap',
-                //   data: convertData(
-                //     data
-                //       .sort(function (a, b) {
-                //         return b.value - a.value;
-                //       })
-                //       .slice(0, 6)
-                //   ),
-                //   symbolSize: function (val) {
-                //     return val[2] / 10;
-                //   },
-                //   encode: {
-                //     value: 2
-                //   },
-                //   showEffectOn: 'render',
-                //   rippleEffect: {
-                //     brushType: 'stroke'
-                //   },
-                //   label: {
-                //     formatter: '{b}',
-                //     position: 'right',
-                //     show: true
-                //   },
-                //   itemStyle: {
-                //     shadowBlur: 10,
-                //     shadowColor: '#333'
-                //   },
-                //   emphasis: {
-                //     scale: true
-                //   },
-                //   zlevel: 1
-                // }
+                },
+
             ]
+
+
         };
         option49 && myChart49.setOption(option49);
     });

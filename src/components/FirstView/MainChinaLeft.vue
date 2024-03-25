@@ -94,7 +94,7 @@ onMounted(async () => {
                         type: 'value',
                         name: '百分比',
                         min: 0,
-                        max: 5,
+                        // max: 5,
                         nameTextStyle: {
                             padding: [0, -25, 0, 0]
                         },

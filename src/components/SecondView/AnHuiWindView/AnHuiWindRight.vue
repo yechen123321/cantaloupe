@@ -3,6 +3,7 @@ import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 import {loadBMap} from "@/assets/map";
 import "echarts/extension/bmap/bmap"
+import router from "@/router";
 
 const echartsRef = ref(null);
 let myChart61 = null;
@@ -10,6 +11,20 @@ let option61 = null;
 
 onMounted(() => {
     myChart61 = echarts.init(echartsRef.value, 'dark');
+    myChart61.on('click', function (params) {
+        if (params.componentType === 'series') {
+            if (params.seriesType === 'scatter') {
+                // 判断点击的是散点图
+                if (params.data && params.data.value) {
+                    // 获取点击的数据
+                    // 在这里可以根据需要处理点击事件，比如获取数据信息，然后跳转到另一个页面
+                    // 这里只是简单的示例，实际情况根据您的需求进行相应处理
+                    // window.location.href = 'https://www.4399.com'
+                    router.push('/windenergy');
+                }
+            }
+        }
+    });
     loadBMap("EGlnrCfbkZCDlamN0ap6OPQpuQhUsdmt").then(() => {
         const data = [
             {name: '合肥', value: 200, thing: '我的世界awd'},
@@ -378,9 +393,9 @@ onMounted(() => {
                             })
                             .slice(0, 6)
                     ),
-                    symbolSize: function (val) {
-                        return val[2] / 10;
-                    },
+                    // symbolSize: function (val) {
+                    //     return val[2] / 10;
+                    // },
                     encode: {
                         value: 2
                     },
@@ -396,50 +411,23 @@ onMounted(() => {
                         position: 'right'
                     },
                     itemStyle: {
-                        color: 'orange' // 设置颜色为橙色
+                        normal: {
+                            color: 'transparent'
+                        },
+                        emphasis: {
+                            color: 'transparent'
+                        }
                     },
+                    symbol: 'image://' + require('../../../assets/1.png'), // 使用 require 加载图片
+                    symbolSize:65, // 设置图片大小
                     emphasis: {
                         label: {
                             show: true
                         }
                     }
                 }
-                // {
-                //   name: 'Top 5',
-                //   type: 'effectScatter',
-                //   coordinateSystem: 'bmap',
-                //   data: convertData(
-                //     data
-                //       .sort(function (a, b) {
-                //         return b.value - a.value;
-                //       })
-                //       .slice(0, 6)
-                //   ),
-                //   symbolSize: function (val) {
-                //     return val[2] / 10;
-                //   },
-                //   encode: {
-                //     value: 2
-                //   },
-                //   showEffectOn: 'render',
-                //   rippleEffect: {
-                //     brushType: 'stroke'
-                //   },
-                //   label: {
-                //     formatter: '{b}',
-                //     position: 'right',
-                //     show: true
-                //   },
-                //   itemStyle: {
-                //     shadowBlur: 10,
-                //     shadowColor: '#333'
-                //   },
-                //   emphasis: {
-                //     scale: true
-                //   },
-                //   zlevel: 1
-                // }
-            ]
+            ],
+
         };
         option61 && myChart61.setOption(option61);
     });

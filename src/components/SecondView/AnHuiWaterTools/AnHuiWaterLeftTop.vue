@@ -82,6 +82,7 @@ onMounted(() => {
                 min: 0,
                 max: 250,
                 nameTextStyle: {
+                    color:'white',
                     padding: [0, 10, 0, 0]
                 },
                 interval: 50,
@@ -103,6 +104,7 @@ onMounted(() => {
                 min: 0,
                 max: 25,
                 nameTextStyle: {
+                    color:'white',
                     padding: [0, -25, 0, 0]
                 },
                 interval: 5,

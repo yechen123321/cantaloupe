@@ -25,6 +25,15 @@ const datas = ref([
     {name: '转换', thing: '太阳能转换'},
 ]);
 
+const reportGenerated = ref(false);
+
+const updateReport = () => {
+    reportGenerated.value = true;
+};
+
+const showReport = () => {
+    // 这里可以添加显示报告的逻辑
+};
 </script>
 
 <template>
@@ -38,8 +47,8 @@ const datas = ref([
                 </li>
             </ul>
         </div>
-        <Button class="update">生成报告</Button>
-        <Button class="done">已生成报告</Button>
+        <Button class="update"  @click="updateReport" v-show="!reportGenerated">生成报告</Button>
+        <Button class="done" @click="showReport" v-show="reportGenerated">已生成报告</Button>
         <Button @click="downloadLocalWordDoc" class="goto">导出报告</Button>
         <img src="../../../assets/pic/ca1.png" alt="" class="BackImg">
     </div>
@@ -152,7 +161,6 @@ const datas = ref([
     background: rgb(25, 83, 206);
     border: none;
     font-weight: bolder;
-    display: none;
   }
 
   .done:hover {

@@ -187,7 +187,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownLeft">
-        <Button class="GotoQ">全国能源效率水平</Button>
+        <Button class="GotoQ">全国能源消耗水平</Button>
         <div id="MainDownLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>

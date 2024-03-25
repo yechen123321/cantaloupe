@@ -3,6 +3,7 @@ import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 import {loadBMap} from "@/assets/map";
 import "echarts/extension/bmap/bmap"
+import router from "@/router";
 
 const echartsRef = ref(null);
 let myChart71 = null;
@@ -18,8 +19,8 @@ onMounted(() => {
                     // 获取点击的数据
                     // 在这里可以根据需要处理点击事件，比如获取数据信息，然后跳转到另一个页面
                     // 这里只是简单的示例，实际情况根据您的需求进行相应处理
-                    window.location.href = 'https://www.4399.com'
-                    // router.push('/anhuirenew');
+                    // window.location.href = 'https://www.4399.com'
+                    router.push('/thermalpower');
                 }
             }
         }
@@ -417,8 +418,8 @@ onMounted(() => {
                             color: 'transparent'
                         }
                     },
-                    symbol: 'image://' + require('../../../assets/img.png'), // 使用 require 加载图片
-                    symbolSize: 40, // 设置图片大小
+                    symbol: 'image://' + require('../../../assets/火电.png'), // 使用 require 加载图片
+                    symbolSize:65, // 设置图片大小
                     emphasis: {
                         label: {
                             show: true

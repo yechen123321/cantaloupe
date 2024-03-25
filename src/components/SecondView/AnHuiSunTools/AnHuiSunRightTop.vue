@@ -33,8 +33,11 @@ const handleUpdate = () => {
                 </li>
             </ul>
         </div>
+        <div class="mm">
+            <div class="one">故障信息：</div>
+            <div class="two">3 条</div>
+        </div>
         <Button @click="handleUpdate" class="update">更新信息</Button>
-        <Button class="goto">光电场管理界面</Button>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
     </div>
 </template>
@@ -43,7 +46,21 @@ const handleUpdate = () => {
 .AnHuiSunRightTop {
   width: 100%;
   height: 100%;
-
+    .mm{
+        position: absolute;
+        color: #fff35e;
+        font-weight: bolder;
+        font-size: 1.2em;
+        margin-top: 15.5vh;
+        margin-left: 2vw;
+        width: 20vw;
+        .one{
+            float: left;
+        }
+        .two{
+            margin-top: 0.1vh;
+        }
+    }
   .ul {
     position: absolute;
     width: 22vw;
@@ -95,26 +112,6 @@ const handleUpdate = () => {
 
   }
 
-  .goto {
-    width: 7.5vw;
-    height: 3vh;
-    line-height: 3vh;
-    text-align: center;
-    position: absolute;
-    border-radius: 3px;
-    margin-top: 16vh;
-    margin-left: 11vw;
-    font-size: 0.9em;
-    color: white;
-    background: rgb(25, 83, 206);
-    border: none;
-    font-weight: bolder;
-  }
-
-  .goto:hover {
-    cursor: pointer;
-  }
-
   .update {
     font-size: 0.9em;
     width: 5vw;
@@ -124,7 +121,7 @@ const handleUpdate = () => {
     position: absolute;
     border-radius: 3px;
     margin-top: 16vh;
-    margin-left: 4vw;
+    margin-left: 14vw;
     color: white;
     background: rgb(25, 83, 206);
     border: none;
