@@ -371,10 +371,10 @@ onMounted(() => {
             visualMap: {
                 min: 0,
                 max: 60000,
-                show:false,
+                show: false,
                 calculable: true,
                 inRange: {
-                    color: [ 'yellow', 'red']
+                    color: ['yellow', 'red']
                 },
                 range: [0, 60000], // 设置热力图数值的覆盖范围，这里假设为 200000 到 4000000
                 textStyle: {
@@ -446,82 +446,86 @@ const showReport = () => {
 .DataAnalysisRightDown {
   width: 100%;
   height: 100%;
-    .all{
-        position: absolute;
-        background: none;
-        border: none;
-        right: 0;
-        margin-top: 7.6vh;
-        margin-right: 1vw;
-        img{
-            width: 2.2vw;
-            height: 4vh;
-        }
-    }
-    .all:hover{
-        cursor: pointer;
-    }
-    .goto {
-        width: 6vw;
-        height: 3.5vh;
-        line-height: 3vh;
-        text-align: center;
-        position: absolute;
-        border-radius: 3px;
-        margin-top: 8vh;
-        margin-left: 13vw;
-        font-size: 1em;
-        color: white;
-        background: rgb(25, 83, 206);
-        border: none;
-        font-weight: bolder;
-    }
 
-    .goto:hover {
-        cursor: pointer;
-    }
+  .all {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 0;
+    margin-top: 7.6vh;
+    margin-right: 1vw;
 
-    .done {
-        width: 6vw;
-        height: 3.5vh;
-        line-height: 3vh;
-        text-align: center;
-        position: absolute;
-        border-radius: 3px;
-        margin-top: 8vh;
-        margin-left: 5vw;
-        font-size: 1em;
-        color: white;
-        background: rgb(25, 83, 206);
-        border: none;
-        font-weight: bolder;
+    img {
+      width: 2.2vw;
+      height: 4vh;
     }
+  }
 
-    .update {
-        width: 6vw;
-        height: 3.5vh;
-        line-height: 3vh;
-        text-align: center;
-        position: absolute;
-        border-radius: 3px;
-        margin-top: 8vh;
-        margin-left: 5vw;
-        font-size: 1em;
-        color: white;
-        background: rgb(25, 83, 206);
-        border: none;
-        font-weight: bolder;
-    }
+  .all:hover {
+    cursor: pointer;
+  }
 
-    .done:hover {
-        cursor: pointer;
-    }
+  .goto {
+    width: 6vw;
+    height: 3.5vh;
+    line-height: 3vh;
+    text-align: center;
+    position: absolute;
+    border-radius: 3px;
+    margin-top: 8vh;
+    margin-left: 13vw;
+    font-size: 1em;
+    color: white;
+    background: rgb(25, 83, 206);
+    border: none;
+    font-weight: bolder;
+  }
 
-    .update:hover {
-        cursor: pointer;
-    }
+  .goto:hover {
+    cursor: pointer;
+  }
 
-    .echarts {
+  .done {
+    width: 6vw;
+    height: 3.5vh;
+    line-height: 3vh;
+    text-align: center;
+    position: absolute;
+    border-radius: 3px;
+    margin-top: 8vh;
+    margin-left: 5vw;
+    font-size: 1em;
+    color: white;
+    background: rgb(25, 83, 206);
+    border: none;
+    font-weight: bolder;
+  }
+
+  .update {
+    width: 6vw;
+    height: 3.5vh;
+    line-height: 3vh;
+    text-align: center;
+    position: absolute;
+    border-radius: 3px;
+    margin-top: 8vh;
+    margin-left: 5vw;
+    font-size: 1em;
+    color: white;
+    background: rgb(25, 83, 206);
+    border: none;
+    font-weight: bolder;
+  }
+
+  .done:hover {
+    cursor: pointer;
+  }
+
+  .update:hover {
+    cursor: pointer;
+  }
+
+  .echarts {
     width: 23vw;
     height: 42vh;
     position: absolute;
@@ -547,7 +551,7 @@ const showReport = () => {
     color: white;
     margin-top: 3vh;
     width: 24vw;
-      margin-left: 1vw;
+    margin-left: 1vw;
     text-align: center;
   }
 

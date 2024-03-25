@@ -10,7 +10,7 @@ let intervalId = null;
 let isHovering = false;
 
 onMounted(() => {
-    myChart82= echarts.init(echartsRef.value);
+    myChart82 = echarts.init(echartsRef.value);
 
     option82 = {
         series: [
@@ -118,10 +118,11 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
-.LeftMiddenEFirst{
+.LeftMiddenEFirst {
   width: 100%;
   height: 100%;
-  .LeftMiddenEFirst-echarts{
+
+  .LeftMiddenEFirst-echarts {
     width: 30vw;
     height: 30vh;
   }

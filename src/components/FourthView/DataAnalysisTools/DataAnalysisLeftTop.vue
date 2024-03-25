@@ -3,7 +3,7 @@ import {onMounted, ref} from 'vue';
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart83= null;
+let myChart83 = null;
 let option83 = null;
 
 onMounted(() => {
@@ -85,7 +85,7 @@ onMounted(() => {
                 min: 0,
                 max: 250,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, 25, 0, 0]
                 },
                 interval: 50,
@@ -107,7 +107,7 @@ onMounted(() => {
                 min: 0,
                 max: 25,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, -25, 0, 0]
                 },
                 interval: 5,
@@ -185,22 +185,24 @@ onMounted(() => {
 .DataAnalysisLeftTop {
   width: 100%;
   height: 100%;
-    .DataAnalysisLeftTop-echarts{
-        width: 29.3vw;
-        height: 31vh;
-        margin-top: 5.2vh;
-        position: absolute;
-    }
-    .title{
-        position: absolute;
-        color: white;
-        font-size: 1.4em;
-        font-weight: bolder;
-        margin-top: 4vh;
-        margin-left: 3vw;
-    }
 
-  .BackImg{
+  .DataAnalysisLeftTop-echarts {
+    width: 29.3vw;
+    height: 31vh;
+    margin-top: 5.2vh;
+    position: absolute;
+  }
+
+  .title {
+    position: absolute;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bolder;
+    margin-top: 4vh;
+    margin-left: 3vw;
+  }
+
+  .BackImg {
     width: 30vw;
     height: 34vh;
   }

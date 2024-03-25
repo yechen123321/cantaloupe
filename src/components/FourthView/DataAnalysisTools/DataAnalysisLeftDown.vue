@@ -3,7 +3,7 @@ import {onMounted, ref} from 'vue';
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart85= null;
+let myChart85 = null;
 let option85 = null;
 
 onMounted(() => {
@@ -26,7 +26,7 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option85 = {
-        backgroundColor:'rgba(1,1,1,0)',
+        backgroundColor: 'rgba(1,1,1,0)',
         color: colorList,
         tooltip: {
             trigger: 'axis',
@@ -35,10 +35,10 @@ onMounted(() => {
             // }
         },
         legend: {
-            top:"16%",
-            left:'20%',
-            textStyle:{
-                color:'white',
+            top: "16%",
+            left: '20%',
+            textStyle: {
+                color: 'white',
             }
         },
         grid: {
@@ -77,10 +77,10 @@ onMounted(() => {
         ],
         yAxis: [
             {
-                name:'单位/万千瓦时',
+                name: '单位/万千瓦时',
                 type: 'value',
                 nameTextStyle: {
-                    color:'white'
+                    color: 'white'
                 },
                 axisLabel: {
                     textStyle: {
@@ -109,7 +109,7 @@ onMounted(() => {
                     focus: 'series'
                 },
                 data: [
-                    3.9, 5.9, 11.1,231.6, 46.6, 55.4, 18.4, 10.3, 0.7 , 18.7, 48.3, 69.2,
+                    3.9, 5.9, 11.1, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7, 18.7, 48.3, 69.2,
                 ]
             },
             {
@@ -120,7 +120,7 @@ onMounted(() => {
                     focus: 'series'
                 },
                 data: [
-                    69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7,3.9, 5.9, 11.1, 18.7, 48.3,
+                    69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7, 3.9, 5.9, 11.1, 18.7, 48.3,
                 ]
             },
             {
@@ -148,35 +148,38 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="DataAnalysisLeftDown">
-      <div class="title">安徽耗能时间分布</div>
-      <div class="DataAnalysisLeftDown-echarts" ref="echartsRef"></div>
-      <img src="../../../assets/pic/midden.png" alt="" class="BackImg">
-  </div>
+    <div class="DataAnalysisLeftDown">
+        <div class="title">安徽耗能时间分布</div>
+        <div class="DataAnalysisLeftDown-echarts" ref="echartsRef"></div>
+        <img src="../../../assets/pic/midden.png" alt="" class="BackImg">
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .DataAnalysisLeftDown{
-    width: 100%;
-    height: 100%;
-    .DataAnalysisLeftDown-echarts{
-      width: 28vw;
-      height: 30vh;
-      margin-top: 4vh;
-      margin-left: 2vw;
-      position: absolute;
-    }
-    .title{
-      position: absolute;
-      color: white;
-      font-size: 1.4em;
-      font-weight: bolder;
-      margin-top: 4.5vh;
-      margin-left: 3vw;
-    }
-    .BackImg{
-      width: 30vw;
-      height: 34vh;
-    }
+.DataAnalysisLeftDown {
+  width: 100%;
+  height: 100%;
+
+  .DataAnalysisLeftDown-echarts {
+    width: 28vw;
+    height: 30vh;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    position: absolute;
   }
+
+  .title {
+    position: absolute;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bolder;
+    margin-top: 4.5vh;
+    margin-left: 3vw;
+  }
+
+  .BackImg {
+    width: 30vw;
+    height: 34vh;
+  }
+}
 </style>

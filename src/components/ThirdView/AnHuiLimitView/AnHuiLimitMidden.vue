@@ -419,7 +419,7 @@ onMounted(() => {
                         }
                     },
                     symbol: 'image://' + require('../../../assets/火电.png'), // 使用 require 加载图片
-                    symbolSize:65, // 设置图片大小
+                    symbolSize: 65, // 设置图片大小
                     emphasis: {
                         label: {
                             show: true

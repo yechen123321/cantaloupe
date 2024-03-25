@@ -11,10 +11,10 @@ onMounted(() => {
     myChart7 = echarts.init(echartsRef.value);
     option7 = {
         legend: {
-            top:"10%",
+            top: "10%",
             data: ['水电', '火电', '核电', '风电', '太阳能'],
-            textStyle:{
-                color:'white'
+            textStyle: {
+                color: 'white'
             }
         },
         tooltip: {
@@ -23,7 +23,7 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位 / 万千瓦<br>'+ '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位 / 万千瓦<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';

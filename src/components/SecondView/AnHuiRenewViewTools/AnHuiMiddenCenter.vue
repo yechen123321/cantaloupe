@@ -228,8 +228,8 @@ onMounted(() => {
   }
 
   .BackImg {
-      width: 40vw;
-      height: 29vh;
+    width: 40vw;
+    height: 29vh;
     //margin-top: -20vh;
   }
 

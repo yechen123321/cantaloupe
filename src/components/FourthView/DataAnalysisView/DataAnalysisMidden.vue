@@ -4,24 +4,26 @@ import DataAnalysisMiddenTop from "@/components/FourthView/DataAnalysisTools/Dat
 </script>
 
 <template>
-  <div class="DataAnalysisMidden">
-    <DataAnalysisMiddenDown id="DataAnalysisMiddenDown-out"></DataAnalysisMiddenDown>
-      <DataAnalysisMiddenTop id="DataAnalysisMiddenTop-out"></DataAnalysisMiddenTop>
-  </div>
+    <div class="DataAnalysisMidden">
+        <DataAnalysisMiddenDown id="DataAnalysisMiddenDown-out"></DataAnalysisMiddenDown>
+        <DataAnalysisMiddenTop id="DataAnalysisMiddenTop-out"></DataAnalysisMiddenTop>
+    </div>
 </template>
 
 <style scoped lang="scss">
-.DataAnalysisMidden{
+.DataAnalysisMidden {
   width: 100%;
   height: 100%;
-  #DataAnalysisMiddenTop-out{
+
+  #DataAnalysisMiddenTop-out {
     width: 40vw;
     height: 40vh;
     position: absolute;
     margin-left: -2vw;
     margin-top: -5vh;
   }
-  #DataAnalysisMiddenDown-out{
+
+  #DataAnalysisMiddenDown-out {
     position: absolute;
     width: 42.5vw;
     height: 30vh;

@@ -2,6 +2,7 @@
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
 import AnHuiMiddenDownThing from "@/components/ThirdView/AnHuiLimitTools/AnHuiMiddenDownThing.vue";
+
 const echartsRef = ref(null);
 let myChart22 = null;
 let option22 = null;
@@ -26,7 +27,7 @@ onMounted(() => {
     }
     for (var i = 0; i < categoryCount; i++) {
         var val = Math.random(1, 100) * 1000;
-        xAxisData.push('矿场' + i );
+        xAxisData.push('矿场' + i);
         var customVal = [i];
         customData.push(customVal);
         for (var j = 0; j < dataList.length; j++) {
@@ -43,7 +44,7 @@ onMounted(() => {
     }
     option22 = {
         backgroundColor: 'rgba(128,128,128,0)',
-        color:colorList,
+        color: colorList,
         // title: {
         //     left: 'center',
         //     top: '-1%',
@@ -57,7 +58,7 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name; // 获取矿地的名字
-                tooltipContent += '<span style="font-weight: bold; margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/万吨' + '<br>'+ '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold; margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/万吨' + '<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
@@ -216,24 +217,27 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   color: white;
-    .SecondMiddenCenter-title{
-        position: absolute;
-        margin-top: -28.7vh;
-        margin-left: 14vw;
-        font-size: 1.3vw;
-        font-weight: bolder;
-    }
-    #AnHuiMiddenDownThing-out{
-        width: 12vw;
-        height: 18vh;
-        position: absolute;
-        right: 0;
-        //background: red;
-        margin-right: 0.8vw;
-        margin-top: -24vh;
-        z-index: 199;
-        border-left: 1.5px solid #0d87f6;
-    }
+
+  .SecondMiddenCenter-title {
+    position: absolute;
+    margin-top: -28.7vh;
+    margin-left: 14vw;
+    font-size: 1.3vw;
+    font-weight: bolder;
+  }
+
+  #AnHuiMiddenDownThing-out {
+    width: 12vw;
+    height: 18vh;
+    position: absolute;
+    right: 0;
+    //background: red;
+    margin-right: 0.8vw;
+    margin-top: -24vh;
+    z-index: 199;
+    border-left: 1.5px solid #0d87f6;
+  }
+
   #SecondMiddenCenter-echarts {
     width: 28vw;
     height: 27vh;

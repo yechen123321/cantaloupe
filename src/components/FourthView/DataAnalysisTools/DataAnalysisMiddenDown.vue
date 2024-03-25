@@ -44,7 +44,7 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option86 = {
-        backgroundColor:'rgba(1,1,1,0)',
+        backgroundColor: 'rgba(1,1,1,0)',
         color: colorList,
         // toolbox: {
         //     iconStyle: {
@@ -85,7 +85,7 @@ onMounted(() => {
             containLabel: true,
         },
         legend: {
-            top:'3%',
+            top: '3%',
             data: ['能源消耗', '全国GDP', '全国能耗降低率'],
             textStyle: {
                 color: 'white'
@@ -117,7 +117,7 @@ onMounted(() => {
                 position: 'right',
                 alignTicks: true,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, -30, 0, 0]
                 },
                 axisLine: {
@@ -137,7 +137,7 @@ onMounted(() => {
                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
                 position: 'right',
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, -38, 0, 0]
                 },
                 alignTicks: true,
@@ -159,7 +159,7 @@ onMounted(() => {
                 position: 'left',
                 alignTicks: true,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                 },
                 axisLine: {
                     lineStyle: {
@@ -211,99 +211,104 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="DataAnalysisMiddenTop">
-      <div class="title">安徽省能源消耗水平</div>
-      <div class="DataAnalysisMiddenDown-echarts" ref="echartsRef"></div>
-      <div class="MySelect">
-          <select style="font-weight: bolder" class="SelectBox">
-              <option style="font-weight: bolder" class="options" v-for="(option, index) in options" :key="index">
-                  {{ option.where }}
-              </option>
-          </select>
-          <button class="SelectGo" @click="handleRouteChange">切换</button>
-      </div>
-      <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
-  </div>
+    <div class="DataAnalysisMiddenTop">
+        <div class="title">安徽省能源消耗水平</div>
+        <div class="DataAnalysisMiddenDown-echarts" ref="echartsRef"></div>
+        <div class="MySelect">
+            <select style="font-weight: bolder" class="SelectBox">
+                <option style="font-weight: bolder" class="options" v-for="(option, index) in options" :key="index">
+                    {{ option.where }}
+                </option>
+            </select>
+            <button class="SelectGo" @click="handleRouteChange">切换</button>
+        </div>
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
+    </div>
 </template>
 
 <style scoped lang="scss">
-  .DataAnalysisMiddenTop{
-    width: 100%;
-    height: 100%;
-      .title{
-          color:white;
-          font-weight: bolder;
-          font-size: 1.4em;
-          position: absolute;
-          width: 42.5vw;
-          text-align: center;
-          margin-top: 0.8vh;
-      }
-      .DataAnalysisMiddenDown-echarts{
-          width: 30vw;
-          height: 28vh;
-          margin-top: 4vh;
-          position: absolute;
-      }
-    .MySelect {
-      width: 12vw;
-      height: 18vh;
-      margin-left: 30vw;
-      margin-top: 7vh;
-      position: absolute;
-      z-index: 222;
-      border-left: 2px solid #0d87f6;
-      .SelectBox {
-        width: 7vw;
-        margin-left: 2.5vw;
-        margin-top: 2vh;
-        height: 4vh;
-        cursor: pointer;
-        overflow: hidden;
-        font-size: 1vw;
-        background: #4d70cd;
-        color: white;
-        border: none;
-        text-align: center;
-        border-radius: 6px;
-      }
+.DataAnalysisMiddenTop {
+  width: 100%;
+  height: 100%;
 
-      .SelectGo {
-        width: 7vw;
-        height: 4vh;
-        right: 0;
-        margin-top: 9vh;
-        margin-right: 2.5vw;
-        position: absolute;
-        cursor: pointer;
-        font-size: 1vw;
-        font-weight: bolder;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        background: #0d87f6;
-        z-index: 222;
-      }
+  .title {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.4em;
+    position: absolute;
+    width: 42.5vw;
+    text-align: center;
+    margin-top: 0.8vh;
+  }
 
-      .SelectGo:hover {
-        width: 7.5vw;
-        height: 5vh;
-        margin-top: 8.5vh;
-        margin-right: 2.15vw;
-        font-size: 1.4vw;
-      }
+  .DataAnalysisMiddenDown-echarts {
+    width: 30vw;
+    height: 28vh;
+    margin-top: 4vh;
+    position: absolute;
+  }
 
-      .SelectGo:active {
-        width: 7vw;
-        height: 4vh;
-        margin-top: 9vh;
-        margin-right: 2.5vw;
-        font-size: 1vw;
-      }
+  .MySelect {
+    width: 12vw;
+    height: 18vh;
+    margin-left: 30vw;
+    margin-top: 7vh;
+    position: absolute;
+    z-index: 222;
+    border-left: 2px solid #0d87f6;
+
+    .SelectBox {
+      width: 7vw;
+      margin-left: 2.5vw;
+      margin-top: 2vh;
+      height: 4vh;
+      cursor: pointer;
+      overflow: hidden;
+      font-size: 1vw;
+      background: #4d70cd;
+      color: white;
+      border: none;
+      text-align: center;
+      border-radius: 6px;
     }
-    .BackImg{
-      width: 42.5vw;
-      height: 28vh;
+
+    .SelectGo {
+      width: 7vw;
+      height: 4vh;
+      right: 0;
+      margin-top: 9vh;
+      margin-right: 2.5vw;
+      position: absolute;
+      cursor: pointer;
+      font-size: 1vw;
+      font-weight: bolder;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      background: #0d87f6;
+      z-index: 222;
+    }
+
+    .SelectGo:hover {
+      width: 7.5vw;
+      height: 5vh;
+      margin-top: 8.5vh;
+      margin-right: 2.15vw;
+      font-size: 1.4vw;
+    }
+
+    .SelectGo:active {
+      width: 7vw;
+      height: 4vh;
+      margin-top: 9vh;
+      margin-right: 2.5vw;
+      font-size: 1vw;
     }
   }
+
+  .BackImg {
+    width: 42.5vw;
+    height: 28vh;
+  }
+}
 </style>

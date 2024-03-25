@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
 
 const echartsRef = ref(null);
@@ -41,12 +41,12 @@ onMounted(() => {
                     show: false
                 },
                 data: [
-                    { value: 1048, name: '煤炭' },
-                    { value: 735, name: '铁矿' },
-                    { value: 580, name: '基岩' },
-                    { value: 484, name: '石灰石' },
-                    { value: 300, name: '钻石' },
-                    { value: 300, name: '其他' }
+                    {value: 1048, name: '煤炭'},
+                    {value: 735, name: '铁矿'},
+                    {value: 580, name: '基岩'},
+                    {value: 484, name: '石灰石'},
+                    {value: 300, name: '钻石'},
+                    {value: 300, name: '其他'}
                 ]
             }
         ]
@@ -121,26 +121,30 @@ onBeforeUnmount(() => {
 
 <style scoped lang="scss">
 .AnHuiMiddenDownThing {
-    width: 100%;
-    height: 100%;
-    .AnHuiMiddenDownThing-title{
-        font-weight: bolder;
-        margin-top: -1vh;
-        width: 12vw;
-        //background: red;
-        margin-left: 1vw;
-        .first{
-            float: left;
-        }
-        .second{
-            margin-top: 1vh;
-        }
+  width: 100%;
+  height: 100%;
+
+  .AnHuiMiddenDownThing-title {
+    font-weight: bolder;
+    margin-top: -1vh;
+    width: 12vw;
+    //background: red;
+    margin-left: 1vw;
+
+    .first {
+      float: left;
     }
-    .AnHuiMiddenDownThing-echarts {
-        width: 20vw;
-        height: 20vh;
-        margin-left: -3.5vw;
-        margin-top: -1.5vh;
+
+    .second {
+      margin-top: 1vh;
     }
+  }
+
+  .AnHuiMiddenDownThing-echarts {
+    width: 20vw;
+    height: 20vh;
+    margin-left: -3.5vw;
+    margin-top: -1.5vh;
+  }
 }
 </style>

@@ -11,7 +11,7 @@ const echarts2 = ref(null);
 let isEcharts1Visible = true;
 
 const echartsRef = ref(null);
-const echartsRef2 = ref(null) ;
+const echartsRef2 = ref(null);
 let myChart1 = null;
 let option1 = null;
 let myChart111 = null;
@@ -25,7 +25,7 @@ onMounted(() => {
     echarts1.value = document.getElementById('MainTable-echarts');
     echarts2.value = document.getElementById('MainTable-echarts2');
 
-    toggleButton.value.addEventListener('click', function() {
+    toggleButton.value.addEventListener('click', function () {
         if (isEcharts1Visible) {
             echarts1.value.style.display = 'none';
             echarts2.value.style.display = 'block';
@@ -37,7 +37,7 @@ onMounted(() => {
         }
     });
     option1 = {
-        backgroundColor:'rgba(128,128,128,0)',
+        backgroundColor: 'rgba(128,128,128,0)',
         title: {
             text: '全国能源进口量',
             left: 'center',
@@ -58,7 +58,7 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
@@ -68,11 +68,11 @@ onMounted(() => {
             }
         },
         legend: {
-            width:'120%',
-            top:'15%',
+            width: '120%',
+            top: '15%',
             itemWidth: 10, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
-            left:'center',
+            left: 'center',
             textStyle: {
                 color: 'white',
             },
@@ -177,7 +177,7 @@ onMounted(() => {
     };
 
     option111 = {
-        backgroundColor:'rgba(128,128,128,0)',
+        backgroundColor: 'rgba(128,128,128,0)',
         title: {
             text: '全国能源出口量',
             left: 'center',
@@ -198,7 +198,7 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>' ; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
@@ -208,11 +208,11 @@ onMounted(() => {
             }
         },
         legend: {
-            width:'120%',
-            top:'15%',
+            width: '120%',
+            top: '15%',
             itemWidth: 10, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
-            left:'center',
+            left: 'center',
             textStyle: {
                 color: 'white',
             },
@@ -226,7 +226,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: [ '2019', '2020', '2021', '2022', '2023'],
+                data: ['2019', '2020', '2021', '2022', '2023'],
                 axisLine: {
                     lineStyle: {
                         color: 'white',
@@ -262,7 +262,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 301, 334, 390, 330, 320]
+                data: [301, 334, 390, 330, 320]
             },
             {
                 name: 'XB能',
@@ -271,7 +271,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 101, 134, 90, 230, 210]
+                data: [101, 134, 90, 230, 210]
             },
             {
                 name: 'XA能',
@@ -280,7 +280,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 191, 234, 290, 330, 310]
+                data: [191, 234, 290, 330, 310]
             },
             {
                 name: 'XZ能',
@@ -289,12 +289,12 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 201, 154, 190, 330, 410]
+                data: [201, 154, 190, 330, 410]
             },
             {
                 name: 'XY能',
                 type: 'bar',
-                data: [ 964, 1026, 1679, 1600, 1570],
+                data: [964, 1026, 1679, 1600, 1570],
                 emphasis: {
                     focus: 'series'
                 },
@@ -333,7 +333,7 @@ onMounted(() => {
         <div id="MainTable-echarts2" ref="echartsRef2"></div>
         <Button id="change"><img src="../../assets/切换.png" alt=""></Button>
         <MainChinaLeft id="MainChinaLeft-out"></MainChinaLeft>
-<!--        <Button class="GoMinerals">全国重要矿产开发产量</Button>-->
+        <!--        <Button class="GoMinerals">全国重要矿产开发产量</Button>-->
         <MainLeftMidden id="MainLeftMidden-out"></MainLeftMidden>
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
         <MainLeftButtom id="MainLeftButtom-out"></MainLeftButtom>
@@ -344,21 +344,25 @@ onMounted(() => {
 .MainLeftTable {
   width: 100vw;
   height: 100vh;
-    #change{
-        background-color: rgba(255, 255, 255, 0);
-        border: none;
-        right: 0;
-        margin-top: 28vh;
-        margin-right: -2vw;
-        z-index: 1000;
-        position: absolute;
-        img{
-            width: 2vw;
-        }
+
+  #change {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    right: 0;
+    margin-top: 28vh;
+    margin-right: -2vw;
+    z-index: 1000;
+    position: absolute;
+
+    img {
+      width: 2vw;
     }
-    #change:hover{
-        cursor: pointer;
-    }
+  }
+
+  #change:hover {
+    cursor: pointer;
+  }
+
   .BackImg {
     width: 27vw;
     height: 84vh;
@@ -371,18 +375,18 @@ onMounted(() => {
     position: absolute;
     margin-top: 28vh;
     z-index: 999;
-      display: block;
+    display: block;
   }
 
-    #MainTable-echarts2 {
-        width: 23vw;
-        height: 21.5vh;
-        margin-left: 1.5vw;
-        position: absolute;
-        margin-top: 28vh;
-        z-index: 999;
-        display: none;
-    }
+  #MainTable-echarts2 {
+    width: 23vw;
+    height: 21.5vh;
+    margin-left: 1.5vw;
+    position: absolute;
+    margin-top: 28vh;
+    z-index: 999;
+    display: none;
+  }
 
   .GoMinerals {
     //cursor: pointer;

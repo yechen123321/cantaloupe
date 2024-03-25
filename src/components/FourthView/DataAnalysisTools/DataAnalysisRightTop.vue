@@ -1,5 +1,6 @@
 <script setup>
 import {ref} from "vue";
+
 const downloadLocalWordDoc = () => {
     // 本地 Word 文档的文件路径
     const localDocPath = 'https://student-portrait-1314223587.cos.ap-nanjing.myqcloud.com/homework.docx';
@@ -47,7 +48,7 @@ const showReport = () => {
                 </li>
             </ul>
         </div>
-        <Button class="update"  @click="updateReport" v-show="!reportGenerated">生成报告</Button>
+        <Button class="update" @click="updateReport" v-show="!reportGenerated">生成报告</Button>
         <Button class="done" @click="showReport" v-show="reportGenerated">已生成报告</Button>
         <Button @click="downloadLocalWordDoc" class="goto">导出报告</Button>
         <img src="../../../assets/pic/ca1.png" alt="" class="BackImg">

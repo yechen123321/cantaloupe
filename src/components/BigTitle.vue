@@ -57,7 +57,8 @@
     color: white;
     text-decoration: none;
     //background: red;
-      z-index: 999;
+    z-index: 999;
+
     img {
       margin-left: -9.7vw;
       margin-top: 0.5vh;

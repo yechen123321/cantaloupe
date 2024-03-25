@@ -15,7 +15,7 @@ onMounted(() => {
         '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
     ];
     option2 = {
-        backgroundColor:'rgba(128,128,128,0)',
+        backgroundColor: 'rgba(128,128,128,0)',
         color: colorList,
         // title: {
         //     top:'-2%',
@@ -28,8 +28,8 @@ onMounted(() => {
         // },
         tooltip: {
             trigger: 'item',
-            textStyle:{
-              fontWeight:'bold',
+            textStyle: {
+                fontWeight: 'bold',
             },
             // formatter: '{a} <br/>{b} : {c} 吨 ({d}%)',
             formatter: '{a} <br/>{b} : {d}%'
@@ -71,7 +71,7 @@ onMounted(() => {
                 label: {
                     show: true,
                     fontWeight: 'bold',
-                    color:'white'
+                    color: 'white'
                 },
                 emphasis: {
                     label: {
@@ -99,7 +99,7 @@ onMounted(() => {
                 },
                 label: {
                     show: true,
-                    color:'white',
+                    color: 'white',
                     fontWeight: 'bold',
                 },
                 data: [

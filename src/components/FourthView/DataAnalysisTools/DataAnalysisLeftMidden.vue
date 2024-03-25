@@ -3,6 +3,7 @@ import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
 import LeftMiddenEFirst from "@/components/FourthView/DataAnalysisTools/LeftMiddenEFirst.vue";
 import LeftMiddenESecond from "@/components/FourthView/DataAnalysisTools/LeftMiddenESecond.vue";
+
 const echartsRef = ref(null);
 let myChart80 = null;
 let option80 = null;
@@ -116,49 +117,54 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="DataAnalysisLeftMidden">
-      <div class="title">安徽能源结构</div>
-      <div class="DataAnalysisLeftMidden-echarts" ref="echartsRef"></div>
-      <LeftMiddenEFirst id="LeftMiddenEFirst-out"></LeftMiddenEFirst>
-      <LeftMiddenESecond id="LeftMiddenESecond-out"></LeftMiddenESecond>
-      <img src="../../../assets/pic/midden.png" alt="" class="BackImg">
-  </div>
+    <div class="DataAnalysisLeftMidden">
+        <div class="title">安徽能源结构</div>
+        <div class="DataAnalysisLeftMidden-echarts" ref="echartsRef"></div>
+        <LeftMiddenEFirst id="LeftMiddenEFirst-out"></LeftMiddenEFirst>
+        <LeftMiddenESecond id="LeftMiddenESecond-out"></LeftMiddenESecond>
+        <img src="../../../assets/pic/midden.png" alt="" class="BackImg">
+    </div>
 </template>
 
 <style scoped lang="scss">
-.DataAnalysisLeftMidden{
+.DataAnalysisLeftMidden {
   width: 100%;
   height: 100%;
-  #LeftMiddenESecond-out{
+
+  #LeftMiddenESecond-out {
     width: 20vw;
     height: 20vh;
     position: absolute;
     margin-top: 1.5vh;
     margin-left: 14vw;
   }
-  #LeftMiddenEFirst-out{
+
+  #LeftMiddenEFirst-out {
     width: 20vw;
     height: 20vh;
     position: absolute;
     margin-top: 1.5vh;
     margin-left: 5.5vw;
   }
-  .DataAnalysisLeftMidden-echarts{
+
+  .DataAnalysisLeftMidden-echarts {
     width: 30vw;
     height: 30vh;
     position: absolute;
     margin-left: -3vw;
     margin-top: 1.6vh;
   }
-  .title{
+
+  .title {
     position: absolute;
-    color:white;
+    color: white;
     margin-top: 3.5vh;
     margin-left: 3vw;
     font-weight: bolder;
     font-size: 1.4em;
   }
-  .BackImg{
+
+  .BackImg {
     width: 30vw;
     height: 28vh;
   }

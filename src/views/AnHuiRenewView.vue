@@ -35,11 +35,11 @@ import AnHuiRightTop from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRigh
   }
 
   #SecondLeftTable {
-      width: 25vw;
-      height: 80vh;
-      margin-top: 3vh;
-      margin-left: 2vw;
-      position: absolute;
+    width: 25vw;
+    height: 80vh;
+    margin-top: 3vh;
+    margin-left: 2vw;
+    position: absolute;
   }
 
   #SecondMiddem {

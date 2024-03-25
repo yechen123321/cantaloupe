@@ -28,7 +28,7 @@ onMounted(() => {
         ]),
         // 其他渐变色定义...
     ];
-    option87 =  {
+    option87 = {
         backgroundColor: "rgba(128,128,128,0)",
         color: colorList,
         tooltip: {
@@ -62,7 +62,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['1', '2', '3', '4', '5', '6', '7','8','9','10','11','12'],
+                data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -90,7 +90,7 @@ onMounted(() => {
                 min: 0,
                 // max: 250,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, 25, 0, 0]
                 },
                 interval: 50,
@@ -117,7 +117,7 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    176.7, 235.6, 262.2, 132.6, 262.2, 132.6, 176.7, 235.6, 262.2,132.6, 176.7, 235.6,
+                    176.7, 235.6, 262.2, 132.6, 262.2, 132.6, 176.7, 235.6, 262.2, 132.6, 176.7, 235.6,
                 ]
             },
             {
@@ -129,7 +129,7 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    135.6, 162.2,76.7, 135.6, 162.2, 32.6, 162.2, 32.6, 76.7, 135.6, 162.2,162.2,
+                    135.6, 162.2, 76.7, 135.6, 162.2, 32.6, 162.2, 32.6, 76.7, 135.6, 162.2, 162.2,
                 ]
             },
             {
@@ -189,7 +189,7 @@ onMounted(() => {
         },
         legend: {
             // left:'0%',
-            top:'3%',
+            top: '3%',
             itemWidth: 10, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             data: ['开采耗费', '获取能量', '能耗降低率'],
@@ -223,7 +223,7 @@ onMounted(() => {
                 position: 'right',
                 alignTicks: true,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, -30, 0, 0]
                 },
                 axisLine: {
@@ -243,7 +243,7 @@ onMounted(() => {
                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
                 position: 'right',
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, -38, 0, 0]
                 },
                 alignTicks: true,
@@ -263,7 +263,7 @@ onMounted(() => {
                 type: 'value',
                 name: '标准煤 / 万亿吨',
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, 10, 0, 0]
                 },
                 position: 'left',
@@ -306,8 +306,8 @@ onMounted(() => {
         ]
     };
 
-    option87&& myChart87.setOption(option87);
-    option88&& myChart88.setOption(option88);
+    option87 && myChart87.setOption(option87);
+    option88 && myChart88.setOption(option88);
 
     const resizeObserver = new ResizeObserver(() => {
         myChart87.resize();
@@ -332,8 +332,9 @@ onMounted(() => {
 .DataAnalysisMiddenTopLeft {
     width: 100%;
     height: 100%;
-    .TitleFirst{
-        color:white;
+
+    .TitleFirst {
+        color: white;
         position: absolute;
         font-weight: bolder;
         margin-top: -6vh;
@@ -342,8 +343,9 @@ onMounted(() => {
         text-align: center;
         font-size: 1.3em;
     }
-    .TitleSecond{
-        color:white;
+
+    .TitleSecond {
+        color: white;
         position: absolute;
         font-weight: bolder;
         margin-top: 21vh;
@@ -352,7 +354,8 @@ onMounted(() => {
         text-align: center;
         font-size: 1.3em;
     }
-    .DataAnalysisMiddenTopLeft-down{
+
+    .DataAnalysisMiddenTopLeft-down {
         width: 31vw;
         height: 29vh;
         position: absolute;
@@ -360,7 +363,8 @@ onMounted(() => {
         margin-left: -2vw;
         z-index: 333;
     }
-    .DataAnalysisMiddenTopLeft-top{
+
+    .DataAnalysisMiddenTopLeft-top {
         width: 25.5vw;
         height: 28vh;
         margin-top: -3vh;
