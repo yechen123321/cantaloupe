@@ -27,7 +27,7 @@ import ThermalPowerRightDown from "@/components/ThermalPower/ThermalPowerTools/T
     width: 40vw;
     height: 20vh;
     position: absolute;
-    margin-top: 28vh;
+    margin-top: 24.5vh;
     margin-left: -0.5vw;
   }
 }

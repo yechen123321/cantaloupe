@@ -24,11 +24,11 @@ import WindEnergyRightDown from "@/components/WindEnergy/WindEnergyTools/WindEne
   }
 
   #WindEnergyRightDown-out {
-    width: 40vw;
-    height: 20vh;
-    position: absolute;
-    margin-top: 28vh;
-    margin-left: -0.5vw;
+      width: 40vw;
+      height: 20vh;
+      position: absolute;
+      margin-top: 24.5vh;
+      margin-left: -0.5vw;
   }
 }
 </style>

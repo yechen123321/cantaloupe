@@ -18,7 +18,7 @@ const showReport = () => {
         <div class="VI">
             <Button @click="updateReport" class="First" v-show="!reportGenerated">模型操作</Button>
             <Button @click="showReport" class="Second" v-show="reportGenerated">视频展示</Button>
-            <video v-show="!reportGenerated" class="VV" src="../../../assets/QQ2024325-22142-HD.mp4" autoplay loop
+            <video v-show="!reportGenerated" class="VV" src="../../../assets/Fire.mp4" autoplay loop
                    muted></video>
         </div>
     </div>
@@ -53,6 +53,7 @@ const showReport = () => {
       width: 42.2vw;
       height: 50vh;
       object-fit: inherit;
+        border-radius: 5px;
     }
   }
 }
