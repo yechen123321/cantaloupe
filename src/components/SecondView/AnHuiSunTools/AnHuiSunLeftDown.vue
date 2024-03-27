@@ -85,7 +85,18 @@ onMounted(() => {
                 name: '合肥',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(234,124,204,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(234,124,204,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -95,7 +106,18 @@ onMounted(() => {
                 name: '马鞍山',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(145,204,117,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(145,204,117,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -105,7 +127,18 @@ onMounted(() => {
                 name: '阜阳',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(250,200,88,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(250,200,88,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -115,7 +148,18 @@ onMounted(() => {
                 name: '芜湖',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(238,102,102,0.7)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(238,102,102,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },

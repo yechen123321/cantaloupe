@@ -18,10 +18,7 @@ onMounted(() => {
             {offset: 0, color: '#bc4e9c'},
             {offset: 1, color: '#f80759'}
         ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
+
         // 其他渐变色定义...
     ];
     // Your echarts option setup here...

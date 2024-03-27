@@ -10,27 +10,6 @@ let option21 = null;
 onMounted(() => {
     myChart21 = echarts.init(echartsRef.value);
     option21 = {
-        // toolbox: {
-        //     iconStyle: {
-        //         borderColor: "#fff",
-        //     },
-        //     showTitle:false,
-        //     right:'3%',
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
-        // title: {
-        //     text: '你好不好我不好',
-        //     left: 'center',
-        //     top: '10%',
-        //     textStyle: {
-        //         color: 'white',
-        //     },
-        // },
         backgroundColor: 'rgba(128,128,128,0)',
         tooltip: {
             trigger: 'axis',
@@ -158,15 +137,6 @@ onMounted(() => {
                 },
                 data: [120, 132, 101, 134, 290, 230, 220]
             },
-            // {
-            //     name: 'Others',
-            //     type: 'bar',
-            //     stack: 'Search Engine',
-            //     emphasis: {
-            //         focus: 'series'
-            //     },
-            //     data: [62, 82, 91, 84, 109, 110, 120]
-            // }
         ]
     };
     option21 && myChart21.setOption(option21);

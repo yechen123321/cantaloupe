@@ -1,33 +1,32 @@
-import  {request}  from "@/utils/request";
+import {request} from "@/utils/request";
 
 /////// 首页 ///////
 
 // 全国能源产量及库存
 export const initadd = () => request({
     url: '/get_energy_production_and_inventory/',
-    method:'get',
+    method: 'get',
 })
 
 // 全国能耗水平
 export const initqdd = () => request({
     url: '/get_energy_consumption/',
-    method:'get',
+    method: 'get',
 })
 
 // 进出口
 export const initapp = () => request({
     url: '/get_energy_import_and_export/',
-    method:'get',
+    method: 'get',
 })
 
 // 全国装机容量
 export const initkdd = () => request({
     url: '/get_power_generation_installed_capacity/',
-    method:'get',
+    method: 'get',
 })
 
 ///////     ///////
-
 
 
 /////// 再生 ///////
@@ -45,16 +44,10 @@ export const initKlist = () => request({
 /////// 有限 ///////
 
 
-
-
-
 ///////     ///////
 
 
 /////// 分析 ///////
-
-
-
 
 
 ///////     ///////

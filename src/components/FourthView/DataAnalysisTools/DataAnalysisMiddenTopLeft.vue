@@ -377,7 +377,7 @@ onMounted(() => {
         width: 25.5vw;
         height: 28vh;
         margin-top: -3vh;
-        z-index: 333;
+        z-index: 999;
         position: absolute;
     }
 }

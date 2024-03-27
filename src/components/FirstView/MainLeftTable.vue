@@ -158,19 +158,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                // markLine: {
-                //     lineStyle: {
-                //         type: 'dashed'
-                //
-                //     },
-                //     label: {
-                //         formatter: '{c} 吨', // 在数据后加上单位
-                //         textStyle: {
-                //             color: 'white' // 设置 markLine 文本颜色为白色
-                //         }
-                //     },
-                //     data: [[{type: 'min'}, {type: 'max'}]]
-                // }
+
             },
 
         ]
@@ -298,19 +286,6 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                markLine: {
-                    lineStyle: {
-                        type: 'dashed'
-
-                    },
-                    label: {
-                        formatter: '{c} 吨', // 在数据后加上单位
-                        textStyle: {
-                            color: 'white' // 设置 markLine 文本颜色为白色
-                        }
-                    },
-                    data: [[{type: 'min'}, {type: 'max'}]]
-                }
             },
         ]
     };
