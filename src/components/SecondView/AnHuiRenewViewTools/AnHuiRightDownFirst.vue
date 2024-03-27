@@ -11,8 +11,35 @@ onMounted(() => {
 
     // Your echarts option setup here...
     // (Your existing option setup code)
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#396afc'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#8E2DE2'},
+            {offset: 1, color: '#4A00E0'}
+        ]),
+        // 其他渐变色定义...
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#ee9ca7'},
+            {offset: 1, color: '#ffdde1'}
+        ]),
+    ];
     option39 = {
-        color: ['#73C0DE', '#FAC858'],
+        color:colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
@@ -70,14 +97,12 @@ onMounted(() => {
                         value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
                         name: '全国平均',
                         areaStyle: {
-                            color: '#73C0DE' // 粉红色，与深蓝色相呼应
                         },
                     },
                     {
                         value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 0],
                         name: '省内总量',
                         areaStyle: {
-                            color: '#FAC858' // 橙色，与深蓝色相呼应
                         },
 
                     },

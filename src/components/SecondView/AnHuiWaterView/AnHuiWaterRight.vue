@@ -416,7 +416,7 @@ onMounted(() => {
                             color: 'transparent'
                         }
                     },
-                    symbol: 'image://' + require('../../../assets/水电.png'),
+                    symbol: 'image://' + require('../../../assets/水发电.png'),
                     symbolSize: 50,
                     emphasis: {
                         label: {

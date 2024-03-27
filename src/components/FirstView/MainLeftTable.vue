@@ -86,7 +86,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                data: ['2019', '2020', '2021', '2022', '2023'],
                 axisLine: {
                     lineStyle: {
                         color: 'white',
@@ -158,19 +158,19 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                markLine: {
-                    lineStyle: {
-                        type: 'dashed'
-
-                    },
-                    label: {
-                        formatter: '{c} 吨', // 在数据后加上单位
-                        textStyle: {
-                            color: 'white' // 设置 markLine 文本颜色为白色
-                        }
-                    },
-                    data: [[{type: 'min'}, {type: 'max'}]]
-                }
+                // markLine: {
+                //     lineStyle: {
+                //         type: 'dashed'
+                //
+                //     },
+                //     label: {
+                //         formatter: '{c} 吨', // 在数据后加上单位
+                //         textStyle: {
+                //             color: 'white' // 设置 markLine 文本颜色为白色
+                //         }
+                //     },
+                //     data: [[{type: 'min'}, {type: 'max'}]]
+                // }
             },
 
         ]

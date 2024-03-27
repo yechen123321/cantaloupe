@@ -1,13 +1,13 @@
 <template>
-<!--    <div v-if="isLoading" class="loading-spinner">-->
-<!--        &lt;!&ndash; 这里可以放置你的加载动画组件 &ndash;&gt;-->
-<!--        Loading...-->
-<!--    </div>-->
+  <!--    <div v-if="isLoading" class="loading-spinner">-->
+  <!--        &lt;!&ndash; 这里可以放置你的加载动画组件 &ndash;&gt;-->
+  <!--        Loading...-->
+  <!--    </div>-->
     <div id="app">
         <div id="stars"></div>
         <router-view v-slot="{ Component }">
             <transition name="scale" mode="out-in">
-                <component :is="Component" />
+                <component :is="Component"/>
             </transition>
         </router-view>
     </div>
@@ -21,28 +21,31 @@ html, body {
   padding: 0;
   overflow: hidden;
 }
+
 .scale-enter-active,
 .scale-leave-active {
-    transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 
 .scale-enter-from,
 .scale-leave-to {
-    opacity: 0;
-    transform: scale(0.9);
+  opacity: 0;
+  transform: scale(0.9);
 }
+
 .loading-spinner {
-    /* 这里可以定义加载动画的样式，比如居中显示、动画效果等 */
-    text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    color: red;
-    width: 30vw;
-    height: 30vh;
-    background: #0d87f6;
-    position: absolute;
+  /* 这里可以定义加载动画的样式，比如居中显示、动画效果等 */
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  color: red;
+  width: 30vw;
+  height: 30vh;
+  background: #0d87f6;
+  position: absolute;
 }
+
 * {
   user-drag: none;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -119,7 +122,7 @@ html {
 </style>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import {ref, onMounted} from 'vue';
 
 const isLoading = ref(true);
 onMounted(() => {

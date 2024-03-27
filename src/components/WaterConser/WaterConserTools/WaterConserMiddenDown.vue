@@ -12,19 +12,28 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        // new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        //     {offset: 0, color: '#bc4e9c'},
-        //     {offset: 1, color: '#f80759'}
-        // ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#396afc'},
             {offset: 1, color: '#2948ff'}
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#00F260'},
+            {offset: 1, color: '#0575E6'}
         ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
+        ]),
+
         // 其他渐变色定义...
+
+
     ];
     option85 = {
         backgroundColor: 'rgba(1,1,1,0)',
@@ -98,6 +107,18 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(57,106,252,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(41,72,255,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 data: [
                     2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
                 ]
@@ -108,6 +129,18 @@ onMounted(() => {
                 smooth: true,
                 emphasis: {
                     focus: 'series'
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(0,242,96,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(5,117,230,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
                 },
                 data: [
                     3.9, 5.9, 11.1, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7, 18.7, 48.3, 69.2,
@@ -120,6 +153,18 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(188,78,156,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(248,7,89,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 data: [
                     69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7, 3.9, 5.9, 11.1, 18.7, 48.3,
                 ]
@@ -130,6 +175,18 @@ onMounted(() => {
                 smooth: true,
                 emphasis: {
                     focus: 'series'
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(251,215,134,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(198,255,221,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
                 },
                 data: [
                     3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7

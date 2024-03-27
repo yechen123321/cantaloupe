@@ -33,21 +33,7 @@ onMounted(() => {
         color: colorList,
         tooltip: {
             trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     crossStyle: {
-            //         color: '#999'
-            //     }
-            // }
         },
-        // toolbox: {
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
         legend: {
 
             textStyle: {
@@ -116,6 +102,18 @@ onMounted(() => {
                         return value + ' ml';
                     }
                 },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(57,106,252,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 0.5,
+                            color: 'rgba(41,72,255,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 data: [
                     176.7, 235.6, 262.2, 132.6, 262.2, 132.6, 176.7, 235.6, 262.2, 132.6, 176.7, 235.6,
                 ]
@@ -126,6 +124,18 @@ onMounted(() => {
                 tooltip: {
                     valueFormatter: function (value) {
                         return value + ' ml';
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(188,78,156,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 0.5,
+                            color: 'rgba(248,7,89,0.1)' // 渐变色起始值
+                        },
+                        ])
                     }
                 },
                 data: [
@@ -140,6 +150,18 @@ onMounted(() => {
                         return value + ' %';
                     }
                 },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(0,201,255,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 0.5,
+                            color: 'rgba(146,254,157,0.1)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 data: [
                     210.3, 123.4, 223.0, 126.5, 123.0, 136.5, 220.3, 120.3, 223.4, 123.0, 223.0, 126.5,
                 ]
@@ -150,19 +172,6 @@ onMounted(() => {
     option88 = {
         color: colorList,
         backgroundColor: 'rgba(1,1,1,0)',
-        // toolbox: {
-        //     iconStyle: {
-        //         borderColor: "#fff",
-        //     },
-        //     showTitle:false,
-        //     right:'3%',
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         // magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小

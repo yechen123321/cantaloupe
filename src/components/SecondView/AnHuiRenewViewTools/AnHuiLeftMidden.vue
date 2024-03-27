@@ -9,7 +9,35 @@ let option37 = null;
 onMounted(() => {
     myChart37 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
-        '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#546570', '#ea7ccc'
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#396afc'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+
+
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#8E2DE2'},
+            {offset: 1, color: '#4A00E0'}
+        ]),
+        // 其他渐变色定义...
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#ee9ca7'},
+            {offset: 1, color: '#ffdde1'}
+        ]),
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)

@@ -1,10 +1,34 @@
 <script setup>
+import {ref} from "vue";
+
+const reportGenerated = ref(false);
+
+const updateReport = () => {
+    reportGenerated.value = true;
+};
+
+const showReport = () => {
+    // 这里可以添加显示报告的逻辑
+    reportGenerated.value = false;
+};
 
 </script>
 
 <template>
     <div class="ThermalPowerRightTop">
-        <div class="title">故障信息</div>
+        <div class="updateMessage" v-show="!reportGenerated">
+            <div class="title">
+                <button @click="showReport" class="button">
+                    <span class="X"></span>
+                    <span class="Y"></span>
+<!--                    <div class="close">关闭</div>-->
+                </button>
+            </div>
+            <div class="main"></div>
+        </div>
+        <div class="title">
+            故障信息
+        </div>
         <div class="ul">
             <ul>
                 <li>
@@ -18,7 +42,7 @@
 
             </ul>
         </div>
-        <Button class="go">维修通知</Button>
+        <Button @click="updateReport" class="go">维修通知</Button>
         <Button class="update">更新数据</Button>
         <Button class="wrong">危险警报</Button>
         <img src="../../../assets/pic/ca1.png" alt="" class="BackImg">
@@ -29,6 +53,110 @@
 .ThermalPowerRightTop {
   width: 100%;
   height: 100%;
+    .updateMessage{
+        position: fixed;
+        width: 35vw;
+        height: 45vh;
+        margin-left: -39.1vw;
+        margin-top: 15vh;
+        z-index:999;
+        .main{
+            width: 35vw;
+            height: 40vh;
+            background: rgba(56, 120, 238, 0.8);
+            margin-left: 0vw;
+            margin-top: 5vh;
+            position: absolute;
+        }
+        .title{
+            width: 35vw;
+            height: 5vh;
+            background: rgba(19, 47, 234, 0.8);
+            margin-left: 0vw;
+            margin-top: 0vh;
+            position: absolute;
+            .button {
+                position: absolute;
+                z-index: 999;
+                width: 2vw;
+                height: 3.8vh;
+                margin-top: 0.5vh;
+                margin-left: 32vw;
+                border: none;
+                background: rgba(180, 83, 107, 0.11);
+                border-radius: 5px;
+                transition: background 0.5s;
+            }
+
+            .X {
+                content: "";
+                position: absolute;
+                top: 48%;
+                left: 50%;
+                width: 1.8vw;
+                height: 1.5px;
+                background-color: rgb(255, 255, 255);
+                transform: translateX(-50%) rotate(45deg);
+            }
+
+            .Y {
+                content: "";
+                position: absolute;
+                top: 48%;
+                left: 50%;
+                width: 1.8vw;
+                height: 1.5px;
+                background-color: #fff;
+                transform: translateX(-50%) rotate(-45deg);
+            }
+
+            .close {
+                position: absolute;
+                display: flex;
+                padding: 0.8rem 1.5rem;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(-50%);
+                top: -150%;
+                left: 50%;
+                width: 3em;
+                height: 1.7em;
+                font-size: 12px;
+                background-color: rgb(19, 22, 24);
+                color: rgb(187, 229, 236);
+                border: none;
+                border-radius: 3px;
+                pointer-events: none;
+                opacity: 0;
+            }
+
+            .button:hover {
+                background-color: rgb(211, 21, 21);
+            }
+
+            .button:active {
+                background-color: rgb(130, 0, 0);
+            }
+
+            .button:hover > .close {
+                animation: close 0.2s forwards 0.25s;
+            }
+
+            @keyframes close {
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .name{
+                color:white;
+                position: absolute;
+                font-size: 1.3em;
+                font-weight: bolder;
+
+            }
+        }
+    }
 
   Button {
     position: absolute;

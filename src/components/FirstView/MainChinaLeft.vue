@@ -99,6 +99,7 @@ onMounted(async () => {
                             padding: [0, -25, 0, 0]
                         },
                         interval: 5,
+
                         axisLabel: {
                             textStyle: {
                                 color: 'white' // 设置Y轴上数据的颜色为白色
@@ -137,6 +138,7 @@ onMounted(async () => {
                         name: '产量增长率',
                         type: 'line',
                         yAxisIndex: 1,
+
                         tooltip: {
                             valueFormatter: function (value) {
                                 return value + ' %';

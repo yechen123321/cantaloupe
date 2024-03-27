@@ -15,8 +15,8 @@ onMounted(() => {
     // (Your existing option setup code)
     loadBMap("EGlnrCfbkZCDlamN0ap6OPQpuQhUsdmt").then(() => {
         const data = [
-            {name: '合肥', value: 60020, thing: '我的世界awd'},
-            {name: '马鞍山', value: 30000, thing: '我的世界awd'},
+            {name: '合肥', value: 60020, },
+            {name: '马鞍山', value: 30000, },
         ];
         const geoCoordMap = {
             海门: [121.15, 31.89],
@@ -225,12 +225,12 @@ onMounted(() => {
         };
         option90 = {
             backgroundColor: 'rgba(121,121,121,0)',
-            tooltip: {
-                trigger: 'item',
-                formatter: function (params) {
-                    return params.name + ': ' + params.data.thing; // 显示 name 和 thing
-                }
-            },
+            // tooltip: {
+            //     trigger: 'item',
+            //     formatter: function (params) {
+            //         return params.name + ': ' + params.data.thing; // 显示 name 和 thing
+            //     }
+            // },
             bmap: {
                 center: [117.27, 31.70], // 合肥的经纬度坐标
                 zoom: 9,

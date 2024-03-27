@@ -9,7 +9,34 @@ let option7 = null;
 
 onMounted(() => {
     myChart7 = echarts.init(echartsRef.value);
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#ec38bc'},
+            {offset: 1, color: '#fdeff9'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FC5C7D'},
+            {offset: 1, color: '#6A82FB'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
+        ]),
+
+        // 其他渐变色定义...
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#396afc'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+
+    ];
     option7 = {
+        color:colorList,
         legend: {
             top: "10%",
             data: ['水电', '火电', '核电', '风电', '太阳能'],
@@ -75,7 +102,18 @@ onMounted(() => {
                 name: '水电',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(236,56,188,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(253,239,249,0.5)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -85,7 +123,18 @@ onMounted(() => {
                 name: '火电',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(252,92,125,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(106,130,251,0.5)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -95,7 +144,18 @@ onMounted(() => {
                 name: '核电',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(188,78,156,0.05)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(248,7,89,0.5)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -105,7 +165,18 @@ onMounted(() => {
                 name: '风电',
                 type: 'line',
                 stack: 'Total',
-                areaStyle: {},
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(251,215,134,0.5)' // 渐变色起始值
+                        }, {
+                            offset: 1,
+                            color: 'rgba(198,255,221,0.5)' // 渐变色起始值
+                        },
+                        ])
+                    }
+                },
                 emphasis: {
                     focus: 'series'
                 },
@@ -123,10 +194,10 @@ onMounted(() => {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(115,192,222,0.7)' // 渐变色起始值
+                            color: 'rgba(57,106,252,0.5)' // 渐变色起始值
                         }, {
                             offset: 1,
-                            color: 'rgba(115,192,222,0.1)' // 渐变色起始值
+                            color: 'rgba(41,72,255,0.5)' // 渐变色起始值
                         },
                         ])
                     }

@@ -9,9 +9,35 @@ let option11 = null;
 
 onMounted(() => {
     myChart11 = echarts.init(echartsRef.value);
-
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#396afc'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#8E2DE2'},
+            {offset: 1, color: '#4A00E0'}
+        ]),
+        // 其他渐变色定义...
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#ee9ca7'},
+            {offset: 1, color: '#ffdde1'}
+        ]),
+    ];
     option11 = {
-        color: ['#73C0DE', '#FAC858'],
+        color: colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
@@ -66,17 +92,12 @@ onMounted(() => {
                     {
                         value: [5000, 14000, 28000, 26000, 42000, 21000],
                         name: '国内总量',
-                        areaStyle: {
-                            color: '#73C0DE' // 粉红色，与深蓝色相呼应
-                        },
+                        areaStyle: {},
                     },
                     {
                         value: [4200, 3000, 20000, 35000, 50000, 18000],
                         name: '世界平均',
-                        areaStyle: {
-                            color: '#FAC858' // 橙色，与深蓝色相呼应
-                        },
-
+                        areaStyle: {},
                     },
 
                 ]
