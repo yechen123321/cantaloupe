@@ -150,7 +150,7 @@ onMounted(() => {
 
 <template>
     <div class="ThermalPowerMiddenDown">
-        <div class="title">风场历史发电量</div>
+        <div class="title">电场历史发电量</div>
         <div class="ThermalPowerMiddenDown-echarts" ref="echartsRef"></div>
         <div class="right">
             <ThermalPowerMiddenDownThing id="ThermalPowerMiddenDownThing-out"></ThermalPowerMiddenDownThing>

@@ -439,6 +439,7 @@ onMounted(() => {
         width: 26vw;
         height: 30vh;
         margin-top: 30vh;
+        z-index: 300;
     }
 
     .title2 {
