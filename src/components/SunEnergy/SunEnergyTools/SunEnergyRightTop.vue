@@ -6,19 +6,11 @@ const updateReport1 = () => {
     reportGenerated1.value = true;
     reportGenerated2.value = false;
 };
-const showReport1 = () => {
-    // 这里可以添加显示报告的逻辑
-    reportGenerated1.value = false;
-};
 
 const reportGenerated2 = ref(false);
 const updateReport2 = () => {
     reportGenerated2.value = true;
     reportGenerated1.value = false;
-};
-const showReport2 = () => {
-    // 这里可以添加显示报告的逻辑
-    reportGenerated2.value = false;
 };
 
 const close = () => {
@@ -33,7 +25,7 @@ const close = () => {
         <div class="updateMessage" v-show="reportGenerated1">
             <div class="title">
                 <div class="name">维修通知操作</div>
-                <button @click="showReport1" class="button">
+                <button @click="close" class="button">
                     <span class="X"></span>
                     <span class="Y"></span>
                 </button>
@@ -55,7 +47,7 @@ const close = () => {
                 <div class="thing">危险警报</div>
                 <div class="little">请各人员按照指定通道进行疏散</div>
                 <img src="../../../assets/da.gif" alt="">
-                <Button @click="showReport2"  class="close">警报解除</Button>
+                <Button @click="close"  class="close">警报解除</Button>
             </div>
         </div>
         <div class="title">
