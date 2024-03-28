@@ -36,12 +36,45 @@ onMounted(() => {
             isEcharts1Visible = true;
         }
     });
+
+    var colorList = [
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#ee9ca7'},
+            {offset: 1, color: '#ffdde1'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bc4e9c'},
+            {offset: 1, color: '#f80759'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#396afc'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#8E2DE2'},
+            {offset: 1, color: '#4A00E0'}
+        ]),
+        // 其他渐变色定义...
+
+    ];
     option1 = {
+        color:colorList,
         backgroundColor: 'rgba(128,128,128,0)',
         title: {
             text: '全国能源进口量',
             left: 'center',
-            top: '0%',
+            top: '8%',
             textStyle: {
                 color: 'white',
             },
@@ -69,7 +102,7 @@ onMounted(() => {
         },
         legend: {
             width: '120%',
-            top: '15%',
+            top: '19%',
             itemWidth: 10, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             left: 'center',
@@ -117,7 +150,7 @@ onMounted(() => {
         ],
         series: [
             {
-                name: 'XX能',
+                name: '电力',
                 type: 'bar',
                 emphasis: {
                     focus: 'series'
@@ -125,7 +158,7 @@ onMounted(() => {
                 data: [320, 332, 301, 334, 390, 330, 320]
             },
             {
-                name: 'XB能',
+                name: '天然气',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -134,7 +167,7 @@ onMounted(() => {
                 data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
-                name: 'XA能',
+                name: '石油',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -143,7 +176,7 @@ onMounted(() => {
                 data: [220, 182, 191, 234, 290, 330, 310]
             },
             {
-                name: 'XZ能',
+                name: '其他',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -152,7 +185,7 @@ onMounted(() => {
                 data: [150, 232, 201, 154, 190, 330, 410]
             },
             {
-                name: 'XY能',
+                name: '煤炭',
                 type: 'bar',
                 data: [862, 1018, 964, 1026, 1679, 1600, 1570],
                 emphasis: {
@@ -165,11 +198,12 @@ onMounted(() => {
     };
 
     option111 = {
+        color:colorList,
         backgroundColor: 'rgba(128,128,128,0)',
         title: {
             text: '全国能源出口量',
             left: 'center',
-            top: '0%',
+            top: '8%',
             textStyle: {
                 color: 'white',
             },
@@ -197,7 +231,7 @@ onMounted(() => {
         },
         legend: {
             width: '120%',
-            top: '15%',
+            top: '19%',
             itemWidth: 10, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             left: 'center',
@@ -245,7 +279,7 @@ onMounted(() => {
         ],
         series: [
             {
-                name: 'XX能',
+                name: '电力',
                 type: 'bar',
                 emphasis: {
                     focus: 'series'
@@ -253,7 +287,7 @@ onMounted(() => {
                 data: [301, 334, 390, 330, 320]
             },
             {
-                name: 'XB能',
+                name: '石油',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -262,7 +296,7 @@ onMounted(() => {
                 data: [101, 134, 90, 230, 210]
             },
             {
-                name: 'XA能',
+                name: '天然气',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -271,7 +305,7 @@ onMounted(() => {
                 data: [191, 234, 290, 330, 310]
             },
             {
-                name: 'XZ能',
+                name: '其他',
                 type: 'bar',
                 stack: 'Ad',
                 emphasis: {
@@ -280,7 +314,7 @@ onMounted(() => {
                 data: [201, 154, 190, 330, 410]
             },
             {
-                name: 'XY能',
+                name: '煤炭',
                 type: 'bar',
                 data: [964, 1026, 1679, 1600, 1570],
                 emphasis: {
@@ -344,22 +378,22 @@ onMounted(() => {
   }
 
   #MainTable-echarts {
-    width: 23vw;
-    height: 21.5vh;
-    margin-left: 1.5vw;
+    width: 25vw;
+    height: 26vh;
+    margin-left: 1vw;
     position: absolute;
-    margin-top: 28vh;
+    margin-top: 25vh;
     z-index: 999;
     display: block;
   }
 
   #MainTable-echarts2 {
-    width: 23vw;
-    height: 21.5vh;
-    margin-left: 1.5vw;
-    position: absolute;
-    margin-top: 28vh;
-    z-index: 999;
+      width: 25vw;
+      height: 26vh;
+      margin-left: 1vw;
+      position: absolute;
+      margin-top: 25vh;
+      z-index: 999;
     display: none;
   }
 
@@ -381,23 +415,6 @@ onMounted(() => {
     border-radius: 2px;
     z-index: 999;
   }
-
-  //.GoMinerals:hover {
-  //  width: 14vw;
-  //  height: 3vh;
-  //  font-size: 1.3vw;
-  //  margin-top: 31vh;
-  //  //margin-right: -2.4vw;
-  //  margin-left: 6.3vw;
-  //}
-  //
-  //.GoMinerals:active {
-  //  font-size: 1.2vw;
-  //  margin-top: 31vh;
-  //  margin-left: 6.8vw;
-  //  width: 13vw;
-  //  height: 2.5vh;
-  //}
 
   #MainLeftMidden-out {
     width: 25vw;

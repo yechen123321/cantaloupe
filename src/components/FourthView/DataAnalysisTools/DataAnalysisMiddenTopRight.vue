@@ -1,6 +1,7 @@
 <script setup>
 import {ref, onMounted} from "vue";
 import * as echarts from "echarts";
+
 const datas = ref([
     {name: '碳排放增率', number: -2.6, up: '%'},
     {name: '能源增产率', number: 3.2, up: '%'},
@@ -29,7 +30,7 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option89 = {
-        color:colorList,
+        color: colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
@@ -130,8 +131,9 @@ onMounted(() => {
 .DataAnalysisMiddenTopRight {
     width: 100%;
     height: 100%;
-    .title{
-        color:white;
+
+    .title {
+        color: white;
         font-weight: bolder;
         font-size: 1.3em;
         position: absolute;
@@ -139,14 +141,16 @@ onMounted(() => {
         width: 16vw;
         text-align: center;
     }
-    .DataAnalysisMiddenTopRight-echarts{
+
+    .DataAnalysisMiddenTopRight-echarts {
         width: 30vw;
         height: 30vh;
         position: absolute;
-        margin-top:13vh;
+        margin-top: 13vh;
         margin-left: -7vw;
         z-index: 300;
     }
+
     ul {
         width: 13.5vw;
         height: 15vh;
@@ -160,6 +164,7 @@ onMounted(() => {
             margin-left: -2vw;
             height: 6vh;
             list-style: none;
+
             .name {
                 position: absolute;
                 font-size: 1.4em;
@@ -173,8 +178,7 @@ onMounted(() => {
                 font-size: 1.8em;
                 right: 0;
                 margin-right: 2.8vw;
-                //margin-left: 9vw;
-                color: yellow;
+            //margin-left: 9vw; color: yellow;
             }
 
             .up {

@@ -15,8 +15,8 @@ onMounted(() => {
     // (Your existing option setup code)
     loadBMap("EGlnrCfbkZCDlamN0ap6OPQpuQhUsdmt").then(() => {
         const data = [
-            {name: '合肥', value: 60020, },
-            {name: '马鞍山', value: 30000, },
+            {name: '合肥', value: 60020,},
+            {name: '马鞍山', value: 30000,},
         ];
         const geoCoordMap = {
             海门: [121.15, 31.89],
@@ -425,16 +425,15 @@ const showReport = () => {
 };
 </script>
 
-
 <template>
     <div class="DataAnalysisRightDown">
         <div class="title">安徽省能源发展明细</div>
         <Button class="update" @click="updateReport" v-show="!reportGenerated">生成报告</Button>
         <Button class="done" @click="showReport" v-show="reportGenerated">已生成报告</Button>
-        <Button @click="downloadLocalWordDoc" class="goto">导出报告</Button>
-        <Button class="all">
-            <img src="../../../assets/全屏.png" alt="" class="icon">
-        </Button>
+        <Button @click="downloadLocalWordDoc" class="goto" :disabled="!reportGenerated">导出报告</Button>
+        <!--        <Button class="all">-->
+        <!--            <img src="../../../assets/全屏.png" alt="" class="icon">-->
+        <!--        </Button>-->
         <div class="echarts">
             <div class="DataAnalysisRightDown-echarts" ref="echartsRef"></div>
         </div>
@@ -479,6 +478,12 @@ const showReport = () => {
     background: rgb(25, 83, 206);
     border: none;
     font-weight: bolder;
+  }
+
+  .goto:disabled {
+    background: #b6d4df;
+    color: white;
+    cursor: no-drop;
   }
 
   .goto:hover {

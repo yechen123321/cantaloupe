@@ -4,16 +4,13 @@ import {ref} from "vue";
 const downloadLocalWordDoc = () => {
     // 本地 Word 文档的文件路径
     const localDocPath = 'https://student-portrait-1314223587.cos.ap-nanjing.myqcloud.com/homework.docx';
-
     // 创建一个链接元素并设置下载属性
     const a = document.createElement('a');
     a.href = localDocPath;
     a.download = 'local-doc.docx';
     document.body.appendChild(a);
-
     // 模拟点击链接进行下载
     a.click();
-
     // 清理链接元素
     document.body.removeChild(a);
 };
@@ -50,7 +47,7 @@ const showReport = () => {
         </div>
         <Button class="update" @click="updateReport" v-show="!reportGenerated">生成报告</Button>
         <Button class="done" @click="showReport" v-show="reportGenerated">已生成报告</Button>
-        <Button @click="downloadLocalWordDoc" class="goto">导出报告</Button>
+        <Button @click="downloadLocalWordDoc" class="goto" :disabled="!reportGenerated">导出报告</Button>
         <img src="../../../assets/pic/ca1.png" alt="" class="BackImg">
     </div>
 </template>
@@ -131,6 +128,12 @@ const showReport = () => {
   .goto:hover {
     cursor: pointer;
   }
+
+    .goto:disabled{
+        background: #b6d4df;
+        color:white;
+        cursor: no-drop;
+    }
 
   .done {
     width: 6vw;
