@@ -36,7 +36,7 @@ const close = () => {
                     <div class="up">已发送</div>
                 </div>
                 <div class="down">将立即执行维修工作</div>
-                <Button @click="close" class="do">确认</Button>
+                <button @click="close" class="do">确认</button>
             </div>
         </div>
 
@@ -46,7 +46,7 @@ const close = () => {
                 <div class="thing">危险警报</div>
                 <div class="little">请各人员按照指定通道进行疏散</div>
                 <img src="../../../assets/da.gif" alt="">
-                <Button @click="close"  class="close">警报解除</Button>
+                <button @click="close"  class="close">警报解除</button>
             </div>
         </div>
         <div class="title">
@@ -69,8 +69,8 @@ const close = () => {
             <div class="one">故障信息：</div>
             <div class="two">2 条</div>
         </div>
-        <Button @click="updateReport1" class="go">维修通知</Button>
-        <Button @click="updateReport2" class="wrong">危险警报</Button>
+        <button @click="updateReport1" class="go">维修通知</button>
+        <button @click="updateReport2" class="wrong">危险警报</button>
         <img src="../../../assets/pic/ca1.png" alt="" class="BackImg">
     </div>
 </template>
@@ -319,7 +319,7 @@ const close = () => {
 
   }
 
-  Button {
+  button {
     position: absolute;
     margin-top: 22.1vh;
     margin-left: 4vw;

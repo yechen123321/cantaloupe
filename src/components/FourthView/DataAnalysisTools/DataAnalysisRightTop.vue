@@ -45,9 +45,9 @@ const showReport = () => {
                 </li>
             </ul>
         </div>
-        <Button class="update" @click="updateReport" v-show="!reportGenerated">生成报告</Button>
-        <Button class="done" @click="showReport" v-show="reportGenerated">已生成报告</Button>
-        <Button @click="downloadLocalWordDoc" class="goto" :disabled="!reportGenerated">导出报告</Button>
+        <button class="update" @click="updateReport" v-show="!reportGenerated">生成报告</button>
+        <button class="done" @click="showReport" v-show="reportGenerated">已生成报告</button>
+        <button @click="downloadLocalWordDoc" class="goto" :disabled="!reportGenerated">导出报告</button>
         <img src="../../../assets/pic/ca1.png" alt="" class="BackImg">
     </div>
 </template>

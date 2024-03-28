@@ -1,13 +1,13 @@
 <script setup>
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
-import 'echarts-gl';
+import {initkdd} from '@/api'
 
 const echartsRef = ref(null);
 let myChart7 = null;
 let option7 = null;
 
-onMounted(() => {
+onMounted(async () => {
     myChart7 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -35,180 +35,198 @@ onMounted(() => {
         ]),
 
     ];
-    option7 = {
-        color:colorList,
-        legend: {
-            top: "10%",
-            data: ['水电', '火电', '核电', '风电', '太阳能'],
-            textStyle: {
-                color: 'white'
-            }
-        },
-        tooltip: {
-            trigger: 'axis',
-            extraCssText: 'width: 10vw; height: 20vh;', // 设置tooltip框的宽度和高度，调整框的大小
-            formatter: function (params) {
-                let tooltipContent = '';
-                let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位 / 万千瓦<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
-                params.forEach(function (param) {
-                    if (param.seriesName !== '趋势') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
-                    }
-                });
-                return tooltipContent;
-            }
-        },
-        grid: {
-            left: '3%',
-            right: '5%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis: [
-            {
-                type: 'category',
-                boundaryGap: false,
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
+
+    try {
+        const data = await initkdd(); // 使用initlandlist函数获取数据
+        const datas = data.data;
+        if (data) {
+
+            option7 = {
+                color: colorList,
+                legend: {
+                    top: "10%",
+                    data: ['水电', '火电', '核电', '风电', '太阳能'],
                     textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
+                        color: 'white'
                     }
-                }
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value',
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    extraCssText: 'width: 10vw; height: 20vh;', // 设置tooltip框的宽度和高度，调整框的大小
+                    formatter: function (params) {
+                        let tooltipContent = '';
+                        let mineName = params[0].name;
+                        tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位 / 万千瓦<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                        params.forEach(function (param) {
+                            if (param.seriesName !== '趋势') {
+                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
+                            }
+                        });
+                        return tooltipContent;
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '5%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: datas["name"],
+                        axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            },
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: 'white' // 设置X轴上数据的颜色为白色
+                            }
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            },
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: 'white' // 设置X轴上数据的颜色为白色
+                            }
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: '水电',
+                        type: 'line',
+                        smooth: true,
+                        stack: 'Total',
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: 'rgba(236,56,188,0.5)' // 渐变色起始值
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(253,239,249,0.5)' // 渐变色起始值
+                                },
+                                ])
+                            }
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: datas.data["水电"]
                     },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            }
-        ],
-        series: [
-            {
-                name: '水电',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(236,56,188,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(253,239,249,0.5)' // 渐变色起始值
+                    {
+                        name: '火电',
+                        type: 'line',
+                        smooth: true,
+                        stack: 'Total',
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: 'rgba(252,92,125,0.5)' // 渐变色起始值
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(106,130,251,0.5)' // 渐变色起始值
+                                },
+                                ])
+                            }
                         },
-                        ])
-                    }
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [120, 132, 101, 134, 90, 230, 210]
-            },
-            {
-                name: '火电',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(252,92,125,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(106,130,251,0.5)' // 渐变色起始值
+                        emphasis: {
+                            focus: 'series'
                         },
-                        ])
-                    }
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [220, 182, 191, 234, 290, 330, 310]
-            },
-            {
-                name: '核电',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(188,78,156,0.05)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(248,7,89,0.5)' // 渐变色起始值
+                        data: datas.data["火电"],
+                    },
+                    {
+                        name: '核电',
+                        type: 'line',
+                        smooth: true,
+                        stack: 'Total',
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: 'rgba(188,78,156,0.05)' // 渐变色起始值
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(248,7,89,0.5)' // 渐变色起始值
+                                },
+                                ])
+                            }
                         },
-                        ])
-                    }
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [150, 232, 201, 154, 190, 330, 410]
-            },
-            {
-                name: '风电',
-                type: 'line',
-                stack: 'Total',
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(251,215,134,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(198,255,221,0.5)' // 渐变色起始值
+                        emphasis: {
+                            focus: 'series'
                         },
-                        ])
-                    }
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [320, 332, 301, 334, 390, 330, 320]
-            },
-            {
-                name: '太阳能',
-                type: 'line',
-                stack: 'Total',
-                // label: {
-                //     show: true,
-                //     position: 'top'
-                // },
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(57,106,252,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(41,72,255,0.5)' // 渐变色起始值
+                        data: datas.data["核电"],
+                    },
+                    {
+                        name: '风电',
+                        smooth: true,
+                        type: 'line',
+                        stack: 'Total',
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: 'rgba(251,215,134,0.5)' // 渐变色起始值
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(198,255,221,0.5)' // 渐变色起始值
+                                },
+                                ])
+                            }
                         },
-                        ])
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: datas.data["风力"],
+                    },
+                    {
+                        name: '太阳能',
+                        type: 'line',
+                        smooth: true,
+                        stack: 'Total',
+                        // label: {
+                        //     show: true,
+                        //     position: 'top'
+                        // },
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: 'rgba(57,106,252,0.5)' // 渐变色起始值
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(41,72,255,0.5)' // 渐变色起始值
+                                },
+                                ])
+                            }
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: datas.data["太阳能发电"],
                     }
-                },
-                emphasis: {
-                    focus: 'series'
-                },
-                data: [820, 932, 901, 934, 1290, 1330, 1320]
-            }
-        ]
-    };
+                ]
+            };
+
+        } else {
+            console.error('Failed to fetch data from initlandlist');
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
 
 
     option7 && myChart7.setOption(option7);
@@ -224,7 +242,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownSea">
-        <Button class="GotoSea">全国发电装机容量</Button>
+        <button class="GotoSea">全国发电装机容量</button>
         <div id="MainDownSea-echarts" ref="echartsRef"></div>
     </div>
 </template>

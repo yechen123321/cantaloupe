@@ -208,7 +208,6 @@ onMounted(() => {
         <div class="SecondMiddenCenter-title">安徽省矿场产量总览</div>
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
         <AnHuiMiddenDownThing id="AnHuiMiddenDownThing-out"></AnHuiMiddenDownThing>
-        <!--        <Button class="GotoOre" @click="handleRouteChange">矿场详情</Button>-->
     </div>
 </template>
 

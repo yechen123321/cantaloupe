@@ -31,7 +31,6 @@ import MainDown from "@/components/FirstView/MainDown.vue";
         <china-map id="map"></china-map>
         <MainDown id="MainDown"></MainDown>
         <FootLoop id="FootLoop"></FootLoop>
-        <!--         <button  @click="actions.initBooksList" style="position: absolute; z-index:123123; width: 200px; height: 200px">adawdawda</button>-->
     </div>
 </template>
 
@@ -42,10 +41,10 @@ import MainDown from "@/components/FirstView/MainDown.vue";
   height: 100vh;
 
   #map {
-    width: 45vw;
+    width: 30vw;
     height: 45vh;
     margin-top: 2.5vh;
-    margin-left: 40vw;
+    margin-left: 47.5vw;
     position: absolute;
   }
 

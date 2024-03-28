@@ -30,19 +30,6 @@ onMounted(() => {
     ];
     option72 = {
         color: colorList,
-        // toolbox: {
-        //     iconStyle: {
-        //         borderColor: "#fff",
-        //     },
-        //     showTitle:false,
-        //     right:'3%',
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         // magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
@@ -90,7 +77,7 @@ onMounted(() => {
                     }
                 },
                 // prettier-ignore
-                data: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                data: ['2019', '2020', '2021', '2022', '2023']
             }
         ],
         yAxis: [

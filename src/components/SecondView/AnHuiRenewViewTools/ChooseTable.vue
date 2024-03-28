@@ -1,6 +1,7 @@
 <script setup>
-import {ref} from 'vue';
+import {reactive, ref} from 'vue';
 import {useRouter} from 'vue-router';
+import {choose} from "@/api";
 
 const router = useRouter();
 
@@ -32,7 +33,14 @@ const options = ref([
     {where: '广东', value: 9},
     {where: '广西', value: 10},
 ]);
+const listData = ref({});
 
+choose().then(response => {
+    Object.assign(listData.value, response.data.data);
+    console.log(listData.value["水生电能"]);
+}).catch(error => {
+    console.error('Error fetching data:', error);
+});
 
 </script>
 
@@ -53,7 +61,7 @@ const options = ref([
             <ul class="factoryUl">
                 <li @click="RouteToWater">
                     <img src="../../../assets/水库.png" alt="">
-                    <div class="number">43.59</div>
+                    <div class="number">{{ listData["水生电能"] }}</div>
                     <div class="up">
                         水生电能
                     </div>
@@ -63,7 +71,7 @@ const options = ref([
                 </li>
                 <li @click="RouteToSun" style="margin-top: 0.63vh">
                     <img src="../../../assets/太阳能发电.png" alt="">
-                    <div class="number">3135</div>
+                    <div class="number">{{ listData["光生电能"] }}</div>
                     <div class="up">
                         光生电能
                     </div>
@@ -73,7 +81,7 @@ const options = ref([
                 </li>
                 <li @click="RouteToWind">
                     <img src="../../../assets/风力发电.png" alt="">
-                    <div class="number">8800</div>
+                    <div class="number">{{ listData["风生电能"] }}</div>
                     <div class="up">
                         风生电能
                     </div>
@@ -112,14 +120,16 @@ const options = ref([
         width: 6vw;
         height: 15vh;
         float: left;
-        margin-left: 4vw;
+        margin-left: 3.5vw;
         margin-top: -1vh;
         //background: red;
         .number {
           color: white;
           margin-left: 4vw;
           margin-top: -5vh;
-          font-size: 1.6vw;
+          font-size: 1.7em;
+          text-align: center;
+          width: 4vw;
           font-weight: bolder;
         }
 

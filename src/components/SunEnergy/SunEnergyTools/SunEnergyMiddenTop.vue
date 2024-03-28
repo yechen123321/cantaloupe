@@ -16,8 +16,8 @@ const showReport = () => {
 <template>
     <div class="SunEnergyMiddenTop">
         <div class="VI">
-            <Button @click="updateReport" class="First" v-show="!reportGenerated">模型操作</Button>
-            <Button @click="showReport" class="Second" v-show="reportGenerated">视频展示</Button>
+            <button @click="updateReport" class="First" v-show="!reportGenerated">模型操作</button>
+            <button @click="showReport" class="Second" v-show="reportGenerated">视频展示</button>
             <video v-show="!reportGenerated" class="VV" src="../../../assets/Sun.mp4" autoplay loop
                    muted></video>
         </div>
@@ -30,7 +30,7 @@ const showReport = () => {
   height: 100%;
 
   .VI {
-    Button {
+    button {
       color: white;
       width: 6vw;
       font-size: 1em;
@@ -45,7 +45,7 @@ const showReport = () => {
       z-index: 333;
     }
 
-    Button:hover {
+    button:hover {
       cursor: pointer;
     }
 

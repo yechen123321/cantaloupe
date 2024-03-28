@@ -1,7 +1,6 @@
 <script setup>
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
-import 'echarts-gl';
 
 const echartsRef = ref(null);
 let myChart11 = null;
@@ -118,7 +117,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownRight">
-        <Button class="GotoForest">全国能源储量统计</Button>
+        <button class="GotoForest">全国能源储量统计</button>
         <div id="MainDownRight-echarts" ref="echartsRef"></div>
     </div>
 </template>

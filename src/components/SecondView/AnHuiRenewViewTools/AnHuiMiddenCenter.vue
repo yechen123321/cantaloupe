@@ -175,7 +175,7 @@ onMounted(() => {
 <template>
     <div className="SecondMiddenCenter">
         <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
-        <Button class="GotoMore">安徽省再生能源产能图</Button>
+        <button class="GotoMore">安徽省再生能源产能图</button>
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
     </div>
 </template>

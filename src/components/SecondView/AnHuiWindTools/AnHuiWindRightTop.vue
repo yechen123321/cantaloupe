@@ -36,7 +36,7 @@ const handleUpdate = () => {
             <div class="one">故障信息：</div>
             <div class="two">1 条</div>
         </div>
-        <Button @click="handleUpdate" class="update">更新信息</Button>
+        <button @click="handleUpdate" class="update">更新信息</button>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
     </div>
 </template>

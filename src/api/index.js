@@ -30,7 +30,11 @@ export const initkdd = () => request({
 
 
 /////// 再生 ///////
-
+// 选择框
+export const choose = () => request({
+    url: '/renew/get_region_energy_production/12/',
+    method: 'get'
+})
 // 设施
 export const initKlist = () => request({
     url: 'get_regional_resource_facilities/1/',

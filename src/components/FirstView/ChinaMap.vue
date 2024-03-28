@@ -265,16 +265,6 @@ canvas {
   width: 100%;
 }
 
-//img{
-//    width: 30vw;
-//    height: 48vh;
-//    position: absolute;
-//    //margin-left: 5vw;
-//    right: 0;
-//    margin-right: -2vw;
-//    margin-top: 21.8vw;
-//
-//}
 
 #mapDom {
   position: absolute;

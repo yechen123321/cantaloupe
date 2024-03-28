@@ -1,27 +1,4 @@
 <script setup>
-// import {onMounted, ref} from "vue";
-// import * as echarts from "echarts";
-// // // import axios from "axios";
-// // import {API_BASE_URL} from "../../../config";
-//
-// const echartsRef = ref(null);
-// let myChart25 = null;
-// let option25 = null;
-//
-// onMounted(() => {
-//     myChart25 = echarts.init(echartsRef.value, 'dark');
-//
-//     // Your echarts option setup here...
-//     // (Your existing option setup code)
-//     option25 = {}
-//     option25 && myChart25.setOption(option25);
-//
-//     const resizeObserver = new ResizeObserver(() => {
-//         myChart25.resize();
-//     });
-//
-//     resizeObserver.observe(echartsRef.value);
-// });
 import {ref} from "vue";
 
 const twice = ref([
@@ -43,24 +20,6 @@ const twice = ref([
             </li>
         </div>
 
-        <!--        <div class="MySelect">-->
-        <!--            <select name="" id="" class="SelectBox">-->
-        <!--                <option>全国</option>-->
-        <!--                <option>安徽</option>-->
-        <!--                <option>北京</option>-->
-        <!--                <option>浙江</option>-->
-        <!--                <option>重庆</option>-->
-        <!--                <option>西藏</option>-->
-        <!--                <option>四川</option>-->
-        <!--                <option>山东</option>-->
-        <!--                <option>上海</option>-->
-        <!--                <option>广东</option>-->
-        <!--                <option>广西</option>-->
-        <!--            </select>-->
-        <!--            <Button class="GotoAn" @click="handleRouteChange">切换</Button>-->
-        <!--        </div>-->
-
-        <!--        <div class="MainRightButtom-echarts" ref="echartsRef"></div>-->
     </div>
 </template>
 

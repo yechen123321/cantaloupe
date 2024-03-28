@@ -27,7 +27,6 @@ onMounted(async () => {
     try {
         const data = await initadd(); // 使用initlandlist函数获取数据
         const datas = data.data.data;
-        console.log(datas)
         // 处理从initlandlist获取的数据，例如更新echarts图表
         if (data) {
             option8 = {
@@ -169,7 +168,7 @@ onMounted(async () => {
 <template>
     <div className="MainChinaLeft">
         <img class="BackImg" src="../../assets/pic/border3.png" alt="">
-        <Button class="GotoGrounds">全国能源产量及库存</Button>
+        <button class="GotoGrounds">全国能源产量及库存</button>
         <div id="MainChinaLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>

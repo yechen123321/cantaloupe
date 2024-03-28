@@ -52,7 +52,7 @@ onMounted(() => {
             name: 'KWh',
             nameTextStyle: {
                 color: 'white',
-                padding: [-160, -680, 0, 0],
+                padding: [-180, -680, 0, 0],
             },
             animationDuration: 300,
             animationDurationUpdate: 300,

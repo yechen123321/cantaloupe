@@ -1,13 +1,12 @@
 <script setup>
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
-import 'echarts-gl';
-
+import {initqdd} from "@/api";
 const echartsRef = ref(null);
 let myChart9 = null;
 let option9 = null;
 
-onMounted(() => {
+onMounted(async() => {
     myChart9 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -24,141 +23,150 @@ onMounted(() => {
         ]),
         // 其他渐变色定义...
     ];
-    option9 = {
-        color: colorList,
-        tooltip: {
-            trigger: 'axis',
-            extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
-            formatter: function (params) {
-                let tooltipContent = '';
-                let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
-                params.forEach(function (param) {
-                    if (param.seriesName === '全国能耗降低率') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
-                    } else {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
+    try {
+        const data = await initqdd(); // 使用initlandlist函数获取数据
+        const datas = data.data.data;
+        // 处理从initlandlist获取的数据，例如更新echarts图表
+        if (data) {
+            option9 = {
+                color: colorList,
+                tooltip: {
+                    trigger: 'axis',
+                    extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
+                    formatter: function (params) {
+                        let tooltipContent = '';
+                        let mineName = params[0].name;
+                        tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                        params.forEach(function (param) {
+                            if (param.seriesName === '全国能耗降低率') {
+                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
+                            } else {
+                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
+                            }
+                        });
+                        return tooltipContent;
                     }
-                });
-                return tooltipContent;
-            }
-        },
-        grid: {
-            left: '5.3%', // 调整图表左边距
-            right: '7%', // 调整图表右边距
-            // top: '10%', // 调整图表上边距
-            bottom: '15%', // 调整图表下边距
-            containLabel: true,
-        },
-        legend: {
-            // left:'0%',
-            data: ['能源消耗', '全国GDP', '全国能耗降低率'],
-            textStyle: {
-                color: 'white'
-            }
-        },
-        xAxis: [
-            {
-                type: 'category',
-                axisTick: {
-                    alignWithLabel: true
-                }, axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
                 },
-                axisLabel: {
+                grid: {
+                    left: '5.3%', // 调整图表左边距
+                    right: '9%', // 调整图表右边距
+                    // top: '10%', // 调整图表上边距
+                    bottom: '15%', // 调整图表下边距
+                    containLabel: true,
+                },
+                legend: {
+                    // left:'0%',
+                    data: ['能源消耗', '全国GDP', '全国能耗降低率'],
                     textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
+                        color: 'white'
                     }
                 },
-                // prettier-ignore
-                data: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value',
-                name: '万亿元',
-                position: 'right',
-                alignTicks: true,
-                nameTextStyle: {
-                    padding: [0, -30, 0, 0]
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
+                xAxis: [
+                    {
+                        type: 'category',
+                        axisTick: {
+                            alignWithLabel: true
+                        }, axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            },
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: 'white' // 设置X轴上数据的颜色为白色
+                            }
+                        },
+                        // prettier-ignore
+                        data: ['2019', '2020', '2021', '2022', '2023']
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '万亿元',
+                        position: 'right',
+                        alignTicks: true,
+                        nameTextStyle: {
+                            padding: [0, -30, 0, 0]
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            },
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: 'white' // 设置X轴上数据的颜色为白色
+                            }
+                        }
                     },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-            {
-                type: 'value',
-                name: '降低率',
-                nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
-                position: 'right',
-                nameTextStyle: {
-                    padding: [0, -38, 0, 0]
-                },
-                alignTicks: true,
-                offset: 40,
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
+                    {
+                        type: 'value',
+                        name: '降低率',
+                        nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
+                        position: 'right',
+                        nameTextStyle: {
+                            padding: [0, -38, 0, 0]
+                        },
+                        alignTicks: true,
+                        offset: 40,
+                        axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            },
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: 'white' // 设置X轴上数据的颜色为白色
+                            }
+                        }
                     },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-            {
-                type: 'value',
-                name: '标准煤 / 万亿吨',
-                position: 'left',
-                alignTicks: true,
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
+                    {
+                        type: 'value',
+                        name: '标准煤 / 万亿吨',
+                        position: 'left',
+                        alignTicks: true,
+                        axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            },
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: 'white' // 设置X轴上数据的颜色为白色
+                            }
+                        }
                     },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-        ],
-        series: [
-            {
-                name: '能源消耗',
-                type: 'bar',
-                yAxisIndex: 2,
-                data: [
-                    135.6, 162.2, 32.6, 20.0, 6.4,
+                ],
+                series: [
+                    {
+                        name: '能源消耗',
+                        type: 'bar',
+                        yAxisIndex: 2,
+                        data:datas["能源消费总量"]
+                    },
+                    {
+                        name: '全国GDP',
+                        type: 'bar',
+                        yAxisIndex: 0,
+                        data: datas["全国GDP"]
+                    },
+                    {
+                        name: '全国能耗降低率',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: datas["全国能耗降低率"]
+                    },
                 ]
-            },
-            {
-                name: '全国GDP',
-                type: 'bar',
-                yAxisIndex: 0,
-                data: [
-                    175.6, 182.2, 48.7, 18.8, 6.0
-                ]
-            },
-            {
-                name: '全国能耗降低率',
-                type: 'line',
-                yAxisIndex: 1,
-                data: [3.4, 2.0, 1.5, 1.0, 3.2]
-            },
-        ]
-    };
+            };
+        } else {
+            console.error('Failed to fetch data from initlandlist');
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+
+
 
     option9 && myChart9.setOption(option9);
 
@@ -173,7 +181,7 @@ onMounted(() => {
 
 <template>
     <div className="MainDownLeft">
-        <Button class="GotoQ">全国能源消耗水平</Button>
+        <button class="GotoQ">全国能源消耗水平</button>
         <div id="MainDownLeft-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -207,9 +215,9 @@ onMounted(() => {
   //}
 
   #MainDownLeft-echarts {
-    width: 26vw;
+    width: 28vw;
     height: 35vh;
-    margin-left: 0.5vw;
+    margin-left: -1vw;
     position: absolute;
     margin-top: -21.5vh;
   }
