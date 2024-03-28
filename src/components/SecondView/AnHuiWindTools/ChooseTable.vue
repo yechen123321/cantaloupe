@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue';
 import {useRouter} from 'vue-router';
+import {choose} from "@/api";
 const router = useRouter();
 
 const handleRouteChange = () => {
@@ -31,7 +32,14 @@ const options = ref([
     {where: '广西', value: 10},
 ]);
 
+const listData = ref({});
 
+choose().then(response => {
+    Object.assign(listData.value, response.data.data);
+    console.log(listData.value["水生电能"]);
+}).catch(error => {
+    console.error('Error fetching data:', error);
+});
 </script>
 
 <template>
@@ -51,7 +59,7 @@ const options = ref([
             <ul class="factoryUl">
                 <li @click="RouteToWater" style="margin-top: -1vh">
                     <img src="../../../assets/水库.png" alt="">
-                    <div class="number">43.59</div>
+                    <div class="number">{{ listData["水生电能"] }}</div>
                     <div class="up">
                         水生电能
                     </div>
@@ -61,7 +69,7 @@ const options = ref([
                 </li>
                 <li @click="RouteToSun" style="margin-top: 0.8vh">
                     <img src="../../../assets/太阳能发电.png" alt="">
-                    <div class="number">3135</div>
+                    <div class="number">{{ listData["光生电能"] }}</div>
                     <div class="up">
                         光生电能
                     </div>
@@ -73,7 +81,7 @@ const options = ref([
                     <img src="../../../assets/风力发电.png" alt="">
                     <img src="../../../assets/pic/pic-5.png" alt=""
                          style="width: 10vw;margin-top: -1vh; margin-left: -4.5vw; position: absolute;">
-                    <div class="number">8800</div>
+                    <div class="number">{{ listData["风生电能"] }}</div>
                     <div class="up">
                         风生电能
                     </div>
