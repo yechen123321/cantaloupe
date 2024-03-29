@@ -61,6 +61,11 @@ const routes = [
         name: 'thermalpower',
         component: () => import('../views/ThermalPowerView.vue')
     },
+    {
+        path: '/beijing',
+        name: 'beijing',
+        component: () => import('../views/BeiJingRenewView.vue')
+    },
 ]
 
 const router = createRouter({

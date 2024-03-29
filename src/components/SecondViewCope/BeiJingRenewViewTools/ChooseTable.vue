@@ -7,7 +7,7 @@ const router = useRouter();
 
 const handleRouteChange = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
-    router.push('/beijing'); // 替换'/new-route'为您要跳转的路由路径
+    router.push('/anhuirenew'); // 替换'/new-route'为您要跳转的路由路径
 };
 const RouteToSun = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
@@ -22,8 +22,8 @@ const RouteToWind = () => {
     router.push('/anhuiwind'); // 替换'/new-route'为您要跳转的路由路径
 };
 const options = ref([
-    {where: '安徽', value: 1},
     {where: '北京', value: 2},
+    {where: '安徽', value: 1},
     {where: '浙江', value: 3},
     {where: '重庆', value: 4},
     {where: '西藏', value: 5},
@@ -47,7 +47,7 @@ choose().then(response => {
 <template>
     <div class="ChooseTable">
         <div class="ChooseTitle">
-            安徽地区基本信息
+            北京地区基本信息
         </div>
         <div class="MySelect">
             <select class="SelectBox">
