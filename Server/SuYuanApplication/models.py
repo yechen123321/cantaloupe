@@ -248,7 +248,7 @@ class MarketInvestmentModel(models.Model):
                                                       help_text='万千瓦时(电量)')
     electricity_trading = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
                                               verbose_name='电力市场交易电量',
-                                              help_text='亿千瓦时')
+                                              help_text='百亿千瓦时')
     coal_methane = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
                                        verbose_name='煤层气产量',
                                        help_text='亿立方米')
