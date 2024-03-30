@@ -8,7 +8,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-from SuYuanApplication.views import my_logout
+from SuYuanApplication.views import my_login, my_logout
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -52,4 +52,5 @@ urlpatterns += [
 
 urlpatterns += [
     path('logout/', my_logout, name='logout'),
+    path('', my_login, name='login'),
 ]

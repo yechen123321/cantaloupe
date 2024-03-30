@@ -30,6 +30,12 @@ def my_logout(request):
     return response
 
 
+def my_login(request):
+    response = redirect(reverse('admin:login'))
+    request.session.delete(request.session.session_key)
+    return response
+
+
 class methods:
     @staticmethod
     def region_dict():
