@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from 'vue';
 import {useRouter} from 'vue-router';
-import {choose} from "@/api";
+import {choose1} from "@/api";
 
 const router = useRouter();
 
@@ -35,7 +35,7 @@ const options = ref([
 ]);
 const listData = ref({});
 
-choose().then(response => {
+choose1().then(response => {
     Object.assign(listData.value, response.data.data);
     console.log(listData.value["水生电能"]);
 }).catch(error => {

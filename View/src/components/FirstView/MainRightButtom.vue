@@ -1,17 +1,34 @@
 <script setup>
 import {ref} from "vue";
+import {inita} from "@/api";
 
-const twice = ref([
-    {name: '全国电力市场交易电量', number: 28000, up: '亿', num: 1.6},
-    {name: '全国煤层气开发投资', number: 28000, up: '亿', num: 1.6},
+const datas = ref([
 ]);
+const listData = ref({});
+
+inita().then(response => {
+    Object.assign(listData.value, response.data);
+    console.log(listData.value["name"][0]);
+    // 将listData中的数据写入datas
+    for (var i = 2; i < 4; i ++) {
+        const newData = {
+            name: listData.value["name"][i],
+            number: listData.value["number"][i],
+            up: listData.value["up"][i],
+            num: listData.value["num"][i]
+        };
+        datas.value.push(newData);
+    }
+}).catch(error => {
+    console.error('Error fetching data:', error);
+});
 </script>
 
 <template>
     <div class="MainRightButtom">
         <img class="BackImg" src="../../assets/pic/pic-3.png" alt="">
         <div class="MainRightButtom-main">
-            <li v-for="(item,index) in twice" :class="{ 'li-active': index === 0 }" :key="index">
+            <li v-for="(item,index) in datas" :class="{ 'li-active': index === 0 }" :key="index">
                 <div class="MainRightButtom-title">{{ item.name }}</div>
                 <div class="MainRightButtom-number">{{ item.number }}</div>
                 <div class="MainRightButtom-up">{{ item.up }}</div>
@@ -57,7 +74,7 @@ const twice = ref([
       position: absolute;
       font-weight: bolder;
       margin-top: 4vh;
-      margin-left: 2vw;
+      margin-left: 1vw;
       color: #1cd7cd;
       text-align: center;
       width: 30%;
@@ -73,7 +90,7 @@ const twice = ref([
       font-size: 1em;
       font-weight: bolder;
       margin-top: 6vh;
-      margin-left: 10vw;
+      margin-left: 7.5vw;
     }
 
     .MainRightButtom-midden {
@@ -84,7 +101,7 @@ const twice = ref([
       font-weight: bolder;
       margin-top: 6vh;
       width: 25%;
-      margin-left: 12vw;
+      margin-left: 13vw;
     }
 
     .MainRightButtom-num {
@@ -92,8 +109,8 @@ const twice = ref([
       position: absolute;
       font-size: 2em;
       font-weight: bolder;
-      margin-top: 5vh;
-      margin-left: 17.3vw;
+      margin-top: 4.5vh;
+      margin-left: 18vw;
     }
   }
 

@@ -7,6 +7,11 @@ export const initadd = () => request({
     url: '/get_energy_production_and_inventory/',
     method: 'get',
 })
+// 全国数据
+export const inita = () => request({
+    url: '/get_market_investment/',
+    method: 'get',
+})
 
 // 全国能耗水平
 export const initqdd = () => request({
@@ -37,21 +42,37 @@ export const choose = () => request({
 })
 // 设施
 export const initKlist = () => request({
-    url: 'get_regional_resource_facilities/1/',
+    url: '/renew/get_regional_resource_facilities/12/',
     method: 'get'
 })
 
+export const choose1 = () => request({
+    url: '/renew/get_region_energy_production/1/',
+    method: 'get'
+})
+// 设施
+export const initKlist1 = () => request({
+    url: '/renew/get_regional_resource_facilities/1/',
+    method: 'get'
+})
 
 ///////     ///////
 
 
 /////// 有限 ///////
 
-
+// limit数据
+export const initK1 = () => request({
+    url: '/limited/get_market_investment/12/',
+    method: 'get'
+})
 ///////     ///////
 
 
 /////// 分析 ///////
-
+export const initK = () => request({
+    url: '/analyse/get_heat_map/12/',
+    method: 'get'
+})
 
 ///////     ///////

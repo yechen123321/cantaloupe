@@ -57,7 +57,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['2017','2018','2019','2020', '2021', '2022', '2023'],
+                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -84,7 +84,7 @@ onMounted(() => {
                 min: 0,
                 max: 250,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, 10, 0, 0]
                 },
                 interval: 50,
@@ -106,7 +106,7 @@ onMounted(() => {
                 min: 0,
                 max: 25,
                 nameTextStyle: {
-                    color:'white',
+                    color: 'white',
                     padding: [0, -25, 0, 0]
                 },
                 interval: 5,
@@ -129,11 +129,11 @@ onMounted(() => {
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' ml';
+                        return value + ' 万千瓦';
                     }
                 },
                 data: [
-                    76.7, 135.6, 162.2, 32.6,162.2, 32.6, 76.7,
+                    176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
                 ]
             },
             {
@@ -141,11 +141,11 @@ onMounted(() => {
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' ml';
+                        return value + ' 万千瓦';
                     }
                 },
                 data: [
-                    70.7, 175.6, 182.2, 48.7,182.2, 48.7, 70.7,
+                    70.7, 75.6, 82.2, 48.7, 82.2, 48.7, 70.7,
                 ]
             },
             {
@@ -154,10 +154,10 @@ onMounted(() => {
                 yAxisIndex: 1,
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' °C';
+                        return value + ' %';
                     }
                 },
-                data: [20.3, 23.4, 23.0, 16.5,23.0, 16.5,20.3, ]
+                data: [20.3, 23.4, 23.0, 16.5, 23.0, 16.5, 20.3,]
             }
         ]
     };
@@ -182,9 +182,10 @@ onMounted(() => {
 .AnHuiSunMiddenDown {
   width: 100%;
   height: 100%;
-  .title{
+
+  .title {
     position: absolute;
-    color:white;
+    color: white;
     width: 40vw;
     font-weight: bolder;
     font-size: 1.26em;
@@ -192,13 +193,16 @@ onMounted(() => {
     margin-top: 1vh;
     //background: red;
   }
-  .AnHuiSunMiddenDown-echarts{
+
+  .AnHuiSunMiddenDown-echarts {
     width: 44vw;
     height: 33vh;
     position: absolute;
     margin-top: -28.5vh;
     margin-left: -3vw;
+    z-index: 555;
   }
+
   .BackImg {
     width: 40vw;
     height: 29vh;

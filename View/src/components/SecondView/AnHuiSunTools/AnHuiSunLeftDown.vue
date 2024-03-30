@@ -4,7 +4,7 @@ import * as echarts from "echarts";
 
 const echartsRef = ref(null);
 let myChart47 = null;
-let option47= null;
+let option47 = null;
 
 onMounted(() => {
     myChart47 = echarts.init(echartsRef.value, 'dark');
@@ -25,7 +25,7 @@ onMounted(() => {
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold; margin-top: -500px; margin-right: 2vw">' + mineName + '</span>' + '单位/XX' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold; margin-top: -500px; margin-right: 2vw">' + mineName + '</span>' + '单位/万千瓦' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName !== '趋势') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
@@ -214,10 +214,11 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-.AnHuiSunLeftDown{
+.AnHuiSunLeftDown {
   width: 100%;
   height: 100%;
-  .title{
+
+  .title {
     position: absolute;
     color: white;
     font-weight: bolder;
@@ -227,11 +228,13 @@ onMounted(() => {
     width: 24vw;
     margin-left: 1vw;
   }
-  .AnHuiSunLeftDown-echarts{
+
+  .AnHuiSunLeftDown-echarts {
     width: 23vw;
     height: 25vh;
     margin-top: 0.6vh;
     margin-left: 1.3vw;
+    z-index: 555;
   }
 }
 </style>
