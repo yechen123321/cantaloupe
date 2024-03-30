@@ -99,7 +99,7 @@ onMounted(() => {
                 type: 'line',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' ml';
+                        return value + ' 万吨';
                     }
                 },
                 areaStyle: {
@@ -123,7 +123,7 @@ onMounted(() => {
                 type: 'line',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' ml';
+                        return value + ' 万吨';
                     }
                 },
                 areaStyle: {
@@ -295,7 +295,7 @@ onMounted(() => {
                 type: 'bar',
                 yAxisIndex: 2,
                 data: [
-                    135.6, 162.2, 32.6, 20.0, 6.4,
+                    135.6, 162.2, 132.6, 120.0, 126.4,
                 ]
             },
             {
@@ -303,7 +303,7 @@ onMounted(() => {
                 type: 'bar',
                 yAxisIndex: 0,
                 data: [
-                    175.6, 182.2, 48.7, 18.8, 6.0
+                    175.6, 182.2, 148.7, 138.8, 136.0
                 ]
             },
             {

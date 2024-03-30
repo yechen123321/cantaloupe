@@ -1,11 +1,23 @@
 <script setup>
 import {ref} from "vue";
+import { inita } from "@/api"
+const datas = ref([]);
+const listData = ref({});
 
-const datas = ref([
-    {name: '全国能源投资建设', number: 28000, up: '亿', num: 1.6},
-]);
-
-
+inita().then(response => {
+    Object.assign(listData.value, response.data);
+    console.log(listData.value["name"][0]);
+    // 将listData中的数据写入datas
+    const newData = {
+        name: listData.value["name"][0],
+        number: listData.value["number"][0],
+        up: listData.value["up"][0],
+        num: listData.value["num"][0]
+    };
+    datas.value.push(newData);
+}).catch(error => {
+    console.error('Error fetching data:', error);
+});
 </script>
 
 <template>
@@ -43,7 +55,7 @@ const datas = ref([
 
     li {
       list-style-type: none;
-      width: 100%;
+      width: 90%;
       margin-top: 2%;
       line-height: 4.5vh;
       color: white;

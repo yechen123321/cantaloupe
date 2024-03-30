@@ -1,11 +1,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
-
-const datas = ref([
-    {name: '全国能源投资建设', number: 28000, up: '亿', num: 1.6},
-    {name: '全国能源投资建设', number: 28000, up: '亿', num: 1.6},
-]);
+import {initK1} from "@/api";
 
 const echartsRef = ref(null);
 let myChart72 = null;
@@ -144,7 +140,7 @@ onMounted(() => {
                 type: 'bar',
                 yAxisIndex: 2,
                 data: [
-                    135.6, 162.2, 32.6, 20.0, 6.4,
+                    35.6, 32.2, 32.6, 20.0, 36.4,
                 ]
             },
             {
@@ -152,7 +148,7 @@ onMounted(() => {
                 type: 'bar',
                 yAxisIndex: 0,
                 data: [
-                    175.6, 182.2, 48.7, 18.8, 6.0
+                    175.6, 182.2, 148.7, 138.8, 146.0
                 ]
             },
             {
@@ -171,6 +167,24 @@ onMounted(() => {
     });
 
     resizeObserver.observe(echartsRef.value);
+});
+const datas = ref([]);
+const listData = ref({});
+
+initK1().then(response => {
+    Object.assign(listData.value, response.data);
+    console.log(listData.value["name"][0]);
+    for (var i = 0; i < 2; i++) {
+        const newData = {
+            name: listData.value["name"][i],
+            number: listData.value["number"][i],
+            up: listData.value["up"][i],
+            num: listData.value["num"][i]
+        };
+        datas.value.push(newData);
+    }
+}).catch(error => {
+    console.error('Error fetching data:', error);
 });
 </script>
 
@@ -217,7 +231,6 @@ onMounted(() => {
     li {
       list-style-type: none;
       width: 100%;
-      //margin-top: 2%;
       line-height: 4.5vh;
       color: white;
       height: 100%;
@@ -233,8 +246,6 @@ onMounted(() => {
       .li-number {
         float: left;
         color: #1cd7cd;
-        text-align: center;
-        margin-left: 2vw;
         width: 30%;
         font-weight: bolder;
         text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
@@ -243,7 +254,7 @@ onMounted(() => {
 
       .li-up {
         float: left;
-        margin-left: 4.5%;
+        margin-left: -1vw;
         font-size: 1em;
         margin-top: 1.3%;
         color: #01bae4;
@@ -252,7 +263,7 @@ onMounted(() => {
 
       .li-midden {
         float: left;
-        margin-left: 4%;
+        margin-left: 1vw;
         margin-top: 1.3%;
         font-size: 1em;
         color: #01bae4;
@@ -261,7 +272,8 @@ onMounted(() => {
 
       .li-num {
         float: left;
-        margin-left: 5%;
+        width: 8vw;
+        text-align: center;
         font-size: 2em;
         color: yellow;
         font-weight: bolder;
@@ -305,7 +317,7 @@ onMounted(() => {
       margin-top: 5vh;
       margin-left: 1.4vw;
       position: absolute;
-      z-index: 300;
+      z-index: 999;
       //background: black;
     }
   }

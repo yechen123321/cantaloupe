@@ -126,7 +126,7 @@ onMounted(() => {
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' ml';
+                        return value + ' 万千瓦';
                     }
                 },
                 data: [170.7, 175.6, 182.2, 148.7,],
@@ -136,7 +136,7 @@ onMounted(() => {
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' ml';
+                        return value + ' 万千瓦';
                     }
                 },
                 data: [76.7, 35.6, 62.2, 32.6,],
@@ -147,7 +147,7 @@ onMounted(() => {
                 yAxisIndex: 1,
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' °C';
+                        return value + ' %';
                     }
                 },
                 data: [20.3, 23.0, 16.5,23.4,]

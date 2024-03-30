@@ -22,16 +22,15 @@ const datas = ref([
     {name: '转换', thing: '水能转换'},
     {name: '转换', thing: '太阳能转换'},
 ]);
-
 const reportGenerated = ref(false);
-
 const updateReport = () => {
     reportGenerated.value = true;
 };
-
 const showReport = () => {
     // 这里可以添加显示报告的逻辑
 };
+
+
 </script>
 
 <template>
