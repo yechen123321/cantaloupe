@@ -231,3 +231,115 @@ class NewEnergyModel(models.Model):
 
     def __str__(self):
         return f"{self.year}年 - 新能源结构及趋势"
+
+
+#  全国市场交易及投资建设
+class MarketInvestmentModel(models.Model):
+    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
+                               default=2000)
+    energy_investment = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                            verbose_name='能源重点项目投资',
+                                            help_text='亿元')
+    new_energy_storage_projects_power = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                                            verbose_name='投运新型储能项目累计装机规模',
+                                                            help_text='万千瓦(功率)')
+    new_energy_storage_projects = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                                      verbose_name='投运新型储能项目累计装机规模',
+                                                      help_text='万千瓦时(电量)')
+    electricity_trading = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                              verbose_name='电力市场交易电量',
+                                              help_text='亿千瓦时')
+    coal_methane = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                       verbose_name='煤层气产量',
+                                       help_text='亿立方米')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name_plural = '全国市场交易及投资建设'
+
+    def __str__(self):
+        return f"{self.year}年 - 全国市场交易及投资建设"
+
+
+#  全国能源开发与需求
+class EnergyDevelopAndDemandModel(models.Model):
+    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
+                               default=2000)
+    #  电力消纳量demand
+    north_China_dm = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                         verbose_name='华北',
+                                         help_text='亿千瓦(需求)')
+    northeast_dm = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                       verbose_name='东北',
+                                       help_text='亿千瓦(需求)')
+    east_China_dm = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                        verbose_name='华东',
+                                        help_text='亿千瓦(需求)')
+    central_South_dm = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                           verbose_name='中南',
+                                           help_text='亿千瓦(需求)')
+    southwest_dm = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                       verbose_name='西南',
+                                       help_text='亿千瓦(需求)')
+    northwest_dm = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                       verbose_name='西北',
+                                       help_text='亿千瓦(需求)')
+
+    #  开发dv
+    north_China_dv = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                         verbose_name='华北',
+                                         help_text='亿千瓦(开发)')
+    northeast_dv = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                       verbose_name='东北',
+                                       help_text='亿千瓦(开发)')
+    east_China_dv = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                        verbose_name='华东',
+                                        help_text='亿千瓦(开发)')
+    central_South_dv = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                           verbose_name='中南',
+                                           help_text='亿千瓦(开发)')
+    southwest_dv = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                       verbose_name='西南',
+                                       help_text='亿千瓦(开发)')
+    northwest_dv = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
+                                       verbose_name='西北',
+                                       help_text='亿千瓦(开发)')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name_plural = '全国能源开发与需求'
+
+    def __str__(self):
+        return f"{self.year}年 - 全国能源开发与需求"
+
+
+#  全国能源储量统计
+class EnergyReserveModel(models.Model):
+    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
+                               default=2000)
+    range = models.CharField(max_length=10,  verbose_name='统计范围', choices=(('全国', '全国'), ('全球', '全球')), default='全球')
+    coal = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                               verbose_name='煤炭',
+                               help_text='万亿吨')
+    petroleum = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                    verbose_name='石油',
+                                    help_text='亿吨')
+    natural_gas = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                      verbose_name='天然气',
+                                      help_text='万亿立方米')
+    geothermal = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                     verbose_name='地热',
+                                     help_text='万千瓦')
+    wind = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                               verbose_name='风能',
+                               help_text='亿千瓦')
+    sun = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                              verbose_name='太阳能',
+                              help_text='亿千瓦')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name_plural = '全国能源储量统计'
+
+    def __str__(self):
+        return f"{self.year}年 - {self.range} - 能源储量统计"

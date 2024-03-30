@@ -42,21 +42,15 @@ class method:
         return s
 
 
-#  地区有限能源结构
-class NewEnergyModel(models.Model):
-    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
-                               default=2000)
-    province = models.CharField(max_length=20, verbose_name='省份', choices=method.region(), default='安徽')
-    energy_type = models.CharField(max_length=50, verbose_name='能源类型', choices=(
-        ('太阳能源', '太阳能源'), ('风力能源', '风力能源'), ('水利能源', '水利能源'), ('生物质能', '生物质能'),
-        ('其他能源', '其他能源')), default='其他能源')
-    value = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
-                                verbose_name='产量',
-                                help_text='亿千瓦时')
+#  能源发展热力图
+class HeatMapModel(models.Model):
+    province = models.CharField(max_length=100, verbose_name='省级', null=True, choices=method.region())
+    name = models.CharField(max_length=100, verbose_name='市级', null=True)
+    value = models.FloatField(verbose_name='数值', null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
-        verbose_name_plural = '新能源结构及趋势'
+        verbose_name_plural = '能源发展情况(权重)'
 
     def __str__(self):
-        return f"{self.year}年 - {self.province}省 - 新能源结构及趋势"
+        return f"{self.province}省 - {self.name}市 - 能源发展情况"

@@ -15,8 +15,8 @@ class MainEnergyProductionAdmin(admin.ModelAdmin):
 
 #  电场信息
 class ElectricFieldAdmin(admin.ModelAdmin):
-    list_filter = ('station_name', 'created_at')
-    search_fields = ('station_name', 'created_at')
+    list_filter = ('station_name', 'state')
+    search_fields = ('station_name', 'state')
     # readonly_fields = [field.name for field in ElectricFieldModel._meta.fields]
 
     def has_change_permission(self, request, obj=None):

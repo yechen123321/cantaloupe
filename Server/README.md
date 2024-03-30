@@ -27,3 +27,9 @@
 
 
 
+##  Installation dependencies and startup steps
+
+1. 在 Server 目录下，终端执行 pip install -r requirements.txt 
+2. 在 templates/admin/index.html 中，找到 fetch('http://172.18.7.71:8080{% url 'index_data' %}') 改为自己的地址和端口号
+3. 在 Server 目录下，终端执行 python manage.py runserver 172.18.7.71:8080 (改成自己的地址和端口)
+ 

@@ -15,7 +15,7 @@ DEBUG = str2bool(os.environ.get('DEBUG'))
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://172.18.7.71:8080']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8080']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:    
@@ -33,12 +33,12 @@ INSTALLED_APPS = [
     "SuYuanApplication",
     "limited",
     "renew",
+    "analyse",
 
     'rest_framework',
     'corsheaders',
     'drf_yasg',  # swagger 接口文档
     'drf_spectacular',  # swagger 文档库
-    'silk',
     
     'simple_history',
 
@@ -46,8 +46,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
-
-    "silk.middleware.SilkyMiddleware",
 
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",

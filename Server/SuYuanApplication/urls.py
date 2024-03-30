@@ -17,4 +17,10 @@ urlpatterns = [
     path('get_energy_consumption/', get_energy_consumption, name='get_energy_consumption'),
     #  新能源结构及趋势
     path('get_new_energy/', get_new_energy, name='get_new_energy'),
+    #  全国市场交易及投资建设
+    path('get_market_investment/', get_market_investment, name='get_market_investment'),
+    #  全国能源开发与需求
+    path('get_energy_develop_demand/', get_energy_develop_demand, name='get_energy_develop_demand'),
+    #  全国能源储量统计
+    path('get_energy_reserve/', get_energy_reserve, name='get_energy_reserve'),
 ]

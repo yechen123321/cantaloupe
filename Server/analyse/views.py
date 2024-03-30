@@ -1,23 +1,22 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt  # 取消 csrf 限制的装饰器
-from django.utils.decorators import method_decorator
+
 from datetime import datetime, timedelta
 
 from drf_spectacular.utils import extend_schema
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes  # 装饰器
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser  # 权限装饰器
 from django.core.serializers import serialize
 
 from django.apps import apps
-from django.db.models import Count, F
-from rest_framework.views import APIView
+from django.db.models import Count
 
 from .seriailzers import *
 from .models import *
+
 
 class methods:
     @staticmethod
@@ -58,105 +57,6 @@ class methods:
         return s[num]
 
 
-def province_dict(self, num=12):
-    s = {
-        '北京': [
-
-        ],
-        '天津': [
-
-        ],
-        '河北': [
-
-        ],
-        '山西': [
-
-        ],
-        '内蒙古': [
-
-        ],
-        '辽宁': [
-
-        ],
-        '吉林': [
-
-        ],
-        '黑龙江': [
-
-        ],
-        '上海': [
-
-        ],
-        '江苏': [
-
-        ],
-        '浙江': [
-
-        ],
-        '安徽': [
-            '合肥', '芜湖', '蚌埠', '淮北', '亳州', '宿州', '阜阳', '淮南', '滁州', '六安', '马鞍山', '宣城', '铜陵', '池州', '安庆', '黄山'
-        ],
-        '福建': [
-
-        ],
-        '江西': [
-
-        ],
-        '山东': [
-
-        ],
-        '河南': [
-
-        ],
-        '湖北': [
-
-        ],
-        '湖南': [
-
-        ],
-        '广东': [
-
-        ],
-        '广西': [
-
-        ],
-        '海南': [
-
-        ],
-        '重庆': [
-
-        ],
-        '四川': [
-
-        ],
-        '贵州': [
-
-        ],
-        '云南': [
-
-        ],
-        '西藏': [
-
-        ],
-        '陕西': [
-
-        ],
-        '甘肃': [
-
-        ],
-        '青海': [
-
-        ],
-        '宁夏': [
-
-        ],
-        '新疆': [
-
-        ],
-    }
-    return s[self.region_dict(num)]
-
-
 """
 ========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 API
@@ -164,35 +64,11 @@ API
 """
 
 
-#  主要能源品种产量
+#  能源发展热力图
 @api_view(['GET', ])
 @permission_classes(())
-def get_region_energy_production(request, id=12):
+def get_heat_map(request, id=12):
     if request.method == 'GET':
-        data_objects = MainEnergyProductionModel.objects.first()
-        data = MainEnergyProductionSerializer(instance=data_objects, many=False)
+        data_objects = HeatMapModel.objects.filter(province=methods.region_dict(num=id)).all()
+        data = HeatMapSerializer(instance=data_objects, many=True)
         return Response(data=data.data, status=status.HTTP_200_OK)
-
-
-#  电场故障信息
-@method_decorator(csrf_exempt, name='dispatch')
-@permission_classes(())
-class ElectricFieldFault(APIView):
-
-    def get(self, request, id=12):
-        #  提供故障信息数据接口
-        fault_data = list(ElectricFieldModel.objects.filter(province__in=province_dict(self=methods, num=id), state=False).values_list('id'))
-        fault_data = [it[0] for it in fault_data if isinstance(it, tuple)]
-        data_objects = ElectricFieldFaultModel.objects.filter(electric_field_id__in=fault_data).all()
-        data = ElectricFieldFaultSerializer(instance=data_objects, many=True)
-        return Response(data=data.data, status=status.HTTP_200_OK)
-
-    def post(self, request, id=12):
-        #  获取用户提交的故障信息请求
-        #  发送故障电场的名称和故障原因即可，均对应上即视为正确数据
-        data = ElectricFieldFaultSerializer(data=request.data)
-        if data.is_valid():
-            # data.save()
-            # ElectricFieldFaultModel.objects.filter(electric_field=1).update(send_times=F('send_times') + 1)
-            return Response(status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_400_BAD_REQUEST)

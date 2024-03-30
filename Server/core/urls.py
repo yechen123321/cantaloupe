@@ -1,4 +1,4 @@
-import SuYuanApplication, renew, limited
+import SuYuanApplication
 
 from django.contrib import admin
 from django.urls import include, path
@@ -24,7 +24,11 @@ schema_view = get_schema_view(
                     "能源消耗水平——————get_energy_consumption/\n"
                     "水光风发电量——————get_region_energy_production/\n"
                     "新能源结构及趋势——————get_new_energy/\n"
-                    
+                    "全国市场交易及投资建设——————get_market_investment/\n"
+                    "全国能源开发与需求——————get_energy_develop_demand/\n"
+                    "全国能源储量统计——————get_energy_reserve/\n"
+                    "能源发展热力图——————get_heat_map/<int:id>/\n"
+                    "电场故障信息——————electric_field_fault/<int:id>/\n"
                     
                     "\n\n===============================================================================================\n\n"
     ),
@@ -39,8 +43,9 @@ urlpatterns = [
 
 urlpatterns += [
     path('api/', include('SuYuanApplication.urls')),
-    path('api/', include('renew.urls')),
-    path('api/', include('limited.urls')),
+    path('api/renew/', include('renew.urls')),
+    path('api/limited/', include('limited.urls')),
+    path('api/analyse/', include('analyse.urls')),
     path('api_docs/', schema_view.with_ui('swagger',
                                           cache_timeout=0), name='schema-swagger-ui'),
 ]

@@ -68,6 +68,24 @@ class NewEnergyAdmin(admin.ModelAdmin):
     search_fields = ('year', 'energy_type')
 
 
+#  全国市场交易及投资建设
+class MarketInvestmentAdmin(admin.ModelAdmin):
+    list_filter = ('year',)
+    search_fields = ('year',)
+
+
+#  全国能源开发与需求
+class EnergyDevelopAndDemandAdmin(admin.ModelAdmin):
+    list_filter = ('year',)
+    search_fields = ('year',)
+
+
+#  全国/全球能源储量统计
+class EnergyReserveAdmin(admin.ModelAdmin):
+    list_filter = ('year', 'range')
+    search_fields = ('year', 'range')
+
+
 # admin.site.register(FileModel, FileModelAdmin)
 admin.site.register(PowerGenerationInstalledCapacityModel, PowerGenerationInstalledCapacityAdmin)
 admin.site.register(MineralDevelopmentModel, MineralDevelopmentModelAdmin)
@@ -76,3 +94,6 @@ admin.site.register(EnergyImportAndExportModel, EnergyImportAndExportAdmin)
 admin.site.register(EnergyProductionAndInventoryModel, EnergyProductionAndInventoryAdmin)
 admin.site.register(EnergyConsumptionModel, EnergyConsumptionAdmin)
 admin.site.register(NewEnergyModel, NewEnergyAdmin)
+admin.site.register(MarketInvestmentModel, MarketInvestmentAdmin)
+admin.site.register(EnergyDevelopAndDemandModel, EnergyDevelopAndDemandAdmin)
+admin.site.register(EnergyReserveModel, EnergyReserveAdmin)

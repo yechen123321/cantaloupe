@@ -183,7 +183,7 @@ class EnergyProductionAndInventorySerializer(serializers.ModelSerializer):
                 last_data = EnergyProductionAndInventoryModel.objects.filter(year=year_i - 1).first()
                 if last_data:
                     increase = round((
-                                                 data.total_production_of_primary_energy - last_data.total_production_of_primary_energy) / last_data.total_production_of_primary_energy,
+                                             data.total_production_of_primary_energy - last_data.total_production_of_primary_energy) / last_data.total_production_of_primary_energy,
                                      5) * 100
                 else:
                     increase = round(random.uniform(0, 0.03), 5) * 100
@@ -287,4 +287,146 @@ class NewEnergySerializer(serializers.ModelSerializer):
                     data_dict[field_name].append(round(data[0] / Decimal(str(sum_data)) * 100, 2))
             data_dict['其他能源'].append(round(Decimal(str(t)) / Decimal(str(sum_data)) * 100, 2))
 
+        return data_dict
+
+
+#  全国市场交易及投资建设
+class MarketInvestmentSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField()
+    number = serializers.SerializerMethodField()
+    up = serializers.SerializerMethodField()
+    num = serializers.SerializerMethodField()
+
+    class Meta:
+        model = MarketInvestmentModel
+        fields = ['year', 'name', 'number', 'up', 'num']
+
+    def get_year(self, obj):
+        #  最新一年
+        return getattr(MarketInvestmentModel.objects.order_by('-year').first(), 'year')
+
+    def get_name(self, obj):
+        name_list = []
+        field_name_list = MarketInvestmentModel._meta.get_fields()
+        for field in field_name_list:
+            if field.name == 'year' or field.name == 'created_at' or field.name == 'id':
+                continue
+            name_list.append(field.verbose_name)
+        return name_list
+
+    def get_number(self, obj):
+        number_list = []
+        data_obj = MarketInvestmentModel.objects.filter(year=self.get_year(obj)).first()
+        field_list = MarketInvestmentModel._meta.get_fields()
+        for field in field_list:
+            if field.name == 'year' or field.name == 'created_at' or field.name == 'id':
+                continue
+            data = getattr(data_obj, field.name)
+            if data:
+                number_list.append(data)
+        return number_list
+
+    def get_up(self, obj):
+        up_list = []
+        up_map = {
+            'energy_investment': '亿元',
+            'new_energy_storage_projects_power': '万千瓦',
+            'new_energy_storage_projects': '万千瓦时',
+            'electricity_trading': '亿千瓦时',
+            'coal_methane': '亿立方米'
+        }
+        field_list = MarketInvestmentModel._meta.get_fields()
+        for field in field_list:
+            if field.name == 'year' or field.name == 'created_at' or field.name == 'id':
+                continue
+            up_list.append(up_map[field.name])
+        return up_list
+
+    def get_num(self, obj):
+        num_list = []
+        #  同比增长
+        data_obj = MarketInvestmentModel.objects.order_by('-year').first()
+        next_obj = MarketInvestmentModel.objects.order_by('-year')[1]
+        field_list = MarketInvestmentModel._meta.get_fields()
+        for field in field_list:
+            if field.name == 'year' or field.name == 'created_at' or field.name == 'id':
+                continue
+            data = getattr(data_obj, field.name)
+            next_data = getattr(next_obj, field.name)
+            num_list.append(round((data - next_data) / next_data * 100, 2))
+        return num_list
+
+
+#  全国能源开发与需求
+class EnergyDevelopAndDemandSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField()
+    data = serializers.SerializerMethodField()
+
+    class Meta:
+        model = EnergyDevelopAndDemandModel
+        fields = ['name', 'data']
+
+    def get_name(self, obj):
+        name_list = ['地区开发', '地区消耗']
+        return name_list
+
+    def get_data(self, obj):
+        data_dict = {}
+        data_dict['地区开发'] = []
+        data_dict['地区消耗'] = []
+
+        data_obj = EnergyDevelopAndDemandModel.objects.order_by('-year').first()
+
+        field_list = EnergyDevelopAndDemandModel._meta.get_fields()
+        for field in field_list:
+            if field.name != 'id' and field.name != 'created_at':
+                data = getattr(data_obj, field.name)
+                if '_dv' in field.name:
+                    #  地区开发
+                    data_dict['地区开发'].append({'value': data, 'name': field.verbose_name})
+                elif '_dm' in field.name:
+                    #  地区消耗
+                    data_dict['地区消耗'].append({'value': data, 'name': field.verbose_name})
+        return data_dict
+
+
+#  全国能源储量统计
+class EnergyReserveSerializer(serializers.ModelSerializer):
+    indicator = serializers.SerializerMethodField()
+    data = serializers.SerializerMethodField()
+
+    class Meta:
+        model = EnergyReserveModel
+        fields = ['indicator', 'data']
+
+    def get_indicator(self, obj):
+        name_list = []
+        field_name_list = EnergyReserveModel._meta.get_fields()
+        for field in field_name_list:
+            data_dict = {}
+            if field.name == 'year' or field.name == 'created_at' or field.name == 'id' or field.name == 'range':
+                continue
+            data_dict['name'] = field.verbose_name
+            data_dict['max'] = round(max(EnergyReserveModel.objects.values_list(field.name, flat=True)) * Decimal(str(random.uniform(1.1, 1.2))), 2)
+            name_list.append(data_dict)
+
+        return name_list
+
+    def get_data(self, obj):
+        data_dict = {}
+        data_dict['国内总量'] = []
+        data_dict['世界平均'] = []
+
+        data_obj1 = EnergyReserveModel.objects.filter(range='全国').order_by('-year').first()
+        data_obj2 = EnergyReserveModel.objects.filter(range='全球').order_by('-year').first()
+
+        field_list = EnergyReserveModel._meta.get_fields()
+        for field in field_list:
+            if not (field.name == 'year' or field.name == 'created_at' or field.name == 'id' or field.name == 'range'):
+                data = getattr(data_obj1, field.name)
+                #  全国
+                data_dict['国内总量'].append(data)
+                #  地区消耗
+                data = getattr(data_obj2, field.name)
+                data_dict['世界平均'].append(data)
         return data_dict
