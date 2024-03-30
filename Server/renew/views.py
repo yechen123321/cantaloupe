@@ -195,3 +195,15 @@ def get_regional_resource_facilities(request, id=12):
         data_objects = RegionalResourceFacilitiesModel.objects.filter(region=methods.region_dict(id)).all()
         data = RegionalResourceFacilitiesSerializer(instance=data_objects, many=True)
         return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区再生能源储量
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=RegionalResourceFacilitiesSerializer)
+def get_energy_reserve(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyReserveSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+        # return Response(data=1, status=status.HTTP_200_OK)
