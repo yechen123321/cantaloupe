@@ -1,5 +1,3 @@
-import random
-
 from .models import *
 from rest_framework import serializers
 
@@ -32,7 +30,7 @@ class MainEnergyProductionSerializer(serializers.ModelSerializer):
         return data_dict
 
 
-#  电场故障信息
+#  电场故障信息GET
 class ElectricFieldFaultSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()
     reason = serializers.SerializerMethodField()
@@ -51,8 +49,18 @@ class ElectricFieldFaultSerializer(serializers.ModelSerializer):
     def get_time(self, obj):  # 故障时间（即创建时间）
         return obj.created_at
 
-    def update(self, instance, validated_data):
-        """更新，instance为要更新的对象实例"""
-        # 需要返回 instance
-        return instance
 
+#  电场故障信息PUT
+class ElectricFieldFaultSerializerPUT(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField()
+    reason = serializers.SerializerMethodField()
+
+    class Meta:
+        model = ElectricFieldFaultModel
+        fields = ['name', 'reason']
+
+    def get_name(self, obj):
+        return obj.electric_field.station_name
+
+    def get_reason(self, obj):
+        return obj.malfunction_reason
