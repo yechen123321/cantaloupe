@@ -205,6 +205,7 @@ def put_electric_field_fault(request):
     if request.method == 'PUT':
         #  故障电场的名称和故障原因对应上即视为正确数据
         data = request.data
+        print(data)
         ElectricFieldFaultModel.objects.filter(electric_field__station_name=data['name'],
                                                malfunction_reason=data['reason']).update(send_times=F('send_times') + 1)
         return Response(status=status.HTTP_200_OK)
