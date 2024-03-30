@@ -323,7 +323,7 @@ class MarketInvestmentSerializer(serializers.ModelSerializer):
                 continue
             data = getattr(data_obj, field.name)
             if data:
-                number_list.append(data)
+                number_list.append(round(data, 0))
         return number_list
 
     def get_up(self, obj):
@@ -332,7 +332,7 @@ class MarketInvestmentSerializer(serializers.ModelSerializer):
             'energy_investment': '亿元',
             'new_energy_storage_projects_power': '万千瓦',
             'new_energy_storage_projects': '万千瓦时',
-            'electricity_trading': '亿千瓦时',
+            'electricity_trading': '百亿千瓦时',
             'coal_methane': '亿立方米'
         }
         field_list = MarketInvestmentModel._meta.get_fields()
@@ -353,7 +353,7 @@ class MarketInvestmentSerializer(serializers.ModelSerializer):
                 continue
             data = getattr(data_obj, field.name)
             next_data = getattr(next_obj, field.name)
-            num_list.append(round((data - next_data) / next_data * 100, 2))
+            num_list.append(round((data - next_data) / next_data * 100, 1))
         return num_list
 
 
