@@ -52,36 +52,6 @@ class method:
         return s
 
 
-#  能源设施
-class RegionalResourceFacilitiesModel(models.Model):
-    my_choices = method.region()
-    up_choice = (
-        ('吨', '吨'),
-        ('万吨', '万吨'),
-        ('公顷', '公顷'),
-        ('万公顷', '万公顷'),
-        ('亩', '亩'),
-        ('万亩', '万亩'),
-        ('千瓦时', '千瓦时'),
-        ('亿千瓦时', '亿千瓦时'),
-    )
-
-    region = models.CharField(max_length=100, verbose_name='行政单位', choices=my_choices)
-    name = models.CharField(max_length=30, verbose_name='设施')
-    do = models.CharField(max_length=30, verbose_name='工作')
-    number = models.DecimalField(default=0, max_digits=7, decimal_places=2, verbose_name='数目')
-    up = models.CharField(max_length=10, choices=up_choice, default='吨', verbose_name='单位')
-    when = models.DateField(verbose_name='时间')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-
-    class Meta:
-        unique_together = ('region', 'name')
-        verbose_name_plural = '地区资源设施使用情况'
-
-    def __str__(self):
-        return f"{self.region} - {self.name}"
-
-
 #  矿产能源
 class MineralDevelopmentModel(models.Model):
     my_choices = method.region()

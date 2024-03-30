@@ -32,12 +32,6 @@ class MineralDevelopmentModelAdmin(admin.ModelAdmin):
     search_fields = ('year', 'region')
 
 
-#  能源设施
-class RegionalResourceFacilitiesModelAdmin(admin.ModelAdmin):
-    list_filter = ('region', 'name')
-    search_fields = ('region', 'name')
-
-
 #  能源进出口量
 class EnergyImportAndExportAdmin(admin.ModelAdmin):
     list_filter = ('year',)
@@ -89,7 +83,6 @@ class EnergyReserveAdmin(admin.ModelAdmin):
 # admin.site.register(FileModel, FileModelAdmin)
 admin.site.register(PowerGenerationInstalledCapacityModel, PowerGenerationInstalledCapacityAdmin)
 admin.site.register(MineralDevelopmentModel, MineralDevelopmentModelAdmin)
-admin.site.register(RegionalResourceFacilitiesModel, RegionalResourceFacilitiesModelAdmin)
 admin.site.register(EnergyImportAndExportModel, EnergyImportAndExportAdmin)
 admin.site.register(EnergyProductionAndInventoryModel, EnergyProductionAndInventoryAdmin)
 admin.site.register(EnergyConsumptionModel, EnergyConsumptionAdmin)

@@ -9,7 +9,7 @@ class NewEnergyAdmin(admin.ModelAdmin):
     search_fields = ('province', 'created_at')
 
 
-#  地区市场交易及投资建设
+#  地区有限能源经济形势
 class MarketInvestmentAdmin(admin.ModelAdmin):
     list_filter = ('province', 'created_at')
     search_fields = ('province', 'created_at')

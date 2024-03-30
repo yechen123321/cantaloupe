@@ -4,524 +4,523 @@
 {% block title %} Home {% endblock title %}
 
 {% block overlay %}
-  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
 {% endblock overlay %}
 
 {% block content %}
-<div class="container-fluid py-4">
-  <div class="row">
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-uppercase font-weight-bold">用户数量</p>
-                <h5 class="font-weight-bolder" id="user-num">
-                    loading...
-                </h5>
-                <p class="mb-0">最近新增
-                  <span class="text-success text-sm font-weight-bolder" id="user-num-last">
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">用户数量</p>
+                                    <h5 class="font-weight-bolder" id="user-num">
+                                        loading...
+                                    </h5>
+                                    <p class="mb-0">最近新增
+                                        <span class="text-success text-sm font-weight-bolder" id="user-num-last">
                       loading...
                   </span>
-                </p>
-              </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23" height="100"
+                                         width="30"><title>users</title>
+                                        <g fill="#F7F7F7" class="nc-icon-wrapper">
+                                            <circle cx="5.75" cy="6.25" r="2.75" fill="#F7F7F7"></circle>
+                                            <circle cx="12" cy="3.75" r="2.75" fill="#F7F7F7"
+                                                    data-color="color-2"></circle>
+                                            <path d="M17.196,11.098c-.811-2.152-2.899-3.598-5.196-3.598-1.417,0-2.752,.553-3.759,1.48,1.854,.709,3.385,2.169,4.109,4.089,.112,.296,.162,.603,.182,.91,1.211-.05,2.409-.26,3.565-.646,.456-.152,.834-.487,1.041-.919,.2-.42,.221-.888,.059-1.316Z"
+                                                  fill="#F7F7F7" data-color="color-2"></path>
+                                            <path d="M10.946,13.598c-.811-2.152-2.899-3.598-5.196-3.598S1.365,11.446,.554,13.598c-.162,.429-.141,.896,.059,1.316,.206,.432,.585,.767,1.041,.919,1.325,.442,2.704,.667,4.096,.667s2.771-.225,4.096-.667c.456-.152,.834-.487,1.041-.919,.2-.42,.221-.888,.059-1.316Z"
+                                                  fill="#F7F7F7"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23" height="100" width="30"><title>users</title><g fill="#F7F7F7" class="nc-icon-wrapper"><circle cx="5.75" cy="6.25" r="2.75" fill="#F7F7F7"></circle><circle cx="12" cy="3.75" r="2.75" fill="#F7F7F7" data-color="color-2"></circle><path d="M17.196,11.098c-.811-2.152-2.899-3.598-5.196-3.598-1.417,0-2.752,.553-3.759,1.48,1.854,.709,3.385,2.169,4.109,4.089,.112,.296,.162,.603,.182,.91,1.211-.05,2.409-.26,3.565-.646,.456-.152,.834-.487,1.041-.919,.2-.42,.221-.888,.059-1.316Z" fill="#F7F7F7" data-color="color-2"></path><path d="M10.946,13.598c-.811-2.152-2.899-3.598-5.196-3.598S1.365,11.446,.554,13.598c-.162,.429-.141,.896,.059,1.316,.206,.432,.585,.767,1.041,.919,1.325,.442,2.704,.667,4.096,.667s2.771-.225,4.096-.667c.456-.152,.834-.487,1.041-.919,.2-.42,.221-.888,.059-1.316Z" fill="#F7F7F7"></path></g></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-uppercase font-weight-bold">总数据量</p>
-                <h5 class="font-weight-bolder" id="data-volume">
-                    loading...
-                </h5>
-                <p class="mb-0">最近新增
-                  <span class="text-success text-sm font-weight-bolder" id="data-volume-last">
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">总数据量</p>
+                                    <h5 class="font-weight-bolder" id="data-volume">
+                                        loading...
+                                    </h5>
+                                    <p class="mb-0">最近新增
+                                        <span class="text-success text-sm font-weight-bolder" id="data-volume-last">
                       loading...
                   </span>
-                </p>
-              </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-success shadow-danger text-center rounded-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23" height="100"
+                                         width="30">
+                                        <g fill="#F7F7F7" class="nc-icon-wrapper">
+                                            <path d="M2.665,5.086L8.534,1.995c.292-.154,.64-.154,.932,0l5.87,3.091c.534,.281,.534,1.046,0,1.327l-5.87,3.091c-.292,.154-.64,.154-.932,0L2.665,6.414c-.534-.281-.534-1.046,0-1.327Z"
+                                                  fill="none" stroke="#F7F7F7" stroke-linecap="round"
+                                                  stroke-linejoin="round" stroke-width="1.5"></path>
+                                            <path d="M15.736,9c0,.261-.134,.523-.401,.664l-5.87,3.091c-.292,.154-.64,.154-.932,0l-5.87-3.091c-.267-.141-.401-.402-.401-.664"
+                                                  fill="none" stroke="#F7F7F7" stroke-linecap="round"
+                                                  stroke-linejoin="round" stroke-width="1.5"
+                                                  data-color="color-2"></path>
+                                            <path d="M15.736,12.25c0,.261-.134,.523-.401,.664l-5.87,3.091c-.292,.154-.64,.154-.932,0l-5.87-3.091c-.267-.141-.401-.402-.401-.664"
+                                                  fill="none" stroke="#F7F7F7" stroke-linecap="round"
+                                                  stroke-linejoin="round" stroke-width="1.5"
+                                                  data-color="color-2"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-success shadow-danger text-center rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23" height="100" width="30"><g fill="#F7F7F7" class="nc-icon-wrapper"><path d="M2.665,5.086L8.534,1.995c.292-.154,.64-.154,.932,0l5.87,3.091c.534,.281,.534,1.046,0,1.327l-5.87,3.091c-.292,.154-.64,.154-.932,0L2.665,6.414c-.534-.281-.534-1.046,0-1.327Z" fill="none" stroke="#F7F7F7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M15.736,9c0,.261-.134,.523-.401,.664l-5.87,3.091c-.292,.154-.64,.154-.932,0l-5.87-3.091c-.267-.141-.401-.402-.401-.664" fill="none" stroke="#F7F7F7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" data-color="color-2"></path><path d="M15.736,12.25c0,.261-.134,.523-.401,.664l-5.87,3.091c-.292,.154-.64,.154-.932,0l-5.87-3.091c-.267-.141-.401-.402-.401-.664" fill="none" stroke="#F7F7F7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" data-color="color-2"></path></g></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-uppercase font-weight-bold">今日访问量</p>
-                <h5 class="font-weight-bolder" id="visits">
-                    loading...
-                </h5>
-                <p class="mb-0">对比昨天
-                  <span class="text-danger text-sm font-weight-bolder" id="visits-last">
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">今日访问量</p>
+                                    <h5 class="font-weight-bolder" id="visits">
+                                        loading...
+                                    </h5>
+                                    <p class="mb-0">对比昨天
+                                        <span class="text-danger text-sm font-weight-bolder" id="visits-last">
                       loading...
                   </span>
-                </p>
-              </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-info shadow-success text-center rounded-circle">
+                                    {#                <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>#}
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23" height="100"
+                                         width="30"><title>eye open</title>
+                                        <g fill="#F7F7F7" class="nc-icon-wrapper">
+                                            <path d="M15.008,6.083l.881-1.441c.216-.354,.105-.815-.248-1.031-.354-.215-.815-.105-1.031,.248l-.907,1.482c-.678-.331-1.388-.588-2.124-.769l.333-1.655c.082-.406-.182-.802-.587-.883-.405-.078-.802,.181-.883,.587l-.339,1.685c-.364-.037-.732-.057-1.103-.057s-.739,.02-1.103,.057l-.339-1.685c-.082-.406-.48-.666-.883-.587-.406,.082-.669,.477-.587,.883l.333,1.655c-.736,.181-1.446,.438-2.124,.769l-.907-1.482c-.215-.353-.677-.463-1.031-.248-.353,.216-.464,.678-.248,1.031l.881,1.441c-.594,.402-1.154,.867-1.668,1.392-.29,.295-.285,.771,.011,1.061,.295,.29,.77,.285,1.061-.011,1.754-1.789,4.1-2.774,6.605-2.774s4.851,.985,6.605,2.774c.147,.15,.341,.225,.536,.225,.189,0,.379-.071,.525-.214,.296-.29,.301-.765,.011-1.061-.515-.525-1.074-.99-1.668-1.392Z"
+                                                  fill="#F7F7F7"></path>
+                                            <circle cx="9" cy="10.5" r="3.5" fill="#F7F7F7"
+                                                    data-color="color-2"></circle>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-info shadow-success text-center rounded-circle">
-{#                <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>#}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23" height="100" width="30"><title>eye open</title><g fill="#F7F7F7" class="nc-icon-wrapper"><path d="M15.008,6.083l.881-1.441c.216-.354,.105-.815-.248-1.031-.354-.215-.815-.105-1.031,.248l-.907,1.482c-.678-.331-1.388-.588-2.124-.769l.333-1.655c.082-.406-.182-.802-.587-.883-.405-.078-.802,.181-.883,.587l-.339,1.685c-.364-.037-.732-.057-1.103-.057s-.739,.02-1.103,.057l-.339-1.685c-.082-.406-.48-.666-.883-.587-.406,.082-.669,.477-.587,.883l.333,1.655c-.736,.181-1.446,.438-2.124,.769l-.907-1.482c-.215-.353-.677-.463-1.031-.248-.353,.216-.464,.678-.248,1.031l.881,1.441c-.594,.402-1.154,.867-1.668,1.392-.29,.295-.285,.771,.011,1.061,.295,.29,.77,.285,1.061-.011,1.754-1.789,4.1-2.774,6.605-2.774s4.851,.985,6.605,2.774c.147,.15,.341,.225,.536,.225,.189,0,.379-.071,.525-.214,.296-.29,.301-.765,.011-1.061-.515-.525-1.074-.99-1.668-1.392Z" fill="#F7F7F7"></path><circle cx="9" cy="10.5" r="3.5" fill="#F7F7F7" data-color="color-2"></circle></g></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-uppercase font-weight-bold">接口使用量</p>
-                <h5 class="font-weight-bolder" id="total-requests">
-                    loading...
-                </h5>
-                <p class="mb-0">对比昨天
-                  <span class="text-danger text-sm font-weight-bolder" id="request-last">
+            <div class="col-xl-3 col-sm-6">
+                <div class="card">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">接口使用量</p>
+                                    <h5 class="font-weight-bolder" id="total-requests">
+                                        loading...
+                                    </h5>
+                                    <p class="mb-0">对比昨天
+                                        <span class="text-danger text-sm font-weight-bolder" id="request-last">
                       loading...
                   </span>
-                </p>
-              </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                                    <svg class="custom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23"
+                                         height="100" width="30">
+                                        <g class="nc-icon-wrapper" fill="#F7F7F7">
+                                            <path d="M9.47,9.97l-1.025,1.025-1.439-1.44,1.025-1.025c.293-.293,.293-.768,0-1.061s-.768-.293-1.061,0l-1.025,1.025-.311-.311c-.682-.683-1.793-.683-2.475,0l-.28,.28c-.89,.889-1.379,2.071-1.379,3.328,0,1.003,.323,1.95,.9,2.747l-1.181,1.181c-.293,.293,.293,.768,0,1.061,.146,.146,.338,.22,.53,.22s.384-.073,.53-.22l1.181-1.181c.796,.577,1.743,.9,2.746,.9,1.258,0,2.439-.49,3.328-1.379l.28-.28c.683-.682,.683-1.792,0-2.475l-.311-.311,1.025-1.025c.293-.293,.293-.768,0-1.061s-.768-.293-1.061,0Z"
+                                                  fill="#F7F7F7"></path>
+                                            <path d="M15.72,1.22l-1.181,1.181c-.796-.577-1.743-.9-2.746-.9-1.258,0-2.439,.49-3.328,1.379l-.28,.28c-.683,.682-.683,1.792,0,2.475l4.182,4.182c.341,.341,.789,.512,1.237,.512s.896-.17,1.237-.512l.28-.28c.89-.889,1.379-2.071,1.379-3.328,0-1.003-.323-1.95-.9-2.747l1.181-1.181c.293-.293,.293-.768,0-1.061s-.768-.293-1.061,0Z"
+                                                  fill="#F7F7F7" data-color="color-2"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                      <svg class="custom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-2 18 23 23" height="100" width="30">
-                        <g class="nc-icon-wrapper" fill="#F7F7F7">
-                            <path d="M9.47,9.97l-1.025,1.025-1.439-1.44,1.025-1.025c.293-.293,.293-.768,0-1.061s-.768-.293-1.061,0l-1.025,1.025-.311-.311c-.682-.683-1.793-.683-2.475,0l-.28,.28c-.89,.889-1.379,2.071-1.379,3.328,0,1.003,.323,1.95,.9,2.747l-1.181,1.181c-.293,.293,.293,.768,0,1.061,.146,.146,.338,.22,.53,.22s.384-.073,.53-.22l1.181-1.181c.796,.577,1.743,.9,2.746,.9,1.258,0,2.439-.49,3.328-1.379l.28-.28c.683-.682,.683-1.792,0-2.475l-.311-.311,1.025-1.025c.293-.293,.293-.768,0-1.061s-.768-.293-1.061,0Z" fill="#F7F7F7"></path>
-                            <path d="M15.72,1.22l-1.181,1.181c-.796-.577-1.743-.9-2.746-.9-1.258,0-2.439,.49-3.328,1.379l-.28,.28c-.683,.682-.683,1.792,0,2.475l4.182,4.182c.341,.341,.789,.512,1.237,.512s.896-.17,1.237-.512l.28-.28c.89-.889,1.379-2.071,1.379-3.328,0-1.003-.323-1.95-.9-2.747l1.181-1.181c.293-.293,.293-.768,0-1.061s-.768-.293-1.061,0Z" fill="#F7F7F7" data-color="color-2"></path>
-                        </g>
-                      </svg>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
 
-  <div class="row mt-4">
-    <div class="col-lg-7 mb-lg-0 mb-4">
-      <div class="card z-index-2 h-100">
-        <div class="card-header pb-0 pt-3 bg-transparent">
-          <h6 class="text-capitalize">近一周提交维修量</h6>
-          <p class="text-sm mb-0">
-            <i class="fa fa-arrow-up text-success"></i>
-            <span class="font-weight-bold">4% more</span> in 2023
-          </p>
-        </div>
-        <div class="card-body p-3">
-          <div class="chart">
-            <canvas id="admin-chart" class="chart-canvas" height="300"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="row mt-4">
+            <div class="col-lg-7 mb-lg-0 mb-4">
+                <div class="card z-index-2 h-100">
+                    <div class="card-header pb-0 pt-3 bg-transparent">
+                        <h6 class="text-capitalize">近一周提交维修量</h6>
+                        <p class="text-sm mb-0">
+                            <i class="fa fa-arrow-up text-success"></i>
+                            <span class="font-weight-bold">4% more</span> in 2023
+                        </p>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="chart">
+                            <canvas id="admin-chart" class="chart-canvas" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-    <div class="col-lg-5">
-      <div class="card card-carousel overflow-hidden h-100 p-0">
-        <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-          <div class="carousel-inner border-radius-lg h-100">
-            <div class="carousel-item h-100 active" style="background-image: url('{% static 'img/poster2.png' %}');
-  background-size: cover;">
-              <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                  <i class="ni ni-camera-compact text-dark opacity-10"></i>
+            <div class="col-lg-5">
+                <div class="card card-carousel overflow-hidden h-100 p-0">
+                    <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-inner border-radius-lg h-100">
+                            <div class="carousel-item h-100 active"
+                                 style="background-image: url('{% static 'img/poster2.png' %}');
+                                         background-size: cover;">
+                                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                        <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                                    </div>
+                                    <h5 class="text-white mb-1">行政地区自然资源数据概览</h5>
+                                    <p>全方位展示自然资源可视化.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100"
+                                 style="background-image: url('{% static 'img/carousel-2.jpg' %}');
+                                         background-size: cover;">
+                                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                        <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+                                    </div>
+                                    <h5 class="text-white mb-1">放啥呢？？？</h5>
+                                    <p>That’s my skill. I’m not really specifically talented at anything except for the
+                                        ability to learn.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100"
+                                 style="background-image: url('{% static 'img/carousel-3.jpg' %}');
+                                         background-size: cover;">
+                                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                        <i class="ni ni-trophy text-dark opacity-10"></i>
+                                    </div>
+                                    <h5 class="text-white mb-1">Share with us your design tips!</h5>
+                                    <p>Don’t be afraid to be wrong because you can’t learn anything from a
+                                        compliment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev w-5 me-3" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">下一页</span>
+                        </button>
+                        <button class="carousel-control-next w-5 me-3" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">上一页</span>
+                        </button>
+                    </div>
                 </div>
-                <h5 class="text-white mb-1">行政地区自然资源数据概览</h5>
-                <p>全方位展示自然资源可视化.</p>
-              </div>
             </div>
-            <div class="carousel-item h-100" style="background-image: url('{% static 'img/carousel-2.jpg' %}');
-  background-size: cover;">
-              <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                  <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-7 mb-lg-0 mb-4">
+                <div class="card ">
+                    <div class="card-header pb-0 p-3">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-2">月度日志更新次数</h6>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <div class="chart1">
+                            <canvas id="admin-chart1" class="chart-canvas" height="300"></canvas>
+                        </div>
+                    </div>
                 </div>
-                <h5 class="text-white mb-1">放啥呢？？？</h5>
-                <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
-              </div>
             </div>
-            <div class="carousel-item h-100" style="background-image: url('{% static 'img/carousel-3.jpg' %}');
-  background-size: cover;">
-              <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                  <i class="ni ni-trophy text-dark opacity-10"></i>
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header pb-0 p-3">
+                        <h6 class="mb-0">近期发生故障电厂</h6>
+                    </div>
+                    <div class="card-body p-3">
+                        <ul class="list-group">
+                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                        <i class="ni ni-mobile-button text-white opacity-10"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm">一号风力电厂</h6>
+                                        <span class="font-weight-bold">2024年 2月 6日</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                                        <i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                </div>
+                            </li>
+                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                        <i class="ni ni-tag text-white opacity-10"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm">十七号火力电厂</h6>
+                                        <span class="font-weight-bold">2024年 2月 11日</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                                        <i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                </div>
+                            </li>
+                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                        <i class="ni ni-box-2 text-white opacity-10"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm">三十二号火力电场</h6>
+                                        <span class="font-weight-bold">2024年 3月 11日</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                                        <i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                </div>
+                            </li>
+                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                                <div class="d-flex align-items-center">
+                                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                                        <i class="ni ni-satisfied text-white opacity-10"></i>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 text-dark text-sm">三十三号火力电场</h6>
+                                        <span class="font-weight-bold">2024年 3月 15日</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                                        <i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <h5 class="text-white mb-1">Share with us your design tips!</h5>
-                <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-              </div>
             </div>
-          </div>
-          <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">下一页</span>
-          </button>
-          <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">上一页</span>
-          </button>
         </div>
-      </div>
+        {% include 'includes/footer.html' %}
     </div>
-  </div>
-  <div class="row mt-4">
-    <div class="col-lg-7 mb-lg-0 mb-4">
-      <div class="card ">
-        <div class="card-header pb-0 p-3">
-          <div class="d-flex justify-content-between">
-            <h6 class="mb-2">我也没想好放啥</h6>
-          </div>
-        </div>
-        <div class="table-responsive">
-{#            {% load url from future %}#}
-{#          <table class="table align-items-center ">#}
-{#            <tbody>#}
-{#              <tr>#}
-{#                <td class="w-30">#}
-{#                  <div class="d-flex px-2 py-1 align-items-center">#}
-{#                    <div>#}
-{#                      <img src="{% static 'img/icons/flags/US.png' %}" alt="Country flag">#}
-{#                    </div>#}
-{#                    <div class="ms-4">#}
-{#                      <p class="text-xs font-weight-bold mb-0">Country:</p>#}
-{#                      <h6 class="text-sm mb-0">United States</h6>#}
-{#                    </div>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Sales:</p>#}
-{#                    <h6 class="text-sm mb-0">2500</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Value:</p>#}
-{#                    <h6 class="text-sm mb-0">$230,900</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td class="align-middle text-sm">#}
-{#                  <div class="col text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Bounce:</p>#}
-{#                    <h6 class="text-sm mb-0">29.9%</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="w-30">#}
-{#                  <div class="d-flex px-2 py-1 align-items-center">#}
-{#                    <div>#}
-{#                      <img src="{% static 'img/icons/flags/DE.png' %}" alt="Country flag">#}
-{#                    </div>#}
-{#                    <div class="ms-4">#}
-{#                      <p class="text-xs font-weight-bold mb-0">Country:</p>#}
-{#                      <h6 class="text-sm mb-0">Germany</h6>#}
-{#                    </div>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Sales:</p>#}
-{#                    <h6 class="text-sm mb-0">3.900</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Value:</p>#}
-{#                    <h6 class="text-sm mb-0">$440,000</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td class="align-middle text-sm">#}
-{#                  <div class="col text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Bounce:</p>#}
-{#                    <h6 class="text-sm mb-0">40.22%</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="w-30">#}
-{#                  <div class="d-flex px-2 py-1 align-items-center">#}
-{#                    <div>#}
-{#                      <img src="{% static 'img/icons/flags/GB.png' %}" alt="Country flag">#}
-{#                    </div>#}
-{#                    <div class="ms-4">#}
-{#                      <p class="text-xs font-weight-bold mb-0">Country:</p>#}
-{#                      <h6 class="text-sm mb-0">Great Britain</h6>#}
-{#                    </div>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Sales:</p>#}
-{#                    <h6 class="text-sm mb-0">1.400</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Value:</p>#}
-{#                    <h6 class="text-sm mb-0">$190,700</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td class="align-middle text-sm">#}
-{#                  <div class="col text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Bounce:</p>#}
-{#                    <h6 class="text-sm mb-0">23.44%</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#              </tr>#}
-{#              <tr>#}
-{#                <td class="w-30">#}
-{#                  <div class="d-flex px-2 py-1 align-items-center">#}
-{#                    <div>#}
-{#                      <img src="{% static 'img/icons/flags/BR.png' %}" alt="Country flag">#}
-{#                    </div>#}
-{#                    <div class="ms-4">#}
-{#                      <p class="text-xs font-weight-bold mb-0">Country:</p>#}
-{#                      <h6 class="text-sm mb-0">Brasil</h6>#}
-{#                    </div>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Sales:</p>#}
-{#                    <h6 class="text-sm mb-0">562</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td>#}
-{#                  <div class="text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Value:</p>#}
-{#                    <h6 class="text-sm mb-0">$143,960</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#                <td class="align-middle text-sm">#}
-{#                  <div class="col text-center">#}
-{#                    <p class="text-xs font-weight-bold mb-0">Bounce:</p>#}
-{#                    <h6 class="text-sm mb-0">32.14%</h6>#}
-{#                  </div>#}
-{#                </td>#}
-{#              </tr>#}
-{#            </tbody>#}
-{#          </table>#}
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-5">
-      <div class="card">
-        <div class="card-header pb-0 p-3">
-          <h6 class="mb-0">近期发生故障电厂</h6>
-        </div>
-        <div class="card-body p-3">
-          <ul class="list-group">
-            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-              <div class="d-flex align-items-center">
-                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                  <i class="ni ni-mobile-button text-white opacity-10"></i>
-                </div>
-                <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                  <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
-                </div>
-              </div>
-              <div class="d-flex">
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-              </div>
-            </li>
-            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-              <div class="d-flex align-items-center">
-                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                  <i class="ni ni-tag text-white opacity-10"></i>
-                </div>
-                <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                  <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
-                </div>
-              </div>
-              <div class="d-flex">
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-              </div>
-            </li>
-            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-              <div class="d-flex align-items-center">
-                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                  <i class="ni ni-box-2 text-white opacity-10"></i>
-                </div>
-                <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                  <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
-                </div>
-              </div>
-              <div class="d-flex">
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-              </div>
-            </li>
-            <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-              <div class="d-flex align-items-center">
-                <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                  <i class="ni ni-satisfied text-white opacity-10"></i>
-                </div>
-                <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm">Happy users</h6>
-                  <span class="text-xs font-weight-bold">+ 430</span>
-                </div>
-              </div>
-              <div class="d-flex">
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% include 'includes/footer.html' %}
-</div>
 
 {% endblock content %}
 
 {% block scripts %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    var total_requests = 0;
-    {#172.18.7.71:8080#}
-    {#192.168.1.110:8080#}
-    fetch('http://172.18.7.71:8080{% url 'index_data' %}')
-    .then(response => response.json())
-    .then(data => {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var total_requests = 0;
+        {#172.18.7.71:8080#}
+        {#192.168.1.110:8080#}
+        fetch('http://172.18.7.71:8080{% url 'index_data' %}')
+            .then(response => response.json())
+            .then(data => {
 
-        total_requests = data.total_requests;
-        visits = data.visits;
-        data_volume = data.data_volume;
-        user_num = data.user_num
+                total_requests = data.total_requests;
+                visits = data.visits;
+                data_volume = data.data_volume;
+                user_num = data.user_num
 
-        var request_last = total_requests[0] - total_requests[1];
-        if (request_last >= 0) {
-            request_last = '+' + request_last;
-        }
+                var request_last = total_requests[0] - total_requests[1];
+                if (request_last >= 0) {
+                    request_last = '+' + request_last;
+                }
 
-        var visits_last = (visits[0] - visits[1]) / (visits[0] + 1) * 100;
-        visits_last = visits_last.toFixed(2);
-        if (visits_last >= 0)
-            visits_last = '+' + visits_last;
-        visits_last += '%';
+                var visits_last = (visits[0] - visits[1]) / (visits[0] + 1) * 100;
+                visits_last = visits_last.toFixed(2);
+                if (visits_last >= 0)
+                    visits_last = '+' + visits_last;
+                visits_last += '%';
 
-        document.getElementById('total-requests').textContent = total_requests[0];
-        document.getElementById('request-last').textContent = request_last;
-        document.getElementById('visits').textContent = visits[0];
-        document.getElementById('visits-last').textContent = visits_last;
-        document.getElementById('data-volume').textContent = data_volume[0];
-        document.getElementById('data-volume-last').textContent = data_volume[1];
-        document.getElementById('user-num').textContent = user_num[0];
-        document.getElementById('user-num-last').textContent = user_num[1];
-    })
-    .catch(error => console.error('An error occurred', error));
+                document.getElementById('total-requests').textContent = total_requests[0];
+                document.getElementById('request-last').textContent = request_last;
+                document.getElementById('visits').textContent = visits[0];
+                document.getElementById('visits-last').textContent = visits_last;
+                document.getElementById('data-volume').textContent = data_volume[0];
+                document.getElementById('data-volume-last').textContent = data_volume[1];
+                document.getElementById('user-num').textContent = user_num[0];
+                document.getElementById('user-num-last').textContent = user_num[1];
+            })
+            .catch(error => console.error('An error occurred', error));
 
 
-  var ctx1 = document.getElementById("admin-chart").getContext("2d");
+        var ctx = document.getElementById("admin-chart").getContext("2d");
+        var ctx1 = document.getElementById("admin-chart1").getContext("2d");
+        var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+        var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+        gradientStroke.addColorStop(1, 'rgba(32, 154, 225, 0.2)');
+        gradientStroke.addColorStop(0.2, 'rgba(32, 154, 225, 0.0)');
+        gradientStroke.addColorStop(0, 'rgba(32, 154, 225, 0)');
+         gradientStroke1.addColorStop(1, 'rgba(32, 154, 225, 0.2)');
+        gradientStroke1.addColorStop(0.2, 'rgba(32, 154, 225, 0.0)');
+        gradientStroke1.addColorStop(0, 'rgba(32, 154, 225, 0)');
+        new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Mobile apps",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    borderColor: "#5ea8e4",
+                    backgroundColor: gradientStroke,
+                    borderWidth: 3,
+                    fill: true,
+                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    maxBarThickness: 6
 
-  var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
-
-  gradientStroke1.addColorStop(1, 'rgba(32, 154, 225, 0.2)');
-  gradientStroke1.addColorStop(0.2, 'rgba(32, 154, 225, 0.0)');
-  gradientStroke1.addColorStop(0, 'rgba(32, 154, 225, 0)');
-  new Chart(ctx1, {
-    type: "line",
-    data: {
-      labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      datasets: [{
-        label: "Mobile apps",
-        tension: 0.4,
-        borderWidth: 0,
-        pointRadius: 0,
-        borderColor: "#5ea8e4",
-        backgroundColor: gradientStroke1,
-        borderWidth: 3,
-        fill: true,
-        data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-        maxBarThickness: 6
-
-      }],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: false,
-        }
-      },
-      interaction: {
-        intersect: false,
-        mode: 'index',
-      },
-      scales: {
-        y: {
-          grid: {
-            drawBorder: false,
-            display: true,
-            drawOnChartArea: true,
-            drawTicks: false,
-            borderDash: [5, 5]
-          },
-          ticks: {
-            display: true,
-            padding: 10,
-            color: '#dad3d3',
-            font: {
-              size: 11,
-              family: "Open Sans",
-              style: 'normal',
-              lineHeight: 2
+                }],
             },
-          }
-        },
-        x: {
-          grid: {
-            drawBorder: false,
-            display: false,
-            drawOnChartArea: false,
-            drawTicks: false,
-            borderDash: [5, 5]
-          },
-          ticks: {
-            display: true,
-            color: '#ccc',
-            padding: 20,
-            font: {
-              size: 11,
-              family: "Open Sans",
-              style: 'normal',
-              lineHeight: 2
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            color: '#dad3d3',
+                            font: {
+                                size: 11,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#ccc',
+                            padding: 20,
+                            font: {
+                                size: 11,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
             },
-          }
-        },
-      },
-    },
-  });
-</script>
+        });
+         new Chart(ctx1, {
+            type: "bar",
+            data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Mobile apps",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    borderColor: "#5ea8e4",
+                    backgroundColor: gradientStroke,
+                    borderWidth: 3,
+                    fill: true,
+                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    maxBarThickness: 6
+
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            color: '#dad3d3',
+                            font: {
+                                size: 11,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#ccc',
+                            padding: 20,
+                            font: {
+                                size: 11,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+    </script>
 
 {% endblock scripts %}

@@ -4,8 +4,6 @@ from .views import *
 
 urlpatterns = [
     #  矿产开发产量
-    path('get_regional_resource_facilities/<int:id>/', get_regional_resource_facilities, name='get_regional_resource_facilities'),
-    #  地区资源设施使用情况
     path('get_mineral_develop/<int:id>/', get_mineral_develop, name='get_mineral_develop'),
     #  能源进出口量
     path('get_energy_import_and_export/', get_energy_import_and_export, name='get_energy_import_and_export'),

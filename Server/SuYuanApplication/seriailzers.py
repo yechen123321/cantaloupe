@@ -5,14 +5,6 @@ from .models import *
 from rest_framework import serializers
 
 
-#  能源设施数据序列化
-class RegionalResourceFacilitiesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = RegionalResourceFacilitiesModel
-        fields = ['name', 'do', 'number', 'up', 'when']
-        # fields = '__all__'
-
-
 #  矿产能源
 class MineralDevelopmentSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()

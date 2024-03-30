@@ -137,18 +137,6 @@ def get_mineral_develop(request, id=1):
         return Response(data=data.data, status=status.HTTP_200_OK)
 
 
-#  矿产开发产量
-@api_view(['GET', ])
-@permission_classes(())
-@extend_schema(responses=RegionalResourceFacilitiesSerializer)
-def get_regional_resource_facilities(request, id=12):
-    # region_dict = method.region_dict()
-    if request.method == 'GET':
-        data_objects = RegionalResourceFacilitiesModel.objects.all()
-        data = RegionalResourceFacilitiesSerializer(instance=data_objects, many=True)
-        return Response(data=data.data, status=status.HTTP_200_OK)
-
-
 #  能源进出口量
 @api_view(['GET', ])
 @permission_classes(())

@@ -5,8 +5,6 @@ from .views import *
 urlpatterns = [
     #  主要能源品种产量
     path('get_region_energy_production/<int:id>/', get_region_energy_production, name='get_region_energy_production'),
-    #  电场故障信息GET
-    path('get_electric_field_fault/<int:id>/', get_electric_field_fault, name='get_electric_field_fault'),
-    #  电场故障信息PUT
-    path('put_electric_field_fault/', put_electric_field_fault, name='put_electric_field_fault'),
+    #  地区资源设施使用情况
+    path('get_regional_resource_facilities/<int:id>/', get_regional_resource_facilities, name='get_regional_resource_facilities'),
 ]

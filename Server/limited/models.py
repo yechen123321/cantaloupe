@@ -62,17 +62,17 @@ class NewEnergyModel(models.Model):
         return f"{self.year}年 - {self.province}省 - 新能源结构及趋势"
 
 
-#  地区市场交易及投资建设
+#  地区有限能源经济形势
 class MarketInvestmentModel(models.Model):
     year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
                                default=2000)
     province = models.CharField(max_length=20, verbose_name='省份', choices=method.region(), default='安徽')
     natural_gas = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
                                       verbose_name='天然气累计消费量',
-                                      help_text='百亿千瓦时')
+                                      help_text='亿立方米')
     coal = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
                                verbose_name='原煤产量',
-                               help_text='百亿千瓦时')
+                               help_text='千万吨')
     coal_methane = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
                                        verbose_name='煤层气产量',
                                        help_text='亿立方米')
@@ -82,4 +82,4 @@ class MarketInvestmentModel(models.Model):
         verbose_name_plural = '地区市场交易及投资建设'
 
     def __str__(self):
-        return f"{self.year}年 - {self.province}省 - 市场交易及投资建设"
+        return f"{self.year}年 - {self.province}省 - 有限能源经济形势"

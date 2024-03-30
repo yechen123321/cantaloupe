@@ -176,22 +176,28 @@ API
 """
 
 
-#  主要能源品种产量
+#  电场故障信息GET
 @api_view(['GET', ])
 @permission_classes(())
-def get_region_energy_production(request, id=12):
+def get_electric_field_fault(request, id=12):
     if request.method == 'GET':
-        data_objects = MainEnergyProductionModel.objects.filter(region=methods.region_dict(id)).first()
-        data = MainEnergyProductionSerializer(instance=data_objects, many=False)
+        fault_data = list(ElectricFieldModel.objects.filter(province__in=methods.province_dict(self=methods, num=id),
+                                                            state=False).values_list('id'))
+        fault_data = [it[0] for it in fault_data if isinstance(it, tuple)]
+        data_objects = ElectricFieldFaultModel.objects.filter(electric_field_id__in=fault_data).all()
+        data = ElectricFieldFaultSerializer(instance=data_objects, many=True)
         return Response(data=data.data, status=status.HTTP_200_OK)
 
 
-#  地区资源设施使用情况
-@api_view(['GET', ])
+#  电场故障信息PUT
+@api_view(['PUT', ])
 @permission_classes(())
-@extend_schema(responses=RegionalResourceFacilitiesSerializer)
-def get_regional_resource_facilities(request, id=12):
-    if request.method == 'GET':
-        data_objects = RegionalResourceFacilitiesModel.objects.filter(region=methods.region_dict(id)).all()
-        data = RegionalResourceFacilitiesSerializer(instance=data_objects, many=True)
-        return Response(data=data.data, status=status.HTTP_200_OK)
+def put_electric_field_fault(request):
+    #  获取用户提交的故障信息请求
+    if request.method == 'PUT':
+        #  故障电场的名称和故障原因对应上即视为正确数据
+        data = request.data
+        print(data)
+        ElectricFieldFaultModel.objects.filter(electric_field__station_name=data['name'],
+                                               malfunction_reason=data['reason']).update(send_times=F('send_times') + 1)
+        return Response(status=status.HTTP_200_OK)

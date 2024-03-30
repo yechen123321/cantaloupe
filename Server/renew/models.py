@@ -55,7 +55,7 @@ class MainEnergyProductionModel(models.Model):
 
     region = models.CharField(max_length=100, verbose_name='行政单位', choices=my_choices)
     year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
-                               default=2000, unique=True)
+                               default=2000)
     raw_coal = models.DecimalField(max_digits=10, decimal_places=1, default=1.0, verbose_name='原煤', help_text='万吨')
     crude_oil = models.DecimalField(max_digits=10, decimal_places=1, default=1.0, verbose_name='原油', help_text='万吨')
     fire_power = models.DecimalField(max_digits=10, decimal_places=1, default=1.0, verbose_name='火力发电量',
@@ -80,44 +80,32 @@ class MainEnergyProductionModel(models.Model):
         return f"{self.region} - {self.year} - 规模以上企业主要能源产量"
 
 
-#  电场信息
-class ElectricFieldModel(models.Model):
-    my_choices = (
-        ('综合性发电', '综合性发电'),
-        ('火力发电', '火力发电'),
-        ('水力发电', '水力发电'),
-        ('风力发电', '风力发电'),
-        ('太阳能发电', '太阳能发电'),
+#  能源设施
+class RegionalResourceFacilitiesModel(models.Model):
+    my_choices = method.region()
+    up_choice = (
+        ('吨', '吨'),
+        ('万吨', '万吨'),
+        ('公顷', '公顷'),
+        ('万公顷', '万公顷'),
+        ('亩', '亩'),
+        ('万亩', '万亩'),
+        ('千瓦时', '千瓦时'),
+        ('万千瓦时', '万千瓦时'),
+        ('亿千瓦时', '亿千瓦时'),
     )
-    province = models.CharField(max_length=100, verbose_name='省级', null=True)
-    station_type = models.CharField(max_length=100, verbose_name='电场类型', choices=my_choices)
-    station_name = models.CharField(max_length=100, verbose_name='电场名称', null=True)
-    state = models.BooleanField(default=True, verbose_name='运行状态')
-    created_at = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
+
+    region = models.CharField(max_length=100, verbose_name='行政单位', choices=my_choices)
+    name = models.CharField(max_length=30, verbose_name='设施')
+    do = models.CharField(max_length=30, verbose_name='工作')
+    number = models.DecimalField(default=0, max_digits=7, decimal_places=2, verbose_name='数目')
+    up = models.CharField(max_length=10, choices=up_choice, default='吨', verbose_name='单位')
+    when = models.DateField(verbose_name='时间')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
-        verbose_name_plural = '电场信息'
+        unique_together = ('region', 'name')
+        verbose_name_plural = '地区资源设施使用情况'
 
     def __str__(self):
-        return f"{self.province}市 - {self.station_name} - {self.created_at}"
-
-
-#  自定义管理器
-class FalseElectricFieldManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(state=False)
-
-
-#  电场故障信息
-class ElectricFieldFaultModel(models.Model):
-    electric_field = models.ForeignKey(ElectricFieldModel, on_delete=models.CASCADE, verbose_name='电场信息',
-                                       limit_choices_to={'state': False}, unique=True)
-    malfunction_reason = models.CharField(max_length=100, verbose_name='故障原因')
-    send_times = models.IntegerField(default=0, verbose_name='通知维修次数')
-    created_at = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
-
-    class Meta:
-        verbose_name_plural = '电场故障'
-
-    def __str__(self):
-        return f"{self.electric_field.province}市 - {self.electric_field.station_name}"
+        return f"{self.region} - {self.name}"

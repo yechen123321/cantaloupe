@@ -57,11 +57,11 @@ class methods:
         return s[num]
 
 
-#  地区市场交易及投资建设
+#  地区有限能源经济形势
 @api_view(['GET', ])
 @permission_classes(())
 def get_market_investment(request, id=12):
     if request.method == 'GET':
-        data_objects = NewEnergyModel.objects.filter(province=methods.region_dict(num=id)).first()
+        data_objects = MarketInvestmentModel.objects.filter(province=methods.region_dict(num=id)).first()
         data = MarketInvestmentSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)

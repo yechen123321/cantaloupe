@@ -406,10 +406,10 @@ CREATE TABLE `renew_electricfieldmodel` (
 -- Dumping data for table `renew_electricfieldmodel`
 --
 
-LOCK TABLES `renew_electricfieldmodel` WRITE;
-/*!40000 ALTER TABLE `renew_electricfieldmodel` DISABLE KEYS */;
-INSERT INTO `renew_electricfieldmodel` VALUES (1,'淮南','火力发电','潘集发电','2024-03-27 22:15:31.477383',1),(2,'合肥','综合性发电','皖能电力','2024-03-27 22:16:52.962466',1),(3,'安庆','火力发电','中节股份','2024-03-27 22:19:19.733705',1),(4,'马鞍山','风力发电','马鞍山经纬回转支承','2024-03-27 22:21:42.253293',0),(5,'合肥','综合性发电','阳光电源','2024-03-27 22:22:09.492367',1),(6,'合肥','太阳能发电','森永新能源','2024-03-27 22:23:20.423792',1),(7,'淮南','火力发电','淮南洛河发电厂','2024-03-30 00:35:38.943749',1),(8,'滁州','综合性发电','滁州电厂','2024-03-30 00:36:06.242429',0),(9,'淮北','火力发电','淮北热电厂','2024-03-30 00:36:19.452954',1),(11,'铜陵','水力发电','铜陵水电站','2024-03-30 00:36:45.536657',1);
-/*!40000 ALTER TABLE `renew_electricfieldmodel` ENABLE KEYS */;
+LOCK TABLES `powergenerationbase_electricfieldmodel` WRITE;
+/*!40000 ALTER TABLE `powergenerationbase_electricfieldmodel` DISABLE KEYS */;
+INSERT INTO `powergenerationbase_electricfieldfaultmodel` VALUES (1,'淮南','火力发电','潘集发电','2024-03-27 22:15:31.477383',1),(2,'合肥','综合性发电','皖能电力','2024-03-27 22:16:52.962466',1),(3,'安庆','火力发电','中节股份','2024-03-27 22:19:19.733705',1),(4,'马鞍山','风力发电','马鞍山经纬回转支承','2024-03-27 22:21:42.253293',0),(5,'合肥','综合性发电','阳光电源','2024-03-27 22:22:09.492367',1),(6,'合肥','太阳能发电','森永新能源','2024-03-27 22:23:20.423792',1),(7,'淮南','火力发电','淮南洛河发电厂','2024-03-30 00:35:38.943749',1),(8,'滁州','综合性发电','滁州电厂','2024-03-30 00:36:06.242429',0),(9,'淮北','火力发电','淮北热电厂','2024-03-30 00:36:19.452954',1),(11,'铜陵','水力发电','铜陵水电站','2024-03-30 00:36:45.536657',1);
+/*!40000 ALTER TABLE `powergenerationbase_electricfieldmodel` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -794,13 +794,13 @@ INSERT INTO `suyuanapplication_powergenerationinstalledcapacitymodel` VALUES (1,
 UNLOCK TABLES;
 
 --
--- Table structure for table `suyuanapplication_regionalresourcefacilitiesmodel`
+-- Table structure for table `renew_regionalresourcefacilitiesmodel`
 --
 
-DROP TABLE IF EXISTS `suyuanapplication_regionalresourcefacilitiesmodel`;
+DROP TABLE IF EXISTS `renew_regionalresourcefacilitiesmodel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `suyuanapplication_regionalresourcefacilitiesmodel` (
+CREATE TABLE `renew_regionalresourcefacilitiesmodel` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `region` varchar(100) NOT NULL,
   `name` varchar(30) NOT NULL,
@@ -810,18 +810,18 @@ CREATE TABLE `suyuanapplication_regionalresourcefacilitiesmodel` (
   `when` date NOT NULL,
   `created_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `SuYuanApplication_region_region_name_1cfeef21_uniq` (`region`,`name`)
+  UNIQUE KEY `renew_regionalresourcefacilitiesmodel` (`region`,`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `suyuanapplication_regionalresourcefacilitiesmodel`
+-- Dumping data for table `renew_regionalresourcefacilitiesmodel`
 --
 
-LOCK TABLES `suyuanapplication_regionalresourcefacilitiesmodel` WRITE;
-/*!40000 ALTER TABLE `suyuanapplication_regionalresourcefacilitiesmodel` DISABLE KEYS */;
-INSERT INTO `suyuanapplication_regionalresourcefacilitiesmodel` VALUES (1,'安徽','铜陵矿业','产铜',12.10,'万吨','1999-12-31','2024-03-25 15:52:16.138171'),(2,'安徽','淮南矿业','采煤',5100.54,'万吨','1999-12-31','2024-03-25 15:52:16.138171'),(3,'安徽','高邮湖风','发电',81.22,'亿千瓦时','2024-08-06','2024-03-25 15:52:16.138171'),(4,'安徽','绩溪电站','发电',40.12,'亿千瓦时','2021-07-23','2024-03-25 15:52:16.138171'),(5,'安徽','芜湖电厂','发电',15.36,'亿千瓦时','2011-03-01','2024-03-25 15:52:16.138171'),(6,'安徽','恒源煤电','产煤',702.40,'万吨','2023-10-12','2024-03-25 15:52:16.138171'),(7,'安徽','淮河能源','产电',49.10,'亿千瓦时','2024-02-02','2024-03-25 15:52:16.138171'),(8,'安徽','铜陵有色','加工铜',40.02,'万吨','2022-11-18','2024-03-25 15:52:16.138171');
-/*!40000 ALTER TABLE `suyuanapplication_regionalresourcefacilitiesmodel` ENABLE KEYS */;
+LOCK TABLES `renew_regionalresourcefacilitiesmodel` WRITE;
+/*!40000 ALTER TABLE `renew_regionalresourcefacilitiesmodel` DISABLE KEYS */;
+INSERT INTO `renew_regionalresourcefacilitiesmodel` VALUES (1,'安徽','铜陵矿业','产铜',12.10,'万吨','1999-12-31','2024-03-25 15:52:16.138171'),(2,'安徽','淮南矿业','采煤',5100.54,'万吨','1999-12-31','2024-03-25 15:52:16.138171'),(3,'安徽','高邮湖风','发电',81.22,'亿千瓦时','2024-08-06','2024-03-25 15:52:16.138171'),(4,'安徽','绩溪电站','发电',40.12,'亿千瓦时','2021-07-23','2024-03-25 15:52:16.138171'),(5,'安徽','芜湖电厂','发电',15.36,'亿千瓦时','2011-03-01','2024-03-25 15:52:16.138171'),(6,'安徽','恒源煤电','产煤',702.40,'万吨','2023-10-12','2024-03-25 15:52:16.138171'),(7,'安徽','淮河能源','产电',49.10,'亿千瓦时','2024-02-02','2024-03-25 15:52:16.138171'),(8,'安徽','铜陵有色','加工铜',40.02,'万吨','2022-11-18','2024-03-25 15:52:16.138171');
+/*!40000 ALTER TABLE `renew_regionalresourcefacilitiesmodel` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

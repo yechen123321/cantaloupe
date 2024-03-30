@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "limited",
     "renew",
     "analyse",
+    "PowerGenerationBase",
 
     'rest_framework',
     'corsheaders',
