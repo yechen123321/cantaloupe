@@ -10,9 +10,9 @@ from django.utils import timezone
 from datetime import timedelta, datetime
 
 
-class method:
+class my_methods:
     @staticmethod
-    def region():
+    def province():
         s = (
             ('北京', '北京'),
             ('天津', '天津'),
@@ -51,9 +51,7 @@ class method:
 
 #  各省份规模以上企业主要能源品种产量
 class MainEnergyProductionModel(models.Model):
-    my_choices = method.region()
-
-    region = models.CharField(max_length=100, verbose_name='行政单位', choices=my_choices)
+    region = models.CharField(max_length=100, verbose_name='行政单位', choices=my_methods.province())
     year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
                                default=2000)
     raw_coal = models.DecimalField(max_digits=10, decimal_places=1, default=1.0, verbose_name='原煤', help_text='万吨')
@@ -82,8 +80,11 @@ class MainEnergyProductionModel(models.Model):
 
 #  能源设施
 class RegionalResourceFacilitiesModel(models.Model):
-    my_choices = method.region()
-    up_choice = (
+    region = models.CharField(max_length=100, verbose_name='行政单位', choices=my_methods.province())
+    name = models.CharField(max_length=30, verbose_name='设施')
+    do = models.CharField(max_length=30, verbose_name='工作')
+    number = models.DecimalField(default=0, max_digits=7, decimal_places=2, verbose_name='数目')
+    up = models.CharField(max_length=10, choices=(
         ('吨', '吨'),
         ('万吨', '万吨'),
         ('公顷', '公顷'),
@@ -93,13 +94,7 @@ class RegionalResourceFacilitiesModel(models.Model):
         ('千瓦时', '千瓦时'),
         ('万千瓦时', '万千瓦时'),
         ('亿千瓦时', '亿千瓦时'),
-    )
-
-    region = models.CharField(max_length=100, verbose_name='行政单位', choices=my_choices)
-    name = models.CharField(max_length=30, verbose_name='设施')
-    do = models.CharField(max_length=30, verbose_name='工作')
-    number = models.DecimalField(default=0, max_digits=7, decimal_places=2, verbose_name='数目')
-    up = models.CharField(max_length=10, choices=up_choice, default='吨', verbose_name='单位')
+    ), default='吨', verbose_name='单位')
     when = models.DateField(verbose_name='时间')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
@@ -109,3 +104,60 @@ class RegionalResourceFacilitiesModel(models.Model):
 
     def __str__(self):
         return f"{self.region} - {self.name}"
+
+
+#  地区再生能源储量/产量/结构/重要再生能源排行/概况
+class EnergyReserveModel(models.Model):
+    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
+                               default=2000)
+    province = models.CharField(max_length=10, verbose_name='省份', choices=my_methods.province(), default='安徽')
+
+    wind_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                   verbose_name='风能',
+                                   help_text='亿千瓦时（产量）')
+    water_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                    verbose_name='水利',
+                                    help_text='亿千瓦时（产量）')
+    light_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                    verbose_name='光伏',
+                                    help_text='亿千瓦时（产量）')
+    biomass_energy_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                             verbose_name='生物质能',
+                                             help_text='亿千瓦时（产量）')
+    geothermal_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                         verbose_name='地热',
+                                         help_text='亿千瓦时（产量）')
+    sea_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                  verbose_name='海洋',
+                                  help_text='亿千瓦时（产量）')
+
+    wind_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                   verbose_name='风能',
+                                   help_text='兆瓦时（储量）')
+    water_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                    verbose_name='水利',
+                                    help_text='亿千瓦时（储量）')
+    light_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                    verbose_name='光伏',
+                                    help_text='亿千瓦时（储量）')
+    biomass_energy_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                             verbose_name='生物质能',
+                                             help_text='亿千瓦时（储量）')
+    geothermal_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                         verbose_name='地热',
+                                         help_text='亿千瓦时（储量）')
+    sea_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                  verbose_name='海洋',
+                                  help_text='亿千瓦时（储量）')
+
+    hydrogen = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                   verbose_name='氢能',
+                                   help_text='亿千瓦时（产量）')
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name_plural = '地区能源储量/产量统计'
+
+    def __str__(self):
+        return f"{self.year}年 - {self.province}省 - 能源储量/产量统计"
