@@ -1,6 +1,13 @@
 {% load static i18n %}
 
 {% block extrastyle %}
+    <style>
+        .filter_panel ul {
+            max-height: 210px; /* 设置最大高度，超过部分将显示滚动条 */
+            overflow-y: auto; /* 添加垂直滚动条 */
+
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="{% static "css/forms.css" %}">
 {% endblock %}
 

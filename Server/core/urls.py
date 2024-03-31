@@ -66,6 +66,6 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-    path('logout/', my_logout, name='logout'),
     path('', my_login, name='login'),
+    path('logout/', my_logout, name='logout'),
 ]

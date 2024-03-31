@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 if not SECRET_KEY:
-    SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))
+    SECRET_KEY = ''.join(random.choice(string.ascii_lowercase) for i in range(32))
 
 DEBUG = str2bool(os.environ.get('DEBUG'))
 
@@ -18,7 +18,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8080']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:    
+if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 INSTALLED_APPS = [
@@ -37,17 +37,16 @@ INSTALLED_APPS = [
     "PowerGenerationBase",
 
     'rest_framework',
-    'corsheaders',
+    'corsheaders',  # 跨域配置
     'drf_yasg',  # swagger 接口文档
     'drf_spectacular',  # swagger 文档库
-    
-    'simple_history',
+
+    # 'simple_history',
 
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
-
+    "corsheaders.middleware.CorsMiddleware",  # 跨域配置
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -80,32 +79,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "core.wsgi.application"
-
-# DB_ENGINE   = os.getenv('DB_ENGINE'   , None)
-# DB_USERNAME = os.getenv('DB_USERNAME' , None)
-# DB_PASS     = os.getenv('DB_PASS'     , None)
-# DB_HOST     = os.getenv('DB_HOST'     , None)
-# DB_PORT     = os.getenv('DB_PORT'     , None)
-# DB_NAME     = os.getenv('DB_NAME'     , None)
-#
-# if DB_ENGINE and DB_NAME and DB_USERNAME:
-#     DATABASES = {
-#       'default': {
-#         'ENGINE'  : 'django.db.backends.' + DB_ENGINE,
-#         'NAME'    : DB_NAME,
-#         'USER'    : DB_USERNAME,
-#         'PASSWORD': DB_PASS,
-#         'HOST'    : DB_HOST,
-#         'PORT'    : DB_PORT,
-#         },
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': 'db.sqlite3',
-#         }
-#     }
 
 DATABASES = {
     'default': {
@@ -153,7 +126,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
@@ -165,15 +137,15 @@ REST_FRAMEWORK = {
         'rest_framework.renders.JSONRender',
         'rest_framework.renders.BrowsableAPIRender',
     ],
-    'DEFAULT_PARSER_CLASSES': [ #  解析 request.data
+    'DEFAULT_PARSER_CLASSES': [  # 解析 request.data
         'rest_framework.parsers.JSONParser',
         'rest_framework.parsers.FormParser',
         'rest_framework.parsers.MultiPartParser',
     ],
-    'DEFAULT_PERMISSION_CLASSES': [ #  权限：一个登录验证通过的用户能够访问哪些接口，或者对于哪些接口能够拿到哪些级别权限的数据
+    'DEFAULT_PERMISSION_CLASSES': [  # 权限：一个登录验证通过的用户能够访问哪些接口，或者对于哪些接口能够拿到哪些级别权限的数据
         'rest_framework.permissions.IsAuthenticated',
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [ #  认证：对用户登录的身份进行校验
+    'DEFAULT_AUTHENTICATION_CLASSES': [  # 认证：对用户登录的身份进行校验
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
