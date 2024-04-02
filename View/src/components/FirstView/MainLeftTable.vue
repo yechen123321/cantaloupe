@@ -384,10 +384,10 @@ onMounted(async () => {
         background-color: rgba(255, 255, 255, 0);
         border: none;
         right: 0;
-        margin-top: 28vh;
+        margin-top: 29vh;
         z-index: 1000;
         position: absolute;
-
+        margin-right: 0.5vw;
         img {
             width: 2vw;
         }
@@ -406,7 +406,7 @@ onMounted(async () => {
         width: 26vw;
         height: 26vh;
         position: absolute;
-        margin-top: 25vh;
+        margin-top: 26vh;
         z-index: 999;
         display: block;
     }
@@ -415,7 +415,7 @@ onMounted(async () => {
         width: 26vw;
         height: 26vh;
         position: absolute;
-        margin-top: 25vh;
+        margin-top: 26vh;
         z-index: 999;
         display: none;
     }
