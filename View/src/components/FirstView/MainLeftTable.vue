@@ -450,7 +450,7 @@ onMounted(async () => {
     #MainLeftButtom-out {
         width: 23vw;
         height: 32.5vh;
-        margin-left: 2.5vw;
+        margin-left: 3vw;
         position: absolute;
         margin-top: -16vh;
     }
