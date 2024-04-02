@@ -19,6 +19,8 @@ from django.apps import apps
 from django.db.models import Count, F
 from rest_framework.views import APIView
 
+from django.views.decorators.cache import cache_page
+
 from .seriailzers import *
 from .models import *
 
@@ -200,10 +202,54 @@ def get_regional_resource_facilities(request, id=12):
 #  地区再生能源储量
 @api_view(['GET', ])
 @permission_classes(())
-@extend_schema(responses=RegionalResourceFacilitiesSerializer)
+@extend_schema(responses=EnergyReserveSerializer)
 def get_energy_reserve(request, id=12):
     if request.method == 'GET':
         data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
         data = EnergyReserveSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)
-        # return Response(data=1, status=status.HTTP_200_OK)
+
+
+#  地区再生能源结构
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyStructureSerializer)
+def get_energy_structure(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyStructureSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区再生能源产能
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyCapacitySerializer)
+def get_energy_capacity(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyCapacitySerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区再生能源排行
+# @cache_page(10)
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyRankingSerializer)
+def get_energy_ranking(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyRankingSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区再生能源储量概况
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyReserveGeneralSerializer)
+def get_energy_reserve_general(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyReserveGeneralSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)

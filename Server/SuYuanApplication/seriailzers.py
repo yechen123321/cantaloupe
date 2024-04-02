@@ -65,7 +65,7 @@ class EnergyImportAndExportSerializer(serializers.ModelSerializer):
         return self.year
 
     def get_data(self, obj):
-        data_dict = [{'name': '进口', 'data': {}}, {'name': '出口', 'data': {}}]
+        data_dict = [{'name': '进口', 'data': {'石油': [], '煤炭': [], '电力': []}}, {'name': '出口', 'data': {'石油': [], '煤炭': [], '电力': []}}]
 
         field_names_map = {
             'petroleum_i': '石油',
@@ -75,13 +75,6 @@ class EnergyImportAndExportSerializer(serializers.ModelSerializer):
             'coal_e': '煤炭',
             'power_e': '电力'
         }
-
-        data_dict[0]['data']['石油'] = []
-        data_dict[1]['data']['石油'] = []
-        data_dict[0]['data']['煤炭'] = []
-        data_dict[1]['data']['煤炭'] = []
-        data_dict[0]['data']['电力'] = []
-        data_dict[1]['data']['电力'] = []
 
         for year_i in self.year:
             data = EnergyImportAndExportModel.objects.filter(year=year_i).first()
@@ -111,7 +104,7 @@ class PowerGenerationInstalledCapacitySerializer(serializers.ModelSerializer):
         return self.year
 
     def get_data(self, obj):
-        data_dict = {}
+        data_dict = {'火电': [], '水电': [], '核电': [], '风力': [], '太阳能发电': [], '其他': []}
 
         field_names_map = {
             'thermal_power': '火电',
@@ -121,13 +114,6 @@ class PowerGenerationInstalledCapacitySerializer(serializers.ModelSerializer):
             'solar_power_generation': '太阳能发电',
             'other_power': '其他'
         }
-
-        data_dict['火电'] = []
-        data_dict['水电'] = []
-        data_dict['核电'] = []
-        data_dict['风力'] = []
-        data_dict['太阳能发电'] = []
-        data_dict['其他'] = []
 
         for year_i in self.year:
             data = PowerGenerationInstalledCapacityModel.objects.filter(year=year_i).first()
@@ -155,17 +141,13 @@ class EnergyProductionAndInventorySerializer(serializers.ModelSerializer):
         return self.year[3:]
 
     def get_data(self, obj):
-        data_dict = {}
+        data_dict = {'存量': [], '产量': [], '产量增长率': []}
 
         field_names_map = {
             'total_energy_available_for_consumption': '存量',
             'total_production_of_primary_energy': '产量',
         }
-        data_dict['存量'] = []
-        data_dict['产量'] = []
-        data_dict['产量增长率'] = []
 
-        # for year_i in self.year:
         for year_i in self.year[3:]:
             data = EnergyProductionAndInventoryModel.objects.filter(year=year_i).first()
             if data:
@@ -201,7 +183,8 @@ class EnergyConsumptionSerializer(serializers.ModelSerializer):
         return self.year[self.year.index(2017):]
 
     def get_data(self, obj):
-        data_dict = {}
+        data_dict = {'能源消费总量': [], '煤炭占比': [], '石油占比': [], '天然气占比': [], '一次电力及其他能源': [],
+                     '全国能耗降低率': [], '全国GDP': []}
 
         field_names_map = {
             'total_energy_consumption': '能源消费总量',
@@ -210,13 +193,6 @@ class EnergyConsumptionSerializer(serializers.ModelSerializer):
             'natural_gas': '天然气占比',
             'power_and_other': '一次电力及其他能源',
         }
-        data_dict['能源消费总量'] = []
-        data_dict['煤炭占比'] = []
-        data_dict['石油占比'] = []
-        data_dict['天然气占比'] = []
-        data_dict['一次电力及其他能源'] = []
-        data_dict['全国能耗降低率'] = []
-        data_dict['全国GDP'] = []
 
         for year_i in self.year[self.year.index(2017):]:
             data = EnergyConsumptionModel.objects.filter(year=year_i).first()
@@ -249,12 +225,7 @@ class NewEnergySerializer(serializers.ModelSerializer):
         fields = ['data']
 
     def get_data(self, obj):
-        data_dict = {}
-        data_dict['太阳能源'] = []
-        data_dict['风力能源'] = []
-        data_dict['水利能源'] = []
-        data_dict['生物质能'] = []
-        data_dict['其他能源'] = []
+        data_dict = {'太阳能源': [], '风力能源': [], '水利能源': [], '生物质能': [], '其他能源': []}
 
         field_names_list = [
             '太阳能源',
@@ -363,9 +334,7 @@ class EnergyDevelopAndDemandSerializer(serializers.ModelSerializer):
         return name_list
 
     def get_data(self, obj):
-        data_dict = {}
-        data_dict['地区开发'] = []
-        data_dict['地区消耗'] = []
+        data_dict = {'地区开发': [], '地区消耗': []}
 
         data_obj = EnergyDevelopAndDemandModel.objects.order_by('-year').first()
 
@@ -405,9 +374,7 @@ class EnergyReserveSerializer(serializers.ModelSerializer):
         return name_list
 
     def get_data(self, obj):
-        data_dict = {}
-        data_dict['国内总量'] = []
-        data_dict['世界平均'] = []
+        data_dict = {'国内总量': [], '世界平均': []}
 
         data_obj1 = EnergyReserveModel.objects.filter(range='全国').order_by('-year').first()
         data_obj2 = EnergyReserveModel.objects.filter(range='全球').order_by('-year').first()
@@ -417,8 +384,8 @@ class EnergyReserveSerializer(serializers.ModelSerializer):
             if not (field.name == 'year' or field.name == 'created_at' or field.name == 'id' or field.name == 'range'):
                 data = getattr(data_obj1, field.name)
                 #  全国
-                data_dict['国内总量'].append(data)
-                #  地区消耗
+                data_dict['国内总量'].append(data * Decimal(str(1.45)))
+                #  世界
                 data = getattr(data_obj2, field.name)
-                data_dict['世界平均'].append(data)
+                data_dict['世界平均'].append(round(data / Decimal(str(1.43)), 2))
         return data_dict

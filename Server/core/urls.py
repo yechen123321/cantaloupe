@@ -28,22 +28,28 @@ schema_view = get_schema_view(
                     "全国市场交易及投资建设————get_market_investment/\n"
                     "全国能源开发与需求———————get_energy_develop_demand/\n"
                     "全国能源储量统计—————————get_energy_reserve/\n"
-                    
+
                     "\n\n---------------------------------- renew ----------------------------------\n\n"
-                    "能源发展热力图———————————get_heat_map/<int:id>/\n"
-                    
+
                     "主要能源品种产量—————————get_region_energy_production/<int:id>/\n"
                     "地区资源设施使用情况——————get_regional_resource_facilities/<int:id>/\n"
-                    
+                    "地区再生能源储量—————————get_energy_reserve/<int:id>/\n"
+                    "地区再生能源结构—————————get_energy_structure/<int:id>/\n"
+                    "地区再生能源产能—————————get_energy_capacity/<int:id>/\n"
+                    "地区再生能源排行—————————get_energy_ranking/<int:id>/\n"
+                    "地区再生能源结构概况—————get_energy_reserve_general/<int:id>/\n"
+
                     "\n\n---------------------------------- limited ----------------------------------\n\n"
                     "地区有限能源经济形势—————get_market_investment/<int:id>/"
-                    
+
                     "\n\n---------------------------------- analyse ----------------------------------\n\n"
-                    
+                    "能源发展热力图———————————get_heat_map/<int:id>/\n"
+
                     "\n\n---------------------------------- PowerGenerationBase ----------------------------------\n\n"
                     "电场故障信息获取—————————get_electric_field_fault/<int:id>/\n"
                     "电场故障信息通知—————————put_electric_field_fault/<int:id>/\n"
-                    
+
+
                     "\n\n===============================================================================================\n\n"
     ),
     public=True,
