@@ -11,23 +11,23 @@ const handleUpdate = () => {
         <div class="ul">
             <ul>
                 <li>
-                    <div class="name">XX发电：</div>
+                    <div class="name">一号发电：</div>
                     <div class="thing">正常运行</div>
                 </li>
                 <li>
-                    <div class="name">XX发电：</div>
+                    <div class="name" style="color: #ffe800;">二号发电：</div>
+                    <div class="thing" style="color: #ffe800;">运行异常</div>
+                </li>
+                <li>
+                    <div class="name">三号发电：</div>
                     <div class="thing">正常运行</div>
                 </li>
                 <li>
-                    <div class="name">XX发电：</div>
+                    <div class="name">四号发电：</div>
                     <div class="thing">正常运行</div>
                 </li>
                 <li>
-                    <div class="name">XX发电：</div>
-                    <div class="thing">正常运行</div>
-                </li>
-                <li>
-                    <div class="name">XX发电：</div>
+                    <div class="name">五号发电：</div>
                     <div class="thing">正常运行</div>
                 </li>
             </ul>
@@ -82,36 +82,36 @@ const handleUpdate = () => {
       margin-left: -2vw;
       //background: red;
 
-      li {
-        list-style: none;
-        width: 9vw;
-        margin-top: 1.6vh;
-        margin-left: 0.85vw;
-        float: left;
-        height: 3vh;
-        //background: rgba(10, 67, 188, .4);
-        .name {
-          width: 5vw;
-          height: 3vh;
-          color: white;
-          font-weight: bolder;
-          margin-left: 0.3vw;
-          margin-top: 0.2vh;
-          //background: #0d87f6;
-          position: absolute;
-        }
+        li {
+            list-style: none;
+            width: 9vw;
+            margin-top: 1.6vh;
+            margin-left: 0.75vw;
+            float: left;
+            height: 3vh;
+            //background: rgba(10, 67, 188, .4);
+            .name {
+                width: 6vw;
+                height: 3vh;
+                color: white;
+                font-weight: bolder;
+                margin-left: 0.3vw;
+                margin-top: 0.2vh;
+                //background: #0d87f6;
+                position: absolute;
+            }
 
-        .thing {
-          width: 4.5vw;
-          height: 3vh;
-          color: white;
-          font-weight: bolder;
-          margin-left: 4.5vw;
-          margin-top: 0.2vh;
-          //background: #ffffff;
-          position: absolute;
+            .thing {
+                width: 10vw;
+                height: 3vh;
+                color: white;
+                font-weight: bolder;
+                margin-left: 5vw;
+                margin-top: 0.2vh;
+                //background: #ffffff;
+                position: absolute;
+            }
         }
-      }
     }
 
   }

@@ -20,7 +20,7 @@ const handleUpdate = () => {
                 </li>
                 <li>
                     <div class="name" style="color: #ffe800">三号发电：</div>
-                    <div class="thing" style="color: #ffe800">正常运行</div>
+                    <div class="thing" style="color: #ffe800">运行异常</div>
                 </li>
                 <li>
                     <div class="name">四号发电：</div>

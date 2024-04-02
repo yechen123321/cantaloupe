@@ -315,7 +315,7 @@ initK1().then(response => {
       width: 25vw;
       height: 15vw;
       margin-top: 5vh;
-      margin-left: 1.4vw;
+      margin-left: 1.6vw;
       position: absolute;
       z-index: 999;
       //background: black;
