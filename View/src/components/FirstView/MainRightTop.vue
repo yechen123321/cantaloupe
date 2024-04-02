@@ -6,7 +6,6 @@ const listData = ref({});
 
 inita().then(response => {
     Object.assign(listData.value, response.data);
-    console.log(listData.value["name"][0]);
     // 将listData中的数据写入datas
     const newData = {
         name: listData.value["name"][0],

@@ -8,7 +8,6 @@ const listData = ref({});
 
 inita().then(response => {
     Object.assign(listData.value, response.data);
-    console.log(listData.value["name"][0]);
     // 将listData中的数据写入datas
     for (var i = 2; i < 4; i ++) {
         const newData = {
