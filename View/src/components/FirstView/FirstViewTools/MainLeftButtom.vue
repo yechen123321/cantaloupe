@@ -1,12 +1,13 @@
 <script setup>
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
+import {initKlist2} from "@/api";
 
 const echartsRef = ref(null);
 let myChart5 = null;
 let option5 = null;
 
-onMounted(() => {
+onMounted(async () => {
     myChart5 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -41,222 +42,235 @@ onMounted(() => {
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
-    option5 = {
-        color:colorList,
-        legend: {
-            itemWidth: 2, // 标签宽度为20px
-            itemHeight: 10, // 标签高度为10px
+    try {
+        const data = await initKlist2(); // 使用initlandlist函数获取数据
+        console.log(data);
 
-            textStyle: {
-                color: 'white'
-            },
-            inactiveColor: '#ccc',
-        },
-        tooltip: {
-            trigger: 'axis',
-            showContent: false,
-        },
-        dataset: {
-            source: [
-                ['年份', '2018', '2019', '2020', '2021', '2022', '2023'],
-                ['太阳能源', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
-                ['风力能源', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
-                ['水利能源', 25.2, 37.1, 41.2, 18, 33.9, 49.1],
-                ['生物质能', 43, 23, 43, 23, 56, 54],
-                ['其他能源', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
-            ]
-        },
-        xAxis: {
-            type: 'category',
-            axisLine: {
-                lineStyle: {
-                    color: 'white',
-                }
-            }
-        },
-        yAxis: {
-            gridIndex: 0,
-            axisLine: {
-                lineStyle: {
-                    color: 'white',
-                }
-            }
-        },
-        grid: {
-            top: '53%',
-        },
-        series: [
-            {
-                type: 'line',
-                smooth: true,
-                seriesLayoutBy: 'row',
-                emphasis: {focus: 'series'}
-            },
-            {
-                type: 'line',
-                smooth: true,
-                seriesLayoutBy: 'row',
-                emphasis: {focus: 'series'}
-            },
-            {
-                type: 'line',
-                smooth: true,
-                seriesLayoutBy: 'row',
-                emphasis: {focus: 'series'}
-            },
-            {
-                type: 'line',
-                smooth: true,
-                seriesLayoutBy: 'row',
-                emphasis: {focus: 'series'}
-            },
-            {
-                type: 'line',
-                smooth: true,
-                seriesLayoutBy: 'row',
-                emphasis: {focus: 'series'}
-            },
-            {
-                type: 'pie',
-                id: 'pie',
-                radius: '30%',
-                center: ['50%', '30%'],
-                emphasis: {
-                    focus: 'self'
-                },
-                label: {
-                    // show:'false',
-                    formatter: `占比为：{d}%`,
-                    color: 'white',
-                },
-                encode: {
-                    itemName: 'product',
-                    value: '2018',
-                    tooltip: '2018'
-                }
-            }
-        ]
-    };
-    setTimeout(() => {
-        myChart5.setOption(option5);
-        option5 = {
-            legend: {
-                textStyle: {
-                    color: 'white'
-                },
-                inactiveColor: '#ccc',
-            },
-            tooltip: {
-                trigger: 'axis',
-                showContent: false,
-            },
-            dataset: {
-                source: [
-                    ['年份', '2018', '2019', '2020', '2021', '2022', '2023'],
-                    ['太阳能源', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
-                    ['风力能源', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
-                    ['水利能源', 25.2, 37.1, 41.2, 18, 33.9, 49.1],
-                    ['生物质能', 43, 23, 43, 23, 56, 54],
-                    ['其他能源', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
-                ]
-            },
-            xAxis: {
-                type: 'category',
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    }
-                }
-            },
-            yAxis: {
-                gridIndex: 0,
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    }
-                }
-            },
-            grid: {
-                top: '53%',
-            },
-            series: [
-                {
-                    type: 'line',
-                    smooth: true,
-                    seriesLayoutBy: 'row',
-                    animation: true, // 启用动画效果
-                    emphasis: {focus: 'series'}
-                },
-                {
-                    type: 'line',
-                    smooth: true,
-                    seriesLayoutBy: 'row',
-                    animation: true, // 启用动画效果
-                    emphasis: {focus: 'series'}
-                },
-                {
-                    type: 'line',
-                    smooth: true,
-                    seriesLayoutBy: 'row',
-                    animation: true, // 启用动画效果
-                    emphasis: {focus: 'series'}
-                },
-                {
-                    type: 'line',
-                    smooth: true,
-                    seriesLayoutBy: 'row',
-                    animation: true, // 启用动画效果
-                    emphasis: {focus: 'series'}
-                },
-                {
-                    type: 'line',
-                    smooth: true,
-                    seriesLayoutBy: 'row',
-                    animation: true, // 启用动画效果
-                    emphasis: {focus: 'series'}
-                },
-                {
-                    type: 'pie',
-                    id: 'pie',
-                    radius: '30%',
-                    center: ['50%', '40%'],
-                    animationType: 'scale',
-                    emphasis: {
-                        focus: 'self'
+        // 处理从initlandlist获取的数据，例如更新echarts图表
+        if (data) {
+            option5 = {
+                color:colorList,
+                legend: {
+                    itemWidth: 2, // 标签宽度为20px
+                    itemHeight: 10, // 标签高度为10px
+
+                    textStyle: {
+                        color: 'white'
                     },
-                    label: {
-                        // show:'false',
-                        formatter: '数据为：{d}%'
-                    },
-                    encode: {
-                        itemName: 'product',
-                        value: '2018',
-                        tooltip: '2018'
+                    inactiveColor: '#ccc',
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    showContent: false,
+                },
+                dataset: {
+                    source: [
+                        ['年份', '2018', '2019', '2020', '2021', '2022', '2023'],
+                        ['太阳能源', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+                        ['风力能源', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+                        ['水利能源', 25.2, 37.1, 41.2, 18, 33.9, 49.1],
+                        ['生物质能', 43, 23, 43, 23, 56, 54],
+                        ['其他能源', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+                    ]
+                },
+                xAxis: {
+                    type: 'category',
+                    axisLine: {
+                        lineStyle: {
+                            color: 'white',
+                        }
                     }
-                }
-            ]
-        };
-        myChart5.on('updateAxisPointer', (event) => {
-            const xAxisInfo = event.axesInfo[0];
-            if (xAxisInfo) {
-                const dimension = xAxisInfo.value + 1;
-                myChart5.setOption({
-                    series: {
+                },
+                yAxis: {
+                    gridIndex: 0,
+                    axisLine: {
+                        lineStyle: {
+                            color: 'white',
+                        }
+                    }
+                },
+                grid: {
+                    top: '53%',
+                },
+                series: [
+                    {
+                        type: 'line',
+                        smooth: true,
+                        seriesLayoutBy: 'row',
+                        emphasis: {focus: 'series'}
+                    },
+                    {
+                        type: 'line',
+                        smooth: true,
+                        seriesLayoutBy: 'row',
+                        emphasis: {focus: 'series'}
+                    },
+                    {
+                        type: 'line',
+                        smooth: true,
+                        seriesLayoutBy: 'row',
+                        emphasis: {focus: 'series'}
+                    },
+                    {
+                        type: 'line',
+                        smooth: true,
+                        seriesLayoutBy: 'row',
+                        emphasis: {focus: 'series'}
+                    },
+                    {
+                        type: 'line',
+                        smooth: true,
+                        seriesLayoutBy: 'row',
+                        emphasis: {focus: 'series'}
+                    },
+                    {
+                        type: 'pie',
                         id: 'pie',
+                        radius: '30%',
+                        center: ['50%', '30%'],
+                        emphasis: {
+                            focus: 'self'
+                        },
                         label: {
-                            show: true,
-                            // formatter: `数据为： {@${dimension}} ({d}%)`
-                            formatter: `占比为：{d}%`
+                            // show:'false',
+                            formatter: `占比为：{d}%`,
+                            color: 'white',
                         },
                         encode: {
-                            value: dimension,
-                            tooltip: dimension
+                            itemName: 'product',
+                            value: '2018',
+                            tooltip: '2018'
+                        }
+                    }
+                ]
+            };
+            setTimeout(() => {
+                myChart5.setOption(option5);
+                option5 = {
+                    legend: {
+                        textStyle: {
+                            color: 'white'
                         },
+                        inactiveColor: '#ccc',
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        showContent: false,
+                    },
+                    dataset: {
+                        source: [
+                            ['年份', '2018', '2019', '2020', '2021', '2022', '2023'],
+                            ['太阳能源', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+                            ['风力能源', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+                            ['水利能源', 25.2, 37.1, 41.2, 18, 33.9, 49.1],
+                            ['生物质能', 43, 23, 43, 23, 56, 54],
+                            ['其他能源', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+                        ]
+                    },
+                    xAxis: {
+                        type: 'category',
+                        axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            }
+                        }
+                    },
+                    yAxis: {
+                        gridIndex: 0,
+                        axisLine: {
+                            lineStyle: {
+                                color: 'white',
+                            }
+                        }
+                    },
+                    grid: {
+                        top: '53%',
+                    },
+                    series: [
+                        {
+                            type: 'line',
+                            smooth: true,
+                            seriesLayoutBy: 'row',
+                            animation: true, // 启用动画效果
+                            emphasis: {focus: 'series'}
+                        },
+                        {
+                            type: 'line',
+                            smooth: true,
+                            seriesLayoutBy: 'row',
+                            animation: true, // 启用动画效果
+                            emphasis: {focus: 'series'}
+                        },
+                        {
+                            type: 'line',
+                            smooth: true,
+                            seriesLayoutBy: 'row',
+                            animation: true, // 启用动画效果
+                            emphasis: {focus: 'series'}
+                        },
+                        {
+                            type: 'line',
+                            smooth: true,
+                            seriesLayoutBy: 'row',
+                            animation: true, // 启用动画效果
+                            emphasis: {focus: 'series'}
+                        },
+                        {
+                            type: 'line',
+                            smooth: true,
+                            seriesLayoutBy: 'row',
+                            animation: true, // 启用动画效果
+                            emphasis: {focus: 'series'}
+                        },
+                        {
+                            type: 'pie',
+                            id: 'pie',
+                            radius: '30%',
+                            center: ['50%', '40%'],
+                            animationType: 'scale',
+                            emphasis: {
+                                focus: 'self'
+                            },
+                            label: {
+                                // show:'false',
+                                formatter: '数据为：{d}%'
+                            },
+                            encode: {
+                                itemName: 'product',
+                                value: '2018',
+                                tooltip: '2018'
+                            }
+                        }
+                    ]
+                };
+                myChart5.on('updateAxisPointer', (event) => {
+                    const xAxisInfo = event.axesInfo[0];
+                    if (xAxisInfo) {
+                        const dimension = xAxisInfo.value + 1;
+                        myChart5.setOption({
+                            series: {
+                                id: 'pie',
+                                label: {
+                                    show: true,
+                                    // formatter: `数据为： {@${dimension}} ({d}%)`
+                                    formatter: `占比为：{d}%`
+                                },
+                                encode: {
+                                    value: dimension,
+                                    tooltip: dimension
+                                },
+                            }
+                        });
                     }
                 });
-            }
-        });
-    });
+            });
+        } else {
+            console.error('Failed to fetch data from initlandlist');
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+
 
     const resizeObserver = new ResizeObserver(() => {
         myChart5.resize();
@@ -291,7 +305,6 @@ onMounted(() => {
 <template>
     <div class="MainLeftButtom">
         <button class="GoEnergy-title">全国新能源结构及趋势</button>
-        <button></button>
         <div id="MainLeftButtom-echarts" ref="echartsRef"></div>
     </div>
 </template>
@@ -303,45 +316,26 @@ onMounted(() => {
   color: white;
 
   .GoEnergy-title {
-    //cursor: pointer;
     position: absolute;
-    //right: 0;
     margin-left: 2vw;
     width: 18vw;
     height: 2.5vh;
     font-size: 1.2vw;
     font-weight: bolder;
-    //margin-right: 0.6vw;
     color: white;
     border: none;
-    margin-top: -18.5vh;
+    margin-top: -17vh;
     background: none;
     border-radius: 2px;
     z-index: 999;
   }
-
-  //.GoEnergy-title:hover {
-  //  width: 20vw;
-  //  height: 2.5vh;
-  //  font-size: 1.3vw;
-  //  margin-left: 1vw;
-  //  margin-top: -18.6vh;
-  //}
-  //
-  //.GoEnergy-title:active {
-  //  margin-left: 2vw;
-  //  width: 18vw;
-  //  height: 2.5vh;
-  //  font-size: 1.2vw;
-  //  margin-top: -18.5vh;
-  //}
 
   #MainLeftButtom-echarts {
     width: 26vw;
     height: 32vh;
     margin-left: -2.4vw;
     position: absolute;
-    margin-top: -17vh;
+    margin-top: -13.5vh;
   }
 
   @keyframes glow {

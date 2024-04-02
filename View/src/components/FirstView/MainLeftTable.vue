@@ -364,113 +364,113 @@ onMounted(async () => {
 
 
 <template>
-    <div class="MainLeftTable">
+    <div className="MainLeftTable">
         <div id="MainTable-echarts" ref="echartsRef"></div>
         <div id="MainTable-echarts2" ref="echartsRef2"></div>
         <button id="change"><img src="../../assets/切换.png" alt=""></button>
         <MainChinaLeft id="MainChinaLeft-out"></MainChinaLeft>
         <MainLeftMidden id="MainLeftMidden-out"></MainLeftMidden>
-        <img class="BackImg" src="../../assets/pic/border3.png" alt="">
+        <img className="BackImg" src="../../assets/pic/border3.png" alt="">
         <MainLeftButtom id="MainLeftButtom-out"></MainLeftButtom>
     </div>
 </template>
 
 <style scoped lang="scss">
 .MainLeftTable {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 
-  #change {
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    right: 0;
-    margin-top: 28vh;
-    z-index: 1000;
-    position: absolute;
+    #change {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        right: 0;
+        margin-top: 28vh;
+        z-index: 1000;
+        position: absolute;
 
-    img {
-      width: 2vw;
-    }
-  }
-
-  #change:hover {
-    cursor: pointer;
-  }
-
-  .BackImg {
-    width: 27vw;
-    height: 84vh;
-  }
-
-  #MainTable-echarts {
-    width: 26vw;
-    height: 26vh;
-    position: absolute;
-    margin-top: 25vh;
-    z-index: 999;
-    display: block;
-  }
-
-  #MainTable-echarts2 {
-    width: 26vw;
-    height: 26vh;
-    position: absolute;
-    margin-top: 25vh;
-    z-index: 999;
-    display: none;
-  }
-
-  .GoMinerals {
-    //cursor: pointer;
-    position: absolute;
-    //right: 0;
-    text-align: center;
-    width: 13vw;
-    height: 2.5vh;
-    font-size: 1.2vw;
-    margin-top: 27.5vh;
-    //margin-right: -2vw;
-    margin-left: 6.8vw;
-    font-weight: bolder;
-    color: white;
-    background: none;
-    border: none;
-    border-radius: 2px;
-    z-index: 999;
-  }
-
-  #MainLeftMidden-out {
-    width: 25vw;
-    height: 23.5vh;
-    margin-left: 2.5vw;
-    position: absolute;
-    margin-top: 27.8vh;
-  }
-
-  #MainLeftButtom-out {
-    width: 23vw;
-    height: 32.5vh;
-    margin-left: 2.5vw;
-    position: absolute;
-    margin-top: -16vh;
-  }
-
-  #MainChinaLeft-out {
-    width: 15vw;
-    height: 23.5vh;
-    margin-left: 28vw;
-    position: absolute;
-    margin-top: 21.8vh;
-  }
-
-  @keyframes glow {
-    from {
-      box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
+        img {
+            width: 2vw;
+        }
     }
 
-    to {
-      box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
+    #change:hover {
+        cursor: pointer;
     }
-  }
+
+    .BackImg {
+        width: 27vw;
+        height: 84vh;
+    }
+
+    #MainTable-echarts {
+        width: 26vw;
+        height: 26vh;
+        position: absolute;
+        margin-top: 25vh;
+        z-index: 999;
+        display: block;
+    }
+
+    #MainTable-echarts2 {
+        width: 26vw;
+        height: 26vh;
+        position: absolute;
+        margin-top: 25vh;
+        z-index: 999;
+        display: none;
+    }
+
+    .GoMinerals {
+        //cursor: pointer;
+        position: absolute;
+        //right: 0;
+        text-align: center;
+        width: 13vw;
+        height: 2.5vh;
+        font-size: 1.2vw;
+        margin-top: 27.5vh;
+        //margin-right: -2vw;
+        margin-left: 6.8vw;
+        font-weight: bolder;
+        color: white;
+        background: none;
+        border: none;
+        border-radius: 2px;
+        z-index: 999;
+    }
+
+    #MainLeftMidden-out {
+        width: 25vw;
+        height: 23.5vh;
+        margin-left: 2.5vw;
+        position: absolute;
+        margin-top: 27.8vh;
+    }
+
+    #MainLeftButtom-out {
+        width: 23vw;
+        height: 32.5vh;
+        margin-left: 2.5vw;
+        position: absolute;
+        margin-top: -16vh;
+    }
+
+    #MainChinaLeft-out {
+        width: 15vw;
+        height: 23.5vh;
+        margin-left: 28vw;
+        position: absolute;
+        margin-top: 21.8vh;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
+        }
+
+        to {
+            box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
+        }
+    }
 }
 </style>
