@@ -184,38 +184,44 @@
                     <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
                         <div class="carousel-inner border-radius-lg h-100">
                             <div class="carousel-item h-100 active"
-                                 style="background-image: url('{% static 'img/poster2.png' %}');
+                                 style="background-image: url('{% static 'img/poster1.gif' %}');
                                          background-size: cover;">
-                                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                                        <i class="ni ni-camera-compact text-dark opacity-10"></i>
-                                    </div>
-                                    <h5 class="text-white mb-1">行政地区自然资源数据概览</h5>
-                                    <p>全方位展示自然资源可视化.</p>
+                                <div style="position: absolute; border-radius: 5px; width: 20vw; height: 15vh; margin-top: 30vh;  margin-left: 15vw; background: rgba(0,111,236,0.6)">
+                                      <div class="lab" style="position: absolute;">
+                                        <h5 style="color: white;  width: 8vw; margin-left:4vw;  margin-top: 4vh; ">火力电厂监控</h5>
+                                        <p id="loading-text1" style="color: greenyellow; margin-left: 4vw; width: 8vw">正常运行中</p>
+                                      </div>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item h-100"
+                                 style="background-image: url('{% static 'img/poster2.gif' %}');
+                                         background-size: cover;">
+                                <div style="position: absolute; border-radius: 5px; width: 20vw; height: 15vh; margin-top: 30vh;  margin-left: 15vw; background: rgba(0,111,236,0.6)">
+                                      <div class="lab" style="position: absolute;">
+                                        <h5 style="color: white;  width: 8vw; margin-left:4vw;  margin-top: 4vh; ">水能电厂监控</h5>
+                                        <p id="loading-text2" style="color: greenyellow; margin-left: 4vw; width: 8vw">正常运行中</p>
+                                      </div>
                                 </div>
                             </div>
                             <div class="carousel-item h-100"
-                                 style="background-image: url('{% static 'img/carousel-2.jpg' %}');
+                                 style="background-image: url('{% static 'img/poster3.gif' %}');
                                          background-size: cover;">
-                                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                                        <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                                    </div>
-                                    <h5 class="text-white mb-1">放啥呢？？？</h5>
-                                    <p>That’s my skill. I’m not really specifically talented at anything except for the
-                                        ability to learn.</p>
+                                <div style="position: absolute; border-radius: 5px; width: 20vw; height: 15vh; margin-top: 30vh;  margin-left: 15vw; background: rgba(0,111,236,0.6)">
+                                      <div class="lab" style="position: absolute;">
+                                        <h5 style="color: white;  width: 8vw; margin-left:4vw;  margin-top: 4vh; ">光伏电厂监控</h5>
+                                        <p id="loading-text3" style="color: red; margin-left: 4vw; width: 8vw">正常运行中</p>
+                                      </div>
                                 </div>
                             </div>
                             <div class="carousel-item h-100"
-                                 style="background-image: url('{% static 'img/carousel-3.jpg' %}');
+                                 style="background-image: url('{% static 'img/poster4.gif' %}');
                                          background-size: cover;">
-                                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                                        <i class="ni ni-trophy text-dark opacity-10"></i>
-                                    </div>
-                                    <h5 class="text-white mb-1">Share with us your design tips!</h5>
-                                    <p>Don’t be afraid to be wrong because you can’t learn anything from a
-                                        compliment.</p>
+                                <div style="position: absolute; border-radius: 5px; width: 20vw; height: 15vh; margin-top: 30vh;  margin-left: 15vw; background: rgba(0,111,236,0.6)">
+                                      <div class="lab" style="position: absolute;">
+                                        <h5 style="color: white;  width: 8vw; margin-left:4vw;  margin-top: 4vh; ">风能电厂监控</h5>
+                                        <p id="loading-text4" style="color: red; margin-left: 4vw; width: 8vw">正常运行中</p>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -345,7 +351,7 @@
                     request_last = '+' + request_last;
                 }
 
-                var visits_last = (visits[0] - visits[1]) / (visits[0] + 1) * 100;
+                var visits_last = (visits[0] - visits[1]) / (visits[0]) * 100;
                 visits_last = visits_last.toFixed(2);
                 if (visits_last >= 0)
                     visits_last = '+' + visits_last;
@@ -378,7 +384,7 @@
             data: {
                 labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                 datasets: [{
-                    label: "Mobile apps",
+                    label: "电场通知维修量",
                     tension: 0.4,
                     borderWidth: 0,
                     pointRadius: 0,
@@ -521,6 +527,37 @@
                 },
             },
         });
+    function Text1(elementId) {
+        const loadingText = document.getElementById(elementId);
+        let dots = 0;
+
+        setInterval(() => {
+            dots = (dots + 1) % 4;
+            let dotsString = '';
+            for (let i = 0; i < dots; i++) {
+                dotsString += '.';
+            }
+            loadingText.textContent = '正常运行中' + dotsString; // 这里可以自定义文本
+        }, 500); // 每0.5秒更新一次
+    }
+    function Text2(elementId) {
+        const loadingText = document.getElementById(elementId);
+        let dots = 0;
+
+        setInterval(() => {
+            dots = (dots + 1) % 4;
+            let dotsString = '';
+            for (let i = 0; i < dots; i++) {
+                dotsString += '.';
+            }
+            loadingText.textContent = '存在故障' + dotsString; // 这里可以自定义文本
+        }, 500); // 每0.5秒更新一次
+    }
+
+    Text1('loading-text1');
+    Text1('loading-text2');
+    Text2('loading-text3');
+    Text2('loading-text4');
     </script>
 
 {% endblock scripts %}

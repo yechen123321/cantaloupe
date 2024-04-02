@@ -18,6 +18,19 @@ class RegionalResourceFacilitiesModelAdmin(admin.ModelAdmin):
     list_filter = ('region', 'name')
     search_fields = ('region', 'name')
 
+    def has_change_permission(self, request, obj=None):
+        return False
+
+
+#  地区再生能源储量/产量/结构/重要再生能源排行/概况
+class EnergyReserveAdmin(admin.ModelAdmin):
+    list_filter = ('year', 'province')
+    search_fields = ('year', 'province')
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
 
 admin.site.register(MainEnergyProductionModel, MainEnergyProductionAdmin)
 admin.site.register(RegionalResourceFacilitiesModel, RegionalResourceFacilitiesModelAdmin)
+admin.site.register(EnergyReserveModel, EnergyReserveAdmin)

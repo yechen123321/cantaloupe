@@ -31,14 +31,18 @@ schema_view = get_schema_view(
                     
                     "\n\n---------------------------------- renew ----------------------------------\n\n"
                     "能源发展热力图———————————get_heat_map/<int:id>/\n"
-                    "电场故障信息获取—————————get_electric_field_fault/<int:id>/\n"
-                    "电场故障信息通知—————————put_electric_field_fault/<int:id>/\n"
+                    
+                    "主要能源品种产量—————————get_region_energy_production/<int:id>/\n"
+                    "地区资源设施使用情况——————get_regional_resource_facilities/<int:id>/\n"
                     
                     "\n\n---------------------------------- limited ----------------------------------\n\n"
                     "地区有限能源经济形势—————get_market_investment/<int:id>/"
                     
                     "\n\n---------------------------------- analyse ----------------------------------\n\n"
                     
+                    "\n\n---------------------------------- PowerGenerationBase ----------------------------------\n\n"
+                    "电场故障信息获取—————————get_electric_field_fault/<int:id>/\n"
+                    "电场故障信息通知—————————put_electric_field_fault/<int:id>/\n"
                     
                     "\n\n===============================================================================================\n\n"
     ),
@@ -56,11 +60,12 @@ urlpatterns += [
     path('api/renew/', include('renew.urls')),
     path('api/limited/', include('limited.urls')),
     path('api/analyse/', include('analyse.urls')),
+    path('api/power/', include('PowerGenerationBase.urls')),
     path('api_docs/', schema_view.with_ui('swagger',
                                           cache_timeout=0), name='schema-swagger-ui'),
 ]
 
 urlpatterns += [
-    path('logout/', my_logout, name='logout'),
     path('', my_login, name='login'),
+    path('logout/', my_logout, name='logout'),
 ]

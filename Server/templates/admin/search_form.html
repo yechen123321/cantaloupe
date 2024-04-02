@@ -22,19 +22,18 @@
                 <div class="col-md-3 pl-md-1">
                     <div class="form-group">
                         {% if show_result_count %}
-                            <span class="small quiet">
+                            <span class="small quiet" style="color: darkblue">
                                 {% blocktrans count counter=cl.result_count %}
-                                    {{ counter }} result
+                                    {{ counter }} 条数据结果
                                 {% plural %}
-                                    {{ counter }} results
+                                    {{ counter }} 条数据结果
                                 {% endblocktrans %} (<a
-                                    href="?{% if cl.is_popup %}_popup=1{% endif %}">{% if cl.show_full_result_count %}
-                                {% blocktrans with full_result_count=cl.full_result_count %}
-                                    {{ full_result_count }} total
-                                {% endblocktrans %}
-                            {% else %}
-                                {% trans "显示所有" %}
-                            {% endif %}</a>)
+                                    href="?{% if cl.is_popup %}_popup=1{% endif %}">
+                                {% if cl.show_full_result_count %}
+                                    {% blocktrans with full_result_count=cl.full_result_count %}
+                                        {{ full_result_count }} 全部数据
+                                    {% endblocktrans %}
+                                {% endif %}</a>)
                             </span>
                         {% endif %}
                         {% for pair in cl.params.items %}

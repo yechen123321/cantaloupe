@@ -10,7 +10,7 @@
             <ul class="pagination mb-0">
                 <li class="page-item">
                     {% if cl.page_num > 1 %}
-                        <a class="page-link" href="?p={{ cl.page_num|neg_num:1 }}">上一页</a>
+                        <a class="page-link" href="?p={{ cl.page_num|neg_num:1 }}">上页</a>
                     {% else %}
                         <span class="page-link">首页</span>
                     {% endif %}
@@ -25,7 +25,7 @@
                 {% endif %}
                 <li class="page-item">
                     {% if cl.page_num < cl.paginator.num_pages %}
-                        <a class="page-link" href="?p={{ cl.page_num|sum_number:1 }}">下一页</a>
+                        <a class="page-link" href="?p={{ cl.page_num|sum_number:1 }}">下页</a>
                     {% else %}
                         <span class="page-link">末尾</span>
                     {% endif %}

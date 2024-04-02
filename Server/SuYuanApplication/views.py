@@ -119,9 +119,9 @@ def index_data(request):
                                                     request_time__range=[datetime.now() - timedelta(days=2),
                                                                          datetime.now() - timedelta(days=1)]).values(
         'path').distinct().count()
-
     data = {"total_requests": [total_requests_now, total_requests_last], "visits": [visits_now * 12, visits_last * 12],
-            "data_volume": [data_volume_now, data_volume_last], "user_num": [user_num_now, user_num_last]}
+            "data_volume": [data_volume_now, data_volume_last], "user_num": [user_num_now, user_num_last],
+            }
     return JsonResponse(data)
 
 
