@@ -2,14 +2,13 @@
 import {ref} from "vue";
 import {inita} from "@/api";
 
-const datas = ref([
-]);
+const datas = ref([]);
 const listData = ref({});
 
 inita().then(response => {
     Object.assign(listData.value, response.data);
     // 将listData中的数据写入datas
-    for (var i = 2; i < 4; i ++) {
+    for (var i = 2; i < 4; i++) {
         const newData = {
             name: listData.value["name"][i],
             number: listData.value["number"][i],
@@ -74,17 +73,17 @@ inita().then(response => {
       font-weight: bolder;
       margin-top: 4vh;
       margin-left: 1vw;
-      color: #1cd7cd;
+
       text-align: center;
       width: 30%;
+      color: #2bfff1;
       text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
       font-size: 2em;
-
     }
 
     .MainRightButtom-up {
-      color: #01bae4;
-      text-shadow: 0 0 0.1px #1cd7cd, 0 0 0.1px #1cd7cd;
+      color: #2bfff1;
+      text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
       position: absolute;
       font-size: 1em;
       font-weight: bolder;
@@ -93,8 +92,8 @@ inita().then(response => {
     }
 
     .MainRightButtom-midden {
-      color: #01bae4;
-      text-shadow: 0 0 0.1px #1cd7cd, 0 0 0.1px #1cd7cd;
+      color: #2bfff1;
+      text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
       position: absolute;
       font-size: 1em;
       font-weight: bolder;
@@ -104,7 +103,8 @@ inita().then(response => {
     }
 
     .MainRightButtom-num {
-      color: yellow;
+      color: #fdfd27;
+      text-shadow: 0 0 1px #fdfd27, 0 0 1px #fdfd27, 0 0 3px #fdfd27;
       position: absolute;
       font-size: 2em;
       font-weight: bolder;

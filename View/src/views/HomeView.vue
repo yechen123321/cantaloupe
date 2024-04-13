@@ -7,20 +7,7 @@ import MainLeftTable from "@/components/FirstView/MainLeftTable.vue";
 import FootLoop from '@/components/FootLoop.vue'
 import MainDown from "@/components/FirstView/MainDown.vue";
 
-// import { initlandlist } from '@/api';
-//
-// const actions = {
-//     initBooksList({ commit }) {
-//         initlandlist().then(res => {
-//             console.log('Response Data:', res.data); // 输出传回来的请求数据
-//             if (res.status === 200) {
-//                 commit('INITBOOKSLIST', res.data);
-//             }
-//         }).catch(err => {
-//             console.error('Error:', err); // 输出错误信息
-//         });
-//     }
-// };
+
 </script>
 <template>
     <div class="main">
@@ -46,6 +33,7 @@ import MainDown from "@/components/FirstView/MainDown.vue";
     margin-top: 2.5vh;
     margin-left: 47.5vw;
     position: absolute;
+      z-index: 999;
   }
 
   #title {

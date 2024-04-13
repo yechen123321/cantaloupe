@@ -11,9 +11,10 @@ onMounted(async () => {
     myChart5 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
             {offset: 1, color: '#92FE9D'}
@@ -22,23 +23,21 @@ onMounted(async () => {
 
 
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#FBD786'},
             {offset: 1, color: '#C6FFDD'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#fc4281'}
         ]),
-        // 其他渐变色定义...
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
+            {offset: 0, color: '#c184fd'},
+            {offset: 1, color: '#915efa'}
         ]),
+
+        // 其他渐变色定义...
+
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
@@ -53,7 +52,7 @@ onMounted(async () => {
                 legend: {
                     itemWidth: 2, // 标签宽度为20px
                     itemHeight: 10, // 标签高度为10px
-
+                    top:'2%',
                     textStyle: {
                         color: 'white'
                     },
@@ -87,10 +86,12 @@ onMounted(async () => {
                         lineStyle: {
                             color: 'white',
                         }
-                    }
+                    },
+                    interval: 50  // 设置 Y 轴的间隔为 25
                 },
                 grid: {
-                    top: '53%',
+                    top: '15%',
+                    left:'60%',
                 },
                 series: [
                     {
@@ -126,14 +127,14 @@ onMounted(async () => {
                     {
                         type: 'pie',
                         id: 'pie',
-                        radius: '30%',
-                        center: ['50%', '30%'],
+                        radius: '35%',
+                        center: ['32%', '45%'],
                         emphasis: {
                             focus: 'self'
                         },
                         label: {
-                            // show:'false',
-                            formatter: `占比为：{d}%`,
+                            show: true, // 显示标签
+                            formatter: `{d}%`,
                             color: 'white',
                         },
                         encode: {
@@ -181,7 +182,8 @@ onMounted(async () => {
                             lineStyle: {
                                 color: 'white',
                             }
-                        }
+                        },
+                        interval: 50  // 设置 Y 轴的间隔为 25
                     },
                     grid: {
                         top: '53%',
@@ -253,7 +255,7 @@ onMounted(async () => {
                                 label: {
                                     show: true,
                                     // formatter: `数据为： {@${dimension}} ({d}%)`
-                                    formatter: `占比为：{d}%`
+                                    formatter: `{d}%`
                                 },
                                 encode: {
                                     value: dimension,
@@ -331,9 +333,9 @@ onMounted(async () => {
   }
 
   #MainLeftButtom-echarts {
-    width: 26vw;
+    width: 30vw;
     height: 32vh;
-    margin-left: -2.4vw;
+    margin-left: -4.5vw;
     position: absolute;
     margin-top: -13.5vh;
   }

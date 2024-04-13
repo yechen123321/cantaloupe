@@ -54,7 +54,7 @@ import AnHuiRightTop from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRigh
     width: 25vw;
     height: 60vh;
     right: 0;
-    margin-top: 26.8vh;
+    margin-top: 28vh;
     margin-right: 2.5vw;
     position: absolute;
   }

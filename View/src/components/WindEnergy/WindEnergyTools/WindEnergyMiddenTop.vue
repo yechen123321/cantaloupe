@@ -16,7 +16,6 @@ const showReport = () => {
 <template>
     <div class="WindEnergyMiddenTop">
         <div class="VI">
-            <Button @click="updateReport" class="First" v-show="!reportGenerated">模型操作</Button>
             <Button @click="showReport" class="Second" v-show="reportGenerated">视频展示</Button>
             <video v-show="!reportGenerated" class="VV" src="../../../assets/Wind.mp4" autoplay loop
                    muted></video>

@@ -10,30 +10,15 @@ onMounted(async () => {
     myChart11 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
+
+            {offset: 0, color: '#fc8cd9'},
             {offset: 1, color: '#f80759'}
         ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
-        ]),
-        // 其他渐变色定义...
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
+
     ];
 
     try {
@@ -71,7 +56,7 @@ onMounted(async () => {
 
                     splitNumber: 4, // 分割的圈数
                     axisLine: {
-                        show: false, // 隐藏雷达图的轴线
+                        // show: false, // 隐藏雷达图的轴线
                         lineStyle: {
                             color: 'white',
                         },
@@ -93,7 +78,7 @@ onMounted(async () => {
                     {
                         name: 'Budget vs spending',
                         type: 'radar',
-                        symbol: 'none', // 去掉每个角的小点
+                        // symbol: 'none', // 去掉每个角的小点
                         data: [
 
                             {

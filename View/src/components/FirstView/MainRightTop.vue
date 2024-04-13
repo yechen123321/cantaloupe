@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from "vue";
-import { inita } from "@/api"
+import {inita} from "@/api"
+
 const datas = ref([]);
 const listData = ref({});
 
@@ -70,7 +71,7 @@ inita().then(response => {
 
       .li-number {
         float: left;
-        color: #1cd7cd;
+        color: #2bfff1;
         text-align: center;
         width: 30%;
         font-weight: bolder;
@@ -83,24 +84,27 @@ inita().then(response => {
         margin-left: 4.5%;
         font-size: 1em;
         margin-top: 1.3%;
-        color: #01bae4;
-        text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
+        color: #2bfff1;
+        font-weight: bolder;
+        text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
       }
 
       .li-midden {
         float: left;
         margin-left: 4%;
         margin-top: 1.3%;
+        font-weight: bolder;
         font-size: 1em;
-        color: #01bae4;
-        text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
+        color: #2bfff1;
+        text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
       }
 
       .li-num {
         float: left;
         margin-left: 5%;
         font-size: 2em;
-        color: yellow;
+        color: #fdfd27;
+        text-shadow: 0 0 1px #fdfd27, 0 0 1px #fdfd27, 0 0 3px #fdfd27;
         font-weight: bolder;
       }
     }

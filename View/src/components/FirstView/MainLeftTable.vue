@@ -40,38 +40,38 @@ onMounted(async () => {
 
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#c184fd'},
+            {offset: 1, color: '#915efa'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
 
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#f80759'}
         ]),
     ];
 
     var colorList1 = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
+            {offset: 0, color: '#c184fd'},
+            {offset: 1, color: '#915efa'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+
+            {offset: 0, color: '#fc8cd9'},
             {offset: 1, color: '#f80759'}
         ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
-        ]),
         // 其他渐变色定义...
-
     ];
     try {
-        const data = await initapp(); // 使用initlandlist函数获取数据
+        const data = await initapp();
         const dataIn = data.data.data[0].data;
         const dataOut = data.data.data[1].data;
         if (data) {
@@ -101,10 +101,10 @@ onMounted(async () => {
                         tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                         params.forEach(function (param) {
                             if (param.seriesName !== '电力') {
-                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '万吨</span>' + '<br>';
+                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + ' 万吨</span>' + '<br>';
                             }
                             if (param.seriesName === '电力') {
-                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '亿千瓦时</span>' + '<br>';
+                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + ' 亿千瓦时</span>' + '<br>';
                             }
                         });
                         return tooltipContent;
@@ -197,7 +197,10 @@ onMounted(async () => {
                         emphasis: {
                             focus: 'series'
                         },
-                        data: dataIn["煤炭"]
+                        data: dataIn["煤炭"],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
                     },
                     {
                         name: '电力',
@@ -206,7 +209,10 @@ onMounted(async () => {
                         emphasis: {
                             focus: 'series'
                         },
-                        data: dataIn["电力"]
+                        data: dataIn["电力"],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
                     },
                 ]
             };
@@ -236,8 +242,11 @@ onMounted(async () => {
                         let mineName = params[0].name;
                         tooltipContent += '<span style="font-weight: bold; margin-top: -500px;">' + mineName + '</span>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                         params.forEach(function (param) {
-                            if (param.seriesName !== '趋势') {
-                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '吨</span>' + '<br>';
+                            if (param.seriesName !== '电力') {
+                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + ' 万吨</span>' + '<br>';
+                            }
+                            if (param.seriesName === '电力') {
+                                tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + ' 亿千瓦时</span>' + '<br>';
                             }
                         });
                         return tooltipContent;
@@ -321,7 +330,8 @@ onMounted(async () => {
                         emphasis: {
                             focus: 'series'
                         },
-                        data: dataOut["石油"]
+                        data: dataOut["石油"],
+
                     },
                     {
                         name: '煤炭',
@@ -330,7 +340,10 @@ onMounted(async () => {
                         emphasis: {
                             focus: 'series'
                         },
-                        data: dataOut["煤炭"]
+                        data: dataOut["煤炭"],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
                     },
                     {
                         name: '电力',
@@ -339,7 +352,10 @@ onMounted(async () => {
                         emphasis: {
                             focus: 'series'
                         },
-                        data: dataOut["电力"]
+                        data: dataOut["电力"],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
                     },
                 ]
             };
@@ -377,100 +393,101 @@ onMounted(async () => {
 
 <style scoped lang="scss">
 .MainLeftTable {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    #change {
-        background-color: rgba(255, 255, 255, 0);
-        border: none;
-        right: 0;
-        margin-top: 29vh;
-        z-index: 1000;
-        position: absolute;
-        margin-right: 0.5vw;
-        img {
-            width: 2vw;
-        }
+  #change {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    right: 0;
+    margin-top: 29vh;
+    z-index: 1000;
+    position: absolute;
+    margin-right: 0.5vw;
+
+    img {
+      width: 2vw;
+    }
+  }
+
+  #change:hover {
+    cursor: pointer;
+  }
+
+  .BackImg {
+    width: 27vw;
+    height: 84vh;
+  }
+
+  #MainTable-echarts {
+    width: 26vw;
+    height: 26vh;
+    position: absolute;
+    margin-top: 26vh;
+    z-index: 999;
+    display: block;
+  }
+
+  #MainTable-echarts2 {
+    width: 26vw;
+    height: 26vh;
+    position: absolute;
+    margin-top: 26vh;
+    z-index: 999;
+    display: none;
+  }
+
+  .GoMinerals {
+    //cursor: pointer;
+    position: absolute;
+    //right: 0;
+    text-align: center;
+    width: 13vw;
+    height: 2.5vh;
+    font-size: 1.2vw;
+    margin-top: 27.5vh;
+    //margin-right: -2vw;
+    margin-left: 6.8vw;
+    font-weight: bolder;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 2px;
+    z-index: 999;
+  }
+
+  #MainLeftMidden-out {
+    width: 25vw;
+    height: 23.5vh;
+    margin-left: 2.5vw;
+    position: absolute;
+    margin-top: 27.8vh;
+  }
+
+  #MainLeftButtom-out {
+    width: 23vw;
+    height: 32.5vh;
+    margin-left: 3vw;
+    position: absolute;
+    margin-top: -16vh;
+  }
+
+  #MainChinaLeft-out {
+    width: 15vw;
+    height: 23.5vh;
+    margin-left: 28vw;
+    position: absolute;
+    margin-top: 21.8vh;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
     }
 
-    #change:hover {
-        cursor: pointer;
+    to {
+      box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
     }
-
-    .BackImg {
-        width: 27vw;
-        height: 84vh;
-    }
-
-    #MainTable-echarts {
-        width: 26vw;
-        height: 26vh;
-        position: absolute;
-        margin-top: 26vh;
-        z-index: 999;
-        display: block;
-    }
-
-    #MainTable-echarts2 {
-        width: 26vw;
-        height: 26vh;
-        position: absolute;
-        margin-top: 26vh;
-        z-index: 999;
-        display: none;
-    }
-
-    .GoMinerals {
-        //cursor: pointer;
-        position: absolute;
-        //right: 0;
-        text-align: center;
-        width: 13vw;
-        height: 2.5vh;
-        font-size: 1.2vw;
-        margin-top: 27.5vh;
-        //margin-right: -2vw;
-        margin-left: 6.8vw;
-        font-weight: bolder;
-        color: white;
-        background: none;
-        border: none;
-        border-radius: 2px;
-        z-index: 999;
-    }
-
-    #MainLeftMidden-out {
-        width: 25vw;
-        height: 23.5vh;
-        margin-left: 2.5vw;
-        position: absolute;
-        margin-top: 27.8vh;
-    }
-
-    #MainLeftButtom-out {
-        width: 23vw;
-        height: 32.5vh;
-        margin-left: 3vw;
-        position: absolute;
-        margin-top: -16vh;
-    }
-
-    #MainChinaLeft-out {
-        width: 15vw;
-        height: 23.5vh;
-        margin-left: 28vw;
-        position: absolute;
-        margin-top: 21.8vh;
-    }
-
-    @keyframes glow {
-        from {
-            box-shadow: 0px 0px 3px 3px #00bfff, 0px 0px 5px 3px #0d0d0d, 0px 0px 7px 5px #00bfff;
-        }
-
-        to {
-            box-shadow: 0px 0px 5px 3px #00bfff, 0px 0px 7px 5px #0d0d0d, 0px 0px 9px 7px #00bfff;
-        }
-    }
+  }
 }
 </style>

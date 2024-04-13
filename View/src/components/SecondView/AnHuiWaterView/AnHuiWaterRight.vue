@@ -29,8 +29,8 @@ onMounted(() => {
     // (Your existing option setup code)
     loadBMap("EGlnrCfbkZCDlamN0ap6OPQpuQhUsdmt").then(() => {
         const data = [
-            {name: '合肥', value: 200, thing: '我的世界awd'},
-            {name: '马鞍山', value: 100, thing: '我的世界awd'},
+            {name: '合肥', value: 200, thing: '一号水电厂'},
+            {name: '马鞍山', value: 100, thing: '二号水电厂'},
         ];
         const geoCoordMap = {
             海门: [121.15, 31.89],

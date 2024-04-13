@@ -10,16 +10,19 @@ let option8 = null;
 onMounted(async () => {
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 0, color: '#c184fd'},
+            {offset: 1, color: '#915efa'}
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#2980B9'},
-            {offset: 1, color: '#6DD5FA'}
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#fc4281'}
         ]),
         // 其他渐变色定义...
     ];
@@ -121,7 +124,10 @@ onMounted(async () => {
                                 return value + ' 千万吨';
                             }
                         },
-                        data: datas['产量']
+                        data: datas['产量'],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
                     },
                     {
                         name: '存量',
@@ -131,7 +137,10 @@ onMounted(async () => {
                                 return value + ' 千万吨';
                             }
                         },
-                        data: datas['存量']
+                        data: datas['存量'],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
                     },
                     {
                         name: '产量增长率',
@@ -206,7 +215,7 @@ onMounted(async () => {
   #MainChinaLeft-echarts {
     width: 19vw;
     height: 39vh;
-    margin-left: 0.2vw;
+    margin-left: 0.5vw;
     position: absolute;
     margin-top: -36vh;
   }

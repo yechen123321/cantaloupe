@@ -31,7 +31,7 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
     width: 23vw;
     height: 23vh;
     margin-left: 1.3vw;
-    margin-top: 29vh;
+    margin-top: 26.5vh;
     position: absolute;
   }
 
@@ -40,7 +40,7 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
     height: 23vh;
     //margin-left: 0vw;
     position: absolute;
-    margin-top: -32vh;
+    margin-top: -32.5vh;
   }
 
   .BackImg {

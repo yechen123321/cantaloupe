@@ -10,11 +10,12 @@ onMounted(async() => {
     myChart9 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
+
+            {offset: 0, color: '#fc8cd9'},
             {offset: 1, color: '#f80759'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -77,7 +78,7 @@ onMounted(async() => {
                             }
                         },
                         // prettier-ignore
-                        data: ['2019', '2020', '2021', '2022', '2023']
+                        data: ['2018','2019', '2020', '2021', '2022', '2023']
                     }
                 ],
                 yAxis: [
@@ -143,13 +144,21 @@ onMounted(async() => {
                         name: '能源消耗',
                         type: 'bar',
                         yAxisIndex: 2,
-                        data:datas["能源消费总量"]
+                        data:datas["能源消费总量"],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
+
                     },
                     {
                         name: '全国GDP',
                         type: 'bar',
                         yAxisIndex: 0,
-                        data: datas["全国GDP"]
+                        data: datas["全国GDP"],
+                        itemStyle: {
+                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                        }
+
                     },
                     {
                         name: '全国能耗降低率',

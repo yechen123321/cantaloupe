@@ -16,7 +16,6 @@ const showReport = () => {
 <template>
     <div class="ThermalPowerMiddenTop">
         <div class="VI">
-            <button @click="updateReport" class="First" v-show="!reportGenerated">模型操作</button>
             <button @click="showReport" class="Second" v-show="reportGenerated">视频展示</button>
             <video v-show="!reportGenerated" class="VV" src="../../../assets/Fire.mp4" autoplay loop
                    muted></video>

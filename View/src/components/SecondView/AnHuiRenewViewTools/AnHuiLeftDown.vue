@@ -13,16 +13,16 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'},
+            {offset: 0, color: '#6cd7fa'},
+            {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'},
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'},
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
         ]),
         // 其他渐变色定义...
     ];
@@ -31,21 +31,8 @@ onMounted(() => {
         color: colorList,
         tooltip: {
             trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     crossStyle: {
-            //         color: '#999'
-            //     }
-            // }
         },
-        // toolbox: {
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
+
         legend: {
             textStyle: {
                 color: 'white'
@@ -135,7 +122,10 @@ onMounted(() => {
                 },
                 data: [
                     176.7, 135.6, 162.2, 132.6,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '存量',
@@ -147,7 +137,10 @@ onMounted(() => {
                 },
                 data: [
                     170.7, 175.6, 182.2, 148.7,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '产量增长率',
@@ -158,7 +151,8 @@ onMounted(() => {
                         return value + ' %';
                     }
                 },
-                data: [20.3, 23.4, 23.0, 16.5,]
+                data: [20.3, 23.4, 23.0, 16.5,],
+
             }
         ]
     };

@@ -12,26 +12,27 @@ onMounted(async () => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
             {offset: 1, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#FBD786'},
             {offset: 1, color: '#C6FFDD'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#fc4281'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#c184fd'},
+            {offset: 1, color: '#915efa'}
         ]),
         // 其他渐变色定义...
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -46,15 +47,6 @@ onMounted(async () => {
             option2 = {
                 backgroundColor: 'rgba(128,128,128,0)',
                 color: colorList,
-                // title: {
-                //     top:'-2%',
-                //     text: '全国资源开发与消耗占比',
-                //     // subtext: 'Fake Data',
-                //     left: 'center',
-                //     textStyle: {
-                //         color: 'white',
-                //     },
-                // },
                 tooltip: {
                     trigger: 'item',
                     textStyle: {
@@ -78,51 +70,61 @@ onMounted(async () => {
                         color: 'white',
                     }
                 },
-                // toolbox: {
-                //     show: true,
-                //     feature: {
-                //         mark: { show: true },
-                //         dataView: { show: true, readOnly: false },
-                //         restore: { show: true },
-                //         saveAsImage: { show: true }
-                //     }
-                // },
                 series: [
                     {
                         name: '地区开发',
                         type: 'pie',
                         radius: ['20%', '50%'],
-                        center: ['28%', '48%'],
-                        roseType: 'radius',
+                        center: ['27%', '48%'],
+                        roseType: 'area',
                         itemStyle: {
-                            borderRadius: 3
+                            borderRadius: 3,
                         },
                         label: {
                             show: true,
+                            position: 'outside',
+                            color: 'white',
                             fontWeight: 'bold',
-                            color: 'white'
+                            alignTo: 'none', // 避免标签互相遮挡
+                            margin: 1 // 控制标签伸出的距离
+                        },
+                        labelLine: { // 设置指示线的长度
+                            normal: {
+                                length: 12,
+                                length2: 8
+                            }
                         },
                         emphasis: {
                             label: {
                                 show: true,
                             }
                         },
+
                         data: data.data.data["地区开发"]
                     },
 
                     {
                         name: '地区消耗',
                         type: 'pie',
-                        radius: ['20%', '50%'],
-                        center: ['70%', '48%'],
+                        radius: ['20%', '60%'],
+                        center: ['75%', '48%'],
                         roseType: 'area',
                         itemStyle: {
-                            borderRadius: 5
+                            borderRadius: 3,
                         },
                         label: {
                             show: true,
+                            position: 'outside',
                             color: 'white',
                             fontWeight: 'bold',
+                            alignTo: 'none', // 避免标签互相遮挡
+                            margin: 1 // 控制标签伸出的距离
+                        },
+                        labelLine: { // 设置指示线的长度
+                            normal: {
+                                length: 3,
+                                length2: 3
+                            }
                         },
                         data:data.data.data["地区消耗"]
                     },

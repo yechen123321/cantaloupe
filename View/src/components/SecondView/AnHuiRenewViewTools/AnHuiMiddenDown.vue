@@ -11,16 +11,16 @@ onMounted(() => {
     myChart22 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#2980B9'},
-            {offset: 1, color: '#6DD5FA'}
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
         ]),
         // 其他渐变色定义...
     ];
@@ -131,7 +131,10 @@ onMounted(() => {
                 },
                 data: [
                     176.7, 135.6, 162.2, 132.6,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10,10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '增长量',
@@ -143,7 +146,10 @@ onMounted(() => {
                 },
                 data: [
                     70.7,75.6, 82.2, 48.7,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '增长率',
@@ -154,7 +160,7 @@ onMounted(() => {
                         return value + ' %';
                     }
                 },
-                data: [20.3, 23.4, 23.0, 16.5,]
+                data: [20.3, 23.4, 23.0, 16.5,],
             }
         ]
     };
