@@ -31,13 +31,13 @@ import AnHuiRightTop from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRigh
     height: 23vh;
     right: 0;
     margin-right: 9vw;
-    margin-top: 14vh;
+    margin-top: 13vh;
   }
 
   #SecondLeftTable {
     width: 25vw;
     height: 80vh;
-    margin-top: 3vh;
+    margin-top: 2vh;
     margin-left: 2vw;
     position: absolute;
   }
@@ -45,7 +45,7 @@ import AnHuiRightTop from "@/components/SecondView/AnHuiRenewViewTools/AnHuiRigh
   #SecondMiddem {
     width: 40vw;
     height: 80vh;
-    margin-top: 4vh;
+    margin-top: 3vh;
     margin-left: 30.2vw;
     position: absolute;
   }

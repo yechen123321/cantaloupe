@@ -5,14 +5,8 @@ import * as echarts from "echarts";
 const echartsRef = ref(null);
 let myChart87 = null;
 let option87 = null;
-const echartsRef2 = ref(null);
-let myChart88 = null;
-let option88 = null;
 onMounted(() => {
     myChart87 = echarts.init(echartsRef.value, 'dark');
-    myChart88 = echarts.init(echartsRef2.value, 'dark');
-    // Your echarts option setup here...
-    // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#396afc'},
@@ -169,158 +163,11 @@ onMounted(() => {
         ]
     };
 
-    option88 = {
-        color: colorList,
-        backgroundColor: 'rgba(1,1,1,0)',
-        tooltip: {
-            trigger: 'axis',
-            extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
-            formatter: function (params) {
-                let tooltipContent = '';
-                let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
-                params.forEach(function (param) {
-                    if (param.seriesName === '全国能耗降低率') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
-                    } else {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
-                    }
-                });
-                return tooltipContent;
-            }
-        },
-        grid: {
-            left: '5.3%', // 调整图表左边距
-            right: '7%', // 调整图表右边距
-            // top: '10%', // 调整图表上边距
-            bottom: '15%', // 调整图表下边距
-            containLabel: true,
-        },
-        legend: {
-            // left:'0%',
-            top: '3%',
-            itemWidth: 10, // 标签宽度为10px
-            itemHeight: 10, // 标签高度为10px
-            data: ['开采耗费', '获取能量', '能耗降低率'],
-            textStyle: {
-                color: 'white'
-            }
-        },
-        xAxis: [
-            {
-                type: 'category',
-                axisTick: {
-                    alignWithLabel: true
-                }, axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                },
-                // prettier-ignore
-                data: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value',
-                name: '万亿元',
-                position: 'right',
-                alignTicks: true,
-                nameTextStyle: {
-                    color: 'white',
-                    padding: [0, -30, 0, 0]
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-            {
-                type: 'value',
-                name: '降低率',
-                nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
-                position: 'right',
-                nameTextStyle: {
-                    color: 'white',
-                    padding: [0, -38, 0, 0]
-                },
-                alignTicks: true,
-                offset: 40,
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-            {
-                type: 'value',
-                name: '标准煤 / 万亿吨',
-                nameTextStyle: {
-                    color: 'white',
-                    padding: [0, 10, 0, 0]
-                },
-                position: 'left',
-                alignTicks: true,
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-        ],
-        series: [
-            {
-                name: '开采耗费',
-                type: 'bar',
-                yAxisIndex: 2,
-                data: [
-                    135.6, 162.2, 132.6, 120.0, 126.4,
-                ]
-            },
-            {
-                name: '获取能量',
-                type: 'bar',
-                yAxisIndex: 0,
-                data: [
-                    175.6, 182.2, 148.7, 138.8, 136.0
-                ]
-            },
-            {
-                name: '能耗降低率',
-                type: 'line',
-                yAxisIndex: 1,
-                data: [3.4, 2.0, 1.5, 1.0, 3.2]
-            },
-        ]
-    };
 
     option87 && myChart87.setOption(option87);
-    option88 && myChart88.setOption(option88);
 
     const resizeObserver = new ResizeObserver(() => {
         myChart87.resize();
-        myChart88.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
@@ -330,8 +177,6 @@ onMounted(() => {
 
 <template>
     <div class="DataAnalysisMiddenTopLeft">
-        <div class="TitleFirst">安徽省能源采集效率</div>
-        <div class="DataAnalysisMiddenTopLeft-top" ref="echartsRef2"></div>
         <div class="TitleSecond">安徽省碳排放量统计</div>
         <div class="DataAnalysisMiddenTopLeft-down" ref="echartsRef"></div>
     </div>
@@ -342,24 +187,13 @@ onMounted(() => {
     width: 100%;
     height: 100%;
 
-    .TitleFirst {
-        color: white;
-        position: absolute;
-        font-weight: bolder;
-        margin-top: -6vh;
-        width: 26vw;
-        margin-left: -2vw;
-        text-align: center;
-        font-size: 1.3em;
-    }
-
     .TitleSecond {
         color: white;
         position: absolute;
         font-weight: bolder;
-        margin-top: 21vh;
+        margin-top: -5.5vh;
         width: 26vw;
-        margin-left: -2vw;
+        margin-left: -4vw;
         text-align: center;
         font-size: 1.3em;
     }
@@ -368,17 +202,9 @@ onMounted(() => {
         width: 31vw;
         height: 29vh;
         position: absolute;
-        margin-top: 21vh;
+        margin-top: -4vh;
         margin-left: -2vw;
         z-index: 333;
-    }
-
-    .DataAnalysisMiddenTopLeft-top {
-        width: 25.5vw;
-        height: 28vh;
-        margin-top: -3vh;
-        z-index: 999;
-        position: absolute;
     }
 }
 </style>

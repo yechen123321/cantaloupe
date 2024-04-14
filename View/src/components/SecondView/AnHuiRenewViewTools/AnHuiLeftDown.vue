@@ -186,7 +186,7 @@ onMounted(() => {
     //background: red;
     margin-left: 1.5vw;
     font-weight: bolder;
-    font-size: 1.3vw;
+      font-size: 1.15em;
     margin-top: 1.5vh;
     position: absolute;
     text-align: center;

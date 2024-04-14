@@ -196,19 +196,19 @@ onMounted(() => {
     border: none;
     background: none;
     font-weight: bolder;
-    font-size: 1.26em;
+    font-size: 1.15em;
     color: white;
-    margin-top: 1.3vh;
+    margin-top: 1vh;
     margin-left: -30vw;
     cursor: pointer;
   }
 
   #SecondMiddenCenter-echarts {
     width: 26vw;
-    height: 27vh;
+    height: 28vh;
     margin-left: 0.7vw;
     position: absolute;
-    margin-top: -28vh;
+    margin-top: -29vh;
     z-index: 1000;
   }
 

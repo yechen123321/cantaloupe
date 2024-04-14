@@ -226,81 +226,6 @@ onMounted(() => {
     });
 
     resizeObserver.observe(echartsRef.value);
-    // let data = [
-    //     {value: 800, name: '风能'},
-    //     {value: 700, name: '太阳能'},
-    //     {value: 600, name: '水利'},
-    //     {value: 500, name: '生物质能'},
-    //     {value: 450, name: '地热能'},
-    //     {value: 400, name: '氢能'},
-    //     {value: 300, name: '沼气'},
-    //     {value: 200, name: '核能'},
-    // ];
-    //
-    // option30 = {
-    //
-    //     series: [
-    //         {
-    //             itemStyle: {
-    //                 borderWidth: 0,
-    //                 borderRadius: [10, 10, 0, 0],
-    //             },
-    //             name: 'Funnel',
-    //             type: 'funnel',
-    //             width: '40%',
-    //             height: '45%',
-    //             left: '30%',
-    //             top: '5%',
-    //             label: {
-    //                 position: 'center',
-    //                 textStyle: {
-    //                     color: 'white',
-    //                     fontSize: 14, // 初始字体大小
-    //                     fontWeight: 'normal', // 初始字体粗细
-    //                 },
-    //             },
-    //             data: data,
-    //         },
-    //     ],
-    // };
-    //
-    // option30 && myChart30.setOption(option30);
-    //
-    // // 循环触发数据项高亮效果
-    // highlightTimer = setInterval(() => {
-    //     // 取消上一个数据项的高亮状态
-    //     myChart30.dispatchAction({
-    //         type: 'downplay',
-    //         seriesIndex: 0,
-    //         dataIndex: currentIndex === 0 ? data.length - 1 : currentIndex - 1,
-    //     });
-    //
-    //     myChart30.dispatchAction({
-    //         type: 'highlight',
-    //         seriesIndex: 0,
-    //         dataIndex: currentIndex,
-    //     });
-    //
-    //     // 修改被选中数据项的字体大小和粗细
-    //     myChart30.setOption({
-    //         series: [{
-    //             label: {
-    //                 emphasis: {
-    //                     fontSize: 18, // 被选中的字体变大
-    //                     fontWeight: 'bold', // 被选中的字体变粗
-    //                 },
-    //             },
-    //         }],
-    //     });
-    //
-    //     currentIndex = (currentIndex + 1) % data.length;
-    // }, 1000); // 每隔1秒切换高亮显示的数据项
-    //
-    // const resizeObserver = new ResizeObserver(() => {
-    //     myChart30.resize();
-    // });
-    //
-    // resizeObserver.observe(echartsRef.value);
 });
 
 // 组件销毁时清除定时器
@@ -323,7 +248,7 @@ onBeforeUnmount(() => {
   height: 100%;
 
   .AnHuiRightTop-title {
-    font-size: 1.2vw;
+    font-size: 1.15em;
     width: 24vw;
     //background: red;
     color: white;
@@ -339,7 +264,7 @@ onBeforeUnmount(() => {
     position: absolute;
     width: 24vw;
     height: 23vh;
-      margin-left: 12.3vw;
+      margin-left: 12vw;
     margin-top: -10vh;
   }
 

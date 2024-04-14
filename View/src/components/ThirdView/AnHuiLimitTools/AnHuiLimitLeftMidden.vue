@@ -12,16 +12,24 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 0, color: '#ffc0cb'},
+            {offset: 1, color: '#de1dde'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#2980B9'},
-            {offset: 1, color: '#6DD5FA'}
+            {offset: 0, color: '#fc82ab'},
+            {offset: 1, color: '#d720a6'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#ea5fff'},
+            {offset: 1, color: '#7F00FF'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#c98a08'},
+            {offset: 1, color: '#b0200f'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FFB75E'},
+            {offset: 1, color: '#ED8F03'}
         ]),
         // 其他渐变色定义...
     ];
@@ -31,35 +39,21 @@ onMounted(() => {
         color: colorList,
         tooltip: {
             trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     crossStyle: {
-            //         color: '#999'
-            //     }
-            // }
         },
-        // toolbox: {
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
         legend: {
             textStyle: {
                 color: 'white'
             },
             top: '12%',
-            left: 'center',
-            data: ['储量', '供量', '储量增长率', '供量增长率'],
+            left: '5%',
+            data: ['产量','储量', '供量', '储量增长率', '供量增长率'],
             itemWidth: 20, // 标签宽度为20px
             itemHeight: 10, // 标签高度为10px
         },
         xAxis: [
             {
                 type: 'category',
-                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                data: [ '2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -82,7 +76,6 @@ onMounted(() => {
         yAxis: [
             {
                 type: 'value',
-                name: '万千瓦',
                 min: 0,
                 max: 250,
                 nameTextStyle: {
@@ -104,7 +97,6 @@ onMounted(() => {
             },
             {
                 type: 'value',
-                name: '百分比',
                 min: 0,
                 max: 25,
                 nameTextStyle: {
@@ -126,6 +118,18 @@ onMounted(() => {
             }
         ],
         series: [
+            {
+                name: '产量',
+                type: 'bar',
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' 万千瓦';
+                    }
+                },
+                data: [
+                    176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
+                ]
+            },
             {
                 name: '储量',
                 type: 'bar',
@@ -161,19 +165,20 @@ onMounted(() => {
                 },
                 data: [20.3, 23.4, 23.0, 16.5, 23.0, 16.5, 20.3,]
             },
-            // {
-            //     name: '供量增长率',
-            //     type: 'line',
-            //     yAxisIndex: 1,
-            //     tooltip: {
-            //         valueFormatter: function (value) {
-            //             return value + ' °C';
-            //         }
-            //     },
-            //     data: [16.5, 23.0, 20.3, 23.4, 23.0, 20.3, 16.5,]
-            // }
+            {
+                name: '供量增长率',
+                type: 'line',
+                yAxisIndex: 1,
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' °C';
+                    }
+                },
+                data: [16.5, 23.0, 20.3, 23.4, 23.0, 20.3, 16.5,]
+            }
         ]
     };
+
     option76 && myChart76.setOption(option76);
 
     const resizeObserver = new ResizeObserver(() => {
@@ -198,12 +203,10 @@ onMounted(() => {
 
   .title {
     width: 24vw;
-    margin-top: -0.5vh;
-    //background: red;
     text-align: center;
     position: absolute;
     color: white;
-    font-size: 1.3em;
+    font-size: 1.15em;
     margin-left: 1vw;
     font-weight: bolder;
   }
@@ -211,7 +214,7 @@ onMounted(() => {
   .AnHuiLimitLeftDown-echarts {
     width: 26vw;
     height: 32vh;
-
+      margin-left: -0.4vw;
   }
 }
 </style>

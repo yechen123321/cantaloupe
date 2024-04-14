@@ -11,17 +11,25 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        // new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        //     {offset: 0, color: '#bc4e9c'},
-        //     {offset: 1, color: '#f80759'}
-        // ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
+            {offset: 0, color: '#ffc0cb'},
+            {offset: 1, color: '#de1dde'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#fc6999'},
+            {offset: 1, color: '#c22668'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#e56bf8'},
+            {offset: 1, color: '#8719f6'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#c98a08'},
+            {offset: 1, color: '#ee1e06'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#FFB75E'},
+            {offset: 1, color: '#ED8F03'}
         ]),
         // 其他渐变色定义...
     ];
@@ -143,7 +151,7 @@ onMounted(() => {
     text-align: center;
     position: absolute;
     color: white;
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-left: 1vw;
     margin-top: -0.5vh;
     font-weight: bolder;

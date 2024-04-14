@@ -15,31 +15,28 @@ onMounted(() => {
     myChart80 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
             {offset: 1, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#FBD786'},
             {offset: 1, color: '#C6FFDD'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#fc4281'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#c184fd'},
+            {offset: 1, color: '#915efa'}
         ]),
         // 其他渐变色定义...
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
     ];
     option80 = {
         color:colorList,
@@ -72,11 +69,11 @@ onMounted(() => {
                     show: false
                 },
                 data: [
-                    {value: 1048, name: '太阳能'},
+                    {value: 848, name: '太阳能'},
                     {value: 735, name: '水利'},
-                    {value: 580, name: '风能'},
-                    {value: 484, name: '质能'},
-                    {value: 300, name: '其他'}
+                    {value: 680, name: '风能'},
+                    {value: 584, name: '质能'},
+                    {value: 400, name: '其他'}
                 ]
             },
         ]

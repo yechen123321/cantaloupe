@@ -52,7 +52,6 @@ onMounted(() => {
 
             splitNumber: 4, // 分割的圈数
             axisLine: {
-                show: false, // 隐藏雷达图的轴线
                 lineStyle: {
                     color: 'white'
                 }
@@ -163,7 +162,7 @@ onMounted(() => {
     text-align: center;
     position: absolute;
     font-weight: bolder;
-    font-size: 1.26em;
+    font-size: 1.15em;
   }
 
   .AnHuiRightDownFirst-echarts {

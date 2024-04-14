@@ -15,19 +15,16 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        // new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        //     {offset: 0, color: '#bc4e9c'},
-        //     {offset: 1, color: '#f80759'}
-        // ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#f80759'}
         ]),
-        // 其他渐变色定义...
+
     ];
     option89 = {
         color: colorList,
@@ -59,7 +56,6 @@ onMounted(() => {
 
             splitNumber: 4, // 分割的圈数
             axisLine: {
-                show: false, // 隐藏雷达图的轴线
                 lineStyle: {
                     color: 'white'
                 }
@@ -81,17 +77,16 @@ onMounted(() => {
             {
                 name: 'Budget vs spending',
                 type: 'radar',
-                symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
-                        value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
+                        value: [50000, 35000, 28000, 35000, 42000, 23200,],
                         name: '全国平均',
                         areaStyle: {
                             color: colorList[0]
                         },
                     },
                     {
-                        value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 0],
+                        value: [40000, 28000, 20000, 30000, 39000, 20000,],
                         name: '省内总量',
                         areaStyle: {
                             color: colorList[1]

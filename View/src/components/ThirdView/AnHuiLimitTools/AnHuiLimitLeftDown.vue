@@ -11,22 +11,19 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        // new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        //     {offset: 0, color: '#bc4e9c'},
-        //     {offset: 1, color: '#f80759'}
-        // ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
+            {offset: 0, color: '#e059f8'},
+            {offset: 1, color: '#7d0cef'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#FFB75E'},
+            {offset: 1, color: '#ED8F03'}
         ]),
+
         // 其他渐变色定义...
     ];
     option75 = {
-        color: ['#73C0DE', '#FAC858'],
+        color: colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
@@ -42,7 +39,7 @@ onMounted(() => {
         },
         radar: {
             // shape: 'circle',
-            center: ['50%', '50%'], // 调整雷达图的位置，这里设置为图表中心
+            center: ['44%', '42%'], // 调整雷达图的位置，这里设置为图表中心
             radius: '55%', // 调整雷达图的大小
             indicator: [
                 {name: '光伏', max: 65000},
@@ -80,17 +77,17 @@ onMounted(() => {
                 symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
-                        value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
+                        value: [50000, 35000, 28000, 26000, 42000, 23200, ],
                         name: '全国平均',
                         areaStyle: {
-                            color: '#73C0DE' // 粉红色，与深蓝色相呼应
+                            color: colorList[0] // 粉红色，与深蓝色相呼应
                         },
                     },
                     {
-                        value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 0],
+                        value: [42000, 30000, 20000, 35000, 45000, 0, ],
                         name: '省内总量',
                         areaStyle: {
-                            color: '#FAC858' // 橙色，与深蓝色相呼应
+                            color: colorList[1] // 橙色，与深蓝色相呼应
                         },
 
                     },
@@ -127,7 +124,7 @@ onMounted(() => {
   height: 100%;
 
   .AnHuiLimitLeftDown-thing {
-    margin-top: -2.8vh;
+    margin-top: -6vh;
     margin-right: -1vw;
     position: absolute;
     right: 0;
@@ -146,7 +143,6 @@ onMounted(() => {
       color: white;
       position: absolute;
       right: 0;
-
       margin-top: -17vh;
       font-size: 2vw;
       margin-right: 3vw;
@@ -170,15 +166,14 @@ onMounted(() => {
     text-align: center;
     position: absolute;
     color: white;
-    font-size: 1.3em;
+    font-size: 1.15em;
     margin-left: 1vw;
-    margin-top: -0.5vh;
     font-weight: bolder;
   }
 
   .AnHuiLimitLeftDown-echarts {
-    width: 25vw;
-    height: 25vh;
+    width: 28vw;
+    height: 28vh;
     margin-top: 4vh;
     margin-left: -3vw;
   }

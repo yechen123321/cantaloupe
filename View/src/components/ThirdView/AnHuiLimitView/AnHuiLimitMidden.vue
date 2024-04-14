@@ -245,7 +245,7 @@ onMounted(() => {
                 }
             },
             bmap: {
-                center: [117.27, 31.70], // 合肥的经纬度坐标
+                center: [117.30, 31.60], // 合肥的经纬度坐标
                 zoom: 9,
                 roam: true,
                 mapStyle: {
@@ -458,24 +458,24 @@ onMounted(() => {
     width: 20vw;
     color: white;
     font-weight: bolder;
-    font-size: 1.4em;
+    font-size: 1.3em;
     position: absolute;
     margin-top: 7vh;
-    margin-left: 4vw;
+    margin-left: 5vw;
   }
 
   .echarts {
-    width: 40vw;
-    height: 43vh;
+    width: 30vw;
+    height: 34vh;
     position: absolute;
     overflow: hidden;
     margin-left: 3.75vw;
-    margin-top: 12vh;
-    border-radius: 5px;
+    margin-top: 20.5vh;
+    border-radius: 8px;
 
     .AnHuiLimitRight-echarts {
       position: absolute;
-      width: 40vw;
+      width: 30vw;
       height: 50vh;
       z-index: 999;
     }

@@ -11,17 +11,26 @@ onMounted(() => {
     myChart72 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
+            {offset: 0, color: '#ffc0cb'},
+            {offset: 1, color: '#de1dde'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 0, color: '#ea5fff'},
+            {offset: 1, color: '#7F00FF'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#FFB75E'},
+            {offset: 1, color: '#ED8F03'}
         ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#fc82ab'},
+            {offset: 1, color: '#d720a6'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#c98a08'},
+            {offset: 1, color: '#b0200f'}
+        ]),
+
         // 其他渐变色定义...
     ];
     option72 = {

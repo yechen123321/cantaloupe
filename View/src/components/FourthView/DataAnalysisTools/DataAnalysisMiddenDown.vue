@@ -30,16 +30,19 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 0, color: '#c184fd'},
+            {offset: 1, color: '#915efa'}
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#2980B9'},
-            {offset: 1, color: '#6DD5FA'}
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#fc4281'}
         ]),
         // 其他渐变色定义...
     ];

@@ -1,30 +1,16 @@
 <script setup>
-import {onMounted, ref} from "vue";
-import * as echarts from "echarts";
-
-const echartsRef = ref(null);
-let myChart38 = null;
-let option38 = null;
+import {onMounted} from "vue";
 
 onMounted(() => {
-    myChart38 = echarts.init(echartsRef.value, 'dark');
 
-
-
-    option38 && myChart38.setOption(option38);
-
-    const resizeObserver = new ResizeObserver(() => {
-        myChart38.resize();
-    });
-
-    resizeObserver.observe(echartsRef.value);
 });
 </script>
 
 <template>
     <div class="AnHuiLeftTop">
         <div class="AnHuiLeftTop-title">安徽省再生能源统计</div>
-        <div class="AnHuiLeftTop-echarts" ref="echartsRef"></div>
+
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
     </div>
 </template>
 
@@ -34,16 +20,23 @@ onMounted(() => {
   height: 100%;
   color: white;
 
+  .BackImg {
+    position: absolute;
+    width: 26vw;
+    height: 22.5vh;
+    margin-left: 2.5vw;
+    margin-top: -4vh;
+  }
+
   .AnHuiLeftTop-title {
     position: absolute;
     color: white;
-    margin-top: -1.2vh;
+    margin-top: -3vh;
     text-align: center;
-    //background: red;
-    width: 23vw;
-    margin-left: 3.5vw;
+    width: 25.8vw;
+    margin-left: 2.6vw;
     font-weight: bolder;
-    font-size: 1.3vw;
+    font-size: 1.15em;
   }
 
   .AnHuiLeftTop-echarts {

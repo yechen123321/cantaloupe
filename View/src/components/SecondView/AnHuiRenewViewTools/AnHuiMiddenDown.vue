@@ -56,7 +56,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['2020', '2021', '2022', '2023'],
+                data: ['2019', '2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -81,11 +81,11 @@ onMounted(() => {
                 type: 'value',
                 name: '万千瓦',
                 min: 0,
-                max: 250,
+                max: 350,
                 nameTextStyle: {
                     padding: [0, 10, 0, 0]
                 },
-                interval: 50,
+                interval: 70,
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
@@ -130,10 +130,10 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    176.7, 135.6, 162.2, 132.6,
+                    176.7, 200.6, 222.2, 260.6, 296.7,
                 ],
                 itemStyle: {
-                    barBorderRadius: [10,10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
             {
@@ -145,7 +145,7 @@ onMounted(() => {
                     }
                 },
                 data: [
-                    70.7,75.6, 82.2, 48.7,
+                    30.7, 25.6, 32.2, 28.7, 30.7,
                 ],
                 itemStyle: {
                     barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
@@ -160,7 +160,7 @@ onMounted(() => {
                         return value + ' %';
                     }
                 },
-                data: [20.3, 23.4, 23.0, 16.5,],
+                data: [20.3, 23.4, 23.0, 16.5, 23.4,],
             }
         ]
     };
@@ -203,7 +203,7 @@ onMounted(() => {
     text-align: center;
     font-weight: bolder;
     margin-top: 1vh;
-    font-size: 1.26em;
+    font-size: 1.15em;
   }
 
   .AnHuiMiddenDownThing-out {

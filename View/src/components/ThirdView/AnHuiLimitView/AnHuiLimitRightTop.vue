@@ -49,7 +49,7 @@ const handleUpdate = () => {
   .mm {
     position: absolute;
     color: red;
-    text-shadow: 0 0 0.5px red;
+    text-shadow: 0 0 1px red;
     font-weight: bolder;
     font-size: 1.2em;
     margin-top: 18.8vh;

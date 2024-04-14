@@ -18,7 +18,6 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
   width: 25vw;
   //background: green;
   height: 80vh;
-
   #AnHuiLeftTop-out {
     width: 23vw;
     height: 23vh;
@@ -31,7 +30,7 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
     width: 23vw;
     height: 23vh;
     margin-left: 1.3vw;
-    margin-top: 26.5vh;
+    margin-top: 29vh;
     position: absolute;
   }
 
@@ -40,12 +39,13 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
     height: 23vh;
     //margin-left: 0vw;
     position: absolute;
-    margin-top: -32.5vh;
+    margin-top: -32vh;
   }
 
   .BackImg {
     width: 26vw;
-    height: 82vh;
+    height: 58vh;
+      margin-top: 25vh;
   }
 }
 </style>

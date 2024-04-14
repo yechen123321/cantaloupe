@@ -11,13 +11,14 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        // new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        //     {offset: 0, color: '#bc4e9c'},
-        //     {offset: 1, color: '#f80759'}
-        // ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#f80759'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
@@ -30,21 +31,7 @@ onMounted(() => {
         color: colorList,
         tooltip: {
             trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     crossStyle: {
-            //         color: '#999'
-            //     }
-            // }
         },
-        // toolbox: {
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
         legend: {
             textStyle: {
                 color: 'white'
