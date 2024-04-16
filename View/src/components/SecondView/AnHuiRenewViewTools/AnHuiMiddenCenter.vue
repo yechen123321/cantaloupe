@@ -233,15 +233,14 @@ onMounted(() => {
             text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
         }
         .out{
-            width: 12vw;
+            width: 16vw;
             height: 10vh;
             position: absolute;
-            overflow: hidden;
-            margin-top: 16vh;
+            margin-top: 16.5vh;
             .down{
                 position: absolute;
                 width: 16vw;
-                margin-left: -2vw;
+                margin-left: -2.5vw;
                 height: 5vh;
             }
         }

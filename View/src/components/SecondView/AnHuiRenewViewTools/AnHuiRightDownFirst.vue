@@ -103,10 +103,9 @@ onMounted(() => {
 });
 </script>
 
-
 <template>
     <div class="AnHuiRightDownFirst">
-        <div class="AnHuiRightDownFirst-title">安徽省再生能源储量概况图</div>
+        <div class="AnHuiRightDownFirst-title">安徽省再生能源发展概况图</div>
         <div class="AnHuiRightDownFirst-echarts" ref="echartsRef"></div>
         <div class="AnHuiRightDownFirst-thing">
             <div class="AnHuiRightDownFirst-name">75%</div>
