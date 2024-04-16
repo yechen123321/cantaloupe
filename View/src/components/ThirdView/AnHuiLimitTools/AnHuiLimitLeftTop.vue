@@ -58,15 +58,7 @@ onMounted(() => {
                 color: 'white',
             },
         },
-        // toolbox: {
-        //     show: true,
-        //     feature: {
-        //         mark: { show: true },
-        //         dataView: { show: true, readOnly: false },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
+
         series: [
             {
                 name: '地区开发',

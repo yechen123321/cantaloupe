@@ -79,7 +79,7 @@ onMounted(() => {
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} '
+                    }, formatter: '{value} %'
 
                 },
                 axisLine: {
@@ -102,7 +102,6 @@ onMounted(() => {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
                     }, formatter: '{value} %'
-
                 },
                 axisLine: {
                     lineStyle: {

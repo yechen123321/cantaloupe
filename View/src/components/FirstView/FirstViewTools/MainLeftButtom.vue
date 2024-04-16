@@ -38,8 +38,6 @@ onMounted(async () => {
     // (Your existing option setup code)
     try {
         const data = await initKlist2(); // 使用initlandlist函数获取数据
-        console.log(data);
-
         // 处理从initlandlist获取的数据，例如更新echarts图表
         if (data) {
             option5 = {

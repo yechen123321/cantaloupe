@@ -100,6 +100,9 @@ onMounted(async () => {
                                 color: 'white',
                             },
                         },
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         axisLabel: {
                             textStyle: {
                                 color: 'white' // 设置X轴上数据的颜色为白色

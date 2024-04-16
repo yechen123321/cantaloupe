@@ -155,6 +155,9 @@ onMounted(async () => {
                                 color: 'white',
                             }
                         },
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         axisLabel: {
                             textStyle: {
                                 color: 'white' // 设置Y轴上数据的颜色为白色
@@ -172,6 +175,9 @@ onMounted(async () => {
                             lineStyle: {
                                 color: 'white',
                             }
+                        },
+                        splitLine:{
+                            show:false // 不显示网格线
                         },
                         axisLabel: {
                             textStyle: {
@@ -297,6 +303,9 @@ onMounted(async () => {
                                 color: 'white',
                             }
                         },
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         axisLabel: {
                             textStyle: {
                                 color: 'white' // 设置Y轴上数据的颜色为白色
@@ -309,6 +318,9 @@ onMounted(async () => {
                         nameTextStyle: {
                             color: 'white',
                             padding: [0, -30, 0, 0]
+                        },
+                        splitLine:{
+                            show:false // 不显示网格线
                         },
                         axisLine: {
                             lineStyle: {

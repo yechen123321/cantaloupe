@@ -98,7 +98,6 @@ let data = mockData.map((i) => {
     };
 });
 
-console.log(data);
 onMounted(() => {
     if (initMap.value) {
         // initMap.value.on('click', function (params) {

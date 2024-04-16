@@ -86,7 +86,11 @@ onMounted(async () => {
                             }, formatter: '{value} '
 
                         },
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         axisLine: {
+                            show: false,
                             lineStyle: {
                                 color: 'white',
                             },
@@ -101,7 +105,9 @@ onMounted(async () => {
                             padding: [0, -25, 0, 0]
                         },
                         interval: 5,
-
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         axisLabel: {
                             textStyle: {
                                 color: 'white' // 设置Y轴上数据的颜色为白色
@@ -109,6 +115,7 @@ onMounted(async () => {
 
                         },
                         axisLine: {
+                            show: false,
                             lineStyle: {
                                 color: 'white',
                             },
@@ -156,7 +163,6 @@ onMounted(async () => {
                     }
                 ]
             };
-            // console.log(a[1][1]
         } else {
             console.error('Failed to fetch data from initlandlist');
         }

@@ -1,15 +1,16 @@
 <script setup>
-import {onMounted} from "vue";
 
-onMounted(() => {
-
-});
 </script>
 
 <template>
     <div class="AnHuiLeftTop">
         <div class="AnHuiLeftTop-title">安徽省再生能源统计</div>
-
+        <div class="AnHuiLeftTop-main">
+            <div class="MainOne"></div>
+            <div class="MainTow"></div>
+            <div class="MainThree"></div>
+            <div class="MainFour"></div>
+        </div>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
     </div>
 </template>
@@ -19,6 +20,39 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   color: white;
+
+  .AnHuiLeftTop-main {
+    position: absolute;
+    width: 25vw;
+    height: 18vh;
+    margin-left: 3vw;
+      .MainOne{
+          width: 11vw;
+          height: 8vh;
+          position: absolute;
+          margin-left: 1vw;
+      }
+      .MainTow{
+          width: 11vw;
+          height: 8vh;
+          position: absolute;
+          margin-left: 13vw;
+      }
+      .MainThree{
+          width: 11vw;
+          height: 8vh;
+          position: absolute;
+          margin-top: 9vh;
+          margin-left: 1vw;
+      }
+      .MainFour{
+          width: 11vw;
+          height: 8vh;
+          position: absolute;
+          margin-top: 9vh;
+          margin-left: 13vw;
+      }
+  }
 
   .BackImg {
     position: absolute;
@@ -39,11 +73,5 @@ onMounted(() => {
     font-size: 1.15em;
   }
 
-  .AnHuiLeftTop-echarts {
-    width: 23vw;
-    height: 25vh;
-    margin-top: -1.2vh;
-    margin-left: 3.2vw;
-  }
 }
 </style>

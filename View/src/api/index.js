@@ -1,16 +1,19 @@
 import {request} from "@/utils/request";
 
 /////// 首页 ///////
+
 // 全国能源开发需求占比
 export const initcdd = () => request({
     url: '/get_energy_develop_demand/',
     method: 'get',
 })
+
 // 全国能源产量及库存
 export const initadd = () => request({
     url: '/get_energy_production_and_inventory/',
     method: 'get',
 })
+
 // 全国数据
 export const inita = () => request({
     url: '/get_market_investment/',
@@ -34,6 +37,7 @@ export const initkdd = () => request({
     url: '/get_power_generation_installed_capacity/',
     method: 'get',
 })
+
 // 全国储量统计
 export const initsdd = () => request({
     url: '/get_energy_reserve/',

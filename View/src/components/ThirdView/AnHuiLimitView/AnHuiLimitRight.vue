@@ -61,7 +61,7 @@ onMounted(() => {
         },
         legend: {
             // left:'0%',
-            data: ['开采耗费', '获取能量', '全国能耗降低率'],
+            data: ['开采耗费', '获取能量', '能耗降低率'],
             textStyle: {
                 color: 'white'
             }
@@ -161,7 +161,7 @@ onMounted(() => {
                 ]
             },
             {
-                name: '全国能耗降低率',
+                name: '能耗降低率',
                 type: 'line',
                 yAxisIndex: 1,
                 data: [3.4, 2.0, 1.5, 1.0, 3.2]
@@ -182,7 +182,6 @@ const listData = ref({});
 
 initK1().then(response => {
     Object.assign(listData.value, response.data);
-    console.log(listData.value["name"][0]);
     for (var i = 0; i < 2; i++) {
         const newData = {
             name: listData.value["name"][i],
@@ -201,15 +200,7 @@ initK1().then(response => {
     <div class="AnHuiLimitRight">
         <div class="second">
             <img src="../../../assets/pic/ca1.png" alt="" class="BackImg">
-            <ul class="year-on-year">
-                <li v-for="(item,index) in datas" :class="{ 'li-active': index === 0 }" :key="index">
-                    <div class="li-title">{{ item.name }}</div>
-                    <div class="li-number">{{ item.number }}</div>
-                    <div class="li-up">{{ item.up }}</div>
-                    <div class="li-midden">同比增长</div>
-                    <div class="li-num">{{ item.num }}%</div>
-                </li>
-            </ul>
+
         </div>
         <div class="first">
             <div class="title1">能源开采效率</div>
@@ -254,10 +245,10 @@ initK1().then(response => {
 
       .li-number {
         float: left;
-        color: #1cd7cd;
+        color: #fc82ab;
         width: 30%;
         font-weight: bolder;
-        text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
+        text-shadow: 0 0 1px #fc82ab, 0 0 2px #fc82ab, 0 0 3px #fc82ab;
         font-size: 2em;
       }
 
@@ -266,8 +257,8 @@ initK1().then(response => {
         margin-left: -1vw;
         font-size: 1em;
         margin-top: 1.3%;
-        color: #01bae4;
-        text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
+        color: #ffc0cb;
+        text-shadow: 0 0 1px #ffc0cb, 0 0 1px #ffc0cb, 0 0 1.5px #ffc0cb;
       }
 
       .li-midden {
@@ -275,8 +266,8 @@ initK1().then(response => {
         margin-left: 1vw;
         margin-top: 1.3%;
         font-size: 1em;
-        color: #01bae4;
-        text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
+        color: #ffc0cb;
+        text-shadow: 0 0 1px #ffc0cb, 0 0 1px #ffc0cb, 0 0 1.5px #ffc0cb;
       }
 
       .li-num {
@@ -284,7 +275,7 @@ initK1().then(response => {
         width: 8vw;
         text-align: center;
         font-size: 2em;
-        color: yellow;
+        color: #FFB75E;
         font-weight: bolder;
       }
     }

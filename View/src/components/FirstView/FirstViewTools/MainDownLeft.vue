@@ -87,6 +87,9 @@ onMounted(async() => {
                         name: '万亿元',
                         position: 'right',
                         alignTicks: true,
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         nameTextStyle: {
                             padding: [0, -30, 0, 0]
                         },
@@ -111,6 +114,9 @@ onMounted(async() => {
                         },
                         alignTicks: true,
                         offset: 40,
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         axisLine: {
                             lineStyle: {
                                 color: 'white',
@@ -126,6 +132,9 @@ onMounted(async() => {
                         type: 'value',
                         name: '标准煤 / 万亿吨',
                         position: 'left',
+                        splitLine:{
+                            show:false // 不显示网格线
+                        },
                         alignTicks: true,
                         axisLine: {
                             lineStyle: {

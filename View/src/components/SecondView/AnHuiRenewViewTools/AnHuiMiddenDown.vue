@@ -82,6 +82,7 @@ onMounted(() => {
                 name: '万千瓦',
                 min: 0,
                 max: 350,
+
                 nameTextStyle: {
                     padding: [0, 10, 0, 0]
                 },
@@ -110,15 +111,15 @@ onMounted(() => {
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} %'
-
+                    },
+                    formatter: '{value} %',
                 },
                 axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
                 },
-            }
+            },
         ],
         series: [
             {

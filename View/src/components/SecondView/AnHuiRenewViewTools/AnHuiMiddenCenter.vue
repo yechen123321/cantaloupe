@@ -60,7 +60,7 @@ onMounted(() => {
         legend: {
             itemWidth: 9, // 标签宽度为20px
             itemHeight: 9, // 标签高度为10px
-            top: '15%',
+            top: '12.5%',
             // itemWidth: 10, // 标签宽度为10px
             // itemHeight: 10, // 标签高度为10px
             textStyle: {
@@ -93,6 +93,7 @@ onMounted(() => {
                         color: 'white',
                     },
                 },
+
             },
         ],
         series: [
@@ -102,7 +103,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 334, 390, 330, 320],
+                data: [ 1334, 1390, 1330, 1320],
                 itemStyle: {
                     barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
@@ -159,7 +160,7 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [734, 1090, 1130, 1120],
+                data: [134, 190, 130, 120],
                 itemStyle: {
                     barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
@@ -181,6 +182,24 @@ onMounted(() => {
         <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
         <button class="GotoMore">安徽省再生能源产能图</button>
         <div id="SecondMiddenCenter-echarts" ref="echartsRef"></div>
+        <div class="right">
+            <div class="rightOne">
+                <div class="left">产能增率：</div>
+                <div class="thing">15.32%</div>
+            </div>
+            <div class="rightTow">
+                <div class="left">风电增率：</div>
+                <div class="thing">3.32%</div>
+            </div>
+            <div class="rightThree">
+                <div class="left">光电增率：</div>
+                <div class="thing">9.32%</div>
+            </div>
+            <div class="out">
+                <img src="../../../assets/pic/1.png" alt="" class="down">
+            </div>
+
+        </div>
     </div>
 </template>
 
@@ -189,7 +208,70 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   color: white;
+    .right{
+        position: absolute;
+        width: 13vw;
+        height: 28vh;
+        right: 0;
+        margin-top: -26vh;
+        .left{
+            margin-top: 2vh;
+            position: absolute;
+            font-weight: bolder;
+            margin-left: 1vw;
+            font-size: 1.15em;
+        }
+        .thing{
+            margin-top: 1.8vh;
+            position: absolute;
+            font-weight: bolder;
+            margin-left: 7vw;
+            width: 6vw;
+            text-align: center;
+            font-size: 1.4em;
+            color: #2bfff1;
+            text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
+        }
+        .out{
+            width: 12vw;
+            height: 10vh;
+            position: absolute;
+            overflow: hidden;
+            margin-top: 16vh;
+            .down{
+                position: absolute;
+                width: 16vw;
+                margin-left: -2vw;
+                height: 5vh;
+            }
+        }
+        .rightOne{
+            width: 13vw;
+            height: 8vh;
+            position: absolute;
+            right: 0;
+            margin-top: 1vh;
+            margin-right: 1vw;
+        }
+        .rightTow{
+            width: 13vw;
+            height: 12vh;
+            position: absolute;
+            right: 0;
+            margin-right: 1vw;
+            margin-top: 6vh;
 
+        }
+        .rightThree{
+            width: 13vw;
+            height: 12vh;
+            position: absolute;
+            right: 0;
+            margin-right: 1vw;
+            margin-top: 11vh;
+
+        }
+    }
   .GotoMore {
     position: absolute;
     width: 20vw;
@@ -208,7 +290,7 @@ onMounted(() => {
     height: 28vh;
     margin-left: 0.7vw;
     position: absolute;
-    margin-top: -29vh;
+    margin-top: -28.4vh;
     z-index: 1000;
   }
 

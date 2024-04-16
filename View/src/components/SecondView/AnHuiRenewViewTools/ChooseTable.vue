@@ -37,7 +37,6 @@ const listData = ref({});
 
 choose().then(response => {
     Object.assign(listData.value, response.data.data);
-    console.log(listData.value["水生电能"]);
 }).catch(error => {
     console.error('Error fetching data:', error);
 });
