@@ -1,178 +1,45 @@
 <script setup>
-import {onMounted, ref} from "vue";
-import * as echarts from "echarts";
 
-const echartsRef = ref(null);
-let myChart51 = null;
-let option51 = null;
-
-onMounted(() => {
-    myChart51 = echarts.init(echartsRef.value, 'dark');
-    var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-        // 其他渐变色定义...
-    ];
-    option51 = {
-        backgroundColor: "rgba(128,128,128,0)",
-        color: colorList,
-        tooltip: {
-            trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     crossStyle: {
-            //         color: '#999'
-            //     }
-            // }
-        },
-        // toolbox: {
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
-        legend: {
-            textStyle: {
-                color: 'white'
-            },
-            top: '12%',
-            data: ['现有量', '增长量', '增长率'],
-            itemWidth: 20, // 标签宽度为20px
-            itemHeight: 10, // 标签高度为10px
-        },
-        xAxis: [
-            {
-                type: 'category',
-                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
-                axisPointer: {
-                    type: 'shadow'
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-            }
-        ],
-        grid: {
-            left: '15%',
-            right: "13%"
-        },
-        yAxis: [
-            {
-                type: 'value',
-                name: '万千瓦',
-                min: 0,
-                max: 250,
-                nameTextStyle: {
-                    color:'white',
-                    padding: [0, 10, 0, 0]
-                },
-                interval: 50,
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} '
-
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-            },
-            {
-                type: 'value',
-                name: '百分比',
-                min: 0,
-                max: 25,
-                nameTextStyle: {
-                    color:'white',
-                    padding: [0, -25, 0, 0]
-                },
-                interval: 5,
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} %'
-
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-            }
-        ],
-        series: [
-            {
-                name: '现有量',
-                type: 'bar',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' 万千瓦';
-                    }
-                },
-                data: [
-                    176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
-                ]
-            },
-            {
-                name: '增长量',
-                type: 'bar',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' 万千瓦';
-                    }
-                },
-                data: [
-                    70.7, 75.6, 82.2, 48.7, 82.2, 48.7, 70.7,
-                ]
-            },
-            {
-                name: '增长率',
-                type: 'line',
-                yAxisIndex: 1,
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' %';
-                    }
-                },
-                data: [20.3, 23.4, 23.0, 16.5, 23.0, 16.5, 20.3,]
-            }
-        ]
-    };
-    option51 && myChart51.setOption(option51);
-
-    const resizeObserver = new ResizeObserver(() => {
-        myChart51.resize();
-    });
-
-    resizeObserver.observe(echartsRef.value);
-});
 </script>
 
 <template>
     <div class="AnHuiWaterLeftTop">
-        <div class="title">安徽省水利发电产能图</div>
-        <div class="AnHuiWaterLeftTop-echarts" ref="echartsRef"></div>
+        <div class="title">安徽省水电能源统计</div>
+        <div class="AnHuiWaterLeftTop-main">
+            <div class="MainOne">
+                <img src="../../../assets/水电站.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">4232</div>
+                    <div class="up">亿万千瓦</div>
+                </div>
+                <div class="tow">水电能源总产量</div>
+            </div>
+            <div class="MainTow">
+                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">5744</div>
+                    <div class="up">万千瓦时</div>
+                </div>
+                <div class="tow">水电装机总容量</div>
+            </div>
+            <div class="MainThree">
+                <img src="../../../assets/投资.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">3789</div>
+                    <div class="up">亿元</div>
+                </div>
+                <div class="tow">能源建设投资</div>
+            </div>
+            <div class="MainFour">
+                <img src="../../../assets/GenericChart.png" style="margin-top: 2vh" alt="" class="pic">
+                <div class="number">
+                    <div class="one" style="margin-left: 0.3vw">1.33</div>
+                    <div class="up">%</div>
+                </div>
+                <div class="tow">发展指标增长</div>
+            </div>
+        </div>
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
     </div>
 </template>
 
@@ -180,22 +47,114 @@ onMounted(() => {
 .AnHuiWaterLeftTop {
   width: 100%;
   height: 100%;
+  color: white;
+
+  .AnHuiWaterLeftTop-main {
+    position: absolute;
+    width: 25vw;
+    height: 18vh;
+    margin-left: 0.75vw;
+    margin-top: 5vh;
+
+    .number {
+      position: absolute;
+      width: 8vw;
+      height: 4vh;
+      margin-top: 1.6vh;
+      margin-left: 3.7vw;
+      border-bottom: 2px solid #0a8cf8;
+
+      .up {
+        position: absolute;
+        width: 5vw;
+        margin-left: 4.2vw;
+        text-align: center;
+        font-size: 0.8em;
+        margin-top: 1.3vh;
+        font-weight: bolder;
+      }
+
+      .one {
+        position: absolute;
+        font-size: 1.6em;
+        margin-left: -0.6vw;
+        line-height: 3.7vh;
+        margin-top: -0.3vh;
+        font-weight: bolder;
+        width: 6vw;
+        text-align: center;
+        height: 3.7vh;
+        color: #2bfff1;
+        text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
+      }
+    }
+
+    .tow {
+      position: absolute;
+      margin-left: 3.75vw;
+      margin-top: 6vh;
+      width: 8vw;
+      font-size: 0.95em;
+      font-weight: 400;
+      height: 3vh;
+      text-align: center;
+    }
+
+    .pic {
+      position: absolute;
+      width: 3.3vw;
+      height: 6vh;
+      margin-top: 1.6vh;
+    }
+
+    .MainOne {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+    }
+
+    .MainTow {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-left: 13vw;
+    }
+
+    .MainThree {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-top: 8vh;
+    }
+
+    .MainFour {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-top: 8vh;
+      margin-left: 13vw;
+      z-index: 999;
+    }
+  }
+
+  .BackImg {
+    position: absolute;
+    width: 26.5vw;
+    height: 23vh;
+    margin-top: 1vh;
+  }
 
   .title {
     position: absolute;
     color: white;
     font-weight: bolder;
     text-align: center;
-    font-size: 1.26em;
-    margin-top: 0.2vh;
+    font-size: 1.15em;
+    margin-top: 2vh;
     width: 24vw;
     margin-left: 1vw;
   }
 
-  .AnHuiWaterLeftTop-echarts {
-    width: 25vw;
-    height: 32vh;
-    margin-top: 0.8vh;
-  }
+
 }
 </style>

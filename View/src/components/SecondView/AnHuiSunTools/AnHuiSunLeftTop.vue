@@ -1,175 +1,156 @@
 <script setup>
-import {onMounted, ref} from "vue";
-import * as echarts from "echarts";
 
-const echartsRef = ref(null);
-let myChart48 = null;
-let option48 = null;
-
-onMounted(() => {
-    myChart48 = echarts.init(echartsRef.value, 'dark');
-    var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-
-
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
-        ]),
-        // 其他渐变色定义...
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
-    ];
-    // Your echarts option setup here...
-    // (Your existing option setup code)
-    option48 ={
-        backgroundColor: 'rgba(128,128,128,0)',
-        color: colorList,
-        tooltip: {
-            trigger: 'item',
-            textStyle: {
-                fontWeight: 'bold',
-            },
-            // formatter: '{a} <br/>{b} : {c} 吨 ({d}%)',
-            formatter: '{a} <br/>{b} : {d}%'
-        },
-        legend: {
-            left: '4%',
-            itemWidth: 20, // 标签宽度为10px
-            itemHeight: 10, // 标签高度为10px
-            top: '80%',
-            width:'120%',
-            data: [
-                '合肥',
-                '芜湖',
-                '马鞍山',
-                '淮南',
-                '蚌埠',
-                '其他',
-            ],
-            textStyle: {
-                color: 'white',
-            },
-        },
-        // toolbox: {
-        //     show: true,
-        //     feature: {
-        //         mark: { show: true },
-        //         dataView: { show: true, readOnly: false },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
-        series: [
-            {
-                name: '地区开发',
-                type: 'pie',
-                radius: ['20%', '40%'],
-                center: ['32%', '48%'],
-                roseType: 'radius',
-                itemStyle: {
-                    borderRadius: 3,
-                },
-                label: {
-                    show: true,
-                    fontWeight: 'bold',
-                    color: 'white'
-                },
-                emphasis: {
-                    label: {
-                        show: true,
-                        fontSize: 16,
-                        color: 'white',
-                        fontWeight: 'bold'
-                    }
-                },
-                data: [
-                    {value: 45, name: '合肥'},
-                    {value: 33, name: '芜湖'},
-                    {value: 28, name: '马鞍山'},
-                    {value: 22, name: '淮南'},
-                    {value: 20, name: '其他'},
-                ]
-            },
-
-            {
-                name: '地区消耗',
-                type: 'pie',
-                radius: ['20%', '40%'],
-                center: ['70%', '48%'],
-                roseType: 'area',
-                itemStyle: {
-                    borderRadius: 5
-                },
-                label: {
-                    show: true,
-                    fontWeight: 'bold',
-                    color: 'white'
-                },
-                data: [
-                    {value: 30, name: '合肥'},
-                    {value: 28, name: '芜湖'},
-                    {value: 26, name: '马鞍山'},
-                    {value: 24, name: '蚌埠'},
-                    {value: 22, name: '其他'},
-                ],
-            }
-        ]
-    };
-    option48 && myChart48.setOption(option48);
-
-    const resizeObserver = new ResizeObserver(() => {
-        myChart48.resize();
-    });
-
-    resizeObserver.observe(echartsRef.value);
-});
 </script>
+
 <template>
     <div class="AnHuiSunLeftTop">
-        <div class="title">安徽省光伏能源结构</div>
-        <div class="AnHuiSunLeftTop-echarts" ref="echartsRef"></div>
+        <div class="title">安徽省光电能源统计</div>
+        <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
+        <div class="AnHuiSunLeftTop-main">
+            <div class="MainOne">
+                <img src="../../../assets/太阳发电.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">4232</div>
+                    <div class="up">亿万千瓦</div>
+                </div>
+                <div class="tow">光电能源总产量</div>
+            </div>
+            <div class="MainTow">
+                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one" style="margin-left: 0.2vw">13.44</div>
+                    <div class="up">%</div>
+                </div>
+                <div class="tow">装机容量提升率</div>
+            </div>
+            <div class="MainThree">
+                <img src="../../../assets/投资.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">3789</div>
+                    <div class="up">亿元</div>
+                </div>
+                <div class="tow">能源建设投资</div>
+            </div>
+            <div class="MainFour">
+                <img src="../../../assets/GenericChart.png" style="margin-top: 2vh" alt="" class="pic">
+                <div class="number">
+                    <div class="one" style="margin-left: 0.3vw">1.33</div>
+                    <div class="up">%</div>
+                </div>
+                <div class="tow">发展指标增长</div>
+            </div>
+        </div>
     </div>
-
 </template>
 
 <style scoped lang="scss">
-.AnHuiSunLeftTop{
+.AnHuiSunLeftTop {
   width: 100%;
   height: 100%;
-  .title{
+
+  .title {
     position: absolute;
     color: white;
     font-weight: bolder;
     text-align: center;
-    font-size: 1.26em;
-    margin-top: 0.2vh;
+    font-size: 1.15em;
+    margin-top: 1vh;
     width: 24vw;
     margin-left: 1vw;
   }
-  .AnHuiSunLeftTop-echarts{
+
+  .AnHuiSunLeftTop-main {
+    position: absolute;
     width: 25vw;
-    height: 25vh;
-    margin-top: -1vh;
+    height: 18vh;
+    margin-left: 0.75vw;
+    margin-top: -19vh;
+    color: white;
+
+    .number {
+      position: absolute;
+      width: 8vw;
+      height: 4vh;
+      margin-top: 1.6vh;
+      margin-left: 3.7vw;
+      border-bottom: 2px solid #0a8cf8;
+
+      .up {
+        position: absolute;
+        width: 5vw;
+        margin-left: 4.2vw;
+        text-align: center;
+        font-size: 0.8em;
+        margin-top: 1.3vh;
+        font-weight: bolder;
+      }
+
+      .one {
+        position: absolute;
+        font-size: 1.6em;
+        margin-left: -0.6vw;
+        line-height: 3.7vh;
+        margin-top: -0.3vh;
+        font-weight: bolder;
+        width: 6vw;
+        text-align: center;
+        height: 3.7vh;
+        color: #2bfff1;
+        text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
+      }
+    }
+
+    .tow {
+      position: absolute;
+      margin-left: 3.75vw;
+      margin-top: 6vh;
+      width: 8vw;
+      font-size: 0.95em;
+      font-weight: 400;
+      height: 3vh;
+      text-align: center;
+    }
+
+    .pic {
+      position: absolute;
+      width: 3.3vw;
+      height: 6vh;
+      margin-top: 1.6vh;
+    }
+
+    .MainOne {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+    }
+
+    .MainTow {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-left: 13vw;
+    }
+
+    .MainThree {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-top: 8vh;
+    }
+
+    .MainFour {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-top: 8vh;
+      margin-left: 13vw;
+      z-index: 999;
+    }
+  }
+
+  .BackImg {
+    width: 26.5vw;
+    height: 22vh;
   }
 }
 </style>

@@ -31,7 +31,7 @@ import AnHuiWindRight from "@/components/SecondView/AnHuiWindView/AnHuiWindRight
   #AnHuiWindLeft-out {
     width: 25vw;
     height: 80vh;
-    margin-top: 3vh;
+    margin-top: 28vh;
     margin-left: 2vw;
     position: absolute;
   }

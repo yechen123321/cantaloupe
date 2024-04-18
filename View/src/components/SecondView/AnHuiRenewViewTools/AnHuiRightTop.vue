@@ -264,7 +264,7 @@ onBeforeUnmount(() => {
     position: absolute;
     width: 24vw;
     height: 23vh;
-      margin-left: 12vw;
+    margin-left: 12vw;
     margin-top: -10vh;
   }
 

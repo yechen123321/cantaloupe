@@ -3,14 +3,11 @@ import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart56= null;
-let option56 = null;
+let myChart49 = null;
+let option49 = null;
 
 onMounted(() => {
-    myChart56 = echarts.init(echartsRef.value, 'dark');
-
-    // Your echarts option setup here...
-    // (Your existing option setup code)
+    myChart49 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#56CCF2'},
@@ -21,15 +18,17 @@ onMounted(() => {
             {offset: 0, color: '#92FE9D'}
         ]),
     ];
-    option56 = {
+    // Your echarts option setup here...
+    // (Your existing option setup code)
+    option49 = {
         color: colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             width: '10vw',
-            top:'-1%',
-            left: '15%',
+            top: '-1%',
+            left: '23%',
             data: ['全国平均', '省内总量'],
             textStyle: {
                 color: 'white',
@@ -38,7 +37,7 @@ onMounted(() => {
         },
         radar: {
             // shape: 'circle',
-            center: ['42%', '40%'], // 调整雷达图的位置，这里设置为图表中心
+            center: ['47%', '44%'], // 调整雷达图的位置，这里设置为图表中心
             radius: '55%', // 调整雷达图的大小
             indicator: [
                 {name: '效率', max: 65000},
@@ -76,14 +75,14 @@ onMounted(() => {
                 // symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
-                        value: [50000, 35000, 28000, 32000, 45000, 25200,],
+                        value: [50000, 35000, 28000, 26000, 42000, 23200, ],
                         name: '全国平均',
                         areaStyle: {
                             color: colorList[0] // 粉红色，与深蓝色相呼应
                         },
                     },
                     {
-                        value: [42000, 30000, 20000, 25000, 40000, 21000,],
+                        value: [42000, 30000, 20000, 20000, 35000, 23000, ],
                         name: '省内总量',
                         areaStyle: {
                             color: colorList[1] // 橙色，与深蓝色相呼应
@@ -95,10 +94,10 @@ onMounted(() => {
             }
         ]
     };
-    option56 && myChart56.setOption(option56);
+    option49 && myChart49.setOption(option49);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart56.resize();
+        myChart49.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
@@ -107,25 +106,21 @@ onMounted(() => {
 
 
 <template>
-    <div class="AnHuiWaterLeftDown">
-        <div class="AnHuiWaterLeftDown-title">安徽省水利能源发展概况图</div>
-        <div class="AnHuiWaterLeftDown-echarts" ref="echartsRef"></div>
-        <div class="AnHuiWaterLeftDown-thing">
-            <div class="AnHuiWaterLeftDown-name">75%</div>
-            <img src="../../../assets/pic/pic-4.png" alt="">
-            <div class="AnHuiWaterLeftDown-down">发展指标</div>
-        </div>
+    <div class="AnHuiSunLeftCenter">
+        <div class="AnHuiSunLeftCenter-title">发展指标</div>
+        <div class="AnHuiSunLeftCenter-echarts" ref="echartsRef"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
-.AnHuiWaterLeftDown {
+.AnHuiSunLeftCenter {
   width: 100%;
   height: 100%;
 
-  .AnHuiWaterLeftDown-thing {
+  .AnHuiSunLeftCenter-thing {
     margin-top: 25vh;
-    .AnHuiWaterLeftDown-down {
+
+    .AnHuiSunLeftCenter-down {
       color: white;
       position: absolute;
       font-weight: bolder;
@@ -134,7 +129,7 @@ onMounted(() => {
       margin-right: 4.1vw;
     }
 
-    .AnHuiWaterLeftDown-name {
+    .AnHuiSunLeftCenter-name {
       color: white;
       position: absolute;
       right: 0;
@@ -155,21 +150,20 @@ onMounted(() => {
     }
   }
 
-  .AnHuiWaterLeftDown-title {
+  .AnHuiSunLeftCenter-title {
     color: white;
-    //background: red;
-    margin-top: -0.6vh;
+    margin-top: 0.5vh;
     width: 24vw;
-    margin-left: 1vw;
+    margin-left: -3vw;
     text-align: center;
     position: absolute;
     font-weight: bolder;
-    font-size: 1.15em;
+    font-size: 1em;
   }
 
-  .AnHuiWaterLeftDown-echarts {
-    width: 28vw;
-    height: 28vh;
+  .AnHuiSunLeftCenter-echarts {
+    width: 25vw;
+    height: 25vh;
     margin-left: -2vw;
     position: absolute;
     margin-top: 4vh;

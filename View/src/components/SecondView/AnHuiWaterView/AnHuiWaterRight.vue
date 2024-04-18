@@ -459,7 +459,7 @@ onMounted(() => {
     position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 1.3em;
+    font-size: 1.15em;
     width: 24vw;
     margin-left: 1.1vw;
     margin-top: 2.7vh;

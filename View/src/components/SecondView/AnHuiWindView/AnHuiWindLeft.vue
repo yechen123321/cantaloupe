@@ -22,31 +22,27 @@ import AnHuiWindLeftDown from "@/components/SecondView/AnHuiWindTools/AnHuiWindL
     width: 26vw;
     height: 24vh;
     position: absolute;
-    //background: red;
     margin-top: 4vh;
-    //margin-left: 2vw;
   }
 
   #AnHuiWindLeftCenter-out {
     width: 26vw;
     height: 24vh;
     position: absolute;
-    //background: #00ff24;
-    margin-top: -52.5vh;
+    margin-top: -81.5vh;
   }
 
   #AnHuiWindLeftDown-out {
     width: 26vw;
     height: 24vh;
     position: absolute;
-    //background: #ffe800;
     margin-left: -0.4vw;
     margin-top: -27vh;
   }
 
   .BackImg {
     width: 26vw;
-    height: 82vh;
+    height: 57vh;
   }
 }
 </style>

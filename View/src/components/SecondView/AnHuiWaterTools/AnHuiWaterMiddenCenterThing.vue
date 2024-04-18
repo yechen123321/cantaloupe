@@ -13,37 +13,30 @@ onMounted(() => {
     myChart52 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#DCE35B'},
+            {offset: 1, color: '#45B649'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#4AC29A'},
+            {offset: 1, color: '#BDFFF3'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
             {offset: 1, color: '#92FE9D'}
         ]),
-
-
-
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
             {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
         ]),
         // 其他渐变色定义...
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
     ];
     option52 = {
-        color:colorList,
+        color: colorList,
         series: [
 
             {
@@ -63,7 +56,7 @@ onMounted(() => {
                 emphasis: {
                     label: {
                         show: true,
-                        fontSize: 16,
+                        fontSize: 20,
                         color: 'white',
                         fontWeight: 'bold'
                     }
@@ -156,25 +149,30 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
-.AnHuiWaterMiddenCenterThing{
+.AnHuiWaterMiddenCenterThing {
   width: 100%;
   height: 100%;
-  .AnHuiWaterMiddenCenterThing-echarts{
-    width: 20vw;
-    height: 20vh;
+
+  .AnHuiWaterMiddenCenterThing-echarts {
+    width: 23vw;
+    height: 23vh;
     position: absolute;
-    margin-top: 2vh;
-    margin-left: -3.5vw;
+    margin-left: -5vw;
   }
-  .title{
-    color:white;
+
+  .title {
+    color: white;
     width: 20vw;
     position: absolute;
     margin-left: 1vw;
-    .name{
+    margin-top: -1.5vh;
+    font-weight: bolder;
+
+    .name {
       float: left;
     }
-    .number{
+
+    .number {
       float: left;
       margin-left: -0.2vw;
       margin-top: -0.3vh;
@@ -183,7 +181,8 @@ onBeforeUnmount(() => {
       text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
       font-size: 1.25em;
     }
-    .up{
+
+    .up {
       float: left;
       margin-left: 0.6vw;
     }

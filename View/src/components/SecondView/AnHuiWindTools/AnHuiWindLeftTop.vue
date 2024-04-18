@@ -10,8 +10,18 @@ onMounted(() => {
     myChart65 = echarts.init(echartsRef.value, 'dark');
     // Your echarts option setup here...
     // (Your existing option setup code)
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
+        ]),
+    ];
     option65 = {
-        color: ['#73C0DE', '#FAC858'],
+        color: colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
@@ -27,7 +37,7 @@ onMounted(() => {
         },
         radar: {
             // shape: 'circle',
-            center: ['50%', '50%'], // 调整雷达图的位置，这里设置为图表中心
+            center: ['43%', '42%'], // 调整雷达图的位置，这里设置为图表中心
             radius: '55%', // 调整雷达图的大小
             indicator: [
                 {name: '效率', max: 65000},
@@ -39,7 +49,7 @@ onMounted(() => {
             ],
             splitNumber: 4, // 分割的圈数
             axisLine: {
-                show: false, // 隐藏雷达图的轴线
+                // show: false, // 隐藏雷达图的轴线
                 lineStyle: {
                     color: 'white'
                 }
@@ -61,20 +71,20 @@ onMounted(() => {
             {
                 name: 'Budget vs spending',
                 type: 'radar',
-                symbol: 'none', // 去掉每个角的小点
+                // symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
-                        value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
+                        value: [50000, 35000, 28000, 26000, 42000, 23200,],
                         name: '全国平均',
                         areaStyle: {
-                            color: '#73C0DE' // 粉红色，与深蓝色相呼应
+                            color: colorList[0] // 粉红色，与深蓝色相呼应
                         },
                     },
                     {
-                        value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 0],
+                        value: [42000, 30000, 20000, 35000, 30000, 25000,],
                         name: '省内总量',
                         areaStyle: {
-                            color: '#FAC858' // 橙色，与深蓝色相呼应
+                            color: colorList[1] // 橙色，与深蓝色相呼应
                         },
                     },
                 ]
@@ -98,7 +108,7 @@ onMounted(() => {
         <div class="AnHuiWindLeftTop-thing">
             <div class="AnHuiWindLeftTop-name">75%</div>
             <img src="../../../assets/pic/pic-4.png" alt="">
-            <div class="AnHuiWindLeftTop-down">发展占比</div>
+            <div class="AnHuiWindLeftTop-down">发展指标</div>
         </div>
     </div>
 </template>
@@ -143,20 +153,19 @@ onMounted(() => {
 
   .AnHuiWindLeftTop-title {
     color: white;
-    //background: red;
     margin-top: -0.6vh;
     width: 24vw;
     margin-left: 1vw;
     text-align: center;
     position: absolute;
     font-weight: bolder;
-    font-size: 1.26em;
+    font-size: 1.15em;
   }
 
   .AnHuiWindLeftTop-echarts {
-    width: 23vw;
-    height: 23vh;
-    margin-left: -2vw;
+    width: 27vw;
+    height: 27vh;
+    margin-left: -2.5vw;
     position: absolute;
     margin-top: 4vh;
     z-index: 399;

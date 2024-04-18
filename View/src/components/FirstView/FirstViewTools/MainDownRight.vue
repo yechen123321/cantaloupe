@@ -77,7 +77,7 @@ onMounted(async () => {
                     {
                         name: 'Budget vs spending',
                         type: 'radar',
-                        symbol: 'none', // 去掉每个角的小点
+                        // symbol: 'none', // 去掉每个角的小点
                         data: [
 
                             {

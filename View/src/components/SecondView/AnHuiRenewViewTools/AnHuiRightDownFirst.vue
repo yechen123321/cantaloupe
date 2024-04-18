@@ -73,7 +73,7 @@ onMounted(() => {
             {
                 name: 'Budget vs spending',
                 type: 'radar',
-                symbol: 'none', // 去掉每个角的小点
+                // symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
                         value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
@@ -82,7 +82,7 @@ onMounted(() => {
                         },
                     },
                     {
-                        value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 0],
+                        value: [42000, 30000, 20000, 23000, 35000, 15000, 18000, 0],
                         name: '省内总量',
                         areaStyle: {
                         },
@@ -110,7 +110,7 @@ onMounted(() => {
         <div class="AnHuiRightDownFirst-thing">
             <div class="AnHuiRightDownFirst-name">75%</div>
             <img src="../../../assets/pic/pic-4.png" alt="">
-            <div class="AnHuiRightDownFirst-down">发展占比</div>
+            <div class="AnHuiRightDownFirst-down">发展指标</div>
         </div>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
-
+import AnHuiSunLeftCenter from "@/components/SecondView/AnHuiSunTools/AnHuiSunMiddenDownThing.vue";
 const echartsRef = ref(null);
 let myChart42 = null;
 let option42 = null;
@@ -10,16 +10,16 @@ onMounted(() => {
     myChart42 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#2980B9'},
-            {offset: 1, color: '#6DD5FA'}
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
         ]),
         // 其他渐变色定义...
     ];
@@ -50,7 +50,7 @@ onMounted(() => {
                 color: 'white'
             },
             top: '12%',
-            data: ['现有量', '增长量', '增长率'],
+            data: ['产量', '增量', '产量增长率'],
             itemWidth: 20, // 标签宽度为20px
             itemHeight: 10, // 标签高度为10px
         },
@@ -125,7 +125,7 @@ onMounted(() => {
         ],
         series: [
             {
-                name: '现有量',
+                name: '产量',
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
@@ -134,10 +134,13 @@ onMounted(() => {
                 },
                 data: [
                     176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
-                name: '增长量',
+                name: '增量',
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
@@ -146,10 +149,13 @@ onMounted(() => {
                 },
                 data: [
                     70.7, 75.6, 82.2, 48.7, 82.2, 48.7, 70.7,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
-                name: '增长率',
+                name: '产量增长率',
                 type: 'line',
                 yAxisIndex: 1,
                 tooltip: {
@@ -175,6 +181,7 @@ onMounted(() => {
         <div class="title">安徽省光伏发电产能图</div>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
         <div class="AnHuiSunMiddenDown-echarts" ref="echartsRef"></div>
+        <AnHuiSunLeftCenter id="AnHuiSunLeftCenter-out"></AnHuiSunLeftCenter>
     </div>
 </template>
 
@@ -182,24 +189,27 @@ onMounted(() => {
 .AnHuiSunMiddenDown {
   width: 100%;
   height: 100%;
-
+    #AnHuiSunLeftCenter-out{
+        position: absolute;
+        margin-top: -27vh;
+        margin-left: 24vw;
+    }
   .title {
     position: absolute;
     color: white;
     width: 40vw;
     font-weight: bolder;
-    font-size: 1.26em;
+    font-size: 1.15em;
     text-align: center;
     margin-top: 1vh;
-    //background: red;
   }
 
   .AnHuiSunMiddenDown-echarts {
-    width: 44vw;
+    width: 30vw;
     height: 33vh;
     position: absolute;
     margin-top: -28.5vh;
-    margin-left: -3vw;
+    margin-left: -1.4vw;
     z-index: 555;
   }
 

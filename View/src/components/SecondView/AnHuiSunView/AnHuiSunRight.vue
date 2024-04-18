@@ -421,7 +421,7 @@ onMounted(() => {
                         }
                     },
                     symbol: 'image://' + require('../../../assets/2.png'), // 使用 require 加载图片
-                    symbolSize:65, // 设置图片大小
+                    symbolSize: 65, // 设置图片大小
                     emphasis: {
                         label: {
                             show: true
@@ -458,13 +458,11 @@ onMounted(() => {
   width: 100%;
   height: 100%;
 
-
-
   .title {
     position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 1.3em;
+    font-size: 1.15em;
     width: 24vw;
     margin-left: 1.1vw;
     margin-top: 2.7vh;

@@ -10,34 +10,27 @@ onMounted(() => {
     myChart55 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#DCE35B'},
+            {offset: 1, color: '#45B649'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#4AC29A'},
+            {offset: 1, color: '#BDFFF3'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
             {offset: 1, color: '#92FE9D'}
         ]),
-
-
-
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
             {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
         ]),
         // 其他渐变色定义...
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
@@ -84,7 +77,7 @@ onMounted(() => {
                 name: '地区开发',
                 type: 'pie',
                 radius: ['20%', '40%'],
-                center: ['32%', '48%'],
+                center: ['29%', '48%'],
                 roseType: 'radius',
                 itemStyle: {
                     borderRadius: 3,
@@ -115,7 +108,7 @@ onMounted(() => {
                 name: '地区消耗',
                 type: 'pie',
                 radius: ['20%', '40%'],
-                center: ['70%', '48%'],
+                center: ['68%', '48%'],
                 roseType: 'area',
                 itemStyle: {
                     borderRadius: 5
@@ -161,15 +154,15 @@ onMounted(() => {
     color: white;
     font-weight: bolder;
     text-align: center;
-    font-size: 1.26em;
-    margin-top: 0.2vh;
+    font-size: 1.15em;
+    margin-top: -2vh;
     width: 24vw;
     margin-left: 1vw;
   }
   .AnHuiWaterLeftCenter-echarts{
-    width: 25vw;
-    height: 25vh;
-    margin-top: -1vh;
+    width: 27vw;
+    height: 27vh;
+    margin-top: -3vh;
   }
 }
 </style>

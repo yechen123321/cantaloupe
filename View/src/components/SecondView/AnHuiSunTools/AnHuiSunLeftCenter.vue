@@ -3,168 +3,159 @@ import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart49 = null;
-let option49 = null;
+let myChart48 = null;
+let option48 = null;
 
 onMounted(() => {
-    myChart49 = echarts.init(echartsRef.value, 'dark');
+    myChart48 = echarts.init(echartsRef.value, 'dark');
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#DCE35B'},
+            {offset: 1, color: '#45B649'}
+        ]),
 
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#4AC29A'},
+            {offset: 1, color: '#BDFFF3'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
+        ]),
+        // 其他渐变色定义...
+    ];
     // Your echarts option setup here...
     // (Your existing option setup code)
-    option49 = {
-        color: ['#73C0DE', '#FAC858'],
-        backgroundColor: 'rgba(128, 128, 128, 0)',
+    option48 = {
+        backgroundColor: 'rgba(128,128,128,0)',
+        color: colorList,
+        tooltip: {
+            trigger: 'item',
+            textStyle: {
+                fontWeight: 'bold',
+            },
+            // formatter: '{a} <br/>{b} : {c} 吨 ({d}%)',
+            formatter: '{a} <br/>{b} : {d}%'
+        },
         legend: {
-            itemWidth: 15, // 标签宽度为10px
+            left: '4%',
+            itemWidth: 20, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
-            width: '10vw',
-            top:'-1%',
-            left: '18%',
-            data: ['全国平均', '省内总量'],
+            top: '80%',
+            width: '120%',
+            data: [
+                '合肥',
+                '芜湖',
+                '马鞍山',
+                '淮南',
+                '蚌埠',
+                '其他',
+            ],
             textStyle: {
                 color: 'white',
-                fontWeight: 'bold',
-            }
-        },
-        radar: {
-            // shape: 'circle',
-            center: ['50%', '50%'], // 调整雷达图的位置，这里设置为图表中心
-            radius: '55%', // 调整雷达图的大小
-            indicator: [
-                {name: '效率', max: 65000},
-                {name: '产能', max: 40000},
-                {name: '储能', max: 30000},
-                {name: '稳定', max: 38000},
-                {name: '效益', max: 50000},
-                {name: '容量', max: 32000},
-            ],
-
-            splitNumber: 4, // 分割的圈数
-            axisLine: {
-                show: false, // 隐藏雷达图的轴线
-                lineStyle: {
-                    color: 'white'
-                }
-            },
-            splitLine: {
-                lineStyle: {
-                    color: ['#B8B8B8'], // 设置分隔线的颜色
-                    width: 1 // 设置分隔线的宽度
-                }
-            },
-            name: {
-                textStyle: {
-                    fontWeight: 'bold',
-                    color: '#fff' // 设置雷达图每一个角的文字颜色为白色
-                }
             },
         },
         series: [
             {
-                name: 'Budget vs spending',
-                type: 'radar',
-                symbol: 'none', // 去掉每个角的小点
+                name: '地区开发',
+                type: 'pie',
+                radius: ['20%', '40%'],
+                center: ['30%', '48%'],
+                roseType: 'radius',
+                itemStyle: {
+                    borderRadius: 3,
+                },
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    color: 'white'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 16,
+                        color: 'white',
+                        fontWeight: 'bold'
+                    }
+                },
                 data: [
-                    {
-                        value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
-                        name: '全国平均',
-                        areaStyle: {
-                            color: '#73C0DE' // 粉红色，与深蓝色相呼应
-                        },
-                    },
-                    {
-                        value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 0],
-                        name: '省内总量',
-                        areaStyle: {
-                            color: '#FAC858' // 橙色，与深蓝色相呼应
-                        },
-
-                    },
-
+                    {value: 45, name: '合肥'},
+                    {value: 33, name: '芜湖'},
+                    {value: 28, name: '马鞍山'},
+                    {value: 22, name: '淮南'},
+                    {value: 20, name: '其他'},
                 ]
+            },
+
+            {
+                name: '地区消耗',
+                type: 'pie',
+                radius: ['20%', '40%'],
+                center: ['70%', '48%'],
+                roseType: 'area',
+                itemStyle: {
+                    borderRadius: 5
+                },
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    color: 'white'
+                },
+                data: [
+                    {value: 30, name: '合肥'},
+                    {value: 28, name: '芜湖'},
+                    {value: 26, name: '马鞍山'},
+                    {value: 24, name: '蚌埠'},
+                    {value: 22, name: '其他'},
+                ],
             }
         ]
     };
-    option49 && myChart49.setOption(option49);
+    option48 && myChart48.setOption(option48);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart49.resize();
+        myChart48.resize();
     });
 
     resizeObserver.observe(echartsRef.value);
 });
 </script>
-
-
 <template>
-    <div class="AnHuiSunLeftCenter">
-        <div class="AnHuiSunLeftCenter-title">安徽省光伏能源发展概况图</div>
-        <div class="AnHuiSunLeftCenter-echarts" ref="echartsRef"></div>
-        <div class="AnHuiSunLeftCenter-thing">
-            <div class="AnHuiSunLeftCenter-name">75%</div>
-            <img src="../../../assets/pic/pic-4.png" alt="">
-            <div class="AnHuiSunLeftCenter-down">发展占比</div>
-        </div>
+    <div class="AnHuiSunLeftTop">
+        <div class="title">安徽省光伏能源结构</div>
+        <div class="AnHuiSunLeftTop-echarts" ref="echartsRef"></div>
     </div>
+
 </template>
 
 <style scoped lang="scss">
-.AnHuiSunLeftCenter {
-    width: 100%;
-    height: 100%;
+.AnHuiSunLeftTop {
+  width: 100%;
+  height: 100%;
 
-    .AnHuiSunLeftCenter-thing {
-        margin-top: 25vh;
-        .AnHuiSunLeftCenter-down {
-            color: white;
-            position: absolute;
-            font-weight: bolder;
-            right: 0;
-            margin-top: -2.7vh;
-            margin-right: 4.1vw;
-        }
+  .title {
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.15em;
+    margin-top: 0.2vh;
+    width: 24vw;
+    margin-left: 1vw;
+  }
 
-        .AnHuiSunLeftCenter-name {
-            color: white;
-            position: absolute;
-            right: 0;
-            margin-top: -17vh;
-            font-size: 2vw;
-            margin-right: 4.1vw;
-            z-index: 199;
-
-        }
-
-        img {
-            width: 8vw;
-            height: 18vh;
-            right: 0;
-            margin-right: 2.2vw;
-            margin-top: -21.5vh;
-            position: absolute;
-        }
-    }
-
-    .AnHuiSunLeftCenter-title {
-        color: white;
-        //background: red;
-        margin-top: -0.6vh;
-        width: 24vw;
-        margin-left: 1vw;
-        text-align: center;
-        position: absolute;
-        font-weight: bolder;
-        font-size: 1.26em;
-    }
-
-    .AnHuiSunLeftCenter-echarts {
-        width: 23vw;
-        height: 23vh;
-        margin-left: -2vw;
-        position: absolute;
-        margin-top: 4vh;
-        z-index: 399;
-    }
-
+  .AnHuiSunLeftTop-echarts {
+    width: 27vw;
+    height: 27vh;
+    margin-top: -1vh;
+  }
 }
 </style>

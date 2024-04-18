@@ -31,7 +31,7 @@ import AnHuiWaterRightTop from "@/components/SecondView/AnHuiWaterTools/AnHuiWat
   #AnHuiWaterLeft-out {
     width: 25vw;
     height: 80vh;
-    margin-top: 3vh;
+    margin-top: 29vh;
     margin-left: 2vw;
     position: absolute;
   }

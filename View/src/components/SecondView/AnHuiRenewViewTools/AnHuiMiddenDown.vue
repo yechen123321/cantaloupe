@@ -189,7 +189,7 @@ onMounted(() => {
 .AnHuiMiddenDown {
   width: 100%;
   height: 100%;
-  //background: red;
+
   .BackImg {
     width: 40vw;
     height: 29vh;
@@ -200,7 +200,6 @@ onMounted(() => {
     color: white;
     position: absolute;
     width: 100%;
-    //background: red;
     text-align: center;
     font-weight: bolder;
     margin-top: 1vh;
@@ -211,7 +210,6 @@ onMounted(() => {
     width: 14vw;
     height: 22vh;
     position: absolute;
-    //background: red;
     right: 0;
     margin-top: 5.5vh;
     margin-right: -0.7vw;
@@ -225,7 +223,6 @@ onMounted(() => {
     margin-left: -1vw;
     position: absolute;
     z-index: 999;
-    //background: red;
   }
 
 

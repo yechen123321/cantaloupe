@@ -34,7 +34,7 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option21 = {
-        color:colorList,
+        color: colorList,
         backgroundColor: 'rgba(128,128,128,0)',
         tooltip: {
             trigger: 'axis',
@@ -93,7 +93,6 @@ onMounted(() => {
                         color: 'white',
                     },
                 },
-
             },
         ],
         series: [
@@ -103,9 +102,9 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 1334, 1390, 1330, 1320],
+                data: [1334, 1390, 1330, 1320],
                 itemStyle: {
-                    barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
             {
@@ -114,20 +113,20 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 132,134,230, 210],
+                data: [132, 134, 230, 210],
                 itemStyle: {
-                    barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
             {
                 name: '风生发电',
                 type: 'bar',
-                data: [ 1026, 1679, 1600, 1570],
+                data: [1026, 1679, 1600, 1570],
                 emphasis: {
                     focus: 'series'
                 },
                 itemStyle: {
-                    barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
             {
@@ -136,9 +135,9 @@ onMounted(() => {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [ 234, 290, 330, 310],
+                data: [234, 290, 330, 310],
                 itemStyle: {
-                    barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
             {
@@ -149,7 +148,7 @@ onMounted(() => {
                 },
                 data: [232, 201, 330, 410],
                 itemStyle: {
-                    barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
 
@@ -162,7 +161,7 @@ onMounted(() => {
                 },
                 data: [134, 190, 130, 120],
                 itemStyle: {
-                    barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
         ]
@@ -208,69 +207,78 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   color: white;
-    .right{
-        position: absolute;
-        width: 13vw;
-        height: 28vh;
-        right: 0;
-        margin-top: -26vh;
-        .left{
-            margin-top: 2vh;
-            position: absolute;
-            font-weight: bolder;
-            margin-left: 1vw;
-            font-size: 1.15em;
-        }
-        .thing{
-            margin-top: 1.8vh;
-            position: absolute;
-            font-weight: bolder;
-            margin-left: 7vw;
-            width: 6vw;
-            text-align: center;
-            font-size: 1.4em;
-            color: #2bfff1;
-            text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
-        }
-        .out{
-            width: 16vw;
-            height: 10vh;
-            position: absolute;
-            margin-top: 16.5vh;
-            .down{
-                position: absolute;
-                width: 16vw;
-                margin-left: -2.5vw;
-                height: 5vh;
-            }
-        }
-        .rightOne{
-            width: 13vw;
-            height: 8vh;
-            position: absolute;
-            right: 0;
-            margin-top: 1vh;
-            margin-right: 1vw;
-        }
-        .rightTow{
-            width: 13vw;
-            height: 12vh;
-            position: absolute;
-            right: 0;
-            margin-right: 1vw;
-            margin-top: 6vh;
 
-        }
-        .rightThree{
-            width: 13vw;
-            height: 12vh;
-            position: absolute;
-            right: 0;
-            margin-right: 1vw;
-            margin-top: 11vh;
+  .right {
+    position: absolute;
+    width: 13vw;
+    height: 28vh;
+    right: 0;
+    margin-top: -26vh;
 
-        }
+    .left {
+      margin-top: 2vh;
+      position: absolute;
+      font-weight: bolder;
+      margin-left: 1vw;
+      font-size: 1.15em;
     }
+
+    .thing {
+      margin-top: 1.8vh;
+      position: absolute;
+      font-weight: bolder;
+      margin-left: 7vw;
+      width: 6vw;
+      text-align: center;
+      font-size: 1.4em;
+      color: #2bfff1;
+      text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
+    }
+
+    .out {
+      width: 16vw;
+      height: 10vh;
+      position: absolute;
+      margin-top: 16.5vh;
+
+      .down {
+        position: absolute;
+        width: 16vw;
+        margin-left: -2.5vw;
+        height: 5vh;
+      }
+    }
+
+    .rightOne {
+      width: 13vw;
+      height: 8vh;
+      position: absolute;
+      right: 0;
+      margin-top: 1vh;
+      margin-right: 1vw;
+    }
+
+    .rightTow {
+      width: 13vw;
+      height: 12vh;
+      position: absolute;
+      right: 0;
+      margin-right: 1vw;
+      margin-top: 6vh;
+
+    }
+
+    .rightThree {
+      width: 13vw;
+      height: 12vh;
+      position: absolute;
+      right: 0;
+      margin-right: 1vw;
+      margin-top: 11vh;
+
+    }
+  }
+
   .GotoMore {
     position: absolute;
     width: 20vw;

@@ -61,7 +61,7 @@ choose().then(response => {
                     <img src="../../../assets/水库.png" alt="">
                     <img src="../../../assets/pic/pic-5.png" alt=""
                          style="width: 10vw;margin-top: -1vh; margin-left: -4.5vw; position: absolute;">
-                    <div class="number">{{ listData["水生电能"] }}</div>
+                    <div class="number" >{{ listData["水生电能"] }}</div>
                     <div class="up">
                         水生电能
                     </div>
@@ -161,13 +161,12 @@ choose().then(response => {
   }
 
   .ChooseTitle {
-    font-size: 1.5vw;
+    font-size: 1.25em;
     font-weight: bolder;
     color: white;
-    right: 0;
-    margin-right: 2vw;
+    width: 40vw;
+    text-align: center;
     position: absolute;
-    margin-left: 2vw;
     margin-top: 1vh;
   }
 

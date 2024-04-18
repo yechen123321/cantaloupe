@@ -2,6 +2,7 @@
 import {ref} from 'vue';
 import {useRouter} from 'vue-router';
 import {choose} from "@/api";
+
 const router = useRouter();
 
 const handleRouteChange = () => {
@@ -56,7 +57,7 @@ choose().then(response => {
         <button class="SelectGo" @click="handleRouteChange">切换</button>
         <div class="factory">
             <ul class="factoryUl">
-                <li @click="RouteToWater" style="margin-top: -1vh">
+                <li @click="RouteToWater" style="margin-top: -0.3vh">
                     <img src="../../../assets/水库.png" alt="">
                     <div class="number">{{ listData["水生电能"] }}</div>
                     <div class="up">
@@ -66,7 +67,7 @@ choose().then(response => {
                         亿千瓦时
                     </div>
                 </li>
-                <li @click="RouteToSun" style="margin-top: 0.8vh">
+                <li @click="RouteToSun" style="margin-top: 1.4vh">
                     <img src="../../../assets/太阳能发电.png" alt="">
                     <div class="number">{{ listData["光生电能"] }}</div>
                     <div class="up">
@@ -76,7 +77,7 @@ choose().then(response => {
                         亿千瓦时
                     </div>
                 </li>
-                <li @click="handleRouteChange" style="margin-top: -2vh">
+                <li @click="handleRouteChange" style="margin-top: -0.9vh">
                     <img src="../../../assets/风力发电.png" alt="">
                     <img src="../../../assets/pic/pic-5.png" alt=""
                          style="width: 10vw;margin-top: -1vh; margin-left: -4.5vw; position: absolute;">
@@ -160,13 +161,12 @@ choose().then(response => {
   }
 
   .ChooseTitle {
-    font-size: 1.5vw;
+    font-size: 1.25em;
     font-weight: bolder;
     color: white;
-    right: 0;
-    margin-right: 2vw;
+      width: 40vw;
+      text-align: center;
     position: absolute;
-    margin-left: 2vw;
     margin-top: 1vh;
   }
 

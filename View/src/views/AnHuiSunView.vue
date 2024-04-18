@@ -31,7 +31,7 @@ import AnHuiSunMidden from "@/components/SecondView/AnHuiSunView/AnHuiSunMidden.
   #AnHuiSunLeft-out {
     width: 25vw;
     height: 80vh;
-    margin-top: 3vh;
+    margin-top: 27vh;
     margin-left: 2vw;
     position: absolute;
   }

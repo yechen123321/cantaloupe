@@ -21,28 +21,25 @@ import AnHuiWaterLeftDown from "@/components/SecondView/AnHuiWaterTools/AnHuiWat
     width: 26vw;
     height: 24vh;
     position: absolute;
-    //background: red;
-    margin-top: 4vh;
-    //margin-left: 2vw;
+    margin-top: -26vh;
   }
   #AnHuiWaterLeftCenter-out{
     width: 26vw;
     height: 24vh;
     position: absolute;
-    //background: #00ff24;
     margin-top: -51.7vh;
   }
   #AnHuiWaterLeftDown-out{
     width: 26vw;
     height: 24vh;
     position: absolute;
-    //background: #ffe800;
     margin-left: -0.4vw;
     margin-top: -29vh;
   }
   .BackImg{
     width: 26vw;
-    height: 82vh;
+    height: 56vh;
+
   }
 }
 </style>

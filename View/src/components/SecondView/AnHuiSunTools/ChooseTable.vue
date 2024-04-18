@@ -66,7 +66,7 @@ choose().then(response => {
                         亿千瓦时
                     </div>
                 </li>
-                <li @click="handleRouteChange" style="margin-top: -1vh">
+                <li @click="handleRouteChange" style="margin-top: -0.7vh">
                     <img src="../../../assets/太阳能发电.png" alt="">
                     <img src="../../../assets/pic/pic-5.png" alt=""
                          style="width: 10vw;margin-top: -1vh; margin-left: -4.5vw; position: absolute;">
@@ -160,13 +160,12 @@ choose().then(response => {
   }
 
   .ChooseTitle {
-    font-size: 1.5vw;
+    font-size: 1.25em;
     font-weight: bolder;
     color: white;
-    right: 0;
-    margin-right: 2vw;
+    width: 40vw;
+    text-align: center;
     position: absolute;
-    margin-left: 2vw;
     margin-top: 1vh;
   }
 

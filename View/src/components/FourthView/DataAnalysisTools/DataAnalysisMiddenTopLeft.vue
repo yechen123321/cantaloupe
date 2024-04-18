@@ -58,31 +58,7 @@ onMounted(() => {
         { name: 'NO2', index: 5, text: '二氧化氮（NO2）' },
         { name: 'SO2', index: 6, text: '二氧化硫（SO2）' }
     ];
-    var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#56CCF2'},
-            {offset: 1, color: '#2948ff'}
-        ]),
 
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-
-            {offset: 0, color: '#fc8cd9'},
-            {offset: 1, color: '#fc4281'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#c184fd'},
-            {offset: 1, color: '#915efa'}
-        ]),
-        // 其他渐变色定义...
-    ];
     const itemStyle = {
         opacity: 0.8,
         shadowBlur: 10,
@@ -92,7 +68,6 @@ onMounted(() => {
     };
     option87 = {
         backgroundColor: 'rgba(1,1,1,0)',
-        color: ['#dd4444', '#FBD786', '#56CCF2'],
         legend: {
             top: '3%',
             left:'24%',
@@ -115,7 +90,7 @@ onMounted(() => {
                 var value = param.value;
                 // prettier-ignore
                 return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
-                    + param.seriesName + ' ' + value[0] + '日：'
+                    + param.seriesName + ' ' + value[0] + '月：'
                     + value[7]
                     + '</div>'
                     + schema[1].text + '：' + value[1] + '<br>'
@@ -241,12 +216,12 @@ onMounted(() => {
                 itemStyle: itemStyle,
                 data: dataGZ
             },
-            {
-                name: '2021',
-                type: 'scatter',
-                itemStyle: itemStyle,
-                data: dataSH
-            },
+            // {
+            //     name: '2021',
+            //     type: 'scatter',
+            //     itemStyle: itemStyle,
+            //     data: dataSH
+            // },
         ]
     };
     option87 && myChart87.setOption(option87);
@@ -287,7 +262,7 @@ onMounted(() => {
         width: 31vw;
         height: 22vh;
         position: absolute;
-        margin-top: -1.5vh;
+        margin-top: 21vh;
         z-index: 999;
     }
 }

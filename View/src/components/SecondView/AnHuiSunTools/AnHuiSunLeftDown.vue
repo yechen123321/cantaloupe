@@ -9,16 +9,33 @@ let option47 = null;
 onMounted(() => {
     myChart47 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
-        '#ea7ccc', '#91cc75', '#fac858', '#ee6666', '#73c0de',
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#4AC29A'},
+            {offset: 1, color: '#BDFFF3'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#DCE35B'},
+            {offset: 1, color: '#45B649'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        // 其他渐变色定义...
     ];
-    // Your echarts option setup here...
-    // (Your existing option setup code)
+
     option47 = {
         backgroundColor: 'rgba(128,128,128,0)',
         color: colorList,
-        // title: {
-        //     text: 'Stacked Area Chart'
-        // },
+
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 10vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
@@ -70,6 +87,7 @@ onMounted(() => {
         yAxis: [
             {
                 type: 'value',
+                offset: 5, // 负值表示向左偏移，这里设置为向左移动 10px
                 axisLine: {
                     lineStyle: {
                         color: 'white', // 设置轴线颜色为白色
@@ -223,15 +241,15 @@ onMounted(() => {
     color: white;
     font-weight: bolder;
     text-align: center;
-    font-size: 1.26em;
+    font-size: 1.15em;
     margin-top: 0.2vh;
     width: 24vw;
     margin-left: 1vw;
   }
 
   .AnHuiSunLeftDown-echarts {
-    width: 23vw;
-    height: 25vh;
+    width: 24vw;
+    height: 27vh;
     margin-top: 0.6vh;
     margin-left: 1.3vw;
     z-index: 555;

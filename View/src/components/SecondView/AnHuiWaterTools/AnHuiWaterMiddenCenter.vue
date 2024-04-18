@@ -10,7 +10,28 @@ let option54 = null;
 onMounted(() => {
     myChart54 = echarts.init(echartsRef.value, 'dark');
     var colorList = [
-        '#ea7ccc', '#91cc75', '#fac858', '#ee6666', '#73c0de',
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#4AC29A'},
+            {offset: 1, color: '#BDFFF3'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#DCE35B'},
+            {offset: 1, color: '#45B649'}
+        ]),
+
+        // 其他渐变色定义...
     ];
     // Your echarts option setup here...
     // (Your existing option setup code)
@@ -83,17 +104,17 @@ onMounted(() => {
         ],
         series: [
             {
-                name: '合肥',
+                name: '芜湖',
                 type: 'line',
                 stack: 'Total',
                 areaStyle: {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(234,124,204,0.7)' // 渐变色起始值
+                            color: 'rgba(198,255,221,0.7)' // 渐变色起始值
                         }, {
                             offset: 1,
-                            color: 'rgba(234,124,204,0.1)' // 渐变色起始值
+                            color: 'rgba(198,255,221,0.1)' // 渐变色起始值
                         },
                         ])
                     }
@@ -111,10 +132,11 @@ onMounted(() => {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(145,204,117,0.7)' // 渐变色起始值
+                            color: 'rgba(0,201,255,0.7)'// 渐变色起始值
                         }, {
                             offset: 1,
-                            color: 'rgba(145,204,117,0.1)' // 渐变色起始值
+                            color: 'rgba(146,254,157,0.1)' // 渐变色起始值 v
+
                         },
                         ])
                     }
@@ -132,10 +154,10 @@ onMounted(() => {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(250,200,88,0.7)' // 渐变色起始值
+                            color: 'rgba(74,194,154,0.7)'// 渐变色起始值
                         }, {
                             offset: 1,
-                            color: 'rgba(250,200,88,0.1)' // 渐变色起始值
+                            color: 'rgba(189,255,243,0.1)' // 渐变色起始值
                         },
                         ])
                     }
@@ -146,17 +168,17 @@ onMounted(() => {
                 data: [150, 232, 201, 154, 190, 330, 410]
             },
             {
-                name: '芜湖',
+                name: '其他',
                 type: 'line',
                 stack: 'Total',
                 areaStyle: {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(238,102,102,0.7)' // 渐变色起始值
+                            color: 'rgba(86,204,242,0.7)' // 渐变色起始值
                         }, {
                             offset: 1,
-                            color: 'rgba(238,102,102,0.1)' // 渐变色起始值
+                            color: 'rgba(41,72,255,0.1)' // 渐变色起始值
                         },
                         ])
                     }
@@ -167,7 +189,7 @@ onMounted(() => {
                 data: [320, 332, 301, 334, 390, 330, 320]
             },
             {
-                name: '其他',
+                name: '合肥',
                 type: 'line',
                 stack: 'Total',
                 label: {
@@ -179,10 +201,10 @@ onMounted(() => {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(115,192,222,0.7)' // 渐变色起始值
+                            color: 'rgba(220,227,91,0.7)' // 渐变色起始值
                         }, {
                             offset: 1,
-                            color: 'rgba(115,192,222,0.1)' // 渐变色起始值
+                            color: 'rgba(69,182,73,0.1)' // 渐变色起始值
                         },
                         ])
                     }
@@ -234,7 +256,7 @@ onMounted(() => {
     position: absolute;
     margin-left: 27vw;
     margin-top: -24vh;
-      border-left: 2px solid #0d87f6;
+    border-left: 2px solid #0d87f6;
   }
 
   .title {
@@ -242,7 +264,7 @@ onMounted(() => {
     color: white;
     width: 40vw;
     font-weight: bolder;
-    font-size: 1.26em;
+    font-size: 1.15em;
     text-align: center;
     margin-top: 1vh;
     //background: red;
