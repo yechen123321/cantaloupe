@@ -26,8 +26,8 @@ onMounted(() => {
         ]),
 
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#074dfd'},
-            {offset: 1, color: '#5907fd'},
+            {offset: 0, color: '#fa3104'},
+            {offset: 1, color: '#ff1212'},
         ]),
     ];
 
@@ -43,14 +43,14 @@ onMounted(() => {
             },
             top: '12%',
             left: '5%',
-            data: ['产量','储量', '供量', '储量增长率', '供量增长率'],
+            data: ['产量', '储量', '供量', '储量增长率', '供量增长率'],
             itemWidth: 20, // 标签宽度为20px
             itemHeight: 10, // 标签高度为10px
         },
         xAxis: [
             {
                 type: 'category',
-                data: [ '2020', '2021', '2022', '2023'],
+                data: ['2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -127,7 +127,7 @@ onMounted(() => {
                     176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
                 ],
                 itemStyle: {
-                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
             {
@@ -142,24 +142,10 @@ onMounted(() => {
                     176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
                 ],
                 itemStyle: {
-                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                 }
             },
-            {
-                name: '供量',
-                type: 'bar',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' 万千瓦';
-                    }
-                },
-                data: [
-                    170.7, 175.6, 182.2, 148.7, 182.2, 148.7, 170.7,
-                ],
-                itemStyle: {
-                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
-                }
-            },
+
             {
                 name: '储量增长率',
                 type: 'line',
@@ -220,7 +206,7 @@ onMounted(() => {
   .AnHuiLimitLeftDown-echarts {
     width: 26vw;
     height: 32vh;
-      margin-left: -0.4vw;
+    margin-left: -0.4vw;
   }
 }
 </style>

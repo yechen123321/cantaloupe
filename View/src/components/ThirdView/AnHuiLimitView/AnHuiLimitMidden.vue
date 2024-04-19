@@ -276,10 +276,44 @@ onMounted(() => {
             <div class="AnHuiLimitRight-echarts" ref="echartsRef"></div>
         </div>
         <div class="top">
-
+            <div class="topOne">
+                <div class="topHead"></div>
+                <div class="topMain"></div>
+            </div>
+            <div class="topTow"></div>
+            <div class="topThree"></div>
+            <div class="topFour">
+                <div class="oneOne">
+                    <div class="topTitle">在线</div>
+                    <div class="topNumber">1232</div>
+                </div>
+                <div class="towTow">
+                    <div class="topTitle">离线</div>
+                    <div class="topNumber">32</div>
+                </div>
+                <div class="threeThree">
+                    <div class="topTitle">停运</div>
+                    <div class="topNumber">12</div>
+                </div>
+            </div>
         </div>
         <div class="right">
-
+            <div class="right-one">
+                <div class="oneTop">XXXX</div>
+                <div class="oneCenter">
+                    <div class="centerLeft">XXXXX</div>
+                    <div class="centerRight">XXXX</div>
+                </div>
+                <div class="oneDown">XXXXX</div>
+            </div>
+            <div class="right-tow">
+                <div class="oneTop">XXXX</div>
+                <div class="oneCenter">
+                    <div class="centerLeft">XXXXX</div>
+                    <div class="centerRight">XXXX</div>
+                </div>
+                <div class="oneDown">XXXXXXXX</div>
+            </div>
         </div>
         <img src="../../../assets/pic/midden.png" alt="" class="BackImg">
     </div>
@@ -289,19 +323,144 @@ onMounted(() => {
 .AnHuiLimitMidden {
   width: 100%;
   height: 100%;
-    .right{
-        width: 10vw;
-        height: 34vh;
-        position: absolute;
-        margin-left: 34.2vw;
-        margin-top: 20.5vh;
-    }
+
   .top {
     position: absolute;
     width: 41.5vw;
     height: 10vh;
-    margin-top: 10vh;
+    margin-top: 11vh;
     margin-left: 3vw;
+
+    div {
+      float: left;
+    }
+
+    .topOne {
+      width: 10vw;
+      height: 10vh;
+      margin-left: 0.8vw;
+    }
+
+    .topTow {
+      width: 10vw;
+      height: 10vh;
+    }
+
+    .topThree {
+      width: 6vw;
+      height: 10vh;
+    }
+
+    .topFour {
+      width: 14vw;
+      height: 11.5vh;
+      margin-top: -1.5vh;
+      border-radius: 5px;
+      font-weight: bolder;
+      border: 1px solid #0a8cf8;
+      background: rgb(7, 22, 33, .7);
+
+      .topNumber {
+        width: 4.6vw;
+        text-align: center;
+        font-size: 1.3em;
+        margin-top: 2vh;
+      }
+
+      .topTitle {
+        text-align: center;
+        width: 4.6vw;
+      }
+
+      .oneOne {
+        width: 4.8vw;
+        height: 9vh;
+        margin-top: 1.2vh;
+        position: absolute;
+        color: white;
+        border-right: 2px solid #0a8cf8;
+      }
+
+      .towTow {
+        width: 4.6vw;
+        height: 9vh;
+        margin-top: 1.2vh;
+        margin-left: 4.8vw;
+        position: absolute;
+        color: #0a8cf8;
+        border-right: 2px solid #0a8cf8;
+      }
+
+      .threeThree {
+        width: 4.6vw;
+        height: 9vh;
+        margin-top: 1.2vh;
+        margin-left: 9.4vw;
+        position: absolute;
+        color: #ff2d00;
+        text-shadow: 0 0 1px #ff2d00;
+        border-right: 2px solid #0a8cf8;
+      }
+    }
+  }
+
+  .right {
+    width: 10vw;
+    height: 34vh;
+    position: absolute;
+    margin-left: 34.2vw;
+    margin-top: 22.5vh;
+    color: white;
+
+    .oneTop {
+      width: 10vw;
+      height: 4.5vh;
+      position: absolute;
+    }
+
+    .oneCenter {
+      width: 10vw;
+      height: 7vh;
+      position: absolute;
+      margin-top: 4.5vh;
+      line-height: 7vh;
+      border-top: 2px solid #0a8cf8;
+      border-bottom: 2px solid #0a8cf8;
+      text-align: center;
+
+      .centerLeft {
+        width: 6vw;
+        position: absolute;
+        height: 7vh;
+      }
+
+      .centerRight {
+        position: absolute;
+        width: 4vw;
+        height: 7vh;
+        right: 0;
+      }
+    }
+
+    .oneDown {
+      width: 10vw;
+      height: 4.5vh;
+      position: absolute;
+      margin-top: 11.5vh;
+    }
+
+    .right-one {
+      width: 10vw;
+      height: 16vh;
+      position: absolute;
+    }
+
+    .right-tow {
+      width: 10vw;
+      height: 16vh;
+      position: absolute;
+      margin-top: 17vh;
+    }
   }
 
   .title {
@@ -316,17 +475,17 @@ onMounted(() => {
 
   .echarts {
     width: 30vw;
-    height: 34vh;
+    height: 32vh;
     position: absolute;
     overflow: hidden;
     margin-left: 3.75vw;
-    margin-top: 20.5vh;
+    margin-top: 22.5vh;
     border-radius: 8px;
 
     .AnHuiLimitRight-echarts {
       position: absolute;
       width: 30vw;
-      height: 50vh;
+      height: 48vh;
       z-index: 999;
     }
   }

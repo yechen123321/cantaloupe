@@ -33,14 +33,14 @@ onMounted(() => {
             {offset: 1, color: '#5907fd'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#fab300'},
+            {offset: 1, color: '#ff0000'},
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#ef98d0'},
             {offset: 1, color: '#fd0792'},
         ]),
 
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#fab300'},
-            {offset: 1, color: '#ff0000'},
-        ]),
 
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#074dfd'},
@@ -226,10 +226,10 @@ onMounted(() => {
   height: 100%;
 
   .AnHuiLimitRight-echarts {
-        width: 30vw;
-      height: 30vh;
-      position: absolute;
-      margin-top: -27vh;
+    width: 30vw;
+    height: 30vh;
+    position: absolute;
+    margin-top: -27vh;
   }
 
   .MySelect {
