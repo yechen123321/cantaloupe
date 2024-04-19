@@ -15,8 +15,8 @@ const handleUpdate = () => {
                     <div class="thing">正常运行</div>
                 </li>
                 <li>
-                    <div class="name" style="color: red; text-shadow: 0 0 0.5px red;">二号发电：</div>
-                    <div class="thing" style="color: red; text-shadow: 0 0 0.5px red;">运行异常</div>
+                    <div class="name" style="color: #ff2d00; text-shadow: 0 0 0.5px #ff2d00;">二号发电：</div>
+                    <div class="thing" style="color: #ff2d00; text-shadow: 0 0 0.5px #ff2d00;">运行异常</div>
                 </li>
                 <li>
                     <div class="name">三号发电：</div>
@@ -48,8 +48,8 @@ const handleUpdate = () => {
 
   .mm {
     position: absolute;
-    color: red;
-    text-shadow: 0 0 1px red;
+    color: #ff2d00;
+    text-shadow: 0 0 1px #ff2d00;
     font-weight: bolder;
     font-size: 1.2em;
     margin-top: 18.8vh;

@@ -73,11 +73,13 @@
                 margin-top: 1.3vh;
                 position: absolute;
                 color: #0ca6e0;
+                text-shadow: 0 0 1px #0ca6e0, 0 0 1px #0ca6e0, 0 0 1px #0ca6e0;
             }
             .what{
                 position: absolute;
                 margin-left: 5vw;
                 color: #3de9fa;
+                text-shadow: 0 0 0.6px #3de9fa, 0 0 0.6px #3de9fa, 0 0 0.6px #3de9fa;
                 margin-top: 4.5vh;
             }
         }
@@ -86,9 +88,9 @@
         color:white;
         position: absolute;
         font-weight: bolder;
-        font-size: 1.3em;
+        font-size: 1.2em;
         margin-left: 3.6vw;
-        margin-top: 3.8vh;
+        margin-top: 4vh;
     }
     .BackImg {
         width: 30vw;

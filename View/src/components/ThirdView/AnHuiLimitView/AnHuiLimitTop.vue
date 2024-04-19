@@ -1,5 +1,6 @@
 <script setup>
-import {onMounted, ref} from 'vue';
+import * as echarts from "echarts";
+import {ref, onMounted} from 'vue'
 import router from "@/router";
 
 const handleRouteChange = () => {
@@ -20,16 +21,192 @@ const options = ref([
 ]);
 
 
+const echartsRef = ref(null);
+let myChart72 = null;
+let option72 = null;
 
 onMounted(() => {
+    myChart72 = echarts.init(echartsRef.value);
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#dc90ea'},
+            {offset: 1, color: '#5907fd'},
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#ef98d0'},
+            {offset: 1, color: '#fd0792'},
+        ]),
 
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#fab300'},
+            {offset: 1, color: '#ff0000'},
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#074dfd'},
+            {offset: 1, color: '#5907fd'},
+        ]),
+    ];
+    option72 = {
+        color: colorList,
+        tooltip: {
+            trigger: 'axis',
+            extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
+            formatter: function (params) {
+                let tooltipContent = '';
+                let mineName = params[0].name;
+                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                params.forEach(function (param) {
+                    if (param.seriesName === '全国能耗降低率') {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
+                    } else {
+                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
+                    }
+                });
+                return tooltipContent;
+            }
+        },
+        grid: {
+            left: '5.3%', // 调整图表左边距
+            right: '7%', // 调整图表右边距
+            bottom: '15%', // 调整图表下边距
+            containLabel: true,
+        },
+        legend: {
+            itemWidth: 20, // 标签宽度为10px
+            itemHeight: 10, // 标签高度为10px
+            left: '13%',
+            top: '13%',
+            data: ['开发耗费', '获取能量', '降低率'],
+            textStyle: {
+                color: 'white'
+            }
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                }, axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                },
+                // prettier-ignore
+                data: ['2019', '2020', '2021', '2022', '2023']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '万亿元',
+                position: 'right',
+                alignTicks: true,
+                nameTextStyle: {
+                    padding: [0, -30, 0, 0]
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            },
+            {
+                type: 'value',
+                name: '降低率',
+                nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
+                position: 'right',
+                nameTextStyle: {
+                    padding: [0, -38, 0, 0]
+                },
+                alignTicks: true,
+                offset: 40,
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            },
+            {
+                type: 'value',
+                name: '标准煤',
+                nameTextStyle: {
+                    padding: [0, 36, 0, 0],
+                },
+                alignTicks: true,
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置X轴上数据的颜色为白色
+                    }
+                }
+            },
+        ],
+        series: [
+            {
+                name: '开发耗费',
+                type: 'bar',
+                yAxisIndex: 2,
+                data: [
+                    35.6, 32.2, 32.6, 20.0, 36.4,
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
+            },
+            {
+                name: '获取能量',
+                type: 'bar',
+                yAxisIndex: 0,
+                data: [
+                    175.6, 182.2, 148.7, 138.8, 146.0
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
+            },
+            {
+                name: '降低率',
+                type: 'line',
+                yAxisIndex: 1,
+                data: [3.4, 2.0, 1.5, 1.0, 3.2]
+            },
+        ]
+    };
+
+    option72 && myChart72.setOption(option72);
+
+    const resizeObserver = new ResizeObserver(() => {
+        myChart72.resize();
+    });
+
+    resizeObserver.observe(echartsRef.value);
 });
 
 </script>
 
 <template>
     <div class="AnHuiLimitTop">
-        <div class="title">安徽省有限资源储能图</div>
+        <div class="title">安徽省有限能源开发</div>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
         <div class="MySelect">
             <select class="SelectBox">
@@ -39,6 +216,7 @@ onMounted(() => {
             </select>
             <button class="SelectGo" @click="handleRouteChange">切换</button>
         </div>
+        <div class="AnHuiLimitRight-echarts" ref="echartsRef"></div>
     </div>
 </template>
 
@@ -46,6 +224,13 @@ onMounted(() => {
 .AnHuiLimitTop {
   width: 100%;
   height: 100%;
+
+  .AnHuiLimitRight-echarts {
+        width: 30vw;
+      height: 30vh;
+      position: absolute;
+      margin-top: -27vh;
+  }
 
   .MySelect {
     width: 12vw;

@@ -17,14 +17,10 @@ onMounted(() => {
             {offset: 0, color: '#00C9FF'},
             {offset: 1, color: '#92FE9D'}
         ]),
-
-
-
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#bc4e9c'},
             {offset: 1, color: '#f80759'}
         ]),
-
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#FBD786'},
             {offset: 1, color: '#C6FFDD'}

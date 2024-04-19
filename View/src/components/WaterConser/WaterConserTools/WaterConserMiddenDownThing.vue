@@ -13,30 +13,25 @@ onMounted(() => {
     myChart31 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 0, color: '#DCE35B'},
+            {offset: 1, color: '#45B649'}
         ]),
 
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
+            {offset: 0, color: '#4AC29A'},
+            {offset: 1, color: '#BDFFF3'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
         ]),
         // 其他渐变色定义...
     ];
@@ -61,7 +56,7 @@ onMounted(() => {
                 emphasis: {
                     label: {
                         show: true,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: 'white',
                         fontWeight: 'bold'
                     }
@@ -154,16 +149,16 @@ onBeforeUnmount(() => {
     color: white;
     position: absolute;
     font-weight: bolder;
-    font-size: 1.3em;
-    margin-top: -4vh;
+    font-size: 1.2em;
+    margin-top: -3vh;
     margin-left: 3vw;
   }
 
   .ThermalPowerMiddenDownThing-echarts {
-    width: 24vw;
-    height: 24vh;
-    margin-left: -3.5vw;
-    margin-top: -1.5vh;
+    width: 27vw;
+    height: 27vh;
+    margin-left: -4.5vw;
+    margin-top: -2vh;
     z-index: 300;
 
   }

@@ -14,34 +14,33 @@ onMounted(() => {
     myChart88 = echarts.init(echartsRef2.value, 'dark');
     // Your echarts option setup here...
     // (Your existing option setup code)
-    var colorList = [
+    var colorList1 = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
-        ]),
-
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
             {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ])
-    ]
+        ]),
+        // 其他渐变色定义...
+    ];
+    var colorList2 = [
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        // 其他渐变色定义...
+    ];
     const categories = (function () {
         let now = new Date();
         let res = [];
@@ -84,7 +83,7 @@ onMounted(() => {
     })();
 
     option87 = {
-        color: colorList,
+        color: colorList1,
         backgroundColor: "rgba(128, 128, 128, 0)",
         tooltip: {
             trigger: "axis",
@@ -197,7 +196,9 @@ onMounted(() => {
             {
                 name: "日照量",
                 type: "bar",
-
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
                 data: data,
             },
             {
@@ -241,7 +242,7 @@ onMounted(() => {
     }, 2100);
 
     option88 = {
-        color: colorList,
+        color: colorList2,
         backgroundColor: 'rgba(1,1,1,0)',
         // toolbox: {
         //     iconStyle: {
@@ -380,7 +381,10 @@ onMounted(() => {
                 yAxisIndex: 2,
                 data: [
                     35.6, 62.2, 32.6, 40.0, 56.4,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
             },
             {
                 name: '能源获取',
@@ -388,7 +392,10 @@ onMounted(() => {
                 yAxisIndex: 0,
                 data: [
                     175.6, 182.2, 148.7, 138.8, 156.0
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
             },
             {
                 name: '开发效率',

@@ -12,26 +12,25 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ffc0cb'},
-            {offset: 1, color: '#de1dde'}
+            {offset: 0, color: '#bf2adc'},
+            {offset: 1, color: '#5003e3'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#fc6999'},
-            {offset: 1, color: '#c22668'}
+            {offset: 0, color: '#dc90ea'},
+            {offset: 1, color: '#c56ef1'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#e56bf8'},
-            {offset: 1, color: '#8719f6'}
+            {offset: 0, color: '#fa7ae3'},
+            {offset: 1, color: '#ff00d5'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#c98a08'},
-            {offset: 1, color: '#ee1e06'}
+            {offset: 0, color: '#fd448c'},
+            {offset: 1, color: '#fd0792'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FFB75E'},
-            {offset: 1, color: '#ED8F03'}
+            {offset: 0, color: '#fa3104'},
+            {offset: 1, color: '#ff1212'},
         ]),
-        // 其他渐变色定义...
     ];
     option74 = {
         backgroundColor: 'rgba(128,128,128,0)',

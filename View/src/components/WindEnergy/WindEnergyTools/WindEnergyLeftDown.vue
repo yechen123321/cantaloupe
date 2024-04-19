@@ -16,10 +16,9 @@ onMounted(() => {
         data.push(Math.round(Math.random() * 200));
     }
     var colorList = [
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: "#00C9FF"},
-            {offset: 1, color: "#92FE9D"},
+        new echarts.graphic.LinearGradient(0, 0,1,0, [
+            {offset: 1, color: '#56CCF2'},
+            {offset: 0, color: '#2948ff'}
         ]),
         // 其他渐变色定义...
     ];
@@ -74,6 +73,9 @@ onMounted(() => {
                 name: '累计发电',
                 type: 'bar',
                 data: data,
+                itemStyle: {
+                    barBorderRadius: [0, 10, 10, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
                 label: {
                     show: true,
                     position: 'right',

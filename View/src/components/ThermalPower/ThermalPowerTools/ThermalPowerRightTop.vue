@@ -46,7 +46,7 @@ const close = () => {
                 <div class="thing">危险警报</div>
                 <div class="little">请各人员按照指定通道进行疏散</div>
                 <img src="../../../assets/da.gif" alt="">
-                <button @click="close"  class="close">警报解除</button>
+                <button @click="close" class="close">警报解除</button>
             </div>
         </div>
         <div class="title">
@@ -82,7 +82,8 @@ const close = () => {
 
   .mm {
     position: absolute;
-    color: #fff35e;
+    color: red;
+    text-shadow: 0 0 0.5px red;
     font-weight: bolder;
     font-size: 1.2em;
     margin-top: 22vh;
@@ -113,51 +114,57 @@ const close = () => {
       margin-left: 0vw;
       margin-top: 5vh;
       position: absolute;
-        .do{
-            position: absolute;
-            width: 7vw;
-            height: 6vh;
-            font-size: 1.4em;
-            background: #0d11f6;
-            border: none;
-            border-radius: 6px;
-            margin-left: 24.5vw;
-            margin-top: 30vh;
+
+      .do {
+        position: absolute;
+        width: 7vw;
+        height: 6vh;
+        font-size: 1.4em;
+        background: #0d11f6;
+        border: none;
+        border-radius: 6px;
+        margin-left: 24.5vw;
+        margin-top: 30vh;
+      }
+
+      .down {
+        color: white;
+        font-size: 1.8em;
+        margin-top: 10vw;
+        margin-left: 6.5vw;
+        font-weight: bolder;
+        position: absolute;
+      }
+
+      .tip-2 {
+        color: white;
+        font-size: 1.8em;
+        margin-top: 6vw;
+        margin-left: 6.5vw;
+        font-weight: bolder;
+        position: absolute;
+
+        .number {
+          width: 15vw;
+          color: #ffe800;
+          position: absolute;
         }
-        .down{
-            color:white;
-            font-size: 1.8em;
-            margin-top: 10vw;
-            margin-left: 6.5vw;
-            font-weight: bolder;
-            position: absolute;
+
+        .up {
+          position: absolute;
+          margin-left: 14vw;
+          width: 8vw;
         }
-        .tip-2{
-            color:white;
-            font-size: 1.8em;
-            margin-top: 6vw;
-            margin-left: 6.5vw;
-            font-weight: bolder;
-            position: absolute;
-            .number{
-                width: 15vw;
-                color: #ffe800;
-                position: absolute;
-            }
-            .up{
-                position: absolute;
-                margin-left: 14vw;
-                width: 8vw;
-            }
-        }
-        .tip{
-            color:white;
-            font-size: 1.8em;
-            margin-top: 2vw;
-            margin-left: 2.5vw;
-            font-weight: bolder;
-            position: absolute;
-        }
+      }
+
+      .tip {
+        color: white;
+        font-size: 1.8em;
+        margin-top: 2vw;
+        margin-left: 2.5vw;
+        font-weight: bolder;
+        position: absolute;
+      }
     }
 
     .title {
@@ -167,14 +174,16 @@ const close = () => {
       margin-left: 0vw;
       margin-top: 0vh;
       position: absolute;
-        .name {
-            color: white;
-            position: absolute;
-            font-size: 1.1em;
-            margin-left: 2vw;
-            margin-top: 0.5vh;
-            font-weight: bolder;
-        }
+
+      .name {
+        color: white;
+        position: absolute;
+        font-size: 1.1em;
+        margin-left: 2vw;
+        margin-top: 0.5vh;
+        font-weight: bolder;
+      }
+
       .button {
         position: absolute;
         z-index: 999;
@@ -259,62 +268,66 @@ const close = () => {
     margin-left: -41.1vw;
     margin-top: 13vh;
     z-index: 999;
-      border-radius: 6px;
+    border-radius: 6px;
     background: #c70000;
 
     .main {
-        width: 35vw;
-        height: 45vh;
-        background: red; /* 初始背景色 */
-        margin-left: 2vw;
-        margin-top: 3vh;
+      width: 35vw;
+      height: 45vh;
+      background: red; /* 初始背景色 */
+      margin-left: 2vw;
+      margin-top: 3vh;
+      position: absolute;
+      border-radius: 6px;
+      animation: fadeBackground 4s infinite; /* 应用名为 fadeBackground 的动画，持续4秒，无限循环 */
+      .big {
+        width: 1000vw;
+        height: 1000vh;
+        background: rgba(255, 0, 0, 0.2);
         position: absolute;
+        margin-top: -100vh;
+        margin-left: -100vw;
+      }
+
+      .close {
+        width: 10vw;
+        height: 7vh;
         border-radius: 6px;
-        animation: fadeBackground 4s infinite; /* 应用名为 fadeBackground 的动画，持续4秒，无限循环 */
-        .big{
-            width: 1000vw;
-            height: 1000vh;
-            background: rgba(255, 0, 0, 0.2);
-            position: absolute;
-            margin-top: -100vh;
-            margin-left: -100vw;
-        }
-        .close{
-            width: 10vw;
-            height: 7vh;
-            border-radius: 6px;
-            border: none;
-            background: white;
-            font-size: 1.8em;
-            color:red;
-            position: absolute;
-            margin-top: 37vh;
-            margin-left: 12.5vw;
-        }
-        .thing{
-            color:#ffe800;
-            font-weight: bolder;
-            font-size: 3.5em;
-            position: absolute;
-            width: 35vw;
-            margin-top: 3.5vh;
-            text-align: center;
-        }
-        .little{
-            color:white;
-            position: absolute;
-            font-size: 1.3em;
-            width: 35vw;
-            text-align: center;
-            margin-top: 13vh;
-            font-weight: bolder;
-        }
-        img{
-            position: absolute;
-            margin-left: 10vw;
-            margin-top: 13vh;
-            width: 15vw;
-        }
+        border: none;
+        background: white;
+        font-size: 1.8em;
+        color: red;
+        position: absolute;
+        margin-top: 37vh;
+        margin-left: 12.5vw;
+      }
+
+      .thing {
+        color: #ffe800;
+        font-weight: bolder;
+        font-size: 3.5em;
+        position: absolute;
+        width: 35vw;
+        margin-top: 3.5vh;
+        text-align: center;
+      }
+
+      .little {
+        color: white;
+        position: absolute;
+        font-size: 1.3em;
+        width: 35vw;
+        text-align: center;
+        margin-top: 13vh;
+        font-weight: bolder;
+      }
+
+      img {
+        position: absolute;
+        margin-left: 10vw;
+        margin-top: 13vh;
+        width: 15vw;
+      }
     }
 
   }
@@ -403,13 +416,14 @@ const close = () => {
     width: 28vw;
     height: 30vh;
   }
-    @keyframes fadeBackground {
-        0%, 100% {
-            background-color: transparent; /* 透明背景色 */
-        }
-        50% {
-            background-color: red; /* 初始背景色 */
-        }
+
+  @keyframes fadeBackground {
+    0%, 100% {
+      background-color: transparent; /* 透明背景色 */
     }
+    50% {
+      background-color: red; /* 初始背景色 */
+    }
+  }
 }
 </style>

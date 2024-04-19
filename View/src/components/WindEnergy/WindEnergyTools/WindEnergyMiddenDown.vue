@@ -1,207 +1,59 @@
-
 <script setup>
-import {onMounted, ref} from 'vue';
-import * as echarts from "echarts";
 import WindEnergyMiddenDownThing from "@/components/WindEnergy/WindEnergyTools/WindEnergyMiddenDownThing.vue";
-const echartsRef = ref(null);
-let myChart85 = null;
-let option85 = null;
+import WaterConserMiddenDownThing from "@/components/WaterConser/WaterConserTools/WaterConserMiddenDownThing.vue";
+import {ref, reactive, onBeforeUnmount, onUnmounted, nextTick} from 'vue'
+import {initKlist} from "@/api";
 
-onMounted(() => {
-    myChart85 = echarts.init(echartsRef.value, 'dark');
-    // Your echarts option setup here...
-    // (Your existing option setup code)
-    var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
+let timer = ref(null);
+let roll = ref(null);
+let listData = reactive([]);
 
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00F260'},
-            {offset: 1, color: '#0575E6'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-
-        // 其他渐变色定义...
-
-
-    ];
-    option85 = {
-        backgroundColor: 'rgba(1,1,1,0)',
-        color: colorList,
-        tooltip: {
-            trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross'
-            // }
-        },
-        legend: {
-            top: "16%",
-            left: '20%',
-            textStyle: {
-                color: 'white',
-            }
-        },
-        grid: {
-            top: 70,
-            bottom: 50
-        },
-        xAxis: [
-            {
-                type: 'category',
-                axisTick: {
-                    alignWithLabel: true
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }
-                },
-                axisLine: {
-                    onZero: false,
-                    lineStyle: {
-                        color: colorList[1]
-                    }
-                },
-                axisPointer: {
-                    label: {
-                        formatter: function (params) {
-                            return (
-                                params.value + ' 月份' + ' 单位/万千瓦时'
-                            );
-                        }
-                    }
-                },
-                // prettier-ignore
-                data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
-            },
-        ],
-        yAxis: [
-            {
-                name: '单位/万千瓦时',
-                type: 'value',
-                nameTextStyle: {
-                    color: 'white'
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }
-                },
-            }
-        ],
-        series: [
-            {
-                name: '2020',
-                type: 'line',
-                smooth: true,
-                emphasis: {
-                    focus: 'series'
-                },
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(57,106,252,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(41,72,255,0.1)' // 渐变色起始值
-                        },
-                        ])
-                    }
-                },
-                data: [
-                    2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
-                ]
-            },
-            {
-                name: '2021',
-                type: 'line',
-                smooth: true,
-                emphasis: {
-                    focus: 'series'
-                },
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(0,242,96,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(5,117,230,0.1)' // 渐变色起始值
-                        },
-                        ])
-                    }
-                },
-                data: [
-                    3.9, 5.9, 11.1, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7, 18.7, 48.3, 69.2,
-                ]
-            },
-            {
-                name: '2022',
-                type: 'line',
-                smooth: true,
-                emphasis: {
-                    focus: 'series'
-                },
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(188,78,156,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(248,7,89,0.1)' // 渐变色起始值
-                        },
-                        ])
-                    }
-                },
-                data: [
-                    69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7, 3.9, 5.9, 11.1, 18.7, 48.3,
-                ]
-            },
-            {
-                name: '2023',
-                type: 'line',
-                smooth: true,
-                emphasis: {
-                    focus: 'series'
-                },
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(251,215,134,0.5)' // 渐变色起始值
-                        }, {
-                            offset: 1,
-                            color: 'rgba(198,255,221,0.1)' // 渐变色起始值
-                        },
-                        ])
-                    }
-                },
-                data: [
-                    3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7
-                ]
-            }
-        ]
-    };
-    option85 && myChart85.setOption(option85);
-
-    const resizeObserver = new ResizeObserver(() => {
-        myChart85.resize();
-    });
-
-    resizeObserver.observe(echartsRef.value);
+onBeforeUnmount(() => {
+    clearTimeout(timer.value);
 });
+
+onUnmounted(() => {
+    clearTimeout(timer.value);
+});
+
+function testMove() {
+    clearTimeout(timer.value);
+}
+
+function testMend() {
+    start();
+}
+
+function start() {
+    clearTimeout(timer.value);
+    let speed = ref(100);
+    timer.value = setInterval(MarqueeTest, speed.value);
+}
+
+function MarqueeTest() {
+    let test1 = roll.value;
+
+    if (test1 && test1.offsetHeight == 0) {
+        test1 = roll.value;
+    } else {
+        test1.scrollTop += 1;
+
+        if (test1.scrollTop >= (test1.scrollHeight - test1.clientHeight)) {
+            test1.scrollTop = 0;
+        }
+    }
+
+}
+
+initKlist().then(data => {
+    listData.splice(0, listData.length, ...data.data);
+    nextTick(() => {
+        start();
+    });
+}).catch(error => {
+    console.error('Failed to fetch data:', error);
+});
+
 
 </script>
 
@@ -210,6 +62,26 @@ onMounted(() => {
     <div class="WindEnergyMiddenDownThing">
         <div class="title">风场历史发电量</div>
         <div class="WindEnergyMiddenDownThing-echarts" ref="echartsRef"></div>
+        <div class="roll">
+            <div class="top">
+                <div class="name">名称</div>
+                <div class="do">类型</div>
+                <div class="number">状态</div>
+                <div class="up">实时信息</div>
+                <div class="when">检查时间</div>
+            </div>
+            <div class="roll-in" ref="roll">
+                <div class="roll-main" v-for="item in listData" :key="item.id">
+                    <div @mousemove="testMove" @mouseleave="testMend" class="name">
+                        <div class="name">{{ item.name }}</div>
+                        <div class="do">{{ item.do }}</div>
+                        <div class="number">{{ item.number }}</div>
+                        <div class="up">{{ item.up }}</div>
+                        <div class="when">{{ item.when }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="right">
             <WindEnergyMiddenDownThing id="WindEnergyMiddenDownThing-out"></WindEnergyMiddenDownThing>
         </div>
@@ -221,6 +93,105 @@ onMounted(() => {
 .WindEnergyMiddenDownThing {
     width: 100%;
     height: 100%;
+    .roll {
+        color: white;
+        position: absolute;
+        width: 27vw;
+        margin-top: 6vh;
+        height: 40vh;
+        margin-left: 1vw;
+
+        .top {
+            width: 100%;
+            height: 3.5vh;
+            background: rgba(255, 255, 255, .2);
+            margin-top: -1vh;
+
+            .name {
+                float: left;
+                margin-left: 1.3vw;
+                margin-top: 0.3vh;
+
+            }
+
+            .do {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 3.3vw;
+            }
+
+            .number {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 2.5vw;
+            }
+
+            .up {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 2vw;
+            }
+
+            .when {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 2.7vw;
+            }
+        }
+
+        .roll-in {
+            width: 27vw;
+            height: 20.5vh;
+            overflow: hidden;
+            margin-right: 2vw;
+            margin-top: 1vh;
+
+            .roll-main {
+                width: 100%;
+                height: 5vh;
+                background: rgba(13, 135, 246, 0.1);
+                margin-top: 1vh;
+
+                .name {
+                    float: left;
+                    margin-left: 0.1vw;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                }
+
+                .number {
+                    float: left;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: 1.2vw;
+                    width: 4vw;
+                }
+
+                .when {
+                    float: left;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: 1vw;
+                }
+
+                .up {
+                    float: left;
+                    width: 5vw;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: -0.3vw;
+                }
+
+                .do {
+                    float: left;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: 0.3vw;
+                    width: 4vw;
+                }
+            }
+        }
+    }
     .right{
         width: 15vw;
         height: 23vh;
@@ -247,11 +218,11 @@ onMounted(() => {
         color:white;
         position: absolute;
         font-weight: bolder;
-        font-size: 1.5em;
+        font-size: 1.3em;
         width: 20vw;
         text-align: center;
         margin-left: 3.6vw;
-        margin-top: 1vh;
+        margin-top: 0.5vh;
     }
     .BackImg {
         width: 43vw;

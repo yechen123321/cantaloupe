@@ -12,15 +12,20 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#e059f8'},
-            {offset: 1, color: '#7d0cef'}
+            {offset: 0, color: '#dc90ea'},
+            {offset: 1, color: '#763aee'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FFB75E'},
-            {offset: 1, color: '#ED8F03'}
+            {offset: 0, color: '#ef98d0'},
+            {offset: 1, color: '#fd0792'},
         ]),
 
-        // 其他渐变色定义...
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#fab300'},
+            {offset: 1, color: '#ff0000'},
+        ]),
+
+
     ];
     option75 = {
         color: colorList,
@@ -52,7 +57,7 @@ onMounted(() => {
 
             splitNumber: 4, // 分割的圈数
             axisLine: {
-                show: false, // 隐藏雷达图的轴线
+                // show: false, // 隐藏雷达图的轴线
                 lineStyle: {
                     color: 'white'
                 }
@@ -74,7 +79,7 @@ onMounted(() => {
             {
                 name: 'Budget vs spending',
                 type: 'radar',
-                symbol: 'none', // 去掉每个角的小点
+                // symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
                         value: [50000, 35000, 28000, 26000, 42000, 23200, ],

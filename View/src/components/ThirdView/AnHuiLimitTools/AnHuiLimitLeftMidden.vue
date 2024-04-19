@@ -12,26 +12,23 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ffc0cb'},
-            {offset: 1, color: '#de1dde'}
+            {offset: 0, color: '#c89cf1'},
+            {offset: 1, color: '#8402fd'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#fc82ab'},
-            {offset: 1, color: '#d720a6'}
+            {offset: 0, color: '#ef98d0'},
+            {offset: 1, color: '#fd0792'},
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ea5fff'},
-            {offset: 1, color: '#7F00FF'}
+            {offset: 0, color: '#fab300'},
+            {offset: 1, color: '#ff0000'},
         ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#c98a08'},
-            {offset: 1, color: '#b0200f'}
+            {offset: 0, color: '#074dfd'},
+            {offset: 1, color: '#5907fd'},
         ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FFB75E'},
-            {offset: 1, color: '#ED8F03'}
-        ]),
-        // 其他渐变色定义...
     ];
 
     option76 = {
@@ -128,7 +125,10 @@ onMounted(() => {
                 },
                 data: [
                     176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '储量',
@@ -140,7 +140,10 @@ onMounted(() => {
                 },
                 data: [
                     176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '供量',
@@ -152,7 +155,10 @@ onMounted(() => {
                 },
                 data: [
                     170.7, 175.6, 182.2, 148.7, 182.2, 148.7, 170.7,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [8, 8, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '储量增长率',

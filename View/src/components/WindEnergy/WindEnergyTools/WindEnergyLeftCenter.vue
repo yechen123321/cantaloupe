@@ -11,19 +11,15 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        // new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-        //     {offset: 0, color: '#bc4e9c'},
-        //     {offset: 1, color: '#f80759'}
-        // ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: "#396afc"},
-            {offset: 1, color: "#2948ff"},
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: "#00C9FF"},
-            {offset: 1, color: "#92FE9D"},
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
         ]),
-        // 其他渐变色定义...
     ];
     const categories = (function () {
         let now = new Date();
@@ -176,7 +172,9 @@ onMounted(() => {
             {
                 name: "发电量",
                 type: "bar",
-
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
                 data: data,
             },
             {

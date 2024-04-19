@@ -1,152 +1,44 @@
 <script setup>
-import {ref, onMounted, onBeforeUnmount} from 'vue';
-import * as echarts from 'echarts';
-import LeftMiddenEFirst from "@/components/FourthView/DataAnalysisTools/LeftMiddenEFirst.vue";
-import LeftMiddenESecond from "@/components/FourthView/DataAnalysisTools/LeftMiddenESecond.vue";
 
-const echartsRef = ref(null);
-let myChart80 = null;
-let option80 = null;
-let currentIndex = 0;
-let intervalId = null;
-let isHovering = false;
-
-onMounted(() => {
-    myChart80 = echarts.init(echartsRef.value);
-    var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#56CCF2'},
-            {offset: 1, color: '#2948ff'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-
-            {offset: 0, color: '#fc8cd9'},
-            {offset: 1, color: '#fc4281'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#c184fd'},
-            {offset: 1, color: '#915efa'}
-        ]),
-        // 其他渐变色定义...
-    ];
-    option80 = {
-        color:colorList,
-        series: [
-
-            {
-                roseType: 'area',
-                name: 'Access From',
-                type: 'pie',
-                radius: ['25%', '50%'],
-                center: ['32%', '48%'],
-                avoidLabelOverlap: false,
-                itemStyle: {
-                    borderRadius: 5,
-                },
-                label: {
-                    show: false,
-                    position: 'center',
-                    formatter: '{b}\n{d}%'
-                },
-                emphasis: {
-                    label: {
-                        show: true,
-                        fontSize: 16,
-                        color: 'white',
-                        fontWeight: 'bold'
-                    }
-                },
-                labelLine: {
-                    show: false
-                },
-                data: [
-                    {value: 848, name: '太阳能'},
-                    {value: 735, name: '水利'},
-                    {value: 680, name: '风能'},
-                    {value: 584, name: '质能'},
-                    {value: 400, name: '其他'}
-                ]
-            },
-        ]
-    };
-
-    option80 && myChart80.setOption(option80);
-    const resizeObserver = new ResizeObserver(() => {
-        myChart80.resize();
-    });
-
-    resizeObserver.observe(echartsRef.value);
-
-    myChart80.on('mouseover', (params) => {
-        isHovering = true;
-        const prevIndex = currentIndex;
-        currentIndex = params.dataIndex;
-        clearInterval(intervalId);
-
-        if (prevIndex !== currentIndex) {
-            myChart80.dispatchAction({
-                type: 'downplay',
-                seriesIndex: 0,
-                dataIndex: prevIndex,
-            });
-        }
-
-        myChart80.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: currentIndex,
-        });
-    });
-
-    myChart80.on('mouseout', () => {
-        isHovering = false;
-        startInterval();
-    });
-
-    startInterval();
-});
-
-function startInterval() {
-    intervalId = setInterval(() => {
-        if (!isHovering) {
-            const prevIndex = currentIndex;
-            currentIndex = (currentIndex + 1) % option80.series[0].data.length;
-
-            myChart80.dispatchAction({
-                type: 'downplay',
-                seriesIndex: 0,
-                dataIndex: prevIndex,
-            });
-
-            myChart80.dispatchAction({
-                type: 'highlight',
-                seriesIndex: 0,
-                dataIndex: currentIndex,
-            });
-        }
-    }, 2000);
-}
-
-onBeforeUnmount(() => {
-    clearInterval(intervalId);
-});
 </script>
 
 <template>
     <div class="DataAnalysisLeftMidden">
         <div class="title">安徽能源结构</div>
-        <div class="DataAnalysisLeftMidden-echarts" ref="echartsRef"></div>
-        <LeftMiddenEFirst id="LeftMiddenEFirst-out"></LeftMiddenEFirst>
-        <LeftMiddenESecond id="LeftMiddenESecond-out"></LeftMiddenESecond>
+        <div class="AnHuiLeftTop-main">
+            <div class="MainOne">
+                <img src="../../../assets/可再生能源.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">4232</div>
+                    <div class="up">亿万千瓦</div>
+                </div>
+                <div class="tow">再生能源总产量</div>
+            </div>
+            <div class="MainTow">
+                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one" style="margin-left: 0.2vw">13.44</div>
+                    <div class="up">%</div>
+                </div>
+                <div class="tow">装机容量提升率</div>
+            </div>
+            <div class="MainThree">
+                <img src="../../../assets/投资.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">3789</div>
+                    <div class="up">亿元</div>
+                </div>
+                <div class="tow">能源建设投资</div>
+            </div>
+            <div class="MainFour">
+                <img src="../../../assets/GenericChart.png" style="margin-top: 2vh" alt="" class="pic">
+                <div class="number">
+                    <div class="one" style="margin-left: 0.3vw">1.33</div>
+                    <div class="up">%</div>
+                </div>
+                <div class="tow">发展指标增长</div>
+            </div>
+        </div>
         <img src="../../../assets/pic/midden.png" alt="" class="BackImg">
     </div>
 </template>
@@ -155,30 +47,93 @@ onBeforeUnmount(() => {
 .DataAnalysisLeftMidden {
   width: 100%;
   height: 100%;
+    .AnHuiLeftTop-main {
+        position: absolute;
+        width: 25vw;
+        height: 18vh;
+        margin-left: 3vw;
+        color:white;
+        margin-top: 7vh;
+        .number {
+            position: absolute;
+            width: 8vw;
+            height: 4vh;
+            margin-top: 1.6vh;
+            margin-left: 3.7vw;
+            border-bottom: 2px solid #0a8cf8;
 
-  #LeftMiddenESecond-out {
-    width: 20vw;
-    height: 20vh;
-    position: absolute;
-    margin-top: 1.5vh;
-    margin-left: 14vw;
-  }
+            .up {
+                position: absolute;
+                width: 5vw;
+                margin-left: 4.2vw;
+                text-align: center;
+                font-size: 0.8em;
+                margin-top: 1.3vh;
+                font-weight: bolder;
+            }
 
-  #LeftMiddenEFirst-out {
-    width: 20vw;
-    height: 20vh;
-    position: absolute;
-    margin-top: 1.5vh;
-    margin-left: 5.5vw;
-  }
+            .one {
+                position: absolute;
+                font-size: 1.6em;
+                margin-left: -0.6vw;
+                line-height: 3.7vh;
+                margin-top: -0.3vh;
+                font-weight: bolder;
+                width: 6vw;
+                text-align: center;
+                height: 3.7vh;
+                color: #2bfff1;
+                text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
+            }
+        }
 
-  .DataAnalysisLeftMidden-echarts {
-    width: 30vw;
-    height: 30vh;
-    position: absolute;
-    margin-left: -3vw;
-    margin-top: 1.6vh;
-  }
+        .tow {
+            position: absolute;
+            margin-left: 3.75vw;
+            margin-top: 6vh;
+            width: 8vw;
+            font-size: 0.95em;
+            font-weight: 400;
+            height: 3vh;
+            text-align: center;
+        }
+
+        .pic {
+            position: absolute;
+            width: 3.3vw;
+            height: 6vh;
+            margin-top: 1.6vh;
+        }
+
+        .MainOne {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+        }
+
+        .MainTow {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+            margin-left: 13vw;
+        }
+
+        .MainThree {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+            margin-top: 8vh;
+        }
+
+        .MainFour {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+            margin-top: 8vh;
+            margin-left: 13vw;
+            z-index: 999;
+        }
+    }
 
   .title {
     position: absolute;
