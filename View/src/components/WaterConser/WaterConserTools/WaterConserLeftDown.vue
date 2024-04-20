@@ -16,7 +16,7 @@ onMounted(() => {
         data.push(Math.round(Math.random() * 200));
     }
     var colorList = [
-        new echarts.graphic.LinearGradient(0, 0,1,0, [
+        new echarts.graphic.LinearGradient(0, 0, 1, 0, [
             {offset: 1, color: '#56CCF2'},
             {offset: 0, color: '#2948ff'}
         ]),
@@ -42,7 +42,7 @@ onMounted(() => {
         },
         yAxis: {
             type: 'category',
-            data: ['电场1', '电场2', '电场3', '电场4', '电场5', '电场6', ],
+            data: ['电场1', '电场2', '电场3', '电场4', '电场5', '电场6',],
             inverse: true,
             name: 'KWh',
             nameTextStyle: {
@@ -135,33 +135,33 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .ThermalPowerLeftDown {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    .title {
-        color: white;
-        position: absolute;
-        //background: red;
-        text-align: center;
-        width: 10vw;
-        font-weight: bolder;
-        font-size: 1.2em;
-        margin-top: 3.6vh;
-        margin-left: 2.8vw;
-    }
+  .title {
+    color: white;
+    position: absolute;
+    //background: red;
+    text-align: center;
+    width: 10vw;
+    font-weight: bolder;
+    font-size: 1.2em;
+    margin-top: 3.6vh;
+    margin-left: 2.8vw;
+  }
 
-    .ThermalPowerLeftDown-echarts {
-        width: 26vw;
-        height: 33vh;
-        margin-left: 2vw;
-        margin-top: 1vh;
-        position: absolute;
-        z-index: 300;
-    }
+  .ThermalPowerLeftDown-echarts {
+    width: 26vw;
+    height: 33vh;
+    margin-left: 2vw;
+    margin-top: 1vh;
+    position: absolute;
+    z-index: 300;
+  }
 
-    .BackImg {
-        width: 30vw;
-        height: 32vh;
-    }
+  .BackImg {
+    width: 30vw;
+    height: 32vh;
+  }
 }
 </style>

@@ -5,8 +5,162 @@ import {ref, onMounted} from "vue";
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
-let myChart86 = null;
-let option86 = null;
+let myChart83 = null;
+let option83 = null;
+
+onMounted(() => {
+    myChart83 = echarts.init(echartsRef.value, 'dark');
+    // Your echarts option setup here...
+    // (Your existing option setup code)
+    var colorList = [
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+
+            {offset: 0, color: '#fc8cd9'},
+            {offset: 1, color: '#f80759'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#00C9FF'},
+            {offset: 1, color: '#92FE9D'}
+        ]),
+        // 其他渐变色定义...
+    ];
+    option83 = {
+        backgroundColor: "rgba(128,128,128,0)",
+        color: colorList,
+        tooltip: {
+            trigger: 'axis',
+        },
+        legend: {
+            textStyle: {
+                color: 'white'
+            },
+            top: '12%',
+            left: 'center',
+            data: ['产量', '产量增量', '产量增长率',],
+            itemWidth: 20, // 标签宽度为20px
+            itemHeight: 10, // 标签高度为10px
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                axisPointer: {
+                    type: 'shadow'
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置Y轴上数据的颜色为白色
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+            }
+        ],
+        grid: {
+            left: '15%',
+            right: "13%"
+        },
+        yAxis: [
+            {
+                type: 'value',
+                name: '万千瓦',
+                min: 0,
+                max: 250,
+                nameTextStyle: {
+                    color: 'white',
+                    padding: [0, 25, 0, 0]
+                },
+                interval: 50,
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置Y轴上数据的颜色为白色
+                    }, formatter: '{value} '
+
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+            },
+            {
+                type: 'value',
+                name: '百分比',
+                min: 0,
+                max: 25,
+                nameTextStyle: {
+                    color: 'white',
+                    padding: [0, -25, 0, 0]
+                },
+                interval: 5,
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置Y轴上数据的颜色为白色
+                    }, formatter: '{value} %'
+
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    },
+                },
+            }
+        ],
+        series: [
+            {
+                name: '产量',
+                type: 'bar',
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' 万千瓦';
+                    }
+                },
+                data: [
+                    176.7, 135.6, 162.2, 132.6, 162.2, 132.6, 176.7,
+                ]
+            },
+            {
+                name: '产量增量',
+                type: 'bar',
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' 万千瓦';
+                    }
+                },
+                data: [
+                    170.7, 175.6, 182.2, 148.7, 182.2, 148.7, 170.7,
+                ]
+            },
+            {
+                name: '产量增长率',
+                type: 'line',
+                yAxisIndex: 1,
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' %';
+                    }
+                },
+                data: [20.3, 23.4, 23.0, 16.5, 23.0, 16.5, 20.3,]
+            },
+        ]
+    };
+    option83 && myChart83.setOption(option83);
+
+    const resizeObserver = new ResizeObserver(() => {
+        myChart83.resize();
+    });
+
+    resizeObserver.observe(echartsRef.value);
+});
+
+
 const handleRouteChange = () => {
     // 在这里添加您的路由切换逻辑，下面是一个示例，实际根据您的路由配置进行修改
     router.push('/dataanalysis'); // 替换'/new-route'为您要跳转的路由路径
@@ -23,180 +177,6 @@ const options = ref([
     {where: '广东', value: 9},
     {where: '广西', value: 10},
 ]);
-
-onMounted(() => {
-    myChart86 = echarts.init(echartsRef.value, 'dark');
-    // Your echarts option setup here...
-    // (Your existing option setup code)
-    var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#c184fd'},
-            {offset: 1, color: '#915efa'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#56CCF2'},
-            {offset: 1, color: '#2948ff'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-
-            {offset: 0, color: '#fc8cd9'},
-            {offset: 1, color: '#fc4281'}
-        ]),
-        // 其他渐变色定义...
-    ];
-    option86 = {
-        backgroundColor: 'rgba(1,1,1,0)',
-        color: colorList,
-        tooltip: {
-            trigger: 'axis',
-            extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
-            formatter: function (params) {
-                let tooltipContent = '';
-                let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
-                params.forEach(function (param) {
-                    if (param.seriesName === '全国能耗降低率') {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
-                    } else {
-                        tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
-                    }
-                });
-                return tooltipContent;
-            }
-
-        },
-        grid: {
-            left: '5.3%', // 调整图表左边距
-            right: '7%', // 调整图表右边距
-            // top: '10%', // 调整图表上边距
-            bottom: '15%', // 调整图表下边距
-            containLabel: true,
-        },
-        legend: {
-            top: '3%',
-            data: ['能源消耗', '全国GDP', '全国能耗降低率'],
-            textStyle: {
-                color: 'white'
-            }
-        },
-        xAxis: [
-            {
-                type: 'category',
-                axisTick: {
-                    alignWithLabel: true
-                }, axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                },
-                // prettier-ignore
-                data: ['2019', '2020', '2021', '2022', '2023']
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value',
-                name: '万亿元',
-                position: 'right',
-                alignTicks: true,
-                nameTextStyle: {
-                    color: 'white',
-                    padding: [0, -30, 0, 0]
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-            {
-                type: 'value',
-                name: '降低率',
-                nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
-                position: 'right',
-                nameTextStyle: {
-                    color: 'white',
-                    padding: [0, -38, 0, 0]
-                },
-                alignTicks: true,
-                offset: 40,
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-            {
-                type: 'value',
-                name: '标准煤 / 万亿吨',
-                position: 'left',
-                alignTicks: true,
-                nameTextStyle: {
-                    color: 'white',
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置X轴上数据的颜色为白色
-                    }
-                }
-            },
-        ],
-        series: [
-            {
-                name: '能源消耗',
-                type: 'bar',
-                yAxisIndex: 2,
-                data: [
-                    135.6, 162.2, 132.6, 120.0, 146.4,
-                ]
-            },
-            {
-                name: '全国GDP',
-                type: 'bar',
-                yAxisIndex: 0,
-                data: [
-                    175.6, 182.2, 148.7, 128.8, 136.0
-                ]
-            },
-            {
-                name: '全国能耗降低率',
-                type: 'line',
-                yAxisIndex: 1,
-                data: [3.4, 2.0, 1.5, 1.0, 3.2]
-            },
-        ]
-    };
-
-    option86 && myChart86.setOption(option86);
-
-    const resizeObserver = new ResizeObserver(() => {
-        myChart86.resize();
-    });
-
-    resizeObserver.observe(echartsRef.value);
-});
 
 </script>
 
@@ -224,17 +204,18 @@ onMounted(() => {
   .title {
     color: white;
     font-weight: bolder;
-    font-size: 1.4em;
+    font-size: 1.25em;
     position: absolute;
     width: 42.5vw;
     text-align: center;
-    margin-top: 0.8vh;
+    margin-top: 1vh;
   }
 
   .DataAnalysisMiddenDown-echarts {
-    width: 30vw;
-    height: 28vh;
-    margin-top: 4vh;
+    width: 33vw;
+    height: 32vh;
+    margin-left: -2vw;
+    margin-top: 1.2vh;
     position: absolute;
   }
 

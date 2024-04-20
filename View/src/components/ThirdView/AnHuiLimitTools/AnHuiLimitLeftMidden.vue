@@ -11,10 +11,7 @@ onMounted(() => {
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#c89cf1'},
-            {offset: 1, color: '#8402fd'},
-        ]),
+
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#ef98d0'},
             {offset: 1, color: '#fd0792'},
@@ -24,7 +21,10 @@ onMounted(() => {
             {offset: 0, color: '#fab300'},
             {offset: 1, color: '#ff0000'},
         ]),
-
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#c89cf1'},
+            {offset: 1, color: '#8402fd'},
+        ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#fa3104'},
             {offset: 1, color: '#ff1212'},

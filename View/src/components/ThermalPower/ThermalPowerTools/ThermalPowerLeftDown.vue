@@ -17,9 +17,9 @@ onMounted(() => {
     }
     var colorList = [
 
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: "#00C9FF"},
-            {offset: 1, color: "#92FE9D"},
+        new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+            {offset: 1, color: '#fab300'},
+            {offset: 0, color: '#ff5900'},
         ]),
         // 其他渐变色定义...
     ];
@@ -47,7 +47,7 @@ onMounted(() => {
         },
         yAxis: {
             type: 'category',
-            data: ['电场1', '电场2', '电场3', '电场4', '电场5', '电场6', ],
+            data: ['电场1', '电场2', '电场3', '电场4', '电场5', '电场6',],
             inverse: true,
             name: 'KWh',
             nameTextStyle: {
@@ -78,7 +78,11 @@ onMounted(() => {
                     show: true,
                     position: 'right',
                     valueAnimation: true
-                }
+                },
+                itemStyle: {
+                    barBorderRadius: [0, 10, 10, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
+                barWidth: 20 // 设置柱状图的宽度为50像素
             }
         ],
         legend: {

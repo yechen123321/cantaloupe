@@ -1,203 +1,36 @@
 <script setup>
-import {ref, onMounted} from "vue";
+import {ref, onMounted} from 'vue'
 import * as echarts from "echarts";
 
-const echartsRef = ref(null);
-let myChart87 = null;
-let option87 = null;
 const echartsRef2 = ref(null);
 let myChart88 = null;
 let option88 = null;
+
 onMounted(() => {
-    myChart87 = echarts.init(echartsRef.value, 'dark');
     myChart88 = echarts.init(echartsRef2.value, 'dark');
     // Your echarts option setup here...
     // (Your existing option setup code)
     var colorList = [
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
-        ]),
-
 
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#fab300'},
+            {offset: 1, color: '#ff0000'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
+            {offset: 0, color: '#ef98d0'},
+            {offset: 1, color: '#fd0792'},
         ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-
-
-        // 其他渐变色定义...
     ];
-    option87 = {
-        backgroundColor: "rgba(128,128,128,0)",
-        color: colorList,
-        tooltip: {
-            trigger: 'axis',
-            // axisPointer: {
-            //     type: 'cross',
-            //     crossStyle: {
-            //         color: '#999'
-            //     }
-            // }
-        },
-        // toolbox: {
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
-        legend: {
-
-            textStyle: {
-                color: 'white'
-            },
-            top: '15%',
-            left: 'center',
-            data: ['煤炭', '天然气', '燃油', '其他'],
-            itemWidth: 20, // 标签宽度为20px
-            itemHeight: 10, // 标签高度为10px
-        },
-        xAxis: [
-            {
-                type: 'category',
-                data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-                axisPointer: {
-                    type: 'shadow'
-                },
-
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-            }
-        ],
-        grid: {
-            left: '15%',
-            right: "13%"
-        },
-        yAxis: [
-            {
-                type: 'value',
-                name: '万吨',
-                min: 0,
-                // max: 250,
-                nameTextStyle: {
-                    color: 'white',
-                    padding: [0, 25, 0, 0]
-                },
-                interval: 50,
-                axisLabel: {
-                    textStyle: {
-                        color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} '
-
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: 'white',
-                    },
-                },
-            },
-        ],
-        series: [
-            {
-                name: '煤炭',
-                type: 'line',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' 万吨';
-                    }
-                },
-                data: [
-                    176.7, 235.6, 262.2, 132.6, 262.2, 132.6, 176.7, 235.6, 262.2, 132.6, 176.7, 235.6,
-                ]
-            },
-            {
-                name: '天然气',
-                type: 'line',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' 万吨';
-                    }
-                },
-                data: [
-                    135.6, 162.2, 76.7, 135.6, 162.2, 32.6, 162.2, 32.6, 76.7, 135.6, 162.2, 162.2,
-                ]
-            },
-            {
-                name: '燃油',
-                type: 'line',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' 万吨';
-                    }
-                },
-                data: [
-                    210.3, 123.4, 223.0, 126.5, 123.0, 136.5, 220.3, 120.3, 223.4, 123.0, 223.0, 126.5,
-                ]
-            },
-            {
-                name: '其他',
-                type: 'line',
-                tooltip: {
-                    valueFormatter: function (value) {
-                        return value + ' 万吨';
-                    }
-                },
-                data: [
-                    76.7, 135.6, 223.0, 135.6, 162.2, 76.7, 220.3, 120.3, 223.4, 135.6, 162.2, 126.5,
-                ]
-            },
-        ]
-    };
-
     option88 = {
         color: colorList,
         backgroundColor: 'rgba(1,1,1,0)',
-        // toolbox: {
-        //     iconStyle: {
-        //         borderColor: "#fff",
-        //     },
-        //     showTitle:false,
-        //     right:'3%',
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         // magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
             formatter: function (params) {
                 let tooltipContent = '';
                 let mineName = params[0].name;
-                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
+                tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/万亿吨, 亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
                 params.forEach(function (param) {
                     if (param.seriesName === '全国能耗降低率') {
                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
@@ -216,8 +49,8 @@ onMounted(() => {
             containLabel: true,
         },
         legend: {
-            // left:'0%',
-            top: '3%',
+            left: '17%',
+            top: '12%',
             itemWidth: 10, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
             data: ['运营耗资', '能源获取', '开发效率'],
@@ -267,9 +100,12 @@ onMounted(() => {
             },
             {
                 type: 'value',
-                name: '降低率',
+                name: '百分比',
+                max: 100,
+                min: 30,
                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
                 position: 'right',
+
                 nameTextStyle: {
                     color: 'white',
                     padding: [0, -18, 0, 0]
@@ -289,10 +125,10 @@ onMounted(() => {
             },
             {
                 type: 'value',
-                name: '标准煤 / 万亿吨',
+                name: '标准煤',
                 nameTextStyle: {
                     color: 'white',
-                    padding: [0, -25, 0, 0]
+                    padding: [0, 20, 0, 0]
                 },
                 position: 'left',
                 alignTicks: true,
@@ -315,7 +151,10 @@ onMounted(() => {
                 yAxisIndex: 2,
                 data: [
                     35.6, 62.2, 32.6, 20.0, 46.4,
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
             },
             {
                 name: '能源获取',
@@ -323,35 +162,64 @@ onMounted(() => {
                 yAxisIndex: 0,
                 data: [
                     175.6, 182.2, 148.7, 138.8, 146.0
-                ]
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                },
             },
             {
                 name: '开发效率',
                 type: 'line',
                 yAxisIndex: 1,
-                data: [3.4, 2.0, 1.5, 1.0, 3.2]
+                data: [83.4, 82.0, 89.5, 91.0, 83.2]
             },
         ]
     };
 
-    option87 && myChart87.setOption(option87);
+
     option88 && myChart88.setOption(option88);
 
     const resizeObserver = new ResizeObserver(() => {
-        myChart87.resize();
         myChart88.resize();
     });
 
-    resizeObserver.observe(echartsRef.value);
+    resizeObserver.observe(echartsRef2.value);
 });
 
 </script>
 <template>
     <div class="ThermalPowerRightDown">
-        <div class="title">燃料使用情况</div>
-        <div class="title2">能源开发效率</div>
-        <div class="ThermalPowerRightDown-echarts" ref="echartsRef"></div>
-        <div class="ThermalPowerRightDown-echarts2" ref="echartsRef2"></div>
+        <div class="title">能源开发效率</div>
+        <div class="ThermalPowerRightDown-echarts" ref="echartsRef2"></div>
+        <div class="title2">室内环境数据</div>
+        <div class="main">
+            <ul>
+                <li>
+                    <img src="../../../assets/大气温度.png" alt="">
+                    <div class="number">26.4</div>
+                    <div class="up">(℃)</div>
+                    <div class="what">室内温度</div>
+                </li>
+                <li>
+                    <img src="../../../assets/露点温度.png" alt="">
+                    <div class="number">11.7</div>
+                    <div class="up">(%RH)</div>
+                    <div class="what">空气湿度</div>
+                </li>
+                <li>
+                    <img src="../../../assets/空气质量置灰.png" alt="">
+                    <div class="number">21.1</div>
+                    <div class="up">(AQI)</div>
+                    <div class="what">空气质量</div>
+                </li>
+                <li>
+                    <img src="../../../assets/空气质一般.png" alt="">
+                    <div class="number">3.2</div>
+                    <div class="up">(M/s)</div>
+                    <div class="what">空气流速</div>
+                </li>
+            </ul>
+        </div>
         <img src="../../../assets/pic/border3.png" alt="" class="BackImg">
     </div>
 </template>
@@ -361,12 +229,67 @@ onMounted(() => {
   width: 100%;
   height: 100%;
 
+  .main {
+    width: 24vw;
+    margin-left: 1vw;
+    height: 22vh;
+    position: absolute;
+    margin-top: 33vh;
+
+    ul {
+      position: absolute;
+      width: 30vw;
+      height: 20vh;
+      margin-top: -2vh;
+      margin-left: -4.4vw;
+
+      li {
+        color: white;
+        font-weight: bolder;
+        font-size: 1em;
+        width: 10vw;
+        height: 8vh;
+        float: left;
+        margin-top: 3vh;
+        margin-left: 2vw;
+        list-style: none;
+
+        img {
+          width: 4vw;
+          position: absolute;
+        }
+
+        .number {
+          position: absolute;
+          margin-left: 4.4vw;
+          margin-top: 3.5vh;
+          font-size: 1.6em;
+          width: 4vw;
+          text-align: center;
+        }
+
+        .up {
+          margin-left: 8.5vw;
+          margin-top: 4.7vh;
+          position: absolute;
+          color: #0ca6e0;
+        }
+
+        .what {
+          position: absolute;
+          margin-left: 5vw;
+          color: #3de9fa;
+          margin-top: 0.5vh;
+        }
+      }
+    }
+  }
+
   .ThermalPowerRightDown-echarts {
     position: absolute;
-    width: 29vw;
+    width: 26vw;
     height: 30vh;
-    margin-left: -1vw;
-    margin-top: 2vh;
+    margin-top: 3.2vh;
   }
 
   .ThermalPowerRightDown-echarts2 {
@@ -381,18 +304,18 @@ onMounted(() => {
     color: white;
     position: absolute;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1.15em;
     margin-left: 2vw;
     width: 21.7vw;
     text-align: center;
-    margin-top: 27.3vh;
+    margin-top: 29.3vh;
   }
 
   .title {
     color: white;
     position: absolute;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1.15em;
     margin-left: 2vw;
     width: 21.7vw;
     text-align: center;

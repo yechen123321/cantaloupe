@@ -37,7 +37,7 @@ onMounted(() => {
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#56CCF2'},
-            {offset: 1, color: '#2948ff'}
+            {offset: 1, color: '#066ff8'}
         ]),
         // 其他渐变色定义...
     ];
@@ -333,7 +333,9 @@ onMounted(() => {
             },
             {
                 type: 'value',
-                name: '降低率',
+                name: '百分比',
+                max: 100,
+                min: 30,
                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
                 position: 'right',
                 nameTextStyle: {
@@ -401,7 +403,7 @@ onMounted(() => {
                 name: '开发效率',
                 type: 'line',
                 yAxisIndex: 1,
-                data: [3.4, 2.0, 1.5, 1.0, 3.2]
+                data: [83.4, 82.0, 89.5, 91.0, 83.2]
             },
         ]
     };

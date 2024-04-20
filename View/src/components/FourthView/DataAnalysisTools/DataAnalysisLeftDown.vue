@@ -50,13 +50,13 @@ onMounted(() => {
     //     [12, 65, 45, 51, 0.74, 39, 17, '良'],
     // ];
     const schema = [
-        { name: 'date', index: 0, text: '月' },
-        { name: 'AQIindex', index: 1, text: '平均AQI指数' },
-        { name: 'PM25', index: 2, text: 'PM2.5' },
-        { name: 'PM10', index: 3, text: 'PM10' },
-        { name: 'CO', index: 4, text: '一氧化碳（CO）' },
-        { name: 'NO2', index: 5, text: '二氧化氮（NO2）' },
-        { name: 'SO2', index: 6, text: '二氧化硫（SO2）' }
+        {name: 'date', index: 0, text: '月'},
+        {name: 'AQIindex', index: 1, text: '平均AQI指数'},
+        {name: 'PM25', index: 2, text: 'PM2.5'},
+        {name: 'PM10', index: 3, text: 'PM10'},
+        {name: 'CO', index: 4, text: '一氧化碳（CO）'},
+        {name: 'NO2', index: 5, text: '二氧化氮（NO2）'},
+        {name: 'SO2', index: 6, text: '二氧化硫（SO2）'}
     ];
 
     const itemStyle = {
@@ -70,11 +70,11 @@ onMounted(() => {
         backgroundColor: 'rgba(1,1,1,0)',
         legend: {
             top: '3%',
-            left:'24%',
-            data: ['2021','2022',  '2023'],
+            left: '24%',
+            data: ['2021', '2022', '2023'],
             textStyle: {
                 fontSize: 16,
-                color:'white',
+                color: 'white',
             }
         },
         grid: {
@@ -84,7 +84,7 @@ onMounted(() => {
             bottom: '10%'
         },
         tooltip: {
-            position:'right',
+            position: 'right',
             backgroundColor: 'rgba(255,255,255,1)',
             formatter: function (param) {
                 var value = param.value;
@@ -131,7 +131,7 @@ onMounted(() => {
             nameGap: 20,
             nameTextStyle: {
                 fontSize: 16,
-                color:'white',
+                color: 'white',
             },
             axisLabel: {
                 textStyle: {
@@ -154,8 +154,8 @@ onMounted(() => {
                 dimension: 2,
                 min: 0,
                 max: 250,
-                textStyle:{
-                    color:'white',
+                textStyle: {
+                    color: 'white',
                 },
                 itemWidth: 13,
                 itemHeight: 50,
@@ -209,20 +209,16 @@ onMounted(() => {
                 name: '2023',
                 type: 'scatter',
                 itemStyle: itemStyle,
-                data: dataBJ
+                data: dataBJ,
+                color: 'blue',
             },
             {
                 name: '2022',
                 type: 'scatter',
                 itemStyle: itemStyle,
-                data: dataGZ
+                data: dataGZ,
+                color: 'red',
             },
-            // {
-            //     name: '2021',
-            //     type: 'scatter',
-            //     itemStyle: itemStyle,
-            //     data: dataSH
-            // },
         ]
     };
     option87 && myChart87.setOption(option87);
@@ -260,10 +256,10 @@ onMounted(() => {
   .title {
     position: absolute;
     color: white;
-    font-size: 1.4em;
+    font-size: 1.25em;
     font-weight: bolder;
-    margin-top: 4.5vh;
-    margin-left: 3vw;
+    margin-top: 4vh;
+    margin-left: 2.6vw;
   }
 
   .BackImg {

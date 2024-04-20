@@ -128,7 +128,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="AnHuiWindLeftTop">
-        <div class="title">安徽省风生能源结构</div>
+        <div class="title">能源开发及供给结构</div>
         <div class="AnHuiWindLeftTop-echarts" ref="echartsRef"></div>
     </div>
 

@@ -54,184 +54,6 @@ initKlist().then(data => {
     console.error('Failed to fetch data:', error);
 });
 
-// const echartsRef = ref(null);
-// let myChart72 = null;
-// let option72 = null;
-
-// onMounted(() => {
-//     myChart72 = echarts.init(echartsRef.value);
-//     var colorList = [
-//         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-//             {offset: 0, color: '#ffc0cb'},
-//             {offset: 1, color: '#de1dde'}
-//         ]),
-//         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-//             {offset: 0, color: '#ea5fff'},
-//             {offset: 1, color: '#7F00FF'}
-//         ]),
-//         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-//             {offset: 0, color: '#FFB75E'},
-//             {offset: 1, color: '#ED8F03'}
-//         ]),
-//         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-//             {offset: 0, color: '#fc82ab'},
-//             {offset: 1, color: '#d720a6'}
-//         ]),
-//         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-//             {offset: 0, color: '#c98a08'},
-//             {offset: 1, color: '#b0200f'}
-//         ]),
-//
-//         // 其他渐变色定义...
-//     ];
-//     option72 = {
-//         color: colorList,
-//         tooltip: {
-//             trigger: 'axis',
-//             extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
-//             formatter: function (params) {
-//                 let tooltipContent = '';
-//                 let mineName = params[0].name;
-//                 tooltipContent += '<span style="font-weight: bold;margin-right: 1vw; margin-top: -500px;">' + mineName + '</span>' + '单位/亿吨,亿元<br>' + '<br>'; // 设置矿地名字的样式为加粗并向上移动5px
-//                 params.forEach(function (param) {
-//                     if (param.seriesName === '全国能耗降低率') {
-//                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '%</span>' + '<br>';
-//                     } else {
-//                         tooltipContent += param.marker + param.seriesName + ': ' + '<span style="float: right; font-weight: bold;">' + param.value + '</span>' + '<br>';
-//                     }
-//                 });
-//                 return tooltipContent;
-//             }
-//         },
-//         grid: {
-//             left: '5.3%', // 调整图表左边距
-//             right: '7%', // 调整图表右边距
-//             bottom: '15%', // 调整图表下边距
-//             containLabel: true,
-//         },
-//         legend: {
-//             itemWidth: 20, // 标签宽度为10px
-//             itemHeight: 10, // 标签高度为10px
-//             left: '13%',
-//             top: '13%',
-//             data: ['开采耗费', '获取能量', '降低率'],
-//             textStyle: {
-//                 color: 'white'
-//             }
-//         },
-//         xAxis: [
-//             {
-//                 type: 'category',
-//                 axisTick: {
-//                     alignWithLabel: true
-//                 }, axisLine: {
-//                     lineStyle: {
-//                         color: 'white',
-//                     },
-//                 },
-//                 axisLabel: {
-//                     textStyle: {
-//                         color: 'white' // 设置X轴上数据的颜色为白色
-//                     }
-//                 },
-//                 // prettier-ignore
-//                 data: ['2019', '2020', '2021', '2022', '2023']
-//             }
-//         ],
-//         yAxis: [
-//             {
-//                 type: 'value',
-//                 name: '万亿元',
-//                 position: 'right',
-//                 alignTicks: true,
-//                 nameTextStyle: {
-//                     padding: [0, -30, 0, 0]
-//                 },
-//                 axisLine: {
-//                     lineStyle: {
-//                         color: 'white',
-//                     },
-//                 },
-//                 axisLabel: {
-//                     textStyle: {
-//                         color: 'white' // 设置X轴上数据的颜色为白色
-//                     }
-//                 }
-//             },
-//             {
-//                 type: 'value',
-//                 name: '降低率',
-//                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
-//                 position: 'right',
-//                 nameTextStyle: {
-//                     padding: [0, -38, 0, 0]
-//                 },
-//                 alignTicks: true,
-//                 offset: 40,
-//                 axisLine: {
-//                     lineStyle: {
-//                         color: 'white',
-//                     },
-//                 },
-//                 axisLabel: {
-//                     textStyle: {
-//                         color: 'white' // 设置X轴上数据的颜色为白色
-//                     }
-//                 }
-//             },
-//             {
-//                 type: 'value',
-//                 name: '标准煤',
-//                 nameTextStyle: {
-//                     padding: [0, 36, 0, 0],
-//                 },
-//                 alignTicks: true,
-//                 axisLine: {
-//                     lineStyle: {
-//                         color: 'white',
-//                     },
-//                 },
-//                 axisLabel: {
-//                     textStyle: {
-//                         color: 'white' // 设置X轴上数据的颜色为白色
-//                     }
-//                 }
-//             },
-//         ],
-//         series: [
-//             {
-//                 name: '开采耗费',
-//                 type: 'bar',
-//                 yAxisIndex: 2,
-//                 data: [
-//                     35.6, 32.2, 32.6, 20.0, 36.4,
-//                 ]
-//             },
-//             {
-//                 name: '获取能量',
-//                 type: 'bar',
-//                 yAxisIndex: 0,
-//                 data: [
-//                     175.6, 182.2, 148.7, 138.8, 146.0
-//                 ]
-//             },
-//             {
-//                 name: '降低率',
-//                 type: 'line',
-//                 yAxisIndex: 1,
-//                 data: [3.4, 2.0, 1.5, 1.0, 3.2]
-//             },
-//         ]
-//     };
-//
-//     option72 && myChart72.setOption(option72);
-//
-//     const resizeObserver = new ResizeObserver(() => {
-//         myChart72.resize();
-//     });
-//
-//     resizeObserver.observe(echartsRef.value);
-// });
 const datas = ref([]);
 const listData = ref({});
 
@@ -281,12 +103,12 @@ initK1().then(response => {
             <div class="title2">设施信息概览</div>
             <div class="AnHuiLeftTop-main">
                 <div class="MainOne">
-                    <img src="../../../assets/可再生能源.png" alt="" class="pic">
+                    <img src="../../../assets/火力电.png" alt="" class="pic">
                     <div class="number">
                         <div class="one">4232</div>
                         <div class="up">亿万千瓦</div>
                     </div>
-                    <div class="tow">再生能源总产量</div>
+                    <div class="tow">有限能源总产量</div>
                 </div>
                 <div class="MainTow">
                     <img src="../../../assets/装机容量.png" alt="" class="pic">

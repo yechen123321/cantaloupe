@@ -12,24 +12,25 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bf2adc'},
-            {offset: 1, color: '#5003e3'},
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#dc90ea'},
-            {offset: 1, color: '#c56ef1'},
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#fa7ae3'},
-            {offset: 1, color: '#ff00d5'},
+            {offset: 0, color: '#fa3104'},
+            {offset: 1, color: '#ff1212'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#fd448c'},
             {offset: 1, color: '#fd0792'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#fa3104'},
-            {offset: 1, color: '#ff1212'},
+            {offset: 0, color: '#fa7ae3'},
+            {offset: 1, color: '#ff00d5'},
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#dc90ea'},
+            {offset: 1, color: '#c56ef1'},
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bf2adc'},
+            {offset: 1, color: '#5003e3'},
         ]),
     ];
     option74 = {
@@ -126,7 +127,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="AnHuiLimitLeftTop">
-        <div class="title">安徽省有限能源结构</div>
+        <div class="title">能源开发及供给结构</div>
         <div class="AnHuiLimitLeftTop-echarts" ref="echartsRef"></div>
     </div>
 </template>

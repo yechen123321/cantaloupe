@@ -207,6 +207,40 @@ onMounted(() => {
 <template>
     <div class="DataAnalysisMiddenTopLeft">
         <div class="TitleSecond">安徽省碳排放量统计</div>
+        <div class="AnHuiLeftTop-main">
+            <div class="MainOne">
+                <img src="../../../assets/火力电.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">4232</div>
+                    <div class="up">亿万千瓦</div>
+                </div>
+                <div class="tow">有限能源总产量</div>
+            </div>
+            <div class="MainTow">
+                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one" style="margin-left: 0.2vw">13.44</div>
+                    <div class="up">%</div>
+                </div>
+                <div class="tow">装机容量提升率</div>
+            </div>
+            <div class="MainThree">
+                <img src="../../../assets/投资.png" alt="" class="pic">
+                <div class="number">
+                    <div class="one">3789</div>
+                    <div class="up">亿元</div>
+                </div>
+                <div class="tow">能源建设投资</div>
+            </div>
+            <div class="MainFour">
+                <img src="../../../assets/GenericChart.png" style="margin-top: 3vh" alt="" class="pic">
+                <div class="number">
+                    <div class="one" style="margin-left: 0.3vw">1.33</div>
+                    <div class="up">%</div>
+                </div>
+                <div class="tow">发展指标增长</div>
+            </div>
+        </div>
         <div class="DataAnalysisMiddenTopLeft-down" ref="echartsRef"></div>
     </div>
 </template>
@@ -215,6 +249,95 @@ onMounted(() => {
 .DataAnalysisMiddenTopLeft {
     width: 100%;
     height: 100%;
+
+    .AnHuiLeftTop-main {
+        position: absolute;
+        width: 25vw;
+        height: 18vh;
+        margin-left: 1vw;
+        margin-top: -1vh;
+        color: white;
+
+        .number {
+            position: absolute;
+            width: 8vw;
+            height: 4vh;
+            margin-top: 5.7vh;
+            margin-left: 3vw;
+
+            .up {
+                position: absolute;
+                width: 5vw;
+                margin-left: 4.2vw;
+                text-align: center;
+                font-size: 0.8em;
+                margin-top: 1.3vh;
+                font-weight: bolder;
+            }
+
+            .one {
+                position: absolute;
+                font-size: 1.6em;
+                margin-left: -0.6vw;
+                line-height: 3.7vh;
+                margin-top: -0.3vh;
+                font-weight: bolder;
+                width: 6vw;
+                text-align: center;
+                height: 3.7vh;
+                color: #fac800;
+                text-shadow: 0 0 1px #fac800, 0 0 1px #fac800, 0 0 2px #fac800;
+            }
+        }
+
+        .tow {
+            position: absolute;
+            margin-left: 3vw;
+            margin-top: 2vh;
+            width: 8vw;
+            font-size: 1em;
+            font-weight: bolder;
+            height: 3vh;
+            border-bottom: 2px solid #00bfff;
+            text-align: center;
+        }
+
+        .pic {
+            position: absolute;
+            width: 2.7vw;
+            height: 5vh;
+            margin-top: 2.4vh;
+        }
+
+        .MainOne {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+        }
+
+        .MainTow {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+            margin-left: 13vw;
+        }
+
+        .MainThree {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+            margin-top: 10vh;
+        }
+
+        .MainFour {
+            width: 11vw;
+            height: 8vh;
+            position: absolute;
+            margin-top: 10vh;
+            margin-left: 13vw;
+            z-index: 999;
+        }
+    }
 
     .TitleSecond {
         color: white;

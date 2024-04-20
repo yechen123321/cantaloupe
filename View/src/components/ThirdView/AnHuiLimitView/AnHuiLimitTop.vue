@@ -40,8 +40,6 @@ onMounted(() => {
             {offset: 0, color: '#ef98d0'},
             {offset: 1, color: '#fd0792'},
         ]),
-
-
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#074dfd'},
             {offset: 1, color: '#5907fd'},

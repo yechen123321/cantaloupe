@@ -140,7 +140,7 @@ onMounted(() => {
 
 <template>
     <div class="AnHuiWaterLeftCenter">
-        <div class="title">安徽省水利能源结构</div>
+        <div class="title">能源开发及供给结构</div>
         <div class="AnHuiWaterLeftCenter-echarts" ref="echartsRef"></div>
     </div>
 </template>

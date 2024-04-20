@@ -268,7 +268,7 @@ const showReport = () => {
 
 <template>
     <div class="DataAnalysisRightDown">
-        <div class="title">安徽省能源发展明细</div>
+        <div class="title">安徽省能源发展适宜区</div>
         <button class="update" @click="updateReport" v-show="!reportGenerated">生成报告</button>
         <button class="done" @click="showReport" v-show="reportGenerated">已生成报告</button>
         <button @click="downloadLocalWordDoc" class="goto" :disabled="!reportGenerated">导出报告</button>

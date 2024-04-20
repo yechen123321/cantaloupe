@@ -58,7 +58,7 @@ initKlist().then(data => {
 
 <template>
     <div class="SunEnergyMiddenDown">
-        <div class="title">水利历史发电量</div>
+        <div class="title">发电装置信息概览</div>
         <div class="roll">
             <div class="top">
                 <div class="name">名称</div>
@@ -88,143 +88,148 @@ initKlist().then(data => {
 
 <style scoped lang="scss">
 .SunEnergyMiddenDown {
-    width: 100%;
-    height: 100%;
-    .roll {
-        color: white;
-        position: absolute;
-        width: 27vw;
-        margin-top: 6vh;
-        height: 40vh;
-        margin-left: 1vw;
+  width: 100%;
+  height: 100%;
 
-        .top {
-            width: 100%;
-            height: 3.5vh;
-            background: rgba(255, 255, 255, .2);
-            margin-top: -1vh;
+  .roll {
+    color: white;
+    position: absolute;
+    width: 27vw;
+    margin-top: 6vh;
+    height: 40vh;
+    margin-left: 1vw;
 
-            .name {
-                float: left;
-                margin-left: 1.3vw;
-                margin-top: 0.3vh;
+    .top {
+      width: 100%;
+      height: 3.5vh;
+      background: rgba(255, 255, 255, .2);
+      margin-top: -1vh;
 
-            }
+      .name {
+        float: left;
+        margin-left: 1.3vw;
+        margin-top: 0.3vh;
 
-            .do {
-                float: left;
-                margin-top: 0.3vh;
-                margin-left: 3.3vw;
-            }
+      }
 
-            .number {
-                float: left;
-                margin-top: 0.3vh;
-                margin-left: 2.5vw;
-            }
+      .do {
+        float: left;
+        margin-top: 0.3vh;
+        margin-left: 3.3vw;
+      }
 
-            .up {
-                float: left;
-                margin-top: 0.3vh;
-                margin-left: 2vw;
-            }
+      .number {
+        float: left;
+        margin-top: 0.3vh;
+        margin-left: 2.5vw;
+      }
 
-            .when {
-                float: left;
-                margin-top: 0.3vh;
-                margin-left: 2.7vw;
-            }
+      .up {
+        float: left;
+        margin-top: 0.3vh;
+        margin-left: 2vw;
+      }
+
+      .when {
+        float: left;
+        margin-top: 0.3vh;
+        margin-left: 2.7vw;
+      }
+    }
+
+    .roll-in {
+      width: 27vw;
+      height: 20.5vh;
+      overflow: hidden;
+      margin-right: 2vw;
+      margin-top: 1vh;
+
+      .roll-main {
+        width: 100%;
+        height: 5vh;
+        background: rgba(13, 135, 246, 0.1);
+        margin-top: 1vh;
+
+        .name {
+          float: left;
+          margin-left: 0.1vw;
+          margin-top: 0.3vh;
+          text-align: center;
         }
 
-        .roll-in {
-            width: 27vw;
-            height: 20.5vh;
-            overflow: hidden;
-            margin-right: 2vw;
-            margin-top: 1vh;
-
-            .roll-main {
-                width: 100%;
-                height: 5vh;
-                background: rgba(13, 135, 246, 0.1);
-                margin-top: 1vh;
-
-                .name {
-                    float: left;
-                    margin-left: 0.1vw;
-                    margin-top: 0.3vh;
-                    text-align: center;
-                }
-
-                .number {
-                    float: left;
-                    margin-top: 0.3vh;
-                    text-align: center;
-                    margin-left: 1.2vw;
-                    width: 4vw;
-                }
-
-                .when {
-                    float: left;
-                    margin-top: 0.3vh;
-                    text-align: center;
-                    margin-left: 1vw;
-                }
-
-                .up {
-                    float: left;
-                    width: 5vw;
-                    margin-top: 0.3vh;
-                    text-align: center;
-                    margin-left: -0.3vw;
-                }
-
-                .do {
-                    float: left;
-                    margin-top: 0.3vh;
-                    text-align: center;
-                    margin-left: 0.3vw;
-                    width: 4vw;
-                }
-            }
+        .number {
+          float: left;
+          margin-top: 0.3vh;
+          text-align: center;
+          margin-left: 1.2vw;
+          width: 4vw;
         }
-    }
 
-    .right{
-        width: 15vw;
-        height: 23vh;
-        margin-top: 6vh;
-        border-left: #0d87f6 2px solid;
-        margin-right: 1vw;
-        position: absolute;
-        right: 0;
-        #SunEnergyMiddenDownThing-out{
-            width: 24vw;
-            height: 24vh;
-            margin-left: -1.5vw;
-            position: absolute;
+        .when {
+          float: left;
+          margin-top: 0.3vh;
+          text-align: center;
+          margin-left: 1vw;
         }
+
+        .up {
+          float: left;
+          width: 5vw;
+          margin-top: 0.3vh;
+          text-align: center;
+          margin-left: -0.3vw;
+        }
+
+        .do {
+          float: left;
+          margin-top: 0.3vh;
+          text-align: center;
+          margin-left: 0.3vw;
+          width: 4vw;
+        }
+      }
     }
-    .SunEnergyMiddenDown-echarts{
-        position: absolute;
-        width: 29vw;
-        height: 34vh;
-        margin-left: 1vw;
-        z-index: 300;
+  }
+
+  .right {
+    width: 15vw;
+    height: 23vh;
+    margin-top: 6vh;
+    border-left: #0d87f6 2px solid;
+    margin-right: 1vw;
+    position: absolute;
+    right: 0;
+
+    #SunEnergyMiddenDownThing-out {
+      width: 24vw;
+      height: 24vh;
+      margin-left: -1.5vw;
+      position: absolute;
     }
-    .title{
-        color:white;
-        position: absolute;
-        font-weight: bolder;
-        font-size: 1.3em;
-        width: 20vw;
-        text-align: center;
-        margin-left: 3.6vw;
-        margin-top: 0.5vh;
-    }
-    .BackImg {
-        width: 43vw;
-        height: 31vh;
-    }
+  }
+
+  .SunEnergyMiddenDown-echarts {
+    position: absolute;
+    width: 29vw;
+    height: 34vh;
+    margin-left: 1vw;
+    z-index: 300;
+  }
+
+  .title {
+    color: white;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 1.3em;
+    width: 20vw;
+    text-align: center;
+    margin-left: 3.6vw;
+    margin-top: 0.5vh;
+  }
+
+  .BackImg {
+    width: 43vw;
+    height: 31vh;
+  }
 }
 </style>

@@ -80,7 +80,8 @@ onMounted(() => {
                     show: true,
                     position: 'right',
                     valueAnimation: true
-                }
+                },
+                barWidth: 20 // 设置柱状图的宽度为50像素
             }
         ],
         legend: {

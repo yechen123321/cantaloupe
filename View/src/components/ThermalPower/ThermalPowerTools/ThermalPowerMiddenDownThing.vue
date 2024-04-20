@@ -13,32 +13,29 @@ onMounted(() => {
     myChart31 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
+            {offset: 0, color: '#fa3104'},
+            {offset: 1, color: '#ff1212'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'}
+            {offset: 0, color: '#fd448c'},
+            {offset: 1, color: '#fd0792'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
+            {offset: 0, color: '#fa7ae3'},
+            {offset: 1, color: '#ff00d5'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
+            {offset: 0, color: '#f69ae3'},
+            {offset: 1, color: '#de6acb'},
         ]),
-        // 其他渐变色定义...
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#dc90ea'},
+            {offset: 1, color: '#c56ef1'},
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#bf2adc'},
+            {offset: 1, color: '#5003e3'},
+        ]),
     ];
     option31 = {
         color: colorList,

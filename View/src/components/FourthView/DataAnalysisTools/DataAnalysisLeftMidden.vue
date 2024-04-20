@@ -47,93 +47,95 @@
 .DataAnalysisLeftMidden {
   width: 100%;
   height: 100%;
-    .AnHuiLeftTop-main {
+
+  .AnHuiLeftTop-main {
+    position: absolute;
+    width: 25vw;
+    height: 18vh;
+    margin-left: 3vw;
+    color: white;
+    margin-top: 7vh;
+
+    .number {
+      position: absolute;
+      width: 8vw;
+      height: 4vh;
+      margin-top: 1.6vh;
+      margin-left: 3.7vw;
+      border-bottom: 2px solid #0a8cf8;
+
+      .up {
         position: absolute;
-        width: 25vw;
-        height: 18vh;
-        margin-left: 3vw;
-        color:white;
-        margin-top: 7vh;
-        .number {
-            position: absolute;
-            width: 8vw;
-            height: 4vh;
-            margin-top: 1.6vh;
-            margin-left: 3.7vw;
-            border-bottom: 2px solid #0a8cf8;
+        width: 5vw;
+        margin-left: 4.2vw;
+        text-align: center;
+        font-size: 0.8em;
+        margin-top: 1.3vh;
+        font-weight: bolder;
+      }
 
-            .up {
-                position: absolute;
-                width: 5vw;
-                margin-left: 4.2vw;
-                text-align: center;
-                font-size: 0.8em;
-                margin-top: 1.3vh;
-                font-weight: bolder;
-            }
-
-            .one {
-                position: absolute;
-                font-size: 1.6em;
-                margin-left: -0.6vw;
-                line-height: 3.7vh;
-                margin-top: -0.3vh;
-                font-weight: bolder;
-                width: 6vw;
-                text-align: center;
-                height: 3.7vh;
-                color: #2bfff1;
-                text-shadow: 0 0 1px #1cd7cd, 0 0 2px #1cd7cd, 0 0 3px #1cd7cd;
-            }
-        }
-
-        .tow {
-            position: absolute;
-            margin-left: 3.75vw;
-            margin-top: 6vh;
-            width: 8vw;
-            font-size: 0.95em;
-            font-weight: 400;
-            height: 3vh;
-            text-align: center;
-        }
-
-        .pic {
-            position: absolute;
-            width: 3.3vw;
-            height: 6vh;
-            margin-top: 1.6vh;
-        }
-
-        .MainOne {
-            width: 11vw;
-            height: 8vh;
-            position: absolute;
-        }
-
-        .MainTow {
-            width: 11vw;
-            height: 8vh;
-            position: absolute;
-            margin-left: 13vw;
-        }
-
-        .MainThree {
-            width: 11vw;
-            height: 8vh;
-            position: absolute;
-            margin-top: 8vh;
-        }
-
-        .MainFour {
-            width: 11vw;
-            height: 8vh;
-            position: absolute;
-            margin-top: 8vh;
-            margin-left: 13vw;
-            z-index: 999;
-        }
+      .one {
+        position: absolute;
+        font-size: 1.6em;
+        margin-left: -0.6vw;
+        line-height: 3.7vh;
+        margin-top: -0.3vh;
+        font-weight: bolder;
+        width: 6vw;
+        text-align: center;
+        height: 3.7vh;
+        color: #2bfff1;
+        text-shadow: 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd, 0 0 2px #1cd7cd;
+      }
     }
+
+    .tow {
+      position: absolute;
+      margin-left: 3.75vw;
+      margin-top: 6vh;
+      width: 8vw;
+      font-size: 0.95em;
+      font-weight: 400;
+      height: 3vh;
+      text-align: center;
+    }
+
+    .pic {
+      position: absolute;
+      width: 3.3vw;
+      height: 6vh;
+      margin-top: 1.6vh;
+    }
+
+    .MainOne {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+    }
+
+    .MainTow {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-left: 13vw;
+    }
+
+    .MainThree {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-top: 8vh;
+    }
+
+    .MainFour {
+      width: 11vw;
+      height: 8vh;
+      position: absolute;
+      margin-top: 8vh;
+      margin-left: 13vw;
+      z-index: 999;
+    }
+  }
 
   .title {
     position: absolute;
@@ -141,7 +143,7 @@
     margin-top: 3.5vh;
     margin-left: 3vw;
     font-weight: bolder;
-    font-size: 1.4em;
+    font-size: 1.25em;
   }
 
   .BackImg {

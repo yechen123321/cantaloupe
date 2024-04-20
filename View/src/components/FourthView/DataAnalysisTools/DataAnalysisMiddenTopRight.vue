@@ -163,8 +163,8 @@ onMounted(() => {
             .name {
                 position: absolute;
                 font-size: 1.4em;
-                color: #83fcf3;
-                text-shadow: 0 0 1px #5bfff4, 0 0 2px #69e8df;
+                color: #2bfff1;
+                text-shadow: 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd, 0 0 2px #1cd7cd;
             }
 
             .thing {

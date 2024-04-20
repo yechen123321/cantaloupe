@@ -244,19 +244,6 @@ onMounted(() => {
     option88 = {
         color: colorList2,
         backgroundColor: 'rgba(1,1,1,0)',
-        // toolbox: {
-        //     iconStyle: {
-        //         borderColor: "#fff",
-        //     },
-        //     showTitle:false,
-        //     right:'3%',
-        //     feature: {
-        //         dataView: { show: true, readOnly: false },
-        //         // magicType: { show: true, type: ['line', 'bar'] },
-        //         restore: { show: true },
-        //         saveAsImage: { show: true }
-        //     }
-        // },
         tooltip: {
             trigger: 'axis',
             extraCssText: 'width: 15vw; height: 15vh;', // 设置tooltip框的宽度和高度，调整框的大小
@@ -277,7 +264,6 @@ onMounted(() => {
         grid: {
             left: '5.3%', // 调整图表左边距
             right: '7%', // 调整图表右边距
-            // top: '10%', // 调整图表上边距
             bottom: '15%', // 调整图表下边距
             containLabel: true,
         },
@@ -333,7 +319,9 @@ onMounted(() => {
             },
             {
                 type: 'value',
-                name: '降低率',
+                name: '百分比',
+                max: 100,
+                min: 30,
                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
                 position: 'right',
                 nameTextStyle: {
@@ -401,7 +389,7 @@ onMounted(() => {
                 name: '开发效率',
                 type: 'line',
                 yAxisIndex: 1,
-                data: [3.4, 2.0, 1.5, 1.0, 3.2]
+                data: [83.4, 82.0, 89.5, 91.0, 83.2]
             },
         ]
     };

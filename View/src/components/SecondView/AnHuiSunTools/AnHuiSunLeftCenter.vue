@@ -130,7 +130,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="AnHuiSunLeftTop">
-        <div class="title">安徽省光伏能源结构</div>
+        <div class="title">能源开发及供给结构</div>
         <div class="AnHuiSunLeftTop-echarts" ref="echartsRef"></div>
     </div>
 

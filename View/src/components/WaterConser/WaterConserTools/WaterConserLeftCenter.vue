@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 import * as echarts from "echarts";
 
 const echartsRef = ref(null);
@@ -230,37 +230,37 @@ onMounted(() => {
     <div class="ThermalPowerLeftCenter">
         <div class="title">涡轮实时效率</div>
         <div class="ThermalPowerLeftCenter-echarts" ref="echartsRef"></div>
-        <img src="../../../assets/pic/midden.png" alt="" class="BackImg" />
+        <img src="../../../assets/pic/midden.png" alt="" class="BackImg"/>
     </div>
 </template>
 
 <style scoped lang="scss">
 .ThermalPowerLeftCenter {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    .title {
-        color: white;
-        position: absolute;
-        text-align: center;
-        width: 10vw;
-        font-weight: bolder;
-        font-size: 1.2em;
-        margin-top: 3.6vh;
-        margin-left: 2.8vw;
-    }
+  .title {
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 10vw;
+    font-weight: bolder;
+    font-size: 1.2em;
+    margin-top: 3.6vh;
+    margin-left: 2.8vw;
+  }
 
-    .ThermalPowerLeftCenter-echarts {
-        width: 26vw;
-        height: 31vh;
-        margin-left: 1.6vw;
-        margin-top: 3.8vh;
-        position: absolute;
-    }
+  .ThermalPowerLeftCenter-echarts {
+    width: 26vw;
+    height: 31vh;
+    margin-left: 1.6vw;
+    margin-top: 3.8vh;
+    position: absolute;
+  }
 
-    .BackImg {
-        width: 30vw;
-        height: 32vh;
-    }
+  .BackImg {
+    width: 30vw;
+    height: 32vh;
+  }
 }
 </style>
