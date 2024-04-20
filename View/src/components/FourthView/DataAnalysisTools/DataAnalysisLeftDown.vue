@@ -71,7 +71,7 @@ onMounted(() => {
         legend: {
             top: '3%',
             left: '24%',
-            data: ['2021', '2022', '2023'],
+            data: ['2022', '2023'],
             textStyle: {
                 fontSize: 16,
                 color: 'white',
@@ -210,14 +210,14 @@ onMounted(() => {
                 type: 'scatter',
                 itemStyle: itemStyle,
                 data: dataBJ,
-                color: 'blue',
+                color: '#2948ff',
             },
             {
                 name: '2022',
                 type: 'scatter',
                 itemStyle: itemStyle,
                 data: dataGZ,
-                color: 'red',
+                color: '#f80759',
             },
         ]
     };
