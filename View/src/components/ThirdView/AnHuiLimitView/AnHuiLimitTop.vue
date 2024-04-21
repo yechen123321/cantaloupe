@@ -75,7 +75,7 @@ onMounted(() => {
             itemHeight: 10, // 标签高度为10px
             left: '13%',
             top: '13%',
-            data: ['开发耗费', '获取能量', '降低率'],
+            data: ['开发耗费', '获取能量', '百分比'],
             textStyle: {
                 color: 'white'
             }
@@ -121,7 +121,9 @@ onMounted(() => {
             },
             {
                 type: 'value',
-                name: '降低率',
+                name: '百分比',
+                max: 100,
+                min: 30,
                 nameLocation: 'end', // 将名称显示在轴线末尾，即向右移动
                 position: 'right',
                 nameTextStyle: {
@@ -183,10 +185,10 @@ onMounted(() => {
                 }
             },
             {
-                name: '降低率',
+                name: '百分比',
                 type: 'line',
                 yAxisIndex: 1,
-                data: [3.4, 2.0, 1.5, 1.0, 3.2]
+                data: [83.4, 94.0, 91.5, 86.0, 83.2]
             },
         ]
     };

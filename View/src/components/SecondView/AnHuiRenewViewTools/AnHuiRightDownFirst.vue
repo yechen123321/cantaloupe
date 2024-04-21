@@ -22,7 +22,7 @@ onMounted(() => {
         ]),
     ];
     option39 = {
-        color:colorList,
+        color: colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
@@ -78,14 +78,12 @@ onMounted(() => {
                     {
                         value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
                         name: '全国平均',
-                        areaStyle: {
-                        },
+                        areaStyle: {},
                     },
                     {
                         value: [42000, 30000, 20000, 23000, 35000, 15000, 18000, 0],
                         name: '省内总量',
-                        areaStyle: {
-                        },
+                        areaStyle: {},
 
                     },
 

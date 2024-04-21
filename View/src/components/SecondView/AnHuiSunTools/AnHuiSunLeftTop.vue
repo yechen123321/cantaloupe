@@ -10,15 +10,15 @@
             <div class="MainOne">
                 <img src="../../../assets/太阳发电.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">4232</div>
-                    <div class="up">亿万千瓦</div>
+                    <div class="one">269.6</div>
+                    <div class="up">亿千瓦时</div>
                 </div>
                 <div class="tow">光电能源总产量</div>
             </div>
             <div class="MainTow">
                 <img src="../../../assets/装机容量.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one" style="margin-left: 0.2vw">13.44</div>
+                    <div class="one" style="margin-left: 0.2vw">49.6</div>
                     <div class="up">%</div>
                 </div>
                 <div class="tow">装机容量提升率</div>
@@ -26,15 +26,15 @@
             <div class="MainThree">
                 <img src="../../../assets/投资.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">3789</div>
-                    <div class="up">亿元</div>
+                    <div class="one">2102</div>
+                    <div class="up">万元</div>
                 </div>
                 <div class="tow">能源建设投资</div>
             </div>
             <div class="MainFour">
                 <img src="../../../assets/GenericChart.png" style="margin-top: 2vh" alt="" class="pic">
                 <div class="number">
-                    <div class="one" style="margin-left: 0.3vw">1.33</div>
+                    <div class="one" style="margin-left: 0.3vw">21.33</div>
                     <div class="up">%</div>
                 </div>
                 <div class="tow">发展指标增长</div>

@@ -55,12 +55,12 @@ const close = () => {
         <div class="ul">
             <ul>
                 <li>
-                    <div class="name">一号锅炉：</div>
+                    <div class="name">F-1708：</div>
                     <div class="thing">失压</div>
                 </li>
                 <li>
-                    <div class="name">三号锅炉：</div>
-                    <div class="thing">高压</div>
+                    <div class="name">F-9784：</div>
+                    <div class="thing">高温</div>
                 </li>
 
             </ul>

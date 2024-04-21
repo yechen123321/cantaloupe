@@ -1,6 +1,6 @@
 <script setup>
 import {ref, reactive, onBeforeUnmount, onUnmounted, nextTick} from 'vue'
-import { initKlist1 } from "@/api";
+import {initKlist} from "@/api";
 
 let timer = ref(null);
 let roll = ref(null);
@@ -43,7 +43,7 @@ function MarqueeTest() {
 
 }
 
-initKlist1().then(data => {
+initKlist().then(data => {
     listData.splice(0, listData.length, ...data.data);
     nextTick(() => {
         start();
@@ -83,115 +83,115 @@ initKlist1().then(data => {
 
 <style scoped lang="scss">
 .AnHuiRightDownSecond {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  .roll {
-    color: white;
-    width: 23vw;
-    margin-top: 28vh;
-    height: 40vh;
-    margin-left: -1vw;
+    .roll {
+        color: white;
+        width: 23vw;
+        margin-top: 28vh;
+        height: 40vh;
+        margin-left: -1vw;
 
-    .top {
-      width: 100%;
-      height: 3.5vh;
-      background: rgba(255, 255, 255, .2);
-      margin-top: -1vh;
+        .top {
+            width: 100%;
+            height: 3.5vh;
+            background: rgba(255, 255, 255, .2);
+            margin-top: -1vh;
 
-      .name {
-        float: left;
-        margin-left: 1.3vw;
-        margin-top: 0.3vh;
+            .name {
+                float: left;
+                margin-left: 1.3vw;
+                margin-top: 0.3vh;
 
-      }
+            }
 
-      .do {
-        float: left;
-        margin-top: 0.3vh;
-        margin-left: 2.3vw;
-      }
+            .do {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 2.3vw;
+            }
 
-      .number {
-        float: left;
-        margin-top: 0.3vh;
-        margin-left: 1.9vw;
-      }
+            .number {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 1.9vw;
+            }
 
-      .up {
-        float: left;
-        margin-top: 0.3vh;
-        margin-left: 2vw;
-      }
+            .up {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 2vw;
+            }
 
-      .when {
-        float: left;
-        margin-top: 0.3vh;
-        margin-left: 2.7vw;
-      }
+            .when {
+                float: left;
+                margin-top: 0.3vh;
+                margin-left: 2.7vw;
+            }
+        }
+
+        .roll-in {
+            width: 23vw;
+            height: 20.5vh;
+            //background: red;
+            overflow: hidden;
+            margin-right: 2vw;
+            margin-top: 1vh;
+
+            .roll-main {
+                //background: red;
+                width: 100%;
+                height: 5vh;
+                background: rgba(13, 135, 246, 0.1);
+                margin-top: 1vh;
+
+                .name {
+                    float: left;
+                    //background: red;
+                    margin-left: 0.1vw;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                }
+
+                .number {
+                    float: left;
+                    //background: red;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: 1.2vw;
+                    width: 4vw;
+                }
+
+                .when {
+                    float: left;
+                    //background: red;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: 1vw;
+                }
+
+                .up {
+                    float: left;
+                    width: 5vw;
+                    //background: red;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: -0.3vw;
+                    margin-right: -1.1vw;
+                }
+
+                .do {
+                    float: left;
+                    margin-top: 0.3vh;
+                    text-align: center;
+                    margin-left: 0.3vw;
+                    margin-right: -1.3vw;
+                    //background: red;
+                    width: 4vw;
+                }
+            }
+        }
     }
-
-    .roll-in {
-      width: 23vw;
-      height: 20.5vh;
-      //background: red;
-      overflow: hidden;
-      margin-right: 2vw;
-      margin-top: 1vh;
-
-      .roll-main {
-        //background: red;
-        width: 100%;
-        height: 5vh;
-        background: rgba(13, 135, 246, 0.1);
-        margin-top: 1vh;
-
-        .name {
-          float: left;
-          //background: red;
-          margin-left: 0.1vw;
-          margin-top: 0.3vh;
-          text-align: center;
-        }
-
-        .number {
-          float: left;
-          //background: red;
-          margin-top: 0.3vh;
-          text-align: center;
-          margin-left: 1.2vw;
-          width: 4vw;
-        }
-
-        .when {
-          float: left;
-          //background: red;
-          margin-top: 0.3vh;
-          text-align: center;
-          margin-left: 1vw;
-        }
-
-        .up {
-          float: left;
-          width: 5vw;
-          //background: red;
-          margin-top: 0.3vh;
-          text-align: center;
-          margin-left: -0.3vw;
-          margin-right: -1.1vw;
-        }
-
-        .do {
-          float: left;
-          margin-top: 0.3vh;
-          text-align: center;
-          margin-left: 0.3vw;
-          margin-right: -1.3vw;
-          //background: red;
-          width: 4vw;
-        }
-      }
-    }
-  }
 }
 </style>

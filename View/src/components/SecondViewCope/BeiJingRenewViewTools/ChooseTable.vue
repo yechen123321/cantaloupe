@@ -22,8 +22,8 @@ const RouteToWind = () => {
     router.push('/anhuiwind'); // 替换'/new-route'为您要跳转的路由路径
 };
 const options = ref([
-    {where: '北京', value: 2},
     {where: '安徽', value: 1},
+    {where: '北京', value: 2},
     {where: '浙江', value: 3},
     {where: '重庆', value: 4},
     {where: '西藏', value: 5},
@@ -46,7 +46,7 @@ choose1().then(response => {
 <template>
     <div class="ChooseTable">
         <div class="ChooseTitle">
-            北京地区基本信息
+            北京市地区基本信息
         </div>
         <div class="MySelect">
             <select class="SelectBox">
@@ -96,144 +96,143 @@ choose1().then(response => {
 
 <style scoped lang="scss">
 .ChooseTable {
-  .factory {
-    position: absolute;
-    width: 26vw;
-    height: 15vh;
-    margin-top: 2.5vh;
-    margin-left: 2vw;
-    //background: white;
-    .factoryUl {
-      position: absolute;
-      list-style: none;
-      width: 40vw;
-      height: 15vh;
-      margin-left: -6.8vw;
-      //background: red;
-
-      li:hover {
-        cursor: pointer;
-      }
-
-      li {
-        width: 6vw;
+    .factory {
+        position: absolute;
+        width: 26vw;
         height: 15vh;
-        float: left;
-        margin-left: 3.5vw;
-        margin-top: -1vh;
-        //background: red;
-        .number {
-          color: white;
-          margin-left: 4vw;
-          margin-top: -5vh;
-          font-size: 1.7em;
-          text-align: center;
-          width: 4vw;
-          font-weight: bolder;
-        }
+        margin-top: 2.5vh;
+        margin-left: 2vw;
+        //background: white;
+        .factoryUl {
+            position: absolute;
+            list-style: none;
+            width: 40vw;
+            height: 15vh;
+            margin-left: -6.8vw;
+            //background: red;
 
-        img {
-          width: 3.5vw;
-        }
+            li:hover {
+                cursor: pointer;
+            }
+
+            li {
+                width: 6vw;
+                height: 15vh;
+                float: left;
+                margin-left: 3.5vw;
+                margin-top: -1vh;
+                //background: red;
+                .number {
+                    color: white;
+                    margin-left: 4vw;
+                    margin-top: -5vh;
+                    font-size: 1.7em;
+                    text-align: center;
+                    width: 4vw;
+                    font-weight: bolder;
+                }
+
+                img {
+                    width: 3.5vw;
+                }
 
 
-        .up {
-          width: 8vw;
-          height: 6vh;
-          margin-top: 1vh;
-          padding-top: 0.5vh;
-          border-top: 2px solid #0d87f6;
-          color: rgb(127, 235, 240);
-          text-shadow: 0 0 2px #b6d4df, 0 0 5px #b6d4df; //设置发光效果
-          font-size: 1.5vw;
-          text-align: center;
-          //background: red;
-        }
+                .up {
+                    width: 8vw;
+                    height: 6vh;
+                    margin-top: 1vh;
+                    padding-top: 0.5vh;
+                    border-top: 2px solid #0d87f6;
+                    color: rgb(127, 235, 240);
+                    text-shadow: 0 0 2px #b6d4df, 0 0 5px #b6d4df; //设置发光效果
+                    font-size: 1.5vw;
+                    text-align: center;
+                    //background: red;
+                }
 
-        .down {
-          color: white;
-          font-size: 1vw;
-          margin-left: 2vw;
-          font-weight: bolder;
-          margin-top: -1.5vh;
-          text-align: center;
+                .down {
+                    color: white;
+                    font-size: 1vw;
+                    margin-left: 2vw;
+                    font-weight: bolder;
+                    margin-top: -1.5vh;
+                    text-align: center;
+                }
+            }
         }
-      }
     }
-  }
 
-  .ChooseTitle {
-    font-size: 1.5vw;
-    font-weight: bolder;
-    color: white;
-    right: 0;
-    margin-right: 2vw;
-    position: absolute;
-    margin-left: 2vw;
-    margin-top: 1vh;
-  }
+    .ChooseTitle {
+        font-size: 1.25em;
+        font-weight: bolder;
+        color: white;
+        width: 40vw;
+        text-align: center;
+        position: absolute;
+        margin-top: 1vh;
+    }
 
-  .MySelect {
-    width: 10vw;
-    height: 10vh;
-    right: 0;
-    position: absolute;
-    margin-top: 6vh;
-    z-index: 222;
-    margin-right: -1vw;
+    .MySelect {
+        width: 10vw;
+        height: 10vh;
+        right: 0;
+        position: absolute;
+        margin-top: 6vh;
+        z-index: 222;
+        margin-right: -1vw;
 
-    .SelectBox {
-      width: 7vw;
-      height: 4vh;
-      cursor: pointer;
-      overflow: hidden;
-      font-size: 1vw;
-      background: #4d70cd;
-      color: white;
-      border: none;
-      text-align: center;
-      border-radius: 6px;
+        .SelectBox {
+            width: 7vw;
+            height: 4vh;
+            cursor: pointer;
+            overflow: hidden;
+            font-size: 1vw;
+            background: #4d70cd;
+            color: white;
+            border: none;
+            text-align: center;
+            border-radius: 6px;
+
+        }
+    }
+
+    .SelectGo {
+        width: 7vw;
+        height: 4vh;
+        right: 0;
+        margin-top: 12vh;
+        margin-right: 2vw;
+        position: absolute;
+        cursor: pointer;
+        font-size: 1vw;
+        font-weight: bolder;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        background: #0d87f6;
+        z-index: 222;
+    }
+
+    .SelectGo:hover {
+        width: 7.5vw;
+        height: 5vh;
+        margin-top: 11.5vh;
+        margin-right: 1.7vw;
+        font-size: 1.4vw;
+    }
+
+    .SelectGo:active {
+        width: 7vw;
+        height: 4vh;
+        margin-top: 12vh;
+        margin-right: 2vw;
+        font-size: 1vw;
+    }
+
+    .BackImg {
+        width: 40vw;
+        height: 20vh;
 
     }
-  }
-
-  .SelectGo {
-    width: 7vw;
-    height: 4vh;
-    right: 0;
-    margin-top: 12vh;
-    margin-right: 2vw;
-    position: absolute;
-    cursor: pointer;
-    font-size: 1vw;
-    font-weight: bolder;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    background: #0d87f6;
-    z-index: 222;
-  }
-
-  .SelectGo:hover {
-    width: 7.5vw;
-    height: 5vh;
-    margin-top: 11.5vh;
-    margin-right: 1.7vw;
-    font-size: 1.4vw;
-  }
-
-  .SelectGo:active {
-    width: 7vw;
-    height: 4vh;
-    margin-top: 12vh;
-    margin-right: 2vw;
-    font-size: 1vw;
-  }
-
-  .BackImg {
-    width: 40vw;
-    height: 20vh;
-
-  }
 }
 </style>

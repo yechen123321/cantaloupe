@@ -100,8 +100,8 @@ onMounted(async () => {
                                 color: 'white',
                             },
                         },
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLabel: {
                             textStyle: {

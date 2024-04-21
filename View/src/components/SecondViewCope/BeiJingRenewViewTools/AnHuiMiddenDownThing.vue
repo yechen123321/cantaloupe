@@ -13,69 +13,61 @@ onMounted(() => {
     myChart35 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
+        ]),
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#DCE35B'},
+            {offset: 1, color: '#45B649'}
+        ]),
+
+        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 0, color: '#4AC29A'},
+            {offset: 1, color: '#BDFFF3'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {offset: 0, color: '#00C9FF'},
             {offset: 1, color: '#92FE9D'}
         ]),
-
-
-
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {offset: 1, color: '#C6FFDD'},
             {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
         ]),
         // 其他渐变色定义...
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
-        ]),
     ];
     option35 = {
-        color:colorList,
+        color: colorList,
         series: [
-
             {
-
                 name: 'Access From',
                 type: 'pie',
-                radius: ['45%', '80%'],
+                radius: ['50%', '90%'],
                 avoidLabelOverlap: false,
                 itemStyle: {
-                    borderRadius: 5,
+                    borderRadius: 7,
                 },
                 label: {
                     show: false,
                     position: 'center',
+                    offset: [0, 3], // 在垂直方向向下偏移 10px
                     formatter: '{b}\n{d}%'
                 },
                 emphasis: {
                     label: {
                         show: true,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: 'white',
-                        fontWeight: 'bold'
+                        fontWeight: 'bolder'
                     }
                 },
                 labelLine: {
                     show: false
                 },
                 data: [
-                    {value: 1448, name: '光伏'},
+                    {value: 1048, name: '光伏'},
                     {value: 735, name: '风能'},
                     {value: 580, name: '水利'},
-                    {value: 664, name: '新型储能'},
+                    {value: 484, name: '新型储能'},
                     {value: 300, name: '其他'}
                 ]
             }
@@ -145,58 +137,59 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div class="AnHuiMiddenDownThing">
-        <div class="AnHuiMiddenDownThing-name">
-            <div class="name-title">总容量：</div>
-            <div class="name-number">1.08</div>
-            <div class="name-up">亿千瓦</div>
+    <div className="AnHuiMiddenDownThing">
+        <div className="AnHuiMiddenDownThing-name">
+            <div className="name-title">总容量：</div>
+            <div className="name-number">1.08</div>
+            <div className="name-up">亿千瓦</div>
         </div>
-        <div class="AnHuiMiddenDownThing-echarts" ref="echartsRef"></div>
+        <div className="AnHuiMiddenDownThing-echarts" ref="echartsRef"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
 .AnHuiMiddenDownThing {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  .AnHuiMiddenDownThing-name {
-    position: absolute;
-    color: white;
-    margin-left: 0.3vw;
+    .AnHuiMiddenDownThing-name {
+        position: absolute;
+        color: white;
+        margin-left: 0.3vw;
+        margin-top: -1vh;
 
-    .name-title {
-      margin-left: 0.5vw;
-      width: 10vw;
-      position: absolute;
+        .name-title {
+            margin-left: 0.5vw;
+            width: 10vw;
+            position: absolute;
+        }
+
+        .name-number {
+            color: #4ed8fa;
+            text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
+            margin-left: 4.5vw;
+            font-size: 1.25em;
+            width: 10vw;
+            margin-top: -0.3vh;
+            font-weight: bolder;
+            position: absolute;
+        }
+
+        .name-up {
+            margin-left: 8vw;
+            width: 10vw;
+            position: absolute;
+        }
     }
 
-    .name-number {
-      color: #4ed8fa;
-      text-shadow: 0 0 1px #1cd7cd, 0 0 1px #1cd7cd, 0 0 1.5px #1cd7cd;
-      margin-left: 4.5vw;
-      font-size: 1.25em;
-      width: 10vw;
-      margin-top: -0.3vh;
-      font-weight: bolder;
-      position: absolute;
+    .AnHuiMiddenDownThing-echarts {
+        width: 10vw;
+        height: 20vh;
+        //background: red;
+        margin-top: 1.8vh;
+        margin-left: 2vw;
+        position: absolute;
+        z-index: 999;
     }
-
-    .name-up {
-      margin-left: 8vw;
-      width: 10vw;
-      position: absolute;
-    }
-  }
-
-  .AnHuiMiddenDownThing-echarts {
-    width: 10vw;
-    height: 20vh;
-    //background: red;
-    margin-top: 1.8vh;
-    margin-left: 2vw;
-    position: absolute;
-    z-index: 999;
-  }
 }
 </style>

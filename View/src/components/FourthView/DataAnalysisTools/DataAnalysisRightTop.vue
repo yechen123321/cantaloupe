@@ -128,11 +128,11 @@ const showReport = () => {
     cursor: pointer;
   }
 
-    .goto:disabled{
-        background: #b6d4df;
-        color:white;
-        cursor: no-drop;
-    }
+  .goto:disabled {
+    background: #b6d4df;
+    color: white;
+    cursor: no-drop;
+  }
 
   .done {
     width: 6vw;

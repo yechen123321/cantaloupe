@@ -1,7 +1,7 @@
 <script setup>
 import ThermalPowerMiddenDownThing from "@/components/ThermalPower/ThermalPowerTools/ThermalPowerMiddenDownThing.vue";
 import {ref, reactive, onBeforeUnmount, onUnmounted, nextTick} from 'vue'
-import {initKlist} from "@/api";
+import {initp41} from "@/api";
 
 let timer = ref(null);
 let roll = ref(null);
@@ -44,7 +44,7 @@ function MarqueeTest() {
 
 }
 
-initKlist().then(data => {
+initp41().then(data => {
     listData.splice(0, listData.length, ...data.data);
     nextTick(() => {
         start();
@@ -61,7 +61,7 @@ initKlist().then(data => {
         <div class="title">发电装置信息概览</div>
         <div class="roll">
             <div class="top">
-                <div class="name">名称</div>
+                <div class="name">序号</div>
                 <div class="do">类型</div>
                 <div class="number">状态</div>
                 <div class="up">实时信息</div>
@@ -71,9 +71,9 @@ initKlist().then(data => {
                 <div class="roll-main" v-for="item in listData" :key="item.id">
                     <div @mousemove="testMove" @mouseleave="testMend" class="name">
                         <div class="name">{{ item.name }}</div>
-                        <div class="do">{{ item.do }}</div>
-                        <div class="number">{{ item.number }}</div>
-                        <div class="up">{{ item.up }}</div>
+                        <div class="do">{{ item.type }}</div>
+                        <div class="number">{{ item.state }}</div>
+                        <div class="up">{{ item.manage }}</div>
                         <div class="when">{{ item.when }}</div>
                     </div>
                 </div>
@@ -115,13 +115,13 @@ initKlist().then(data => {
       .do {
         float: left;
         margin-top: 0.3vh;
-        margin-left: 3.3vw;
+        margin-left: 2.1vw;
       }
 
       .number {
         float: left;
         margin-top: 0.3vh;
-        margin-left: 2.5vw;
+        margin-left: 1.6vw;
       }
 
       .up {
@@ -133,7 +133,7 @@ initKlist().then(data => {
       .when {
         float: left;
         margin-top: 0.3vh;
-        margin-left: 2.7vw;
+        margin-left: 3.2vw;
       }
     }
 
@@ -161,7 +161,7 @@ initKlist().then(data => {
           float: left;
           margin-top: 0.3vh;
           text-align: center;
-          margin-left: 1.2vw;
+          margin-left: -0.9vw;
           width: 4vw;
         }
 
@@ -174,7 +174,7 @@ initKlist().then(data => {
 
         .up {
           float: left;
-          width: 5vw;
+          width: 7vw;
           margin-top: 0.3vh;
           text-align: center;
           margin-left: -0.3vw;
@@ -184,8 +184,8 @@ initKlist().then(data => {
           float: left;
           margin-top: 0.3vh;
           text-align: center;
-          margin-left: 0.3vw;
-          width: 4vw;
+          margin-left: 0.2vw;
+          width: 5vw;
         }
       }
     }

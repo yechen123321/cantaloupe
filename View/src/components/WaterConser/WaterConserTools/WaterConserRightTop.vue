@@ -56,12 +56,12 @@ const close = () => {
         <div class="ul">
             <ul>
                 <li>
-                    <div class="name">一号涡轮：</div>
-                    <div class="thing">损坏</div>
+                    <div class="name">C-8947：</div>
+                    <div class="thing">瓦温</div>
                 </li>
                 <li>
-                    <div class="name">三号涡轮：</div>
-                    <div class="thing">离线</div>
+                    <div class="name">C-3331：</div>
+                    <div class="thing">轴损</div>
                 </li>
 
             </ul>

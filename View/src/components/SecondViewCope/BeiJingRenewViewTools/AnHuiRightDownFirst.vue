@@ -13,33 +13,16 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
+            {offset: 0, color: '#56CCF2'},
             {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#FBD786'},
-            {offset: 1, color: '#C6FFDD'}
-        ]),
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#8E2DE2'},
-            {offset: 1, color: '#4A00E0'}
-        ]),
-        // 其他渐变色定义...
-        new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#ee9ca7'},
-            {offset: 1, color: '#ffdde1'}
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
         ]),
     ];
     option39 = {
-        color:colorList,
+        color: colorList,
         backgroundColor: 'rgba(128, 128, 128, 0)',
         legend: {
             itemWidth: 15, // 标签宽度为10px
@@ -69,7 +52,6 @@ onMounted(() => {
 
             splitNumber: 4, // 分割的圈数
             axisLine: {
-                show: false, // 隐藏雷达图的轴线
                 lineStyle: {
                     color: 'white'
                 }
@@ -91,19 +73,17 @@ onMounted(() => {
             {
                 name: 'Budget vs spending',
                 type: 'radar',
-                symbol: 'none', // 去掉每个角的小点
+                // symbol: 'none', // 去掉每个角的小点
                 data: [
                     {
                         value: [50000, 35000, 28000, 26000, 42000, 23200, 21000, 28000],
                         name: '全国平均',
-                        areaStyle: {
-                        },
+                        areaStyle: {},
                     },
                     {
-                        value: [42000, 30000, 20000, 35000, 45000, 25000, 18000, 15220],
+                        value: [42000, 30000, 20000, 23000, 35000, 0, 18000, 0],
                         name: '省内总量',
-                        areaStyle: {
-                        },
+                        areaStyle: {},
 
                     },
 
@@ -121,76 +101,75 @@ onMounted(() => {
 });
 </script>
 
-
 <template>
-    <div class="AnHuiRightDownFirst">
-        <div class="AnHuiRightDownFirst-title">北京再生能源储量概况图</div>
-        <div class="AnHuiRightDownFirst-echarts" ref="echartsRef"></div>
-        <div class="AnHuiRightDownFirst-thing">
-            <div class="AnHuiRightDownFirst-name">81%</div>
+    <div className="AnHuiRightDownFirst">
+        <div className="AnHuiRightDownFirst-title">北京市再生能源发展概况图</div>
+        <div className="AnHuiRightDownFirst-echarts" ref="echartsRef"></div>
+        <div className="AnHuiRightDownFirst-thing">
+            <div className="AnHuiRightDownFirst-name">51%</div>
             <img src="../../../assets/pic/pic-4.png" alt="">
-            <div class="AnHuiRightDownFirst-down">发展占比</div>
+            <div className="AnHuiRightDownFirst-down">发展指标</div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
 .AnHuiRightDownFirst {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  .AnHuiRightDownFirst-thing {
-    margin-top: 25vh;
+    .AnHuiRightDownFirst-thing {
+        margin-top: 25vh;
 
-    .AnHuiRightDownFirst-down {
-      color: white;
-      position: absolute;
-      font-weight: bolder;
-      right: 0;
-      margin-top: -2.7vh;
-      margin-right: 2.8vw;
+        .AnHuiRightDownFirst-down {
+            color: white;
+            position: absolute;
+            font-weight: bolder;
+            right: 0;
+            margin-top: -2.7vh;
+            margin-right: 2.8vw;
+        }
+
+        .AnHuiRightDownFirst-name {
+            color: white;
+            position: absolute;
+            right: 0;
+            margin-top: -17vh;
+            font-size: 2vw;
+            margin-right: 3vw;
+            z-index: 199;
+
+        }
+
+        img {
+            width: 8vw;
+            height: 18vh;
+            right: 0;
+            margin-right: 0.9vw;
+            margin-top: -21.5vh;
+            position: absolute;
+        }
     }
 
-    .AnHuiRightDownFirst-name {
-      color: white;
-      position: absolute;
-      right: 0;
-      margin-top: -17vh;
-      font-size: 2vw;
-      margin-right: 3vw;
-      z-index: 199;
-
+    .AnHuiRightDownFirst-title {
+        color: white;
+        //background: red;
+        margin-top: -0.6vh;
+        width: 21vw;
+        text-align: center;
+        position: absolute;
+        font-weight: bolder;
+        font-size: 1.15em;
     }
 
-    img {
-      width: 8vw;
-      height: 18vh;
-      right: 0;
-      margin-right: 0.9vw;
-      margin-top: -21.5vh;
-      position: absolute;
+    .AnHuiRightDownFirst-echarts {
+        width: 23vw;
+        height: 25vh;
+        margin-left: -5vw;
+        position: absolute;
+        margin-top: 3vh;
+        z-index: 399;
     }
-  }
-
-  .AnHuiRightDownFirst-title {
-    color: white;
-    //background: red;
-    margin-top: -0.6vh;
-    width: 21vw;
-    text-align: center;
-    position: absolute;
-    font-weight: bolder;
-    font-size: 1.26em;
-  }
-
-  .AnHuiRightDownFirst-echarts {
-    width: 23vw;
-    height: 25vh;
-    margin-left: -5vw;
-    position: absolute;
-    margin-top: 3vh;
-    z-index: 399;
-  }
 
 }
 </style>

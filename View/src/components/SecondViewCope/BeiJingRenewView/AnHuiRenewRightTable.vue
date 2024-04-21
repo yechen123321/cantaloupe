@@ -13,36 +13,35 @@ import AnHuiRightDownSecond from "@/components/SecondViewCope/BeiJingRenewViewTo
 
 <style scoped lang="scss">
 .SecondRightTable {
-  width: 23vw;
-  height: 80vh;
-  //background: red;
-  #AnHuiRightDownFirst-out {
-    position: absolute;
-    width: 21vw;
-    height: 26vh;
-    border-bottom: 1px solid #0d87f6;
-    //background: red;
-    margin-top: -55vh;
-    margin-left: 2.5vw;
-  }
-
-  #AnHuiRightDownSecond-out {
-    position: absolute;
-    width: 21vw;
-    height: 26vh;
-    margin-left: 2.5vw;
-  }
-
-  #AnHuiRightDown {
     width: 23vw;
-    height: 23vh;
-    position: absolute;
-    margin-top: -30vh;
-  }
+    height: 80vh;
+    #AnHuiRightDownFirst-out {
+        position: absolute;
+        width: 21vw;
+        height: 26vh;
+        border-bottom: 1px solid #0d87f6;
+        //background: red;
+        margin-top: -55vh;
+        margin-left: 2.5vw;
+    }
 
-  .BackImg {
-    width: 26vw;
-    height: 58vh;
-  }
+    #AnHuiRightDownSecond-out {
+        position: absolute;
+        width: 21vw;
+        height: 26vh;
+        margin-left: 2.5vw;
+    }
+
+    #AnHuiRightDown {
+        width: 23vw;
+        height: 23vh;
+        position: absolute;
+        margin-top: -30vh;
+    }
+
+    .BackImg {
+        width: 26vw;
+        height: 58vh;
+    }
 }
 </style>

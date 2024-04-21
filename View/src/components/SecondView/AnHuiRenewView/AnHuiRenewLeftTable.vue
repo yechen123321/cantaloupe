@@ -18,6 +18,7 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
   width: 25vw;
   //background: green;
   height: 80vh;
+
   #AnHuiLeftTop-out {
     width: 23vw;
     height: 23vh;
@@ -45,7 +46,7 @@ import AnHuiLeftDown from "@/components/SecondView/AnHuiRenewViewTools/AnHuiLeft
   .BackImg {
     width: 26vw;
     height: 58vh;
-      margin-top: 25vh;
+    margin-top: 25vh;
   }
 }
 </style>

@@ -117,7 +117,7 @@ onMounted(() => {
             },
             geo: {
                 map: "china",
-                top:'10.2%',
+                top: '10.2%',
                 zoom: 1.03,
                 silent: true,
                 show: true,

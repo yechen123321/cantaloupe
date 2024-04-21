@@ -141,7 +141,7 @@ onBeforeUnmount(() => {
     <div class="AnHuiWindMiddenDownThing">
         <div class="title">
             <div class="name">当年增长率：</div>
-            <div class="number">1.89</div>
+            <div class="number">35.6</div>
             <div class="up">%</div>
         </div>
         <div class="AnHuiWindMiddenDownThing-echarts" ref="echartsRef"></div>

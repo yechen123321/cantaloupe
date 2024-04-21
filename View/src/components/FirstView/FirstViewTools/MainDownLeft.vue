@@ -2,11 +2,12 @@
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
 import {initqdd} from "@/api";
+
 const echartsRef = ref(null);
 let myChart9 = null;
 let option9 = null;
 
-onMounted(async() => {
+onMounted(async () => {
     myChart9 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -78,7 +79,7 @@ onMounted(async() => {
                             }
                         },
                         // prettier-ignore
-                        data: ['2018','2019', '2020', '2021', '2022', '2023']
+                        data: ['2018', '2019', '2020', '2021', '2022', '2023']
                     }
                 ],
                 yAxis: [
@@ -87,8 +88,8 @@ onMounted(async() => {
                         name: '万亿元',
                         position: 'right',
                         alignTicks: true,
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         nameTextStyle: {
                             padding: [0, -30, 0, 0]
@@ -114,8 +115,8 @@ onMounted(async() => {
                         },
                         alignTicks: true,
                         offset: 40,
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLine: {
                             lineStyle: {
@@ -132,8 +133,8 @@ onMounted(async() => {
                         type: 'value',
                         name: '标准煤 / 万亿吨',
                         position: 'left',
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         alignTicks: true,
                         axisLine: {
@@ -153,9 +154,9 @@ onMounted(async() => {
                         name: '能源消耗',
                         type: 'bar',
                         yAxisIndex: 2,
-                        data:datas["能源消费总量"],
+                        data: datas["能源消费总量"],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
 
                     },
@@ -165,7 +166,7 @@ onMounted(async() => {
                         yAxisIndex: 0,
                         data: datas["全国GDP"],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
 
                     },
@@ -183,7 +184,6 @@ onMounted(async() => {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-
 
 
     option9 && myChart9.setOption(option9);

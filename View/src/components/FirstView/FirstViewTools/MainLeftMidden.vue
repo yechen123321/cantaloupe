@@ -2,6 +2,7 @@
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
 import {initcdd} from '@/api'
+
 const echartsRef = ref(null);
 let myChart2 = null;
 let option2 = null;
@@ -126,7 +127,7 @@ onMounted(async () => {
                                 length2: 3
                             }
                         },
-                        data:data.data.data["地区消耗"]
+                        data: data.data.data["地区消耗"]
                     },
                 ]
             };

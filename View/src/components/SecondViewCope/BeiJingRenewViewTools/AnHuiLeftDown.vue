@@ -13,16 +13,16 @@ onMounted(() => {
     // (Your existing option setup code)
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#396afc'},
-            {offset: 1, color: '#2948ff'},
+            {offset: 0, color: '#6cd7fa'},
+            {offset: 1, color: '#2948ff'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'},
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'},
+            {offset: 0, color: '#FBD786'},
+            {offset: 1, color: '#C6FFDD'}
         ]),
         // 其他渐变色定义...
     ];
@@ -32,6 +32,7 @@ onMounted(() => {
         tooltip: {
             trigger: 'axis',
         },
+
         legend: {
             textStyle: {
                 color: 'white'
@@ -78,7 +79,7 @@ onMounted(() => {
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} '
+                    }, formatter: '{value} %'
 
                 },
                 axisLine: {
@@ -101,7 +102,6 @@ onMounted(() => {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
                     }, formatter: '{value} %'
-
                 },
                 axisLine: {
                     lineStyle: {
@@ -116,24 +116,30 @@ onMounted(() => {
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' 万千瓦';
+                        return value + ' 亿元';
                     }
                 },
                 data: [
-                    162.2, 132.6,176.7, 135.6,
-                ]
+                    176.7, 135.6, 162.2, 132.6,
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '存量',
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
-                        return value + ' 万千瓦';
+                        return value + ' 亿元';
                     }
                 },
                 data: [
-                    182.2, 148.7,170.7, 175.6,
-                ]
+                    170.7, 175.6, 182.2, 148.7,
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '产量增长率',
@@ -144,7 +150,8 @@ onMounted(() => {
                         return value + ' %';
                     }
                 },
-                data: [23.0, 16.5,20.3, 23.4, ]
+                data: [20.3, 23.4, 23.0, 16.5,],
+
             }
         ]
     };
@@ -161,35 +168,35 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="AnHuiLeftDown">
-        <div class="AnHuiLeftDown-title">北京再生能源建设投资</div>
-        <div class="AnHuiLeftDown-echarts" ref="echartsRef"></div>
+    <div className="AnHuiLeftDown">
+        <div className="AnHuiLeftDown-title">北京市再生能源建设投资</div>
+        <div className="AnHuiLeftDown-echarts" ref="echartsRef"></div>
     </div>
 </template>
 
 <style scoped lang="scss">
 .AnHuiLeftDown {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  .AnHuiLeftDown-title {
-    width: 23vw;
-    color: white;
-    //background: red;
-    margin-left: 1.5vw;
-    font-weight: bolder;
-    font-size: 1.3vw;
-    margin-top: 1.5vh;
-    position: absolute;
-    text-align: center;
-  }
+    .AnHuiLeftDown-title {
+        width: 23vw;
+        color: white;
+        //background: red;
+        margin-left: 1.5vw;
+        font-weight: bolder;
+        font-size: 1.15em;
+        margin-top: 1.5vh;
+        position: absolute;
+        text-align: center;
+    }
 
-  .AnHuiLeftDown-echarts {
-    width: 25vw;
-    height: 33vh;
-    margin-top: 2vh;
-    position: absolute;
-    z-index: 999;
-  }
+    .AnHuiLeftDown-echarts {
+        width: 25vw;
+        height: 33vh;
+        margin-top: 2vh;
+        position: absolute;
+        z-index: 999;
+    }
 }
 </style>

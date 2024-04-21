@@ -206,39 +206,40 @@ onMounted(() => {
 
 <template>
     <div class="DataAnalysisMiddenTopLeft">
-        <div class="TitleSecond">安徽省碳排放量统计</div>
+        <div class="TitleFirst">安徽省能源发展统计</div>
+        <div class="TitleSecond">安徽省耗能时间分布</div>
         <div class="AnHuiLeftTop-main">
             <div class="MainOne">
-                <img src="../../../assets/火力电.png" alt="" class="pic">
+                <img src="../../../assets/为国内生产总值贡献.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">4232</div>
-                    <div class="up">亿万千瓦</div>
+                    <div class="one">4.71</div>
+                    <div class="up">万亿元</div>
                 </div>
-                <div class="tow">有限能源总产量</div>
+                <div class="tow">全省生产总值</div>
             </div>
             <div class="MainTow">
                 <img src="../../../assets/装机容量.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one" style="margin-left: 0.2vw">13.44</div>
-                    <div class="up">%</div>
+                    <div class="one" style="margin-left: 0.2vw">1.081</div>
+                    <div class="up">亿千瓦</div>
                 </div>
-                <div class="tow">装机容量提升率</div>
+                <div class="tow">全省总装机容量</div>
             </div>
             <div class="MainThree">
-                <img src="../../../assets/投资.png" alt="" class="pic">
+                <img src="../../../assets/日用电量查询.png" alt="" class="pic" style="margin-top: 3vh">
                 <div class="number">
-                    <div class="one">3789</div>
-                    <div class="up">亿元</div>
+                    <div class="one" style="margin-left: -0.2vw">3214</div>
+                    <div class="up" style="margin-left: 5vw">亿千瓦时</div>
                 </div>
-                <div class="tow">能源建设投资</div>
+                <div class="tow">全省社会用电</div>
             </div>
             <div class="MainFour">
-                <img src="../../../assets/GenericChart.png" style="margin-top: 3vh" alt="" class="pic">
+                <img src="../../../assets/投资.png" style="margin-top: 3vh" alt="" class="pic">
                 <div class="number">
-                    <div class="one" style="margin-left: 0.3vw">1.33</div>
+                    <div class="one" style="margin-left: 0.3vw">14.33</div>
                     <div class="up">%</div>
                 </div>
-                <div class="tow">发展指标增长</div>
+                <div class="tow">建设投资增长</div>
             </div>
         </div>
         <div class="DataAnalysisMiddenTopLeft-down" ref="echartsRef"></div>
@@ -255,7 +256,7 @@ onMounted(() => {
         width: 25vw;
         height: 18vh;
         margin-left: 1vw;
-        margin-top: -1vh;
+        margin-top: -3.5vh;
         color: white;
 
         .number {
@@ -271,7 +272,7 @@ onMounted(() => {
                 margin-left: 4.2vw;
                 text-align: center;
                 font-size: 0.8em;
-                margin-top: 1.3vh;
+                margin-top: 1vh;
                 font-weight: bolder;
             }
 
@@ -343,11 +344,22 @@ onMounted(() => {
         color: white;
         position: absolute;
         font-weight: bolder;
-        margin-top: -5.5vh;
+        margin-top: 17.5vh;
         width: 26vw;
         margin-left: -4vw;
         text-align: center;
-        font-size: 1.3em;
+        font-size: 1.25em;
+    }
+
+    .TitleFirst {
+        color: white;
+        position: absolute;
+        font-weight: bolder;
+        margin-top: -6vh;
+        width: 26vw;
+        margin-left: -4vw;
+        text-align: center;
+        font-size: 1.25em;
     }
 
     .DataAnalysisMiddenTopLeft-down {

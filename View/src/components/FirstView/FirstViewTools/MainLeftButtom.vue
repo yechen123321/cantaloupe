@@ -41,11 +41,11 @@ onMounted(async () => {
         // 处理从initlandlist获取的数据，例如更新echarts图表
         if (data) {
             option5 = {
-                color:colorList,
+                color: colorList,
                 legend: {
                     itemWidth: 2, // 标签宽度为20px
                     itemHeight: 10, // 标签高度为10px
-                    top:'2%',
+                    top: '2%',
                     textStyle: {
                         color: 'white'
                     },
@@ -84,7 +84,7 @@ onMounted(async () => {
                 },
                 grid: {
                     top: '15%',
-                    left:'60%',
+                    left: '60%',
                 },
                 series: [
                     {

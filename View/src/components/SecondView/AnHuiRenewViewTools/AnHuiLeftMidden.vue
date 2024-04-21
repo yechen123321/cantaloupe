@@ -163,7 +163,7 @@ onMounted(async () => {
     width: 23vw;
     color: white;
     font-weight: bolder;
-      margin-top: -1vh;
+    margin-top: -1vh;
     font-size: 1.15em;
     text-align: center;
     position: absolute;
@@ -173,7 +173,7 @@ onMounted(async () => {
     width: 27vw;
     height: 23vh;
     margin-left: -2vw;
-      margin-top: -0.5vh;
+    margin-top: -0.5vh;
   }
 }
 </style>

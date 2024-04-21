@@ -86,8 +86,8 @@ onMounted(async () => {
                             }, formatter: '{value} '
 
                         },
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLine: {
                             show: false,
@@ -105,8 +105,8 @@ onMounted(async () => {
                             padding: [0, -25, 0, 0]
                         },
                         interval: 5,
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLabel: {
                             textStyle: {
@@ -133,7 +133,7 @@ onMounted(async () => {
                         },
                         data: datas['产量'],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
                     },
                     {
@@ -146,7 +146,7 @@ onMounted(async () => {
                         },
                         data: datas['存量'],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
                     },
                     {

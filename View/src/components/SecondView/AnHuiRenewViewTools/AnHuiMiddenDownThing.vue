@@ -36,7 +36,7 @@ onMounted(() => {
         // 其他渐变色定义...
     ];
     option35 = {
-        color:colorList,
+        color: colorList,
         series: [
             {
                 name: 'Access From',
@@ -156,7 +156,8 @@ onBeforeUnmount(() => {
     position: absolute;
     color: white;
     margin-left: 0.3vw;
-      margin-top: -1vh;
+    margin-top: -1vh;
+
     .name-title {
       margin-left: 0.5vw;
       width: 10vw;

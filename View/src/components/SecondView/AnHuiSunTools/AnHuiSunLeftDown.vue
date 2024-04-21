@@ -107,7 +107,7 @@ onMounted(() => {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(234,124,204,0.7)' // 渐变色起始值
+                            color: 'rgba(223,234,124,0.7)' // 渐变色起始值
                         }, {
                             offset: 1,
                             color: 'rgba(234,124,204,0.1)' // 渐变色起始值
@@ -149,7 +149,7 @@ onMounted(() => {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(250,200,88,0.7)' // 渐变色起始值
+                            color: 'rgba(88,250,164,0.7)' // 渐变色起始值
                         }, {
                             offset: 1,
                             color: 'rgba(250,200,88,0.1)' // 渐变色起始值
@@ -170,7 +170,7 @@ onMounted(() => {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(238,102,102,0.7)' // 渐变色起始值
+                            color: 'rgba(102,238,129,0.7)' // 渐变色起始值
                         }, {
                             offset: 1,
                             color: 'rgba(238,102,102,0.1)' // 渐变色起始值

@@ -283,8 +283,8 @@ onMounted(() => {
             </div>
             <div class="topTow">
                 <div class="topHead">发电装机总容量</div>
-                <div class="topMain" style="margin-left: -2.4vw">3245</div>
-                <div class="up">万千瓦</div>
+                <div class="topMain" style="margin-left: -2.4vw">6070.9</div>
+                <div class="up" style="margin-left: 6vw">万千瓦</div>
             </div>
             <div class="topFour">
                 <div class="oneOne">
@@ -305,11 +305,11 @@ onMounted(() => {
             <div class="right-one">
                 <div class="oneTop">月平均发电量</div>
                 <div class="oneCenter">
-                    <div class="centerLeft">234</div>
+                    <div class="centerLeft">251.98</div>
                     <div class="centerRight">万千瓦</div>
                 </div>
                 <div class="oneDown">
-                    <div class="num">2.34%</div>
+                    <div class="num">12.34%</div>
                     <img src="../../../assets/上升.png" alt="" class="Out">
                 </div>
             </div>
@@ -321,7 +321,7 @@ onMounted(() => {
                 </div>
                 <div class="oneDown">
                     <div class="num">4.5%</div>
-                    <img src="../../../assets/下降.png" alt="" class="Out">
+                    <img src="../../../assets/上升.png" alt="" class="Out">
                 </div>
             </div>
         </div>

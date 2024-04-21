@@ -1,14 +1,37 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
 
+const totalPower = ref(3200); // 初始总发电量
+let timer = null;
+
+const startIncreasing = () => {
+    timer = setInterval(() => {
+        // 每秒增加10，你可以根据需要调整这个值
+        totalPower.value += 10;
+    }, 1000);
+};
+
+const stopIncreasing = () => {
+    clearInterval(timer);
+};
+
+onMounted(() => {
+    startIncreasing();
+});
+
+onUnmounted(() => {
+    stopIncreasing();
+});
 </script>
+
 
 <template>
     <div class="ThermalPowerLeftTop">
-      <div class="title">电场信息总览</div>
+        <div class="title">电场信息总览</div>
         <ul>
             <li>
                 <img src="../../../assets/发电量.png" alt="">
-                <div class="number">3200</div>
+                <div class="number">{{ totalPower }}</div>
                 <div class="up">KWh</div>
                 <div class="what">总 发 电 量</div>
             </li>
@@ -39,15 +62,16 @@
 .ThermalPowerLeftTop {
   width: 100%;
   height: 100%;
-  ul{
+
+  ul {
     position: absolute;
     width: 30vw;
     height: 20vh;
     margin-top: 7vh;
     margin-left: -2.5vw;
     //background: red;
-    li{
-      color:white;
+    li {
+      color: white;
       font-weight: bolder;
       font-size: 1em;
       width: 10vw;
@@ -56,11 +80,13 @@
       margin-top: 2vh;
       margin-left: 3vw;
       list-style: none;
-      img{
+
+      img {
         width: 4vw;
         position: absolute;
       }
-      .number{
+
+      .number {
         position: absolute;
         margin-left: 5vw;
         margin-top: 0.2vh;
@@ -68,13 +94,15 @@
         width: 4vw;
         text-align: center;
       }
-      .up{
+
+      .up {
         margin-left: 9.5vw;
         margin-top: 1.3vh;
         position: absolute;
         color: #0ca6e0;
       }
-      .what{
+
+      .what {
         position: absolute;
         margin-left: 5vw;
         color: #3de9fa;
@@ -82,14 +110,16 @@
       }
     }
   }
-  .title{
-    color:white;
+
+  .title {
+    color: white;
     position: absolute;
     font-weight: bolder;
     font-size: 1.3em;
     margin-left: 3.6vw;
     margin-top: 3.8vh;
   }
+
   .BackImg {
     width: 30vw;
     height: 32vh;

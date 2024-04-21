@@ -11,16 +11,16 @@ onMounted(() => {
     myChart22 = echarts.init(echartsRef.value);
     var colorList = [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#bc4e9c'},
-            {offset: 1, color: '#f80759'}
+            {offset: 1, color: '#00C9FF'},
+            {offset: 0, color: '#92FE9D'}
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#2980B9'},
-            {offset: 1, color: '#6DD5FA'}
+            {offset: 1, color: '#C6FFDD'},
+            {offset: 0, color: '#FBD786'},
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            {offset: 0, color: '#00C9FF'},
-            {offset: 1, color: '#92FE9D'}
+            {offset: 0, color: '#56CCF2'},
+            {offset: 1, color: '#2948ff'}
         ]),
         // 其他渐变色定义...
     ];
@@ -56,7 +56,7 @@ onMounted(() => {
         xAxis: [
             {
                 type: 'category',
-                data: ['2020', '2021', '2022', '2023'],
+                data: ['2019', '2020', '2021', '2022', '2023'],
                 axisPointer: {
                     type: 'shadow'
                 },
@@ -81,11 +81,12 @@ onMounted(() => {
                 type: 'value',
                 name: '万千瓦',
                 min: 0,
-                max: 250,
+                max: 350,
+
                 nameTextStyle: {
                     padding: [0, 10, 0, 0]
                 },
-                interval: 50,
+                interval: 70,
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
@@ -110,15 +111,15 @@ onMounted(() => {
                 axisLabel: {
                     textStyle: {
                         color: 'white' // 设置Y轴上数据的颜色为白色
-                    }, formatter: '{value} %'
-
+                    },
+                    formatter: '{value} %',
                 },
                 axisLine: {
                     lineStyle: {
                         color: 'white',
                     },
                 },
-            }
+            },
         ],
         series: [
             {
@@ -129,7 +130,12 @@ onMounted(() => {
                         return value + ' 万千瓦';
                     }
                 },
-                data: [170.7, 175.6, 182.2, 148.7,],
+                data: [
+                    176.7, 200.6, 222.2, 260.6, 296.7,
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '增长量',
@@ -139,7 +145,12 @@ onMounted(() => {
                         return value + ' 万千瓦';
                     }
                 },
-                data: [76.7, 35.6, 62.2, 32.6,],
+                data: [
+                    30.7, 25.6, 32.2, 28.7, 30.7,
+                ],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                }
             },
             {
                 name: '增长率',
@@ -150,7 +161,7 @@ onMounted(() => {
                         return value + ' %';
                     }
                 },
-                data: [20.3, 23.0, 16.5,23.4,]
+                data: [20.3, 23.4, 23.0, 16.5, 23.4,],
             }
         ]
     };
@@ -166,10 +177,10 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="AnHuiMiddenDown">
-        <img class="BackImg" src="../../../assets/pic/border4.png" alt="">
-        <div class="AnHuiMiddenDown-title">北京再生能源装机容量</div>
-        <div class="AnHuiMiddenDown-echarts" ref="echartsRef"></div>
+    <div className="AnHuiMiddenDown">
+        <img className="BackImg" src="../../../assets/pic/border4.png" alt="">
+        <div className="AnHuiMiddenDown-title">北京市再生能源装机容量</div>
+        <div className="AnHuiMiddenDown-echarts" ref="echartsRef"></div>
         <AnHuiMiddenDownThing class="AnHuiMiddenDownThing-out"></AnHuiMiddenDownThing>
     </div>
 </template>
@@ -178,7 +189,7 @@ onMounted(() => {
 .AnHuiMiddenDown {
   width: 100%;
   height: 100%;
-  //background: red;
+
   .BackImg {
     width: 40vw;
     height: 29vh;
@@ -189,18 +200,16 @@ onMounted(() => {
     color: white;
     position: absolute;
     width: 100%;
-    //background: red;
     text-align: center;
     font-weight: bolder;
     margin-top: 1vh;
-    font-size: 1.26em;
+    font-size: 1.15em;
   }
 
   .AnHuiMiddenDownThing-out {
     width: 14vw;
     height: 22vh;
     position: absolute;
-    //background: red;
     right: 0;
     margin-top: 5.5vh;
     margin-right: -0.7vw;
@@ -214,7 +223,6 @@ onMounted(() => {
     margin-left: -1vw;
     position: absolute;
     z-index: 999;
-    //background: red;
   }
 
 

@@ -141,7 +141,7 @@ onBeforeUnmount(() => {
     <div class="AnHuiSunMiddenCenterThing">
         <div class="title">
             <div class="name">总容量：</div>
-            <div class="number">721.94</div>
+            <div class="number">3223.1</div>
             <div class="up">万千瓦</div>
         </div>
         <div class="AnHuiSunMiddenCenterThing-echarts" ref="echartsRef"></div>

@@ -155,8 +155,8 @@ onMounted(async () => {
                                 color: 'white',
                             }
                         },
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLabel: {
                             textStyle: {
@@ -176,8 +176,8 @@ onMounted(async () => {
                                 color: 'white',
                             }
                         },
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLabel: {
                             textStyle: {
@@ -205,7 +205,7 @@ onMounted(async () => {
                         },
                         data: dataIn["煤炭"],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
                     },
                     {
@@ -217,7 +217,7 @@ onMounted(async () => {
                         },
                         data: dataIn["电力"],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
                     },
                 ]
@@ -303,8 +303,8 @@ onMounted(async () => {
                                 color: 'white',
                             }
                         },
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLabel: {
                             textStyle: {
@@ -319,8 +319,8 @@ onMounted(async () => {
                             color: 'white',
                             padding: [0, -30, 0, 0]
                         },
-                        splitLine:{
-                            show:false // 不显示网格线
+                        splitLine: {
+                            show: false // 不显示网格线
                         },
                         axisLine: {
                             lineStyle: {
@@ -354,7 +354,7 @@ onMounted(async () => {
                         },
                         data: dataOut["煤炭"],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
                     },
                     {
@@ -366,7 +366,7 @@ onMounted(async () => {
                         },
                         data: dataOut["电力"],
                         itemStyle: {
-                            barBorderRadius: [5,5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
+                            barBorderRadius: [5, 5, 0, 0] // 设置柱子上方为圆角，数组中的四个值分别代表左上、右上、右下、左下的圆角半径
                         }
                     },
                 ]
@@ -377,7 +377,6 @@ onMounted(async () => {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-
 
     option1 && myChart1.setOption(option1);
     option111 && myChart111.setOption(option111);
@@ -450,15 +449,12 @@ onMounted(async () => {
   }
 
   .GoMinerals {
-    //cursor: pointer;
     position: absolute;
-    //right: 0;
     text-align: center;
     width: 13vw;
     height: 2.5vh;
     font-size: 1.2vw;
     margin-top: 27.5vh;
-    //margin-right: -2vw;
     margin-left: 6.8vw;
     font-weight: bolder;
     color: white;

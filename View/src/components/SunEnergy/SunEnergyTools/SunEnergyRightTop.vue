@@ -33,7 +33,7 @@ const close = () => {
             <div class="main">
                 <div class="tip">电厂维修通知操作成功：</div>
                 <div class="tip-2">
-                    <div class="number">2 条 故障信息</div>
+                    <div class="number">3 条 故障信息</div>
                     <div class="up">已发送</div>
                 </div>
                 <div class="down">将立即执行维修工作</div>
@@ -56,14 +56,17 @@ const close = () => {
         <div class="ul">
             <ul>
                 <li>
-                    <div class="name">十七面板：</div>
-                    <div class="thing">过温</div>
+                    <div class="name">H-6899：</div>
+                    <div class="thing">开路</div>
                 </li>
                 <li>
-                    <div class="name">三七面板：</div>
-                    <div class="thing">离线</div>
+                    <div class="name">H-6667：</div>
+                    <div class="thing">高温</div>
                 </li>
-
+                <li>
+                    <div class="name">H-9391：</div>
+                    <div class="thing">短路</div>
+                </li>
             </ul>
         </div>
         <div class="mm">

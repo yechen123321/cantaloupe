@@ -9,23 +9,23 @@
             <div class="MainOne">
                 <img src="../../../assets/风电新能.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">4232</div>
-                    <div class="up">亿万千瓦</div>
+                    <div class="one">139.9</div>
+                    <div class="up">亿千瓦</div>
                 </div>
                 <div class="tow">风生能源总产量</div>
             </div>
             <div class="MainTow">
                 <img src="../../../assets/装机容量.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">3344</div>
-                    <div class="up">万千瓦时</div>
+                    <div class="one">721.9</div>
+                    <div class="up">万千瓦</div>
                 </div>
                 <div class="tow">风电装机总容量</div>
             </div>
             <div class="MainThree">
                 <img src="../../../assets/投资.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">3789</div>
+                    <div class="one">280.8</div>
                     <div class="up">亿元</div>
                 </div>
                 <div class="tow">能源建设投资</div>

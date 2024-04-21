@@ -2,6 +2,7 @@
 import {ref, onMounted} from 'vue';
 import * as echarts from 'echarts';
 import {initsdd} from '@/api'
+
 const echartsRef = ref(null);
 let myChart11 = null;
 let option11 = null;
@@ -100,7 +101,6 @@ onMounted(async () => {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-
 
 
     option11 && myChart11.setOption(option11);

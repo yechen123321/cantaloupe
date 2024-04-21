@@ -1,23 +1,23 @@
 <script setup>
-
+import {initq, initp} from "@/api";
 </script>
 
 <template>
     <div class="DataAnalysisLeftMidden">
-        <div class="title">安徽能源结构</div>
+        <div class="title">安徽能源总计</div>
         <div class="AnHuiLeftTop-main">
             <div class="MainOne">
                 <img src="../../../assets/可再生能源.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">4232</div>
-                    <div class="up">亿万千瓦</div>
+                    <div class="one">3521</div>
+                    <div class="up">亿千瓦时</div>
                 </div>
-                <div class="tow">再生能源总产量</div>
+                <div class="tow">全省能源总产量</div>
             </div>
             <div class="MainTow">
                 <img src="../../../assets/装机容量.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one" style="margin-left: 0.2vw">13.44</div>
+                    <div class="one" style="margin-left: 0.2vw">27.7</div>
                     <div class="up">%</div>
                 </div>
                 <div class="tow">装机容量提升率</div>
@@ -25,7 +25,7 @@
             <div class="MainThree">
                 <img src="../../../assets/投资.png" alt="" class="pic">
                 <div class="number">
-                    <div class="one">3789</div>
+                    <div class="one">1311</div>
                     <div class="up">亿元</div>
                 </div>
                 <div class="tow">能源建设投资</div>

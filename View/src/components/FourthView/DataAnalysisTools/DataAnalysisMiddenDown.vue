@@ -188,7 +188,7 @@ const options = ref([
 
 <template>
     <div class="DataAnalysisMiddenTop">
-        <div class="title">安徽省能源消耗水平</div>
+        <div class="title">安徽省能源产能图</div>
         <div class="DataAnalysisMiddenDown-echarts" ref="echartsRef"></div>
         <div class="MySelect">
             <select style="font-weight: bolder" class="SelectBox">

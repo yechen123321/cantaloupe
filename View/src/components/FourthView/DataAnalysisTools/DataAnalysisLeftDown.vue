@@ -234,7 +234,7 @@ onMounted(() => {
 
 <template>
     <div class="DataAnalysisLeftDown">
-        <div class="title">安徽耗能时间分布</div>
+        <div class="title">安徽省空气质量</div>
         <div class="DataAnalysisLeftDown-echarts" ref="echartsRef"></div>
         <img src="../../../assets/pic/midden.png" alt="" class="BackImg">
     </div>

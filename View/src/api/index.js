@@ -2,43 +2,43 @@ import {request} from "@/utils/request";
 
 /////// 首页 ///////
 
-// 全国能源开发需求占比
+// 全国能源开发需求占比 1
 export const initcdd = () => request({
     url: '/get_energy_develop_demand/',
     method: 'get',
 })
 
-// 全国能源产量及库存
+// 全国能源产量及库存 2
 export const initadd = () => request({
     url: '/get_energy_production_and_inventory/',
     method: 'get',
 })
 
-// 全国数据
+// 全国数据 3
 export const inita = () => request({
     url: '/get_market_investment/',
     method: 'get',
 })
 
-// 全国能耗水平
+// 全国能耗水平 4
 export const initqdd = () => request({
     url: '/get_energy_consumption/',
     method: 'get',
 })
 
-// 进出口
+// 进出口 5
 export const initapp = () => request({
     url: '/get_energy_import_and_export/',
     method: 'get',
 })
 
-// 全国装机容量
+// 全国装机容量 6
 export const initkdd = () => request({
     url: '/get_power_generation_installed_capacity/',
     method: 'get',
 })
 
-// 全国储量统计
+// 全国储量统计 7
 export const initsdd = () => request({
     url: '/get_energy_reserve/',
     method: 'get',
@@ -91,4 +91,60 @@ export const initK = () => request({
     method: 'get'
 })
 
+export const initq = () => request({
+    url: '/analyse/get_capacity_structure/12/',
+    method: 'get'
+})
+
+export const initp = () => request({
+    url: '/analyse/get_consumption/12/',
+    method: 'get'
+})
+
+///////     ///////
+
+
+/////// 电场 ///////
+export const initp1 = () => request({
+    url: '/power//get_electric_field_fault/12/',
+    method: 'get'
+})
+export const initp2 = () => request({
+    url: '/power//put_electric_field_fault/12/',
+    method: 'put'
+})
+export const initp31 = () => request({
+    url: '/power//get_base_distribution/12/0/',
+    method: 'get'
+})
+export const initp32 = () => request({
+    url: '/power//get_base_distribution/12/1/',
+    method: 'get'
+})
+export const initp33 = () => request({
+    url: '/power//get_base_distribution/12/2/',
+    method: 'get'
+})
+export const initp34 = () => request({
+    url: '/power//get_base_distribution/12/3/',
+    method: 'get'
+})
+
+////// problem
+export const initp41 = () => request({
+    url: 'power/get_base_equipment_working_information/12/0/',
+    method: 'get'
+})
+export const initp42 = () => request({
+    url: 'power/get_base_equipment_working_information/12/1/',
+    method: 'get'
+})
+export const initp43 = () => request({
+    url: 'power/get_base_equipment_working_information/12/2/',
+    method: 'get'
+})
+export const initp44 = () => request({
+    url: 'power/get_base_equipment_working_information/12/3/',
+    method: 'get'
+})
 ///////     ///////
