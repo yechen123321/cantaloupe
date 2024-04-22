@@ -40,12 +40,12 @@ onMounted(() => {
             center: ['44%', '42%'], // 调整雷达图的位置，这里设置为图表中心
             radius: '55%', // 调整雷达图的大小
             indicator: [
-                {name: '光伏', max: 65000},
-                {name: '水利', max: 40000},
-                {name: '风力', max: 30000},
-                {name: '地热', max: 38000},
-                {name: '氢能', max: 52000},
-                {name: '潮汐', max: 30000},
+                {name: '效率', max: 65000},
+                {name: '产能', max: 40000},
+                {name: '储能', max: 30000},
+                {name: '容量', max: 38000},
+                {name: '效益', max: 52000},
+                {name: '稳定', max: 30000},
             ],
 
             splitNumber: 4, // 分割的圈数
@@ -87,9 +87,7 @@ onMounted(() => {
                         areaStyle: {
                             color: colorList[1] // 橙色，与深蓝色相呼应
                         },
-
                     },
-
                 ]
             }
         ]

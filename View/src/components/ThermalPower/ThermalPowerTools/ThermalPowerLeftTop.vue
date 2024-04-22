@@ -1,16 +1,20 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const totalPower = ref(3200); // 初始总发电量
+const totalPower = ref(4322); // 初始总发电量
 let timer = null;
 
 const startIncreasing = () => {
+    const min = 20;
+    const max = 70;
+    const range = max - min + 1;
+    const randomValue = Math.floor(Math.random() * range) + min;
+
     timer = setInterval(() => {
-        // 每秒增加10，你可以根据需要调整这个值
-        totalPower.value += 10;
+        // 每次增加的值将是20到70之间的随机整数
+        totalPower.value += randomValue;
     }, 1000);
 };
-
 const stopIncreasing = () => {
     clearInterval(timer);
 };

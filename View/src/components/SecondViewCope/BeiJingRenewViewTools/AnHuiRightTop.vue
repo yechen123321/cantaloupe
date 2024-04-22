@@ -1,7 +1,24 @@
 <script setup>
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import * as echarts from 'echarts';
-
+import {
+    initK11,
+    initK12,
+    initK13,
+    initK14,
+    initK15,
+    initKlist21,
+    initKlist22,
+    initKlist23,
+    initKlist24,
+    initKlist25,
+    initKlist26,
+    initKlist27,
+    initKlist28,
+    initKlist29,
+    initKlist30,
+    initKlist31
+} from '@/api'
 const echartsRef = ref(null);
 let myChart30 = null;
 let option30 = null;

@@ -1,5 +1,31 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
 
+const totalPower = ref(5321); // 初始总发电量
+let timer = null;
+
+const startIncreasing = () => {
+    const min = 20;
+    const max = 70;
+    const range = max - min + 1;
+    const randomValue = Math.floor(Math.random() * range) + min;
+
+    timer = setInterval(() => {
+        // 每次增加的值将是20到70之间的随机整数
+        totalPower.value += randomValue;
+    }, 1000);
+};
+const stopIncreasing = () => {
+    clearInterval(timer);
+};
+
+onMounted(() => {
+    startIncreasing();
+});
+
+onUnmounted(() => {
+    stopIncreasing();
+});
 </script>
 
 <template>
@@ -8,7 +34,7 @@
         <ul>
             <li>
                 <img src="../../../assets/发电量.png" alt="">
-                <div class="number">3200</div>
+                <div class="number">{{ totalPower }}</div>
                 <div class="up">KWh</div>
                 <div class="what">总 发 电 量</div>
             </li>

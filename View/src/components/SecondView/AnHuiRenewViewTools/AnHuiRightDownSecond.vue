@@ -1,6 +1,6 @@
 <script setup>
 import {ref, reactive, onBeforeUnmount, onUnmounted, nextTick} from 'vue'
-import {initKlist} from "@/api";
+import {initKlist10} from "@/api";
 
 let timer = ref(null);
 let roll = ref(null);
@@ -40,10 +40,9 @@ function MarqueeTest() {
             test1.scrollTop = 0;
         }
     }
-
 }
 
-initKlist().then(data => {
+initKlist10().then(data => {
     listData.splice(0, listData.length, ...data.data);
     nextTick(() => {
         start();

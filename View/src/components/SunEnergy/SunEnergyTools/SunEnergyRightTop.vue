@@ -71,7 +71,7 @@ const close = () => {
         </div>
         <div class="mm">
             <div class="one">故障信息：</div>
-            <div class="two">2 条</div>
+            <div class="two">3 条</div>
         </div>
         <button @click="updateReport1" class="go">维修通知</button>
         <button @click="updateReport2" class="wrong">危险警报</button>

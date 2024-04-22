@@ -2,7 +2,7 @@
 // import * as echarts from "echarts";
 import {initK1} from "@/api";
 import {ref, reactive, onBeforeUnmount, onUnmounted, nextTick,} from 'vue'
-import {initKlist} from "@/api";
+import {initKlist11} from "@/api";
 
 let timer = ref(null);
 let roll = ref(null);
@@ -45,7 +45,7 @@ function MarqueeTest() {
 
 }
 
-initKlist().then(data => {
+initKlist11().then(data => {
     listDatas.splice(0, listDatas.length, ...data.data);
     nextTick(() => {
         start();

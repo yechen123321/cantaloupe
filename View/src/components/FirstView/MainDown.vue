@@ -2,6 +2,7 @@
 import MainDownLeft from "@/components/FirstView/FirstViewTools/MainDownLeft.vue";
 import MainDownSea from "@/components/FirstView/FirstViewTools/MainDownSea.vue";
 import MainDownRight from "@/components/FirstView/FirstViewTools/MainDownRight.vue";
+
 </script>
 
 <template>

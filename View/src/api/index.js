@@ -53,18 +53,18 @@ export const choose = () => request({
     method: 'get'
 })
 // 设施
-export const initKlist = () => request({
-    url: '/renew/get_regional_resource_facilities/12/',
-    method: 'get'
-})
-
 export const choose1 = () => request({
     url: '/renew/get_region_energy_production/1/',
     method: 'get'
 })
 // 设施
-export const initKlist1 = () => request({
-    url: '/renew/get_regional_resource_facilities/1/',
+export const initKlist10 = () => request({
+    url: '/renew/get_regional_resource_facilities/12/0',
+    method: 'get'
+})
+
+export const initKlist11 = () => request({
+    url: '/renew/get_regional_resource_facilities/12/1',
     method: 'get'
 })
 // 结构
@@ -72,6 +72,52 @@ export const initKlist2 = () => request({
     url: '/renew/get_energy_structure/12/',
     method: 'get'
 })
+
+export const initKlist21 = () => request({
+    url: '/renew/get_energy_reserve/12/',
+    method: 'get'
+})
+export const initKlist22 = () => request({
+    url: '/renew/get_energy_structure/12/',
+    method: 'get'
+})
+export const initKlist23 = () => request({
+    url: '/renew/get_energy_capacity/12/',
+    method: 'get'
+})
+export const initKlist24 = () => request({
+    url: '/renew/get_energy_ranking/12/',
+    method: 'get'
+})
+export const initKlist25 = () => request({
+    url: '/renew/get_energy_reserve_general/12/',
+    method: 'get'
+})
+export const initKlist26 = () => request({
+    url: '/renew/get_energy_installation/12/',
+    method: 'get'
+})
+export const initKlist27 = () => request({
+    url: '/renew/get_energy_construction_investment/12/',
+    method: 'get'
+})
+export const initKlist28 = () => request({
+    url: '/renew/get_classification_capacity/12/',
+    method: 'get'
+})
+export const initKlist29 = () => request({
+    url: '/renew/get_classification_structure/12/',
+    method: 'get'
+})
+export const initKlist30 = () => request({
+    url: '/renew/get_classification_installation/12/',
+    method: 'get'
+})
+export const initKlist31 = () => request({
+    url: '/renew/get_classification_reserve_general/12/',
+    method: 'get'
+})
+
 ///////     ///////
 
 
@@ -80,6 +126,26 @@ export const initKlist2 = () => request({
 // limit数据
 export const initK1 = () => request({
     url: '/limited/get_market_investment/12/',
+    method: 'get'
+})
+export const initK11 = () => request({
+    url: '/limited/get_energy_structure/12/',
+    method: 'get'
+})
+export const initK12 = () => request({
+    url: '/limited/get_energy_capacity/12/',
+    method: 'get'
+})
+export const initK13 = () => request({
+    url: '/limited/get_energy_reserve_general/12/',
+    method: 'get'
+})
+export const initK14 = () => request({
+    url: '/limited/get_energy_reserve/12/',
+    method: 'get'
+})
+export const initK15 = () => request({
+    url: '/limited/get_extraction_efficiency/12/',
     method: 'get'
 })
 ///////     ///////

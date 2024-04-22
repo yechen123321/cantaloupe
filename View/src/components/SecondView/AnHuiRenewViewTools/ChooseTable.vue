@@ -58,6 +58,16 @@ choose().then(response => {
         <button class="SelectGo" @click="handleRouteChange">切换</button>
         <div class="factory">
             <ul class="factoryUl">
+                <li @click="RouteToWind">
+                    <img src="../../../assets/风力发电.png" alt="">
+                    <div class="number">{{ listData["风生电能"] }}</div>
+                    <div class="up">
+                        风生电能
+                    </div>
+                    <div class="down">
+                        亿千瓦时
+                    </div>
+                </li>
                 <li @click="RouteToWater">
                     <img src="../../../assets/水库.png" alt="">
                     <div class="number">{{ listData["水生电能"] }}</div>
@@ -78,16 +88,7 @@ choose().then(response => {
                         亿千瓦时
                     </div>
                 </li>
-                <li @click="RouteToWind">
-                    <img src="../../../assets/风力发电.png" alt="">
-                    <div class="number">{{ listData["风生电能"] }}</div>
-                    <div class="up">
-                        风生电能
-                    </div>
-                    <div class="down">
-                        亿千瓦时
-                    </div>
-                </li>
+
             </ul>
         </div>
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">

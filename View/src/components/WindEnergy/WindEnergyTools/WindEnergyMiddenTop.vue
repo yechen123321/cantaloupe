@@ -16,7 +16,8 @@ const showReport = () => {
 <template>
     <div class="WindEnergyMiddenTop">
         <div class="VI">
-            <Button @click="showReport" class="Second" v-show="reportGenerated">视频展示</Button>
+            <button @click="updateReport" class="Second" v-show="!reportGenerated">模型操控</Button>
+            <button @click="showReport" class="Second" v-show="reportGenerated">视频展示</Button>
             <video v-show="!reportGenerated" class="VV" src="../../../assets/Wind.mp4" autoplay loop
                    muted></video>
         </div>
@@ -41,7 +42,7 @@ const showReport = () => {
       border-radius: 5px;
       margin-top: 2vh;
       margin-left: 2vw;
-      z-index: 333;
+      z-index: 888;
     }
 
     Button:hover {

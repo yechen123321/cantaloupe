@@ -33,7 +33,7 @@ import {initq, initp} from "@/api";
             <div class="MainFour">
                 <img src="../../../assets/GenericChart.png" style="margin-top: 2vh" alt="" class="pic">
                 <div class="number">
-                    <div class="one" style="margin-left: 0.3vw">1.33</div>
+                    <div class="one" style="margin-left: 0.3vw">7.02</div>
                     <div class="up">%</div>
                 </div>
                 <div class="tow">发展指标增长</div>
