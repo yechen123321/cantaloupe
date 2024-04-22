@@ -68,99 +68,42 @@ class my_methods:
     def province_dict(self, num=12):
         s = {
             '北京': [
-
-            ],
-            '天津': [
-
-            ],
-            '河北': [
-
-            ],
-            '山西': [
-
-            ],
-            '内蒙古': [
-
-            ],
-            '辽宁': [
-
-            ],
-            '吉林': [
-
-            ],
-            '黑龙江': [
-
-            ],
-            '上海': [
-
-            ],
-            '江苏': [
-
+                '石景山', '房山', '通州', '顺义', '昌平', '大兴', '怀柔', '平谷', '延庆', '密云', '西城', '海淀',
+                '朝阳', '丰台', '门头沟'
             ],
             '浙江': [
-
+                '杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华', '衢州', '台州', '丽水', '舟山'
+            ],
+            '重庆': [
+                '渝中', '大渡口', '江北', '南岸', '北碚', '巴南', '九龙坡', '南川', '江津', '永川', '合川', '綦江',
+                '潼南', '铜梁', '万盛'
+            ],
+            '西藏': [
+                '拉萨', '昌都', '日喀则'],
+            '四川': [
+                '成都', '绵阳', '自贡', '攀枝花', '泸州', '德阳', '广元', '遂宁', '内江', '乐山', '资阳', '宜宾',
+                '南充', '达州', '雅安', '广安', '巴中', '眉山'
+            ],
+            '山东': [
+                '济南', '青岛', '淄博', '枣庄', '东营', '烟台', '潍坊', '济宁', '泰安', '威海', '日照', '滨州', '德州',
+                '聊城', '临沂', '菏泽'
+            ],
+            '上海': [
+                '黄浦', '徐汇', '长宁', '静安', '普陀', '虹口', '杨浦', '闵行', '宝山', '嘉定', '浦东新区', '金山',
+                '松江', '青浦', '奉贤', '崇明'
+            ],
+            '广东': [
+                '深圳', '广州', '珠海', '东莞', '佛山', '中山', '惠州', '汕头', '江门', '湛江', '肇庆', '梅州', '茂名',
+                '阳江', '清远', '韶关', '揭阳', '汕尾', '潮州', '河源', '云浮'
+            ],
+            '广西': [
+                '南宁', '柳州', '桂林', '梧州', '北海', '崇左', '来宾', '贺州', '玉林', '百色', '河池', '钦州',
+                '防城港', '贵港'
             ],
             '安徽': [
                 '合肥', '芜湖', '蚌埠', '淮北', '亳州', '宿州', '阜阳', '淮南', '滁州', '六安', '马鞍山', '宣城',
                 '铜陵', '池州', '安庆', '黄山'
-            ],
-            '福建': [
-
-            ],
-            '江西': [
-
-            ],
-            '山东': [
-
-            ],
-            '河南': [
-
-            ],
-            '湖北': [
-
-            ],
-            '湖南': [
-
-            ],
-            '广东': [
-
-            ],
-            '广西': [
-
-            ],
-            '海南': [
-
-            ],
-            '重庆': [
-
-            ],
-            '四川': [
-
-            ],
-            '贵州': [
-
-            ],
-            '云南': [
-
-            ],
-            '西藏': [
-
-            ],
-            '陕西': [
-
-            ],
-            '甘肃': [
-
-            ],
-            '青海': [
-
-            ],
-            '宁夏': [
-
-            ],
-            '新疆': [
-
-            ],
+            ]
         }
         return s[self.region_dict(num)]
 
@@ -193,9 +136,10 @@ def get_region_energy_production(request, id=12):
 @api_view(['GET', ])
 @permission_classes(())
 @extend_schema(responses=RegionalResourceFacilitiesSerializer)
-def get_regional_resource_facilities(request, id=12):
+def get_regional_resource_facilities(request, id=12, typeNum=0):
+    type_list = ['再生能源', '有限能源']
     if request.method == 'GET':
-        data_objects = RegionalResourceFacilitiesModel.objects.filter(province=my_methods.region_dict(id)).all()
+        data_objects = RegionalResourceFacilitiesModel.objects.filter(province=my_methods.region_dict(id), type=type_list[typeNum]).all()
         data_list = list(data_objects)
         shuffle(data_list)
         data = RegionalResourceFacilitiesSerializer(instance=data_list, many=True)

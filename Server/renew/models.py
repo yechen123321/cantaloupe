@@ -84,73 +84,10 @@ class my_methods:
                 '南宁', '柳州', '桂林', '梧州', '北海', '崇左', '来宾', '贺州', '玉林', '百色', '河池', '钦州',
                 '防城港', '贵港'
             ],
-            '天津': [
-
-            ],
-            '河北': [
-
-            ],
-            '山西': [
-
-            ],
-            '内蒙古': [
-
-            ],
-            '辽宁': [
-
-            ],
-            '吉林': [
-
-            ],
-            '黑龙江': [
-
-            ],
-            '江苏': [
-
-            ],
             '安徽': [
                 '合肥', '芜湖', '蚌埠', '淮北', '亳州', '宿州', '阜阳', '淮南', '滁州', '六安', '马鞍山', '宣城',
                 '铜陵', '池州', '安庆', '黄山'
-            ],
-            '福建': [
-
-            ],
-            '江西': [
-
-            ],
-            '河南': [
-
-            ],
-            '湖北': [
-
-            ],
-            '湖南': [
-
-            ],
-            '海南': [
-
-            ],
-            '贵州': [
-
-            ],
-            '云南': [
-
-            ],
-            '陕西': [
-
-            ],
-            '甘肃': [
-
-            ],
-            '青海': [
-
-            ],
-            '宁夏': [
-
-            ],
-            '新疆': [
-
-            ],
+            ]
         }
         return s
 
@@ -187,6 +124,10 @@ class MainEnergyProductionModel(models.Model):
 #  能源设施
 class RegionalResourceFacilitiesModel(models.Model):
     province = models.CharField(max_length=100, verbose_name='行政单位', choices=my_methods.province())
+    type = models.CharField(max_length=20, verbose_name='能源归类', choices=(
+        ('再生能源', '再生能源'),
+        ('有限能源', '有限能源')
+    ), default='再生能源')
     name = models.CharField(max_length=30, verbose_name='设施')
     do = models.CharField(max_length=30, verbose_name='工作')
     number = models.DecimalField(default=0, max_digits=7, decimal_places=2, verbose_name='数目')

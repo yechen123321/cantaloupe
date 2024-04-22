@@ -1,7 +1,6 @@
 import os, random, string
 from pathlib import Path
 from dotenv import load_dotenv
-from str2bool import str2bool
 
 load_dotenv()  # take environment variables from .env.
 
@@ -11,11 +10,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if not SECRET_KEY:
     SECRET_KEY = ''.join(random.choice(string.ascii_lowercase) for i in range(32))
 
-DEBUG = str2bool(os.environ.get('DEBUG'))
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8085', 'http://172.18.7.26:8085']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8085', 'http://172.18.7.26:8085', 'http://101.42.158.192:8085', 'http://172.18.7.71:8085']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:

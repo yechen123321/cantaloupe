@@ -119,8 +119,66 @@ def index_data(request):
                                                     request_time__range=[datetime.now() - timedelta(days=2),
                                                                          datetime.now() - timedelta(days=1)]).values(
         'path').distinct().count()
+
+    # 获取一周前的日期
+    one_week_ago = timezone.now().date() - timedelta(weeks=1)
+    w_data = []
+
+    for i in range(1, 8):
+        # 计算当前日期
+        current_date = one_week_ago + timedelta(days=i)
+        # 当天的 00:00:00
+        start_time = datetime.combine(current_date, datetime.min.time())
+        # 当天的 23:59:59
+        end_time = datetime.combine(current_date, datetime.max.time())
+        w_data.append(APIRequest.objects.filter(
+            path='/api/power/put_electric_field_fault/',
+            request_time__range=[start_time, end_time]
+        ).count())
+    end_date = datetime.now().date()
+    start_date = end_date - timedelta(days=6)
+    date_week_list = []
+    current_date = start_date
+    while current_date <= end_date:
+        weekday = current_date.weekday()
+        date_week_list.append(weekday)
+        current_date += timedelta(days=1)
+    w_labels = []
+    weekly_list = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    for i in date_week_list:
+        w_labels.append(weekly_list[i])
+
+    today = datetime.today()
+    start_date = today - timedelta(days=350)
+    monthly_list = []
+    current_date = start_date
+    while current_date <= today:
+        month_year = current_date.strftime("%m")
+        monthly_list.append(int(month_year))
+        current_date += timedelta(days=30)
+    m_list = ['0', '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+    m_labels = []
+    for i in monthly_list:
+        m_labels.append(m_list[i])
+    m_data = {'added': [], 'changed': []}
+    last_month = 0
+    now_year = datetime.now().year - 1
+    for i in monthly_list:
+        if last_month > i:
+            now_year += 1
+        m_data['added'].append(LogEntry.objects.filter(change_message__contains='added', action_time__month=i, action_time__year=now_year).count())
+        m_data['changed'].append(LogEntry.objects.filter(change_message__contains='changed', action_time__month=i, action_time__year=now_year).count())
+        last_month = i
+
+    #  ======================================================================
     data = {"total_requests": [total_requests_now, total_requests_last], "visits": [visits_now * 12, visits_last * 12],
             "data_volume": [data_volume_now, data_volume_last], "user_num": [user_num_now, user_num_last],
+            "weekly_submission_quantity": {
+                "labels": w_labels,
+                "data": w_data},
+            "month_log_update": {
+                "labels": m_labels,
+                "data": m_data}
             }
     return JsonResponse(data)
 

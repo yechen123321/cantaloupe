@@ -30,7 +30,7 @@ schema_view = get_schema_view(
                     "\n\n---------------------------------- renew ----------------------------------\n\n"
 
                     "主要能源品种产量—————————get_region_energy_production/<int:id>/\n"
-                    "地区资源设施使用情况——————get_regional_resource_facilities/<int:id>/\n\n"
+                    "地区资源设施使用情况——————get_regional_resource_facilities/<int:id>/<int:typeNum>/\n\n"
                     "地区再生能源储量—————————get_energy_reserve/<int:id>/\n"
                     "地区再生能源结构—————————get_energy_structure/<int:id>/\n"
                     "地区再生能源产能—————————get_energy_capacity/<int:id>/\n"

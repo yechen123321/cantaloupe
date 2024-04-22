@@ -10,9 +10,13 @@
 
 ##  Technologies Used
 
-- Django：一个高级Python Web框架，用于快速开发安全且可维护的网站。
-- Django REST framework：一个强大的工具集，用于构建Web APIs。
-- MySQL：一个功能强大的关系型数据库系统，具有较高的性能，特别是对于读取频繁的应用场景，用于存储和管理数据。
+- Django
+- Django Bootstrap
+- Django Admin Argon Dashboard
+- Django REST framework
+- Coreapi
+- MySQL
+...
 
 ##  Features
 
@@ -29,7 +33,20 @@
 
 ##  Installation dependencies and startup steps
 
-1. 在 Server 目录下，终端执行 pip install -r requirements.txt 
-2. 在 templates/admin/index.html 中，找到 fetch('http://172.18.7.71:8080{% url 'index_data' %}') 改为自己的地址和端口号
-3. 在 Server 目录下，终端执行 python manage.py runserver 172.18.7.71:8080 (改成自己的地址和端口)
- 
+1. python==3.12.3, pip==24.0
+2. pip install -r requirements.txt
+3. 在 mysql 查询控制台中运行 /SuYuanData.sql 
+4. core/setting.py: 
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'suyuan',
+        'USER': 'your_database_name',
+        'PASSWORD': 'your_password',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
+}
+5. python manage.py makemigrations
+6. python manage.py migrate
+7. python manage.py runserver localhost:8085
