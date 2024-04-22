@@ -22,8 +22,8 @@ const RouteToWind = () => {
     router.push('/anhuiwind'); // 替换'/new-route'为您要跳转的路由路径
 };
 const options = ref([
-    {where: '安徽', value: 1},
     {where: '北京', value: 2},
+    {where: '安徽', value: 1},
     {where: '浙江', value: 3},
     {where: '重庆', value: 4},
     {where: '西藏', value: 5},
@@ -59,7 +59,7 @@ choose1().then(response => {
         <div class="factory">
             <ul class="factoryUl">
                 <li @click="RouteToWater">
-                    <img src="../../../assets/水库.png" alt="">
+                    <img src="../../../assets/water.png" alt="">
                     <div class="number">{{ listData["水生电能"] }}</div>
                     <div class="up">
                         水生电能
@@ -69,7 +69,7 @@ choose1().then(response => {
                     </div>
                 </li>
                 <li @click="RouteToSun" style="margin-top: 0.63vh">
-                    <img src="../../../assets/太阳能发电.png" alt="">
+                    <img src="../../../assets/sunopen2.png" alt="">
                     <div class="number">{{ listData["光生电能"] }}</div>
                     <div class="up">
                         光生电能
@@ -79,7 +79,7 @@ choose1().then(response => {
                     </div>
                 </li>
                 <li @click="RouteToWind">
-                    <img src="../../../assets/风力发电.png" alt="">
+                    <img src="../../../assets/winddian.png" alt="">
                     <div class="number">{{ listData["风生电能"] }}</div>
                     <div class="up">
                         风生电能

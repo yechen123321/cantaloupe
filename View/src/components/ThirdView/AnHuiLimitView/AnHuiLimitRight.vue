@@ -103,7 +103,7 @@ initK1().then(response => {
             <div class="title2">设施信息概览</div>
             <div class="AnHuiLeftTop-main">
                 <div class="MainOne">
-                    <img src="../../../assets/火力电.png" alt="" class="pic">
+                    <img src="../../../assets/firedian.png" alt="" class="pic">
                     <div class="number">
                         <div class="one">3023</div>
                         <div class="up">亿千瓦时</div>
@@ -111,7 +111,7 @@ initK1().then(response => {
                     <div class="tow">有限能源总产量</div>
                 </div>
                 <div class="MainTow">
-                    <img src="../../../assets/装机容量.png" alt="" class="pic">
+                    <img src="../../../assets/zhuangji.png" alt="" class="pic">
                     <div class="number">
                         <div class="one" style="margin-left: 0.2vw">4.88</div>
                         <div class="up">%</div>
@@ -119,7 +119,7 @@ initK1().then(response => {
                     <div class="tow">装机容量提升率</div>
                 </div>
                 <div class="MainThree">
-                    <img src="../../../assets/投资.png" alt="" class="pic">
+                    <img src="../../../assets/makemoney.png" alt="" class="pic">
                     <div class="number">
                         <div class="one">389</div>
                         <div class="up">亿元</div>

@@ -73,7 +73,7 @@ onMounted(() => {
         legend: {
             itemWidth: 20, // 标签宽度为10px
             itemHeight: 10, // 标签高度为10px
-            left: '13%',
+            left: '20%',
             top: '13%',
             data: ['开发耗费', '获取能量', '百分比'],
             textStyle: {

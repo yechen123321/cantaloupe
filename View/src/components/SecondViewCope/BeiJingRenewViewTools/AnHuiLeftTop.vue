@@ -7,7 +7,7 @@
         <div className="AnHuiLeftTop-title">北京市省再生能源统计</div>
         <div className="AnHuiLeftTop-main">
             <div className="MainOne">
-                <img src="../../../assets/可再生能源.png" alt="" className="pic">
+                <img src="../../../assets/renew.png" alt="" className="pic">
                 <div className="number">
                     <div className="one">11.02</div>
                     <div className="up">亿千瓦时</div>
@@ -15,7 +15,7 @@
                 <div className="tow">再生能源总产量</div>
             </div>
             <div className="MainTow">
-                <img src="../../../assets/装机容量.png" alt="" className="pic">
+                <img src="../../../assets/zhuangji.png" alt="" className="pic">
                 <div className="number">
                     <div className="one" style="margin-left: 0.2vw">8.17</div>
                     <div className="up">%</div>
@@ -23,7 +23,7 @@
                 <div className="tow">装机容量提升率</div>
             </div>
             <div className="MainThree">
-                <img src="../../../assets/投资.png" alt="" className="pic">
+                <img src="../../../assets/makemoney.png" alt="" className="pic">
                 <div className="number">
                     <div className="one">419</div>
                     <div className="up">亿元</div>

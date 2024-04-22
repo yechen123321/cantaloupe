@@ -248,7 +248,7 @@ onMounted(() => {
                             color: 'transparent'
                         }
                     },
-                    symbol: 'image://' + require('../../../assets/火电.png'), // 使用 require 加载图片
+                    symbol: 'image://' + require('../../../assets/fire.png'), // 使用 require 加载图片
                     symbolSize: 65, // 设置图片大小
                     emphasis: {
                         label: {
@@ -310,7 +310,7 @@ onMounted(() => {
                 </div>
                 <div class="oneDown">
                     <div class="num">12.34%</div>
-                    <img src="../../../assets/上升.png" alt="" class="Out">
+                    <img src="../../../assets/up.png" alt="" class="Out">
                 </div>
             </div>
             <div class="right-tow">
@@ -321,7 +321,7 @@ onMounted(() => {
                 </div>
                 <div class="oneDown">
                     <div class="num">4.5%</div>
-                    <img src="../../../assets/上升.png" alt="" class="Out">
+                    <img src="../../../assets/up.png" alt="" class="Out">
                 </div>
             </div>
         </div>

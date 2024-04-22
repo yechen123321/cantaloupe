@@ -195,25 +195,25 @@ onMounted(() => {
         <div class="main">
             <ul>
                 <li>
-                    <img src="../../../assets/大气温度.png" alt="">
+                    <img src="../../../assets/wendu.png" alt="">
                     <div class="number">26.4</div>
                     <div class="up">(℃)</div>
                     <div class="what">室内温度</div>
                 </li>
                 <li>
-                    <img src="../../../assets/露点温度.png" alt="">
+                    <img src="../../../assets/ludian.png" alt="">
                     <div class="number">11.7</div>
                     <div class="up">(%RH)</div>
                     <div class="what">空气湿度</div>
                 </li>
                 <li>
-                    <img src="../../../assets/空气质量置灰.png" alt="">
+                    <img src="../../../assets/air2.png" alt="">
                     <div class="number">21.1</div>
                     <div class="up">(AQI)</div>
                     <div class="what">空气质量</div>
                 </li>
                 <li>
-                    <img src="../../../assets/空气质一般.png" alt="">
+                    <img src="../../../assets/air1.png" alt="">
                     <div class="number">3.2</div>
                     <div class="up">(M/s)</div>
                     <div class="what">空气流速</div>

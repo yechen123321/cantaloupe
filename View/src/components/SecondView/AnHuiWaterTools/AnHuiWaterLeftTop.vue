@@ -7,7 +7,7 @@
         <div class="title">安徽省水电能源统计</div>
         <div class="AnHuiWaterLeftTop-main">
             <div class="MainOne">
-                <img src="../../../assets/水电站.png" alt="" class="pic">
+                <img src="../../../assets/water2.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">86.6</div>
                     <div class="up">亿千瓦时</div>
@@ -15,7 +15,7 @@
                 <div class="tow">水电能源总产量</div>
             </div>
             <div class="MainTow">
-                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <img src="../../../assets/zhuangji.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">623.6</div>
                     <div class="up">万千瓦</div>
@@ -23,7 +23,7 @@
                 <div class="tow">水电装机总容量</div>
             </div>
             <div class="MainThree">
-                <img src="../../../assets/投资.png" alt="" class="pic">
+                <img src="../../../assets/makemoney.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">641.3</div>
                     <div class="up">亿元</div>

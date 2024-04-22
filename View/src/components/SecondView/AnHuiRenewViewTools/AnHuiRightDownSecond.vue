@@ -44,6 +44,7 @@ function MarqueeTest() {
 
 initKlist10().then(data => {
     listData.splice(0, listData.length, ...data.data);
+    console.log(data)
     nextTick(() => {
         start();
     });

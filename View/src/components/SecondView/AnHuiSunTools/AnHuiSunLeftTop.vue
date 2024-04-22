@@ -8,7 +8,7 @@
         <img src="../../../assets/pic/border4.png" alt="" class="BackImg">
         <div class="AnHuiSunLeftTop-main">
             <div class="MainOne">
-                <img src="../../../assets/太阳发电.png" alt="" class="pic">
+                <img src="../../../assets/sunopen.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">269.6</div>
                     <div class="up">亿千瓦时</div>
@@ -16,7 +16,7 @@
                 <div class="tow">光电能源总产量</div>
             </div>
             <div class="MainTow">
-                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <img src="../../../assets/zhuangji.png" alt="" class="pic">
                 <div class="number">
                     <div class="one" style="margin-left: 0.2vw">49.6</div>
                     <div class="up">%</div>
@@ -24,7 +24,7 @@
                 <div class="tow">装机容量提升率</div>
             </div>
             <div class="MainThree">
-                <img src="../../../assets/投资.png" alt="" class="pic">
+                <img src="../../../assets/makemoney.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">2102</div>
                     <div class="up">万元</div>

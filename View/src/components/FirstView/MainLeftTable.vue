@@ -394,7 +394,7 @@ onMounted(async () => {
     <div className="MainLeftTable">
         <div id="MainTable-echarts" ref="echartsRef"></div>
         <div id="MainTable-echarts2" ref="echartsRef2"></div>
-        <button id="change"><img src="../../assets/切换.png" alt=""></button>
+        <button id="change"><img src="../../assets/cg.png" alt=""></button>
         <MainChinaLeft id="MainChinaLeft-out"></MainChinaLeft>
         <MainLeftMidden id="MainLeftMidden-out"></MainLeftMidden>
         <img className="BackImg" src="../../assets/pic/border3.png" alt="">

@@ -33,25 +33,25 @@ onUnmounted(() => {
         <div class="title">电场信息总览</div>
         <ul>
             <li>
-                <img src="../../../assets/发电量.png" alt="">
+                <img src="../../../assets/fadian.png" alt="">
                 <div class="number">{{ totalPower }}</div>
                 <div class="up">KWh</div>
                 <div class="what">总 发 电 量</div>
             </li>
             <li>
-                <img src="../../../assets/机组.png" alt="">
+                <img src="../../../assets/jizu.png" alt="">
                 <div class="number">21</div>
                 <div class="up">个</div>
                 <div class="what">机 组 数 量</div>
             </li>
             <li>
-                <img src="../../../assets/太阳能.png" alt="">
+                <img src="../../../assets/sunopen1.png" alt="">
                 <div class="number">377</div>
                 <div class="up">个</div>
                 <div class="what">面 板 数 量</div>
             </li>
             <li>
-                <img src="../../../assets/转换率.png" alt="">
+                <img src="../../../assets/zhuanhuan.png" alt="">
                 <div class="number">92</div>
                 <div class="up">%</div>
                 <div class="what">可 利 用 率</div>

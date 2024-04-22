@@ -7,7 +7,7 @@
         <div class="title">安徽省风生能源储能</div>
         <div class="AnHuiWaterLeftTop-main">
             <div class="MainOne">
-                <img src="../../../assets/风电新能.png" alt="" class="pic">
+                <img src="../../../assets/windpower.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">139.9</div>
                     <div class="up">亿千瓦</div>
@@ -15,7 +15,7 @@
                 <div class="tow">风生能源总产量</div>
             </div>
             <div class="MainTow">
-                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <img src="../../../assets/zhuangji.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">721.9</div>
                     <div class="up">万千瓦</div>
@@ -23,7 +23,7 @@
                 <div class="tow">风电装机总容量</div>
             </div>
             <div class="MainThree">
-                <img src="../../../assets/投资.png" alt="" class="pic">
+                <img src="../../../assets/makemoney.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">280.8</div>
                     <div class="up">亿元</div>

@@ -7,7 +7,7 @@
         <div class="AnHuiLeftTop-title">安徽省再生能源统计</div>
         <div class="AnHuiLeftTop-main">
             <div class="MainOne">
-                <img src="../../../assets/可再生能源.png" alt="" class="pic">
+                <img src="../../../assets/renew.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">496.1</div>
                     <div class="up">亿千瓦</div>
@@ -15,7 +15,7 @@
                 <div class="tow">再生能源总产量</div>
             </div>
             <div class="MainTow">
-                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <img src="../../../assets/zhuangji.png" alt="" class="pic">
                 <div class="number">
                     <div class="one" style="margin-left: 0.2vw">32.55</div>
                     <div class="up">%</div>
@@ -23,7 +23,7 @@
                 <div class="tow">装机容量提升率</div>
             </div>
             <div class="MainThree">
-                <img src="../../../assets/投资.png" alt="" class="pic">
+                <img src="../../../assets/makemoney.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">922</div>
                     <div class="up">亿元</div>

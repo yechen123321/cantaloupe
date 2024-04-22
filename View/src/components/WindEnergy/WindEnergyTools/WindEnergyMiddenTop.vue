@@ -20,6 +20,7 @@ const showReport = () => {
             <button @click="showReport" class="Second" v-show="reportGenerated">视频展示</Button>
             <video v-show="!reportGenerated" class="VV" src="../../../assets/Wind.mp4" autoplay loop
                    muted></video>
+            <iframe v-show="reportGenerated" class="VV" src="http://172.18.7.7:1025/d8n910plspw8/" frameborder=0 allowfullscreen=true></iframe>
         </div>
     </div>
 </template>

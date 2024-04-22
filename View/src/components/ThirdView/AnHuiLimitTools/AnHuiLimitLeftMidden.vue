@@ -42,7 +42,7 @@ onMounted(() => {
                 color: 'white'
             },
             top: '12%',
-            left: '5%',
+            left: '12%',
             data: ['产量', '储量', '供量', '储量增长率', '供量增长率'],
             itemWidth: 20, // 标签宽度为20px
             itemHeight: 10, // 标签高度为10px

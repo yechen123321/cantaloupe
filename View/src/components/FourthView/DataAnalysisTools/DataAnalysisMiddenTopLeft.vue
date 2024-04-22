@@ -210,7 +210,7 @@ onMounted(() => {
         <div class="TitleSecond">安徽省耗能时间分布</div>
         <div class="AnHuiLeftTop-main">
             <div class="MainOne">
-                <img src="../../../assets/为国内生产总值贡献.png" alt="" class="pic">
+                <img src="../../../assets/money.png" alt="" class="pic">
                 <div class="number">
                     <div class="one">4.71</div>
                     <div class="up">万亿元</div>
@@ -218,7 +218,7 @@ onMounted(() => {
                 <div class="tow">全省生产总值</div>
             </div>
             <div class="MainTow">
-                <img src="../../../assets/装机容量.png" alt="" class="pic">
+                <img src="../../../assets/zhuangji.png" alt="" class="pic">
                 <div class="number">
                     <div class="one" style="margin-left: 0.2vw">1.081</div>
                     <div class="up">亿千瓦</div>
@@ -226,7 +226,7 @@ onMounted(() => {
                 <div class="tow">全省总装机容量</div>
             </div>
             <div class="MainThree">
-                <img src="../../../assets/日用电量查询.png" alt="" class="pic" style="margin-top: 3vh">
+                <img src="../../../assets/daydian.png" alt="" class="pic" style="margin-top: 3vh">
                 <div class="number">
                     <div class="one" style="margin-left: -0.2vw">3214</div>
                     <div class="up" style="margin-left: 5vw">亿千瓦时</div>
@@ -234,7 +234,7 @@ onMounted(() => {
                 <div class="tow">全省社会用电</div>
             </div>
             <div class="MainFour">
-                <img src="../../../assets/投资.png" style="margin-top: 3vh" alt="" class="pic">
+                <img src="../../../assets/makemoney.png" style="margin-top: 3vh" alt="" class="pic">
                 <div class="number">
                     <div class="one" style="margin-left: 0.3vw">14.33</div>
                     <div class="up">%</div>

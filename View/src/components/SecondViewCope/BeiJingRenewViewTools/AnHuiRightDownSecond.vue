@@ -1,10 +1,22 @@
 <script setup>
 import {ref, reactive, onBeforeUnmount, onUnmounted, nextTick} from 'vue'
-import {initKlist} from "@/api";
+const listData = reactive([
+    {name:'北控新能', do:'发电', number:'234.1', up:'万千瓦', when:'2024-04-12'},
+    {name:'新华能源', do:'发电', number:'312.2', up:'万千瓦', when:'2024-04-13'},
+    {name:'晶澳电力', do:'发电', number:'139.3', up:'万千瓦', when:'2024-04-14'},
+    {name:'天合光能', do:'发电', number:'36.5', up:'万千瓦', when:'2024-04-16'},
+    {name:'明阳能源', do:'发电', number:'128.7', up:'万千瓦', when:'2024-04-13'},
+    {name:'星辉能源', do:'发电', number:'333.5', up:'万千瓦', when:'2024-04-15'},
+    {name:'鸿宇能源', do:'发电', number:'435.6', up:'万千瓦', when:'2024-04-16'},
+    {name:'凌阳能源', do:'发电', number:'134.3', up:'万千瓦', when:'2024-04-17'},    
+    {name:'瑞丰电力', do:'发电', number:'34.3', up:'万千瓦', when:'2024-04-18'},
+    {name:'海阳能源', do:'发电', number:'84.8', up:'万千瓦', when:'2024-04-11'},
+    {name:'汇智能源', do:'发电', number:'239.1', up:'万千瓦', when:'2024-04-12'},    
+])
+
 
 let timer = ref(null);
 let roll = ref(null);
-let listData = reactive([]);
 
 onBeforeUnmount(() => {
     clearTimeout(timer.value);
@@ -40,21 +52,9 @@ function MarqueeTest() {
             test1.scrollTop = 0;
         }
     }
-
 }
 
-initKlist().then(data => {
-    listData.splice(0, listData.length, ...data.data);
-    nextTick(() => {
-        start();
-    });
-}).catch(error => {
-    console.error('Failed to fetch data:', error);
-});
-
-
 </script>
-
 
 <template>
     <div class="AnHuiRightDownSecond">

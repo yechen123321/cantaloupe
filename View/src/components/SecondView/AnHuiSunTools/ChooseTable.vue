@@ -57,7 +57,7 @@ choose().then(response => {
         <div class="factory">
             <ul class="factoryUl">
                 <li @click="RouteToWind">
-                    <img src="../../../assets/风力发电.png" alt="">
+                    <img src="../../../assets/winddian.png" alt="">
                     <div class="number">{{ listData["风生电能"] }}</div>
                     <div class="up">
                         风生电能
@@ -67,7 +67,7 @@ choose().then(response => {
                     </div>
                 </li>
                 <li @click="RouteToWater">
-                    <img src="../../../assets/水库.png" alt="">
+                    <img src="../../../assets/water.png" alt="">
                     <div class="number">{{ listData["水生电能"] }}</div>
                     <div class="up">
                         水生电能
@@ -77,7 +77,7 @@ choose().then(response => {
                     </div>
                 </li>
                 <li @click="handleRouteChange" style="margin-top: -0.7vh">
-                    <img src="../../../assets/太阳能发电.png" alt="">
+                    <img src="../../../assets/sunopen2.png" alt="">
                     <img src="../../../assets/pic/pic-5.png" alt=""
                          style="width: 10vw;margin-top: -1vh; margin-left: -4.5vw; position: absolute;">
                     <div class="number">{{ listData["光生电能"] }}</div>

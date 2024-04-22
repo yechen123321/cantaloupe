@@ -13,7 +13,7 @@ import {initp1, initp2, initp31, initp32, initp33, initp34 } from '@/api'
                 </div>
                 <div class="oneDown">
                     <div class="num">2.34%</div>
-                    <img src="../../../assets/上升.png" alt="" class="Out">
+                    <img src="../../../assets/up.png" alt="" class="Out">
                 </div>
             </div>
             <div class="right-tow">
@@ -24,7 +24,7 @@ import {initp1, initp2, initp31, initp32, initp33, initp34 } from '@/api'
                 </div>
                 <div class="oneDown">
                     <div class="num">2.3%</div>
-                    <img src="../../../assets/下降.png" alt="" class="Out">
+                    <img src="../../../assets/down.png" alt="" class="Out">
                 </div>
             </div>
             <div class="right-three">
@@ -35,7 +35,7 @@ import {initp1, initp2, initp31, initp32, initp33, initp34 } from '@/api'
                 </div>
                 <div class="oneDown">
                     <div class="num">4.3%</div>
-                    <img src="../../../assets/下降.png" alt="" class="Out">
+                    <img src="../../../assets/down.png" alt="" class="Out">
                 </div>
             </div>
             <div class="right-four">
@@ -46,7 +46,7 @@ import {initp1, initp2, initp31, initp32, initp33, initp34 } from '@/api'
                 </div>
                 <div class="oneDown">
                     <div class="num">1.1%</div>
-                    <img src="../../../assets/上升.png" alt="" class="Out">
+                    <img src="../../../assets/up.png" alt="" class="Out">
                 </div>
             </div>
         </div>
