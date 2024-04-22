@@ -17,8 +17,6 @@ schema_view = get_schema_view(
         #  文档描述
         description="=================================  接口具体应用，参考以下信息：  =================================\n\n"
                     "---------------------------------- natural ----------------------------------\n\n"
-                    "矿产开发产量—————————————get_regional_resource_facilities/<int:id>/\n"
-                    "地区资源设施使用情况——————get_mineral_develop/<int:id>/\n"
                     "能源进出口量—————————————get_energy_import_and_export/\n"
                     "发电装机容量—————————————get_power_generation_installed_capacity/\n"
                     "能源平衡总和—————————————get_energy_production_and_inventory/\n"
@@ -32,23 +30,39 @@ schema_view = get_schema_view(
                     "\n\n---------------------------------- renew ----------------------------------\n\n"
 
                     "主要能源品种产量—————————get_region_energy_production/<int:id>/\n"
-                    "地区资源设施使用情况——————get_regional_resource_facilities/<int:id>/\n"
+                    "地区资源设施使用情况——————get_regional_resource_facilities/<int:id>/\n\n"
                     "地区再生能源储量—————————get_energy_reserve/<int:id>/\n"
                     "地区再生能源结构—————————get_energy_structure/<int:id>/\n"
                     "地区再生能源产能—————————get_energy_capacity/<int:id>/\n"
                     "地区再生能源排行—————————get_energy_ranking/<int:id>/\n"
                     "地区再生能源结构概况—————get_energy_reserve_general/<int:id>/\n"
-
+                    "地区再生能源装机容量—————get_energy_installation/<int:id>/\n"
+                    "地区再生能源建设投资—————get_energy_construction_investment/<int:id>/\n\n"
+                    
+                    '地区分种类发电储能————————get_classification_capacity/<int:id>/\n'
+                    '地区分种类能源结构————————get_classification_structure/<int:id>/\n'
+                    '地区分种类发电装机容量————get_classification_installation/<int:id>/\n'
+                    '地区分种类储量概况————————get_classification_reserve_general/<int:id>/\n'
+                    
                     "\n\n---------------------------------- limited ----------------------------------\n\n"
-                    "地区有限能源经济形势—————get_market_investment/<int:id>/"
-
+                    "地区有限能源经济形势—————get_market_investment/<int:id>/\n"
+                    "地区不可再生能源结构—————get_energy_structure/<int:id>/\n"
+                    "地区不可再生能源产能—————get_energy_capacity/<int:id>/\n"
+                    "地区不可再生能源储量概况——get_energy_reserve_general/<int:id>/\n"
+                    "地区不可再生能源储能图————get_energy_reserve/<int:id>/\n"
+                    "地区不可再生能源开采效率———get_extraction_efficiency/<int:id>/\n"
+                    
                     "\n\n---------------------------------- analyse ----------------------------------\n\n"
                     "能源发展热力图———————————get_heat_map/<int:id>/\n"
-
+                    "能源产能及结构———————————get_capacity_structure/<int:id>/\n"
+                    "能源消耗水平—————————————get_consumption/<int:id>/\n"
+                    
                     "\n\n---------------------------------- PowerGenerationBase ----------------------------------\n\n"
                     "电场故障信息获取—————————get_electric_field_fault/<int:id>/\n"
-                    "电场故障信息通知—————————put_electric_field_fault/<int:id>/\n"
-
+                    "电场故障信息通知—————————put_electric_field_fault/<int:id>/\n\n"
+                    "地区基地分布—————————————get_base_distribution/<int:id>/<int:typeNum>/\n"
+                    "地区电场运行状况—————————get_operation_status/<int:id>/<int:typeNum>/\n"
+                    "地区基地设备运行相关信息——get_base_equipment_working_information/<int:id>/<int:typeNum>/\n"
 
                     "\n\n===============================================================================================\n\n"
     ),

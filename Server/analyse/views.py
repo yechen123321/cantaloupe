@@ -72,3 +72,23 @@ def get_heat_map(request, id=12):
         data_objects = HeatMapModel.objects.filter(province=methods.region_dict(num=id)).all()
         data = HeatMapSerializer(instance=data_objects, many=True)
         return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  能源产能及结构
+@api_view(['GET', ])
+@permission_classes(())
+def get_capacity_structure(request, id=12):
+    if request.method == 'GET':
+        data_objects = CapacityStructureModel.objects.filter(province=methods.region_dict(num=id)).first()
+        data = CapacityStructureSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  能源消耗水平
+@api_view(['GET', ])
+@permission_classes(())
+def get_consumption(request, id=12):
+    if request.method == 'GET':
+        data_objects = ConsumptionModel.objects.filter(province=methods.region_dict(num=id)).first()
+        data = ConsumptionSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)

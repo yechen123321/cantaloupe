@@ -5,8 +5,8 @@ from .models import *
 
 #  各省份规模以上企业主要能源品种产量
 class MainEnergyProductionAdmin(admin.ModelAdmin):
-    list_filter = ('year', 'region')
-    search_fields = ('year', 'region')
+    list_filter = ('year', 'province')
+    search_fields = ('year', 'province')
 
     def has_change_permission(self, request, obj=None):
         # 编辑后数据只可读
@@ -15,8 +15,8 @@ class MainEnergyProductionAdmin(admin.ModelAdmin):
 
 #  能源设施
 class RegionalResourceFacilitiesModelAdmin(admin.ModelAdmin):
-    list_filter = ('region', 'name')
-    search_fields = ('region', 'name')
+    list_filter = ('province', 'name')
+    search_fields = ('province', 'name')
 
     def has_change_permission(self, request, obj=None):
         return False
@@ -31,6 +31,13 @@ class EnergyReserveAdmin(admin.ModelAdmin):
         return False
 
 
+#  地区再生能源装机容量
+class RenewableEnergyInstallationAdmin(admin.ModelAdmin):
+    list_filter = ('year', 'province')
+    search_fields = ('year', 'province')
+
+
 admin.site.register(MainEnergyProductionModel, MainEnergyProductionAdmin)
 admin.site.register(RegionalResourceFacilitiesModel, RegionalResourceFacilitiesModelAdmin)
 admin.site.register(EnergyReserveModel, EnergyReserveAdmin)
+admin.site.register(RenewableEnergyInstallationModel, RenewableEnergyInstallationAdmin)

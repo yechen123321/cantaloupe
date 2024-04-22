@@ -65,3 +65,58 @@ def get_market_investment(request, id=12):
         data_objects = MarketInvestmentModel.objects.filter(province=methods.region_dict(num=id)).first()
         data = MarketInvestmentSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区不可再生能源结构
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyStructureSerializer)
+def get_energy_structure(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyStructureSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区不可再生能源产能
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyCapacitySerializer)
+def get_energy_capacity(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyCapacitySerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区不可再生能源储量概况
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyReserveGeneralSerializer)
+def get_energy_reserve_general(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyReserveGeneralSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区不可再生能源储能图
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyReserveSerializer)
+def get_energy_reserve(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data = EnergyReserveSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区不可再生能源开采效率
+@api_view(['GET', ])
+@permission_classes(())
+@extend_schema(responses=EnergyReserveSerializer)
+def get_extraction_efficiency(request, id=12):
+    if request.method == 'GET':
+        data_objects = ExtractionEfficiencyModel.objects.filter(province=methods.region_dict(id)).first()
+        data = ExtractionEfficiencySerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)

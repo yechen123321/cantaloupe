@@ -199,19 +199,15 @@ class EnergyConsumptionSerializer(serializers.ModelSerializer):
             if data:
                 for field_name, verbose_name in field_names_map.items():
                     value = getattr(data, field_name)
-                    data_dict[verbose_name].append(value)
+                    data_dict[verbose_name].append(round(value, 2))
                 last_data = EnergyConsumptionModel.objects.filter(year=year_i - 1).first()
                 if last_data:
-                    decrease = round((
-                                             data.total_energy_consumption - last_data.total_energy_consumption) / last_data.total_energy_consumption,
-                                     5) * 100
+                    decrease = (data.total_energy_consumption - last_data.total_energy_consumption) / last_data.total_energy_consumption * 100
                 else:
-                    decrease = round(random.uniform(0, 0.03), 5) * 100
+                    decrease = random.uniform(0, 0.03) * 100
 
-                data_dict['全国能耗降低率'].append(decrease)
-        gdps = [83.2, 91.93, 98.65, 101.36, 114.36, 120.47]  # 2017 ~ 2022
-        for gdp in gdps:
-            data_dict['全国GDP'].append(gdp)
+                data_dict['全国能耗降低率'].append(round(decrease, 2))
+            data_dict['全国GDP'] = [83.2, 91.93, 98.65, 101.36, 114.36, 120.47]  # 2017 ~ 2022
 
         return data_dict
 
@@ -364,11 +360,11 @@ class EnergyReserveSerializer(serializers.ModelSerializer):
         name_list = []
         field_name_list = EnergyReserveModel._meta.get_fields()
         for field in field_name_list:
-            data_dict = {}
             if field.name == 'year' or field.name == 'created_at' or field.name == 'id' or field.name == 'range':
                 continue
-            data_dict['name'] = field.verbose_name
-            data_dict['max'] = round(max(EnergyReserveModel.objects.values_list(field.name, flat=True)) * Decimal(str(random.uniform(1.1, 1.2))), 2)
+            data_dict = {'name': field.verbose_name, 'max': round(
+                max(EnergyReserveModel.objects.values_list(field.name, flat=True)) * Decimal(
+                    str(random.uniform(0.1, 1.2))), 2)}
             name_list.append(data_dict)
 
         return name_list
@@ -378,14 +374,20 @@ class EnergyReserveSerializer(serializers.ModelSerializer):
 
         data_obj1 = EnergyReserveModel.objects.filter(range='全国').order_by('-year').first()
         data_obj2 = EnergyReserveModel.objects.filter(range='全球').order_by('-year').first()
-
         field_list = EnergyReserveModel._meta.get_fields()
-        for field in field_list:
+
+        # 煤炭 石油 天然气 地热 风能 太阳能
+        weight_list = [[3.12, 1.69], [20, 2.45], [15.3, 2.00], [3.5, 1.65], [1.45, 2.21], [1.45, 2.18]]
+
+        k = 0
+        for i in range(len(field_list)):
+            field = field_list[i]
             if not (field.name == 'year' or field.name == 'created_at' or field.name == 'id' or field.name == 'range'):
                 data = getattr(data_obj1, field.name)
                 #  全国
-                data_dict['国内总量'].append(data * Decimal(str(1.45)))
+                data_dict['国内总量'].append(round(float(data) * weight_list[k][0], 2))
                 #  世界
                 data = getattr(data_obj2, field.name)
-                data_dict['世界平均'].append(round(data / Decimal(str(1.43)), 2))
+                data_dict['世界平均'].append(round(float(data) / weight_list[k][1], 2))
+                k += 1
         return data_dict

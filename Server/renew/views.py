@@ -1,4 +1,5 @@
 import json
+from random import shuffle
 
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect, reverse
@@ -25,7 +26,7 @@ from .seriailzers import *
 from .models import *
 
 
-class methods:
+class my_methods:
     @staticmethod
     def region_dict(num=12):
         s = {
@@ -183,7 +184,7 @@ API
 @permission_classes(())
 def get_region_energy_production(request, id=12):
     if request.method == 'GET':
-        data_objects = MainEnergyProductionModel.objects.filter(region=methods.region_dict(id)).first()
+        data_objects = MainEnergyProductionModel.objects.filter(province=my_methods.region_dict(id)).first()
         data = MainEnergyProductionSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)
 
@@ -194,8 +195,10 @@ def get_region_energy_production(request, id=12):
 @extend_schema(responses=RegionalResourceFacilitiesSerializer)
 def get_regional_resource_facilities(request, id=12):
     if request.method == 'GET':
-        data_objects = RegionalResourceFacilitiesModel.objects.filter(region=methods.region_dict(id)).all()
-        data = RegionalResourceFacilitiesSerializer(instance=data_objects, many=True)
+        data_objects = RegionalResourceFacilitiesModel.objects.filter(province=my_methods.region_dict(id)).all()
+        data_list = list(data_objects)
+        shuffle(data_list)
+        data = RegionalResourceFacilitiesSerializer(instance=data_list, many=True)
         return Response(data=data.data, status=status.HTTP_200_OK)
 
 
@@ -205,7 +208,7 @@ def get_regional_resource_facilities(request, id=12):
 @extend_schema(responses=EnergyReserveSerializer)
 def get_energy_reserve(request, id=12):
     if request.method == 'GET':
-        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
         data = EnergyReserveSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)
 
@@ -216,7 +219,7 @@ def get_energy_reserve(request, id=12):
 @extend_schema(responses=EnergyStructureSerializer)
 def get_energy_structure(request, id=12):
     if request.method == 'GET':
-        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
         data = EnergyStructureSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)
 
@@ -227,7 +230,7 @@ def get_energy_structure(request, id=12):
 @extend_schema(responses=EnergyCapacitySerializer)
 def get_energy_capacity(request, id=12):
     if request.method == 'GET':
-        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
         data = EnergyCapacitySerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)
 
@@ -239,7 +242,7 @@ def get_energy_capacity(request, id=12):
 @extend_schema(responses=EnergyRankingSerializer)
 def get_energy_ranking(request, id=12):
     if request.method == 'GET':
-        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
         data = EnergyRankingSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)
 
@@ -250,6 +253,66 @@ def get_energy_ranking(request, id=12):
 @extend_schema(responses=EnergyReserveGeneralSerializer)
 def get_energy_reserve_general(request, id=12):
     if request.method == 'GET':
-        data_objects = EnergyReserveModel.objects.filter(province=methods.region_dict(id)).first()
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
         data = EnergyReserveGeneralSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区再生能源装机容量
+@api_view(['GET', ])
+@permission_classes(())
+def get_energy_installation(request, id=12):
+    if request.method == 'GET':
+        data_objects = RenewableEnergyInstallationModel.objects.filter(province=my_methods.region_dict(id)).first()
+        data = RenewableEnergyInstallationSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区再生能源建设投资
+@api_view(['GET', ])
+@permission_classes(())
+def get_energy_construction_investment(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
+        data = EnergyConstructionInvestmentSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区分种类发电储能
+@api_view(['GET', ])
+@permission_classes(())
+def get_classification_capacity(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
+        data = ClassificationCapacitySerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区分种类能源结构
+@api_view(['GET', ])
+@permission_classes(())
+def get_classification_structure(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
+        data = ClassificationStructureSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区分种类发电装机容量
+@api_view(['GET', ])
+@permission_classes(())
+def get_classification_installation(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
+        data = ClassificationInstallationSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区分种类储量概况
+@api_view(['GET', ])
+@permission_classes(())
+def get_classification_reserve_general(request, id=12):
+    if request.method == 'GET':
+        data_objects = EnergyReserveModel.objects.filter(province=my_methods.region_dict(id)).first()
+        data = ClassificationReserveGeneralSerializer(instance=data_objects, many=False)
         return Response(data=data.data, status=status.HTTP_200_OK)

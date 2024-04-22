@@ -3,9 +3,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
-class method:
+class my_methods:
     @staticmethod
-    def region():
+    def province():
         s = (
             ('北京', '北京'),
             ('天津', '天津'),
@@ -42,31 +42,11 @@ class method:
         return s
 
 
-#  地区有限能源结构
-class NewEnergyModel(models.Model):
-    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
-                               default=2000)
-    province = models.CharField(max_length=20, verbose_name='省份', choices=method.region(), default='安徽')
-    energy_type = models.CharField(max_length=50, verbose_name='能源类型', choices=(
-        ('太阳能源', '太阳能源'), ('风力能源', '风力能源'), ('水利能源', '水利能源'), ('生物质能', '生物质能'),
-        ('其他能源', '其他能源')), default='其他能源')
-    value = models.DecimalField(max_digits=10, decimal_places=1, default=1.0,
-                                verbose_name='产量',
-                                help_text='亿千瓦时')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-
-    class Meta:
-        verbose_name_plural = '新能源结构及趋势'
-
-    def __str__(self):
-        return f"{self.year}年 - {self.province}省 - 新能源结构及趋势"
-
-
 #  地区有限能源经济形势
 class MarketInvestmentModel(models.Model):
     year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
                                default=2000)
-    province = models.CharField(max_length=20, verbose_name='省份', choices=method.region(), default='安徽')
+    province = models.CharField(max_length=20, verbose_name='省份', choices=my_methods.province(), default='安徽')
     natural_gas = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
                                       verbose_name='天然气累计消费量',
                                       help_text='亿立方米')
@@ -83,3 +63,71 @@ class MarketInvestmentModel(models.Model):
 
     def __str__(self):
         return f"{self.year}年 - {self.province}省 - 有限能源经济形势"
+
+
+#  地区不可再生能源储量/产量/结构/概况
+class EnergyReserveModel(models.Model):
+    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
+                               default=2000)
+    province = models.CharField(max_length=10, verbose_name='省份', choices=my_methods.province(), default='安徽')
+
+    petroleum_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                        verbose_name='石油',
+                                        help_text='亿千瓦时（产量）')
+    natural_gas_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                          verbose_name='天然气',
+                                          help_text='亿千瓦时（产量）')
+    coal_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                   verbose_name='煤炭',
+                                   help_text='亿千瓦时（产量）')
+    nuclear_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                      verbose_name='核能',
+                                      help_text='亿千瓦时（产量）')
+    other_pro = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                    verbose_name='其他',
+                                    help_text='亿千瓦时（产量）')
+    petroleum_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                        verbose_name='石油',
+                                        help_text='亿千瓦时（储量）')
+    natural_gas_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                          verbose_name='天然气',
+                                          help_text='亿千瓦时（储量）')
+    coal_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                   verbose_name='煤炭',
+                                   help_text='亿千瓦时（储量）')
+    nuclear_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                      verbose_name='核能',
+                                      help_text='亿千瓦时（储量）')
+    other_res = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                                    verbose_name='其他',
+                                    help_text='亿千瓦时（储量）')
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name_plural = '地区不可再生能源储量/产量统计'
+
+    def __str__(self):
+        return f"{self.year}年 - {self.province}省 - 不可再生能源储量/产量统计"
+
+
+#  地区不可再生能源开采效率
+class ExtractionEfficiencyModel(models.Model):
+    year = models.IntegerField(validators=[MinValueValidator(2000), MaxValueValidator(2099)], verbose_name='年份',
+                               default=2000)
+    province = models.CharField(max_length=10, verbose_name='省份', choices=my_methods.province(), default='安徽')
+
+    cost = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                               verbose_name='开采耗费',
+                               help_text='亿元')
+    get = models.DecimalField(max_digits=10, decimal_places=2, default=1.0,
+                              verbose_name='获取能源',
+                              help_text='亿吨')
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name_plural = '地区不可再生能源开采效率'
+
+    def __str__(self):
+        return f"{self.year}年 - {self.province}省 - 不可再生能源开采效率"

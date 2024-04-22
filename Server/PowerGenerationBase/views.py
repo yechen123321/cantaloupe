@@ -1,4 +1,5 @@
 import json
+from random import shuffle
 
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect, reverse
@@ -23,7 +24,7 @@ from .seriailzers import *
 from .models import *
 
 
-class methods:
+class my_methods:
     @staticmethod
     def region_dict(num=12):
         s = {
@@ -181,7 +182,7 @@ API
 @permission_classes(())
 def get_electric_field_fault(request, id=12):
     if request.method == 'GET':
-        fault_data = list(ElectricFieldModel.objects.filter(province__in=methods.province_dict(self=methods, num=id),
+        fault_data = list(ElectricFieldModel.objects.filter(province__in=my_methods.province_dict(self=my_methods, num=id),
                                                             state=False).values_list('id'))
         fault_data = [it[0] for it in fault_data if isinstance(it, tuple)]
         data_objects = ElectricFieldFaultModel.objects.filter(electric_field_id__in=fault_data).all()
@@ -201,3 +202,41 @@ def put_electric_field_fault(request):
         ElectricFieldFaultModel.objects.filter(electric_field__station_name=data['name'],
                                                malfunction_reason=data['reason']).update(send_times=F('send_times') + 1)
         return Response(status=status.HTTP_200_OK)
+
+
+#  地区基地分布
+@api_view(['GET', ])
+@permission_classes(())
+def get_base_distribution(request, id=12, typeNum=0):
+    type_list = ['火电厂', '水电厂', '光电场', '风电场']
+    if request.method == 'GET':
+        data_objects = BaseDistributionModel.objects.filter(electric_field__province=my_methods.region_dict(num=id), electric_field__station_type=type_list[typeNum]).all()
+        data = BaseDistributionSerializer(instance=data_objects, many=True)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区电场运行状况
+@api_view(['GET', ])
+@permission_classes(())
+def get_operation_status(request, id=12, typeNum=0):
+    type_list = ['火电厂', '水电厂', '光电场', '风电场']
+    if request.method == 'GET':
+        data_objects = BaseDistributionModel.objects.filter(electric_field__province=my_methods.region_dict(num=id), electric_field__station_type=type_list[typeNum]).first()
+        data = OperationStatusSerializer(instance=data_objects, many=False)
+        return Response(data=data.data, status=status.HTTP_200_OK)
+
+
+#  地区基地设备运行相关信息
+@api_view(['GET', ])
+@permission_classes(())
+def get_base_equipment_working_information(request, id=12, typeNum=0):
+    type_list = ['火电厂', '水电厂', '光电场', '风电场']
+    if request.method == 'GET':
+        # 获取数据对象
+        data_objects = BaseEquipmentWorkingInformationModel.objects.filter(province=my_methods.region_dict(num=id), type_in=type_list[typeNum]).all()
+        # 将数据对象列表转换为可乱序处理的列表
+        data_list = list(data_objects)
+        shuffle(data_list)  # 对列表进行乱序处理
+        # 序列化处理后的数据
+        data = BaseEquipmentWorkingInformationSerializer(instance=data_list, many=True)
+        return Response(data=data.data, status=status.HTTP_200_OK)
